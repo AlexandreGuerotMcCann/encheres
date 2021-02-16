@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="styles/test.css"> <!-- FEUILLE CSS DE TEST -->
+<title>Se connecter</title>
+</head>
+<body>
+
+	<form action="projetEncheres/servletConnexion" method="post" name="connexion" > <!--  Encadrer les différents input dans des div ? (pour CSS flexbox) -->
+		<p>
+		<label for="identifiant"> Identifiant :</label>
+		<input type="text" name="identifiant" id="identifiant" maxlenght="30" required="required" autofocus="autofocus"/>
+		</p>
+		
+		<p>
+		<label for="motdepasse">Mot de passe :</label>
+		<input type="password" name="motdepasse" id="motdepasse" maxlenght="30" required minimumlength="8"/>
+		</p>
+		
+		<p>
+		<button type="submit">Connexion</button>
+		<input type="checkbox" name ="sesouvenir"/>Se souvenir de moi
+		<a href="">Mot de passe oublié</a>  <!-- Lien vers MDP oublié -->
+		</p>
+		
+		<p>
+		<input type="button" onclick="window.location.href='connexion.html';" value="Créer un compte"/>  <!-- A FAIRE Lien vers page "créer un compte" -->
+		</p>
+		
+	</form>
+</body>
+</html>
