@@ -28,7 +28,7 @@
     background-color:aliceblue;
     opacity:0.9;
     border-radius: 4px;
-    grid-gap: 0.2em;
+    grid-gap: 0.1em;
    
   }
   .wrapper > * {
