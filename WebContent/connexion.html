@@ -2,32 +2,45 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="styles/test.css"> <!-- FEUILLE CSS DE TEST -->
+<link rel="stylesheet" type="text/css" href="test.css"> <!-- FEUILLE CSS DE TEST -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 <title>Se connecter</title>
 </head>
 <body>
-
+    
+    
+    <h1>Se connecter</h1>
+        
 	<form action="projetEncheres/servletConnexion" method="post" name="connexion" > <!--  Encadrer les différents input dans des div ? (pour CSS flexbox) -->
-		<p>
+		<div class="wrapper2">
 		<label for="identifiant"> Identifiant :</label>
 		<input type="text" name="identifiant" id="identifiant" maxlenght="30" required="required" autofocus="autofocus"/>
-		</p>
+	
 		
-		<p>
+		
 		<label for="motdepasse">Mot de passe :</label>
 		<input type="password" name="motdepasse" id="motdepasse" maxlenght="30" required minimumlength="8"/>
-		</p>
+	
+		  
+            	<input type="button" class="button" onclick="window.location.href='connexion.html';" value="Créer un compte"/>  <!-- A FAIRE Lien vers page "créer un compte" -->
 		
-		<p>
-		<button type="submit">Connexion</button>
-		<input type="checkbox" name ="sesouvenir"/>Se souvenir de moi
+		<button type="submit"class="button" >Connexion</button>
+          
+            
+		<span><input type="checkbox" class="checkbox" name ="sesouvenir"/>Se souvenir de moi </span>
+
+            
 		<a href="">Mot de passe oublié</a>  <!-- Lien vers MDP oublié -->
-		</p>
 		
-		<p>
-		<input type="button" onclick="window.location.href='connexion.html';" value="Créer un compte"/>  <!-- A FAIRE Lien vers page "créer un compte" -->
-		</p>
 		
-	</form>
+		
+        </div>
+		
+        
+        </form>
+        
+       
+		
+	
 </body>
 </html>
