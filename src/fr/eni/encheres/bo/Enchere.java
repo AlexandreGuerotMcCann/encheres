@@ -3,8 +3,14 @@ package fr.eni.encheres.bo;
 import java.time.LocalDate;
 
 public class Enchere {
+	
 	private LocalDate dateEnchere;
 	private int montant_enchere;
+	
+	// Constructeur sans paramètres
+	public Enchere() {
+		
+	}
 	
 	
 	// Getter et Setter

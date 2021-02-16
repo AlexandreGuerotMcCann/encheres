@@ -1,10 +1,18 @@
 package fr.eni.encheres.bo;
 
 public class Retrait {
+	
 	private String rue;
 	private String code_postal; // String car VARCHAR en BDD
 	private String ville;
 	
+	// Constructeur sans paramètres
+		public Retrait() {
+			
+		}
+	
+		
+	// Getter et Setter
 	/**
 	 * @return the rue
 	 */

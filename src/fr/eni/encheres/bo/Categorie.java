@@ -1,8 +1,17 @@
 package fr.eni.encheres.bo;
 
 public class Categorie {
+	
 	private int noCategorie;
 	private String libelle;
+	
+	
+	// Constructeur sans paramètres
+		public Categorie() {
+			
+		}
+	
+	// Getter et Setter
 	/**
 	 * @return the noCategorie
 	 */
