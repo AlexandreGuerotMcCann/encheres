@@ -1,3 +1,6 @@
+* {font-family: ubuntu;}
+
+
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -33,3 +36,6 @@ h2 {text-align: center;}
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.button:hover {background-color: lightgrey;
+    color:black;}
