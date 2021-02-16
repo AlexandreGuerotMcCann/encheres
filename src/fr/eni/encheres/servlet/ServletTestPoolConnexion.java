@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 /**
  * Servlet implementation class ServletTestPoolConnexion
  */
-@WebServlet("/ServletTestPoolConnexion")
+@WebServlet("/encheres/ServletTestPoolConnexion")
 public class ServletTestPoolConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
