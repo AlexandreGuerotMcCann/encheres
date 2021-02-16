@@ -3,6 +3,7 @@ package fr.eni.encheres.bo;
 import java.time.LocalDate;
 
 public class ArticleVendu {
+	
 	private int noArticle;
 	private String nomArticle;
 	private String description;
@@ -11,8 +12,14 @@ public class ArticleVendu {
 	private int miseAPrix;
 	private int prixVente;
 	private String etatVente;
-
-
+	
+	
+	// Constructeur sans paramètres
+		public ArticleVendu() {
+			
+		}
+		
+	// Getter et Setter		
 /**
 	 * @return the noArticle
 	 */
