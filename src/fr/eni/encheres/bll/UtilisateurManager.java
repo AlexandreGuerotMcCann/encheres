@@ -9,6 +9,6 @@ public class UtilisateurManager {
 	
 	// Méthode pour obtenir un utilisateur de la BDD
 	public void ListeUtilisateur() {
-		daoUtilisateur = DAOFactory.getUtilisateurDAO();
+		daoUtilisateur = DAOFactory.getUtilisateurDAO();M
 	}
 }
