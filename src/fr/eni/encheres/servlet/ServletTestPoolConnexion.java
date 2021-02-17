@@ -24,39 +24,40 @@ import javax.sql.DataSource;
 @WebServlet("/encheres/ServletTestPoolConnexion")
 public class ServletTestPoolConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out =response.getWriter();
-	try {
-		Context context = new InitialContext();
-		//Recherche de la ressource
-		DataSource dataSource = (DataSource)context.lookup("java:comp/env/jdbc/pool_cnx");
-		//Demande d'une connexion. La méthode getConnection met la demande en attente tant qu'il n'y a pas de connexion disponible
-		Connection cnx = dataSource.getConnection();
-		//Exploitation de la connexion
-		out.print("La connexion est "+ (cnx.isClosed()?"fermée":"ouverte")+".");
-		//Libération de la connexion. Elle n'est pas fermée mais remise dans le pool
-		cnx.close();} catch (NamingException  |SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR );
-	out.println("une Erreur est survenue lors de l'utilisation de la BDD");
-	}
-	
-	
-	
-	
-	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		try {
+			Context context = new InitialContext();
+			// Recherche de la ressource
+			DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/pool_cnx");
+			// Demande d'une connexion. La méthode getConnection met la demande en attente
+			// tant qu'il n'y a pas de connexion disponible
+			Connection cnx = dataSource.getConnection();
+			// Exploitation de la connexion
+			out.print("La connexion est " + (cnx.isClosed() ? "fermée" : "ouverte") + ".");
+			// Libération de la connexion. Elle n'est pas fermée mais remise dans le pool
+			cnx.close();
+		} catch (NamingException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+			out.println("une Erreur est survenue lors de l'utilisation de la BDD");
+		}
+
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
