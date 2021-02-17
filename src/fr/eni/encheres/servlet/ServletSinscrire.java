@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletSinscrire
  */
-@WebServlet("/encheres/servlet/ServletSinscrire")
+@WebServlet("/ServletSinscrire")
 public class ServletSinscrire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -28,6 +28,7 @@ public class ServletSinscrire extends HttpServlet {
 	public static final String rue="rue";
 	public static final String codePostal="codePostal";
 	public static final String city="city";
+	public static final String ihm="/WEB-INF/sinscrire.jsp";
 	
 
 	
@@ -35,7 +36,7 @@ public class ServletSinscrire extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
+		this.getServletContext().getRequestDispatcher(ihm).forward( request, response );
 		
 	}
 
@@ -61,12 +62,7 @@ public class ServletSinscrire extends HttpServlet {
         } catch (Exception e) {
             /* Gérer les erreurs de validation ici. */
 	}
-	
-
-
 	} 
-
-
 
 			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception{
 				 if (mdp != null && mdp.trim().length() != 0 && confirmMdp != null && confirmMdp.trim().length() != 0) {
@@ -78,7 +74,8 @@ public class ServletSinscrire extends HttpServlet {
 				    } else {
 				        throw new Exception("Merci de saisir et confirmer votre mot de passe.");
 				        }
-			}}
+			}
+			}
 				
 		
 
