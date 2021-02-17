@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class servletConnexion
  */
-@WebServlet("/servletConnexion")
+@WebServlet("servletConnexion")
 public class servletConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,14 +29,10 @@ public class servletConnexion extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
-		String motDePasse = request.getParameter("motdepasse");
+
 		String identifiant = request.getParameter("identifiant");		
-=======
-		String identifiant = request.getParameter("identifiant");
 		String motDePasse = request.getParameter("motdepasse");
-		
->>>>>>> branch 'main' of https://github.com/camillejmr/projetEncheres.git
+
 		
 		//doGet(request, response);
 	}
