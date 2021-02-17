@@ -10,7 +10,7 @@ public interface UtilisateurDAO {
 									// et lors de la création pour que le pseudo soit unique
 	
 	
-	  void ajouterUtilisateur (Utilisateur utlisateur);
+	  void ajoutUtilisateur (Utilisateur utlisateur);
 	  
 	  
 	  void supprimerUtilisateur (Utilisateur utilisateur);
