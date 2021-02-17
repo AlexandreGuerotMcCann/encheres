@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletSinscrire
  */
-@WebServlet("/encheres/ServletSinscrire")
+@WebServlet("/ServletSinscrire")
 public class ServletSinscrire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -29,6 +29,8 @@ public class ServletSinscrire extends HttpServlet {
 	public static final String codePostal="codePostal";
 	public static final String city="city";
 	public static final String ihm="/WEB-INF/sinscrire.jsp";
+	
+
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
