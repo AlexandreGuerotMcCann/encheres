@@ -23,14 +23,14 @@ public class UtilisateurManager {
 //		return this.daoUtilisateur.selectAll();
 //		}
 	
-	public void verifierIdentifiants(HttpServletRequest request,UtilisateurDAO daoUtilisateur) {
+	public void verifierIdentifiants(HttpServletRequest request, Utilisateur utilisateur) {
 		
-		String pseudo=request.getParameter("identifiant");
+		String identifiant=request.getParameter("identifiant");
 		String motDePasse=request.getParameter("motdepasse");
 		
 		try {
-			if (identifiant.equals(daoUtilisateur.)
-					&& motDePasse.equals(utilisateurManager.retournerUtilisateur(motDePasse))) {
+			if (identifiant.equals(utilisateur.getPseudo())
+					&& motDePasse.equals(utilisateur.getMotDePasse())) {
 
 	}
 	

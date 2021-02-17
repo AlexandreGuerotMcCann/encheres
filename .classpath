@@ -11,6 +11,5 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5"/>
-	<classpathentry kind="lib" path="C:/Users/camil/OneDrive/Bureau/D2WM Camille/Le développement Web côté serveur – BackEnd avec Java Enterprise Edition (JEE)/4 - L&apos;accès aux données/Module 04 - Démonstrations/Module 04 - Ressources démonstrations/sqljdbc42.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
