@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletSinscrire
  */
-@WebServlet("/ServletSinscrire")
+@WebServlet("/servletSinscrire")
 public class ServletSinscrire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
