@@ -67,16 +67,7 @@ public class ServletSinscrire extends HttpServlet {
 	} 
 
 
-			private void validationEmail( String mail ) throws Exception{
-				 if ( mail != null && mail.trim().length() != 0 ) {
-				        if ( mail.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
-				            throw new Exception( "Merci de saisir une adresse mail valide." );
-				        }
-				    } else {
-				        throw new Exception( "Merci de saisir une adresse mail." );
-				    }
-				
-			}
+
 			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception{
 				 if (mdp != null && mdp.trim().length() != 0 && confirmMdp != null && confirmMdp.trim().length() != 0) {
 				        if (mdp.equals(confirmMdp)) {
