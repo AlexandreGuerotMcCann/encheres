@@ -15,6 +15,7 @@ public class UtilisateurManager {
 daoUtilisateur=DAOFactory.getUtilisateurDAO();}
 	
 	
+
 	// Méthode pour obtenir la liste des utilisateurs présents en BDD
 	public List<Utilisateur> getListeUtilisateurs() throws BusinessException {
 		return this.daoUtilisateur.selectAll();
@@ -24,6 +25,12 @@ daoUtilisateur=DAOFactory.getUtilisateurDAO();}
 //public void verifierUtilisateur(String pseudo, String motDePasse,List<Utilisateur> daoUtilisateurs) {
 //	if(identifiant.length()<30 && identifiant.)
 //	
+	
+
+	// Méthode pour obtenir un utilisateur de la BDD
+	public void ListeUtilisateur() {
+		daoUtilisateur = DAOFactory.getUtilisateurDAO();
+	}
 	
 
 }

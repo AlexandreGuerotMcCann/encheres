@@ -43,6 +43,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			utilisateur.setCodePostal(rs.getString("code_postal"));
 			utilisateur.setVille(rs.getString("ville"));
 			utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
+			utilisateur.setCredit(rs.getInt("credit"));
 			utilisateur.setAdministrateur(rs.getBoolean("administrateur"));
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -51,6 +52,24 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			throw businessException;
 		}
 		return null;
+	}
+
+	@Override
+	public void ajoutUtilisateur(Utilisateur utlisateur) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void supprimerUtilisateur(Utilisateur utilisateur) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modifierUtilisateur(Utilisateur utilisateur) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	// Lors de se connecter, il faudra vérif si le pseudo instanceOf pseudo de la

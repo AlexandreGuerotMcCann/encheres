@@ -11,6 +11,7 @@ public class BusinessException extends Exception {
 	public BusinessException() {
 		super();
 		this.listeCodesErreurs = new ArrayList<>();
+
 	}
 
 //Ajout du code d'erreur, s'il est inexistant.
@@ -18,7 +19,8 @@ public class BusinessException extends Exception {
 		if (!this.listeCodesErreurs.contains(codeErreur)) {
 			this.listeCodesErreurs.add(codeErreur);
 		}
-	}
+}
+
 
 //	Getter retournant la liste des codes erreurs
 	public List<Integer> getListeCodesErreurs() {
