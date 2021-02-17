@@ -13,13 +13,6 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
-	<servlet>
-		<servlet-name>sinscrire</servlet-name>
-		<jsp-file>/WEB-INF/sinscrire.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ServletSinscrire</servlet-name>
-		<url-pattern>/encheres/ServletSinscrire</url-pattern>
-	</servlet-mapping>
+
 
 </web-app>
