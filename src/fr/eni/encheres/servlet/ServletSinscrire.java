@@ -1,9 +1,7 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
-import bo.Utilisateur;
 import fr.eni.encheres.bll.UtilisateurManager;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletSinscrire
  */
-@WebServlet("/servletSinscrire")
+@WebServlet("/encheres/servlet/ServletSinscrire")
 public class ServletSinscrire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -54,17 +52,34 @@ public class ServletSinscrire extends HttpServlet {
 		String rue = request.getParameter("rue");
 		String codePostal = request.getParameter("codePostal");
 		String city = request.getParameter("city");
+		
+		
+		try {
+            validationMotsDePasse( mdp, confirmMdp );
+        } catch (Exception e) {
+            /* Gérer les erreurs de validation ici. */
 	}
 	
 
-	private void validationEmail( String email ) throws Exception {
-	    if ( email != null && email.trim().length() != 0 ) {
-	        if ( !email.matches( "([^.@]+)(\.[^.@]+)@([^.@]+\.)+([^.@]+)" ) ) {
-	            throw new Exception( "Merci de saisir une adresse mail valide." );
-	        }
-	    } else {
-	        throw new Exception( "Merci de saisir une adresse mail." );
-	    }
-	}
 
-}
+	} 
+
+
+
+			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception{
+				 if (mdp != null && mdp.trim().length() != 0 && confirmMdp != null && confirmMdp.trim().length() != 0) {
+				        if (mdp.equals(confirmMdp)) {
+				            throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
+				        } else if (mdp.trim().length() < 3) {
+				            throw new Exception("Les mots de passe doivent contenir au moins 8 caractères.");
+				        }
+				    } else {
+				        throw new Exception("Merci de saisir et confirmer votre mot de passe.");
+				        }
+			}}
+				
+		
+
+
+
+
