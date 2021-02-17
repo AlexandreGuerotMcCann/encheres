@@ -57,7 +57,7 @@
                  <input type="button" class="button"  name="annuler" value="annuler" onclick="accueil.html"/>
 				<input type="submit" class="button" name="sinscrire" value="s'inscrire" onclick="accueil.html"/>
         </div>
-            			
+
 	</form>
     
 </body>
