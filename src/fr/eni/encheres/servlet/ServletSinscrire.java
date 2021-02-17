@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletSinscrire
  */
-@WebServlet("/servletSinscrire")
+@WebServlet("/encheres/ServletSinscrire")
 public class ServletSinscrire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -56,15 +56,5 @@ public class ServletSinscrire extends HttpServlet {
 		String city = request.getParameter("city");
 	}
 	
-
-	/*private void validationEmail( String email ) throws Exception {
-	    if ( email != null && email.trim().length() != 0 ) {
-	        if ( !email.matches( "([^.@]+)(\.[^.@]+)@([^.@]+\.)+([^.@]+)" ) ) {
-	            throw new Exception( "Merci de saisir une adresse mail valide." );
-	        }
-	    } else {
-	        throw new Exception( "Merci de saisir une adresse mail." );
-	    }
-	}*/
 
 }
