@@ -55,9 +55,7 @@ public class ServletSinscrire extends HttpServlet {
 		
 		
 		try {
-            validationEmail( mail );
             validationMotsDePasse( mdp, confirmMdp );
-            validationNom( nom );
         } catch (Exception e) {
             /* Gérer les erreurs de validation ici. */
 	}
@@ -77,22 +75,10 @@ public class ServletSinscrire extends HttpServlet {
 				        }
 				    } else {
 				        throw new Exception("Merci de saisir et confirmer votre mot de passe.");
-				    }
+				        }
+			}}
 				
-				
-			}
-			
-			
-			
-			private void validationNom( String nom ) throws Exception
-			
-			{
-				
-				if ( nom != null && nom.trim().length() < 3 ) {
-			        throw new Exception( "Le nom d'utilisateur doit contenir au moins 8 caractères." );
-			    }
-			}
-}
+		
 
 
 
