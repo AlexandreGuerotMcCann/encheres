@@ -54,6 +54,56 @@ public class ServletSinscrire extends HttpServlet {
 		String rue = request.getParameter("rue");
 		String codePostal = request.getParameter("codePostal");
 		String city = request.getParameter("city");
+		
+		
+		try {
+            validationEmail( mail );
+            validationMotsDePasse( mdp, confirmMdp );
+            validationNom( nom );
+        } catch (Exception e) {
+            /* Gérer les erreurs de validation ici. */
 	}
 
+
+	} 
+
+
+			private void validationEmail( String mail ) throws Exception{
+				 if ( mail != null && mail.trim().length() != 0 ) {
+				        if ( mail.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
+				            throw new Exception( "Merci de saisir une adresse mail valide." );
+				        }
+				    } else {
+				        throw new Exception( "Merci de saisir une adresse mail." );
+				    }
+				
+			}
+			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception{
+				 if (mdp != null && mdp.trim().length() != 0 && confirmMdp != null && confirmMdp.trim().length() != 0) {
+				        if (mdp.equals(confirmMdp)) {
+				            throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
+				        } else if (mdp.trim().length() < 3) {
+				            throw new Exception("Les mots de passe doivent contenir au moins 3 caractères.");
+				        }
+				    } else {
+				        throw new Exception("Merci de saisir et confirmer votre mot de passe.");
+				    }
+				
+				
+			}
+			
+			
+			
+			private void validationNom( String nom ) throws Exception
+			
+			{
+				
+				if ( nom != null && nom.trim().length() < 3 ) {
+			        throw new Exception( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
+			    }
+			}
 }
+
+
+
+
