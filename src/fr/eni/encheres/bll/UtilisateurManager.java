@@ -2,8 +2,6 @@ package fr.eni.encheres.bll;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bo.Utilisateur;
 import fr.eni.encheres.dal.DAOFactory;
@@ -22,18 +20,7 @@ public class UtilisateurManager {
 //	public List<Utilisateur> getListeUtilisateurs() throws BusinessException {
 //		return this.daoUtilisateur.selectAll();
 //		}
-	
-	public void verifierIdentifiants(HttpServletRequest request, Utilisateur utilisateur) {
-		
-		String identifiant=request.getParameter("identifiant");
-		String motDePasse=request.getParameter("motdepasse");
-		
-		try {
-			if (identifiant.equals(utilisateur.getPseudo())
-					&& motDePasse.equals(utilisateur.getMotDePasse())) {
 
-	}
-	
 public Utilisateur retournerUtilisateur(String pseudo) throws BusinessException
 {
 	return daoUtilisateur.selectByPseudo(pseudo);}

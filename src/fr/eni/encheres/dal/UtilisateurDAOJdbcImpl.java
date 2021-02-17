@@ -12,7 +12,7 @@ import fr.eni.encheres.bo.Utilisateur;
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
-	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo=?";
+	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo=?, password=?";
 	private static final String SELECT_ALL = "SELECT pseudo,mot_de_passe FROM utiliseurs;";
 
 	@Override
@@ -29,7 +29,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 					PreparedStatement.RETURN_GENERATED_KEYS);
 			pStatement.setString(1, pseudo);
 			ResultSet rs = pStatement.executeQuery();
-			while (rs.next()) { // on boucle sur le resultset pour transormer le result utilisateur
+			while(rs.next()) { // on boucle sur le resultset pour transormer le result utilisateur
 
 			}
 			ResultSet key = pStatement.getGeneratedKeys();// Colonne noUtilisateur generatedKey
@@ -48,7 +48,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 			BusinessException businessException = new BusinessException();
-			businessException.ajouterErreur(CodesErreursDAL.ECHEC_LECTURE_UTILISATEUR_SELECTIONNE);
+			businessException.ajouterErreur(CodesErreursDAL.ERREURS_IDENTIFIANTS);
 			throw businessException;
 		}
 		return utilisateur;
