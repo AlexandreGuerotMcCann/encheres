@@ -8,5 +8,14 @@ public interface UtilisateurDAO {
 
 	List<Utilisateur> selectAll(); // POur vérifier lors de la connexion si le pseudo est présent en BDD 
 									// et lors de la création pour que le pseudo soit unique
+	
+	
+	  void ajoutUtilisateur (Utilisateur utlisateur);
+	  
+	  
+	  void supprimerUtilisateur (Utilisateur utilisateur);
+	  
+	  
+	  void modifierUtilisateur (Utilisateur utilisateur);
 
 }

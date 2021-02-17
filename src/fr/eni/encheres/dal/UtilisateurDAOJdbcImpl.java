@@ -35,7 +35,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
-			BusinessException businessException= new Busi
+			BusinessException businessException= new BusinessException();
 		}
 		return listeUtilisateur;
 	}

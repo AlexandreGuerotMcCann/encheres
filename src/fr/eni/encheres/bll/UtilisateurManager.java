@@ -15,4 +15,5 @@ this.daoUtilisateur=DAOFactory.getUtilisateurDAO();}
 	public void ListeUtilisateur() {
 		daoUtilisateur = DAOFactory.getUtilisateurDAO();
 	}
+	
 }
