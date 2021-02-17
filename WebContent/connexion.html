@@ -2,25 +2,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="test.css"> <!-- FEUILLE CSS DE TEST -->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+<link rel="stylesheet" type="text/css" href="test.css">
+<!-- FEUILLE CSS DE TEST -->
+<link rel="stylesheet" type="text/css"
+	href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 <title>Se connecter</title>
 </head>
 <body>
-    
-    
-    <h1>Se connecter</h1>
+
+
+	<h1>Se connecter</h1>
 
 	<form action="ServletConnexion" method="post">
 		<!--  Encadrer les différents input dans des div ? (pour CSS flexbox) -->
 		<div class="wrapper2">
-			<label for="identifiant"> Identifiant :</label> <input type="text"
-				name="identifiant" id="identifiant" maxlenght="30"
-				required="required" autofocus="autofocus" /> <label for="motdepasse">Mot
-				de passe :</label> <input type="password" name="motdepasse" id="motdepasse"
-				maxlenght="30" required minimumlength="8" /> <input type="button"
-				class="button" onclick="window.location.href='connexion.html';"
-				value="Créer un compte" />
+			<label for="identifiant"> Identifiant :</label> 
+			<input type="text" id="identifiant" name="identifiant" required maxlenght="30"  autofocus="autofocus" />
+			<label for="motdepasse">Mot de	passe :</label> 
+			<input type="password" name="motdepasse" id="motdepasse" required minimumlength="8" maxlenght="30"  /> 
+				
+				<input type="button" class="button" onclick="window.location.href='connexion.html';"value="Créer un compte" />
 			<!-- A FAIRE Lien vers page "créer un compte" -->
 
 			<button type="submit" class="button">Connexion</button>
