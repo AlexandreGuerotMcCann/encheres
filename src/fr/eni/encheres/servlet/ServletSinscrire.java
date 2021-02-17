@@ -22,6 +22,7 @@ public class ServletSinscrire extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/sinscrire.html");
 		rd.forward(request, response);
+		
 	}
 
 	/**
