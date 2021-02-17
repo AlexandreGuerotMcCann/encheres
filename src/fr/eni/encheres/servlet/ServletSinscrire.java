@@ -1,9 +1,7 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
-import bo.Utilisateur;
 import fr.eni.encheres.bll.UtilisateurManager;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletSinscrire
  */
-@WebServlet("/encheres/ServletSinscrire")
+@WebServlet("/encheres/servlet/ServletSinscrire")
 public class ServletSinscrire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -84,7 +82,7 @@ public class ServletSinscrire extends HttpServlet {
 				        if (mdp.equals(confirmMdp)) {
 				            throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
 				        } else if (mdp.trim().length() < 3) {
-				            throw new Exception("Les mots de passe doivent contenir au moins 3 caractères.");
+				            throw new Exception("Les mots de passe doivent contenir au moins 8 caractères.");
 				        }
 				    } else {
 				        throw new Exception("Merci de saisir et confirmer votre mot de passe.");
@@ -100,7 +98,7 @@ public class ServletSinscrire extends HttpServlet {
 			{
 				
 				if ( nom != null && nom.trim().length() < 3 ) {
-			        throw new Exception( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
+			        throw new Exception( "Le nom d'utilisateur doit contenir au moins 8 caractères." );
 			    }
 			}
 }
