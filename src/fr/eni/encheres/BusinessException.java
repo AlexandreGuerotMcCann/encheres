@@ -5,14 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BusinessException extends Exception {
- private List<Integer> listeCodesErreurs;
- 
-public BusinessException() {
-super();
-this.listeCodesErreurs=new ArrayList<>();
+	private List<Integer> listeCodesErreurs;
 
+	public BusinessException() {
+		super();
+		this.listeCodesErreurs = new ArrayList<>();
 
+	}
 
-}
- 
 }

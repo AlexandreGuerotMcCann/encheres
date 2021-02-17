@@ -1,6 +1,8 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
+import bo.Utilisateur;
+import fr.eni.encheres.bll.UtilisateurManager;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,7 +35,7 @@ public class ServletSinscrire extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+			
 		
 	}
 
