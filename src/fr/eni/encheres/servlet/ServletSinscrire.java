@@ -20,16 +20,16 @@ public class ServletSinscrire extends HttpServlet {
 	
 	
 	
-	private static final String mdp="mdp";
-	private static final String pseudo ="pseudo";
-	private static final String confirmMdp="confirmMdp";
-	private static final String nom ="nom";
-	private static final String prenom="prenom";
-	private static final String mail="mail";
-	private static final String telephone="telephone";
-	private static final String rue="rue";
-	private static final String codePostal="codePostal";
-	private static final String city="city";
+	public static final String mdp="mdp";
+	public static final String pseudo ="pseudo";
+	public static final String confirmMdp="confirmMdp";
+	public static final String nom ="nom";
+	public static final String prenom="prenom";
+	public static final String mail="mail";
+	public static final String telephone="telephone";
+	public static final String rue="rue";
+	public static final String codePostal="codePostal";
+	public static final String city="city";
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -54,6 +54,17 @@ public class ServletSinscrire extends HttpServlet {
 		String rue = request.getParameter("rue");
 		String codePostal = request.getParameter("codePostal");
 		String city = request.getParameter("city");
+	}
+	
+
+	private void validationEmail( String email ) throws Exception {
+	    if ( email != null && email.trim().length() != 0 ) {
+	        if ( !email.matches( "([^.@]+)(\.[^.@]+)@([^.@]+\.)+([^.@]+)" ) ) {
+	            throw new Exception( "Merci de saisir une adresse mail valide." );
+	        }
+	    } else {
+	        throw new Exception( "Merci de saisir une adresse mail." );
+	    }
 	}
 
 }
