@@ -51,7 +51,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			businessException.ajouterErreur(CodesErreursDAL.ECHEC_LECTURE_UTILISATEUR_SELECTIONNE);
 			throw businessException;
 		}
-		return null;
+		return utilisateur;
 	}
 
 	@Override

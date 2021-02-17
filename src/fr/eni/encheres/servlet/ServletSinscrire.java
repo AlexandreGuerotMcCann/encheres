@@ -1,9 +1,7 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
-import bo.Utilisateur;
 import fr.eni.encheres.bll.UtilisateurManager;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,22 +12,22 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletSinscrire
  */
-@WebServlet("/ServletSinscrire")
+@WebServlet("/encheres/servlet/ServletSinscrire")
 public class ServletSinscrire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	
 	
-	private static final String mdp="mdp";
-	private static final String pseudo ="pseudo";
-	private static final String confirmMdp="confirmMdp";
-	private static final String nom ="nom";
-	private static final String prenom="prenom";
-	private static final String mail="mail";
-	private static final String telephone="telephone";
-	private static final String rue="rue";
-	private static final String codePostal="codePostal";
-	private static final String city="city";
+	public static final String mdp="mdp";
+	public static final String pseudo ="pseudo";
+	public static final String confirmMdp="confirmMdp";
+	public static final String nom ="nom";
+	public static final String prenom="prenom";
+	public static final String mail="mail";
+	public static final String telephone="telephone";
+	public static final String rue="rue";
+	public static final String codePostal="codePostal";
+	public static final String city="city";
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -54,6 +52,34 @@ public class ServletSinscrire extends HttpServlet {
 		String rue = request.getParameter("rue");
 		String codePostal = request.getParameter("codePostal");
 		String city = request.getParameter("city");
+		
+		
+		try {
+            validationMotsDePasse( mdp, confirmMdp );
+        } catch (Exception e) {
+            /* Gérer les erreurs de validation ici. */
 	}
+	
 
-}
+
+	} 
+
+
+
+			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception{
+				 if (mdp != null && mdp.trim().length() != 0 && confirmMdp != null && confirmMdp.trim().length() != 0) {
+				        if (mdp.equals(confirmMdp)) {
+				            throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
+				        } else if (mdp.trim().length() < 3) {
+				            throw new Exception("Les mots de passe doivent contenir au moins 8 caractères.");
+				        }
+				    } else {
+				        throw new Exception("Merci de saisir et confirmer votre mot de passe.");
+				        }
+			}}
+				
+		
+
+
+
+
