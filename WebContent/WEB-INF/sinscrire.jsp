@@ -16,7 +16,7 @@
  	<h2>Création d'un nouveau compte</h2>
  	
 
-		<form action="encheres/ServletSinscrire" method="post" name="connexion" >
+		<form action="ServletSinscrire" method="post" name="connexion" >
        
         <div class="wrapper">
         
