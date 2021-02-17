@@ -20,16 +20,24 @@ public class ServletSinscrire extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/sinscrire.html");
-		rd.forward(request, response);
-		
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		//doGet(request, response);
+		String mdp = request.getParameter("mdp");
+		String pseudo = request.getParameter("pseudo");
+		String confirmMdp = request.getParameter("confirmMdp");
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");
+		String mail = request.getParameter("mail");
+		String telephone = request.getParameter("telephone");
+		String rue = request.getParameter("rue");
+		String codePostal = request.getParameter("codePostal");
+		String city = request.getParameter("city");
 	}
 
 }
