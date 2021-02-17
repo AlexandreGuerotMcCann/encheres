@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>accueil</title>
+<title>Erreur</title>
 </head>
+<!-- TODO :: CODE 
++ redirection vers page authentification
++Redirection vers mot de passe oublié -->
 <body>
-
+Erreur erreur
 </body>
 </html>
