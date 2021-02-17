@@ -57,7 +57,7 @@ public class ServletSinscrire extends HttpServlet {
 	}
 	
 
-	private void validationEmail( String email ) throws Exception {
+	/*private void validationEmail( String email ) throws Exception {
 	    if ( email != null && email.trim().length() != 0 ) {
 	        if ( !email.matches( "([^.@]+)(\.[^.@]+)@([^.@]+\.)+([^.@]+)" ) ) {
 	            throw new Exception( "Merci de saisir une adresse mail valide." );
@@ -65,6 +65,6 @@ public class ServletSinscrire extends HttpServlet {
 	    } else {
 	        throw new Exception( "Merci de saisir une adresse mail." );
 	    }
-	}
+	}*/
 
 }
