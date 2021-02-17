@@ -31,8 +31,7 @@ public class servletConnexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String motDePasse = request.getParameter("motdepasse");
-		String identifiant = request.getParameter("identifiant");
-		
+		String identifiant = request.getParameter("identifiant");		
 		
 		//doGet(request, response);
 	}

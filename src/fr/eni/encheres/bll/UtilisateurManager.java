@@ -11,4 +11,5 @@ public class UtilisateurManager {
 	public void ListeUtilisateur() {
 		daoUtilisateur = DAOFactory.getUtilisateurDAO();
 	}
+	
 }
