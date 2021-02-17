@@ -24,14 +24,19 @@ public class servletConnexion extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 	}
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
 		String motDePasse = request.getParameter("motdepasse");
 		String identifiant = request.getParameter("identifiant");		
+=======
+		String identifiant = request.getParameter("identifiant");
+		String motDePasse = request.getParameter("motdepasse");
+		
+>>>>>>> branch 'main' of https://github.com/camillejmr/projetEncheres.git
 		
 		//doGet(request, response);
 	}
