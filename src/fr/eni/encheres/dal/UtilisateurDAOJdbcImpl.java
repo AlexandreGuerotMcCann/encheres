@@ -12,7 +12,7 @@ import fr.eni.encheres.bo.Utilisateur;
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
-	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateur WHERE pseudo=?";
+	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo=?";
 	private static final String SELECT_ALL = "SELECT pseudo,mot_de_passe FROM utiliseurs;";
 
 	@Override
