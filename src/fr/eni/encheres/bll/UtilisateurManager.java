@@ -21,9 +21,9 @@ public class UtilisateurManager {
 //		return this.daoUtilisateur.selectAll();
 //		}
 
-public void verifierUtilisateur(String pseudo, String motDePasse,List<Utilisateur> daoUtilisateurs) {
-	if(identifiant.length()<30 && identifiant.)
-	
+public Utilisateur retournerUtilisateur(String pseudo) throws BusinessException
+{
+	return daoUtilisateur.selectByPseudo(pseudo);}
 	// Méthode pour obtenir un utilisateur de la BDD
 	public void ListeUtilisateur() {
 		daoUtilisateur = DAOFactory.getUtilisateurDAO();
