@@ -29,6 +29,8 @@ public class ServletSinscrire extends HttpServlet {
 	public static final String codePostal="codePostal";
 	public static final String city="city";
 	
+
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
