@@ -18,6 +18,19 @@ import javax.servlet.http.HttpServletResponse;
 public class ServletSinscrire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	
+	
+	private static final String mdp="mdp";
+	private static final String pseudo ="pseudo";
+	private static final String confirmMdp="confirmMdp";
+	private static final String nom ="nom";
+	private static final String prenom="prenom";
+	private static final String mail="mail";
+	private static final String telephone="telephone";
+	private static final String rue="rue";
+	private static final String codePostal="codePostal";
+	private static final String city="city";
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
