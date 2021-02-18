@@ -61,7 +61,7 @@ public class ServletSinscrire extends HttpServlet {
 			rd.forward(request, response);
 		} catch (Exception e) {
 			
-			//Sinon je retourne à la page d'inscrire et indiquer les problèmes:
+			//Sinon je retourne à la page s'inscrire et j'indique les problèmes:
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);

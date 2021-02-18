@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni.encheres.BusinessException;
@@ -34,7 +33,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_PSEUDO);
 			pStatement.setString(1, pseudo);
 			ResultSet rs = pStatement.executeQuery();
-			if (rs.next()) { // on boucle sur le resultset pour transormer le result utilisateur
+			if (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes d'utilisateurs
 			}
 			utilisateur = new Utilisateur();
 			utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
@@ -124,6 +123,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 				pStatement.setString(9, utilisateur.getMotDePasse());
 				pStatement.setInt(10, utilisateur.getNoUtilisateur()); // Pas sûre de toucher au "no_utilisateur"
 				//Com de camille : je ne pense pas car c'est une PK en BDD :)
+				//Com de Sandrine : Bien reçu ! Merci pour l'explication, du coup il faudra bien la supprimer aussi dans la constante UPDATE_USER
 				pStatement.executeUpdate();
 			} catch (SQLException ex) {
 			
@@ -134,6 +134,4 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		}
 	}
 
-	//
-//	}
 
