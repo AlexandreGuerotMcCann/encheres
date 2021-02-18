@@ -58,10 +58,13 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	}
 
 	@Override
-	public void ajoutUtilisateur(Utilisateur utlisateur) {
+	public void ajoutUtilisateur(Utilisateur utilisateur) {
 		// TODO Auto-generated method stub
 		try (Connection connection=ConnectionProvider.getConnection()) {
 			PreparedStatement preparedStatement =connection.prepareStatement(INSERT,PreparedStatement.RETURN_GENERATED_KEYS);
+			
+		
+	
 			
 			
 		} catch (SQLException e) {
