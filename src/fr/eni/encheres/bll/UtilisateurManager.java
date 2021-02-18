@@ -32,4 +32,9 @@ public void ListeUtilisateur() {
 		daoUtilisateur = DAOFactory.getUtilisateurDAO();
 	}
 
+public void ajoutUtilisateur (String mdp, String pseudo, String confirmMdp, String nom, String prenom, String mail,
+		String telephone, String rue, String codePostal, String city) {
+	
+}
+
 }
