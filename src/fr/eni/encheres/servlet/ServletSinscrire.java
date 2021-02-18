@@ -2,7 +2,6 @@ package fr.eni.encheres.servlet;
 
 import java.io.IOException;
 
-import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bll.UtilisateurManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,17 +19,17 @@ public class ServletSinscrire extends HttpServlet {
 	
 	
 	
-	public static final String mdp="mdp";
-	public static final String pseudo ="pseudo";
-	public static final String confirmMdp="confirmMdp";
-	public static final String nom ="nom";
-	public static final String prenom="prenom";
-	public static final String mail="mail";
-	public static final String telephone="telephone";
-	public static final String rue="rue";
-	public static final String codePostal="codePostal";
-	public static final String city="city";
-	public static final String ihm="/WEB-INF/sinscrire.jsp";
+	public static final String MDP="mdp";
+	public static final String PSEUDO ="pseudo";
+	public static final String CONFIRM_MDP="confirmMdp";
+	public static final String NOM ="nom";
+	public static final String PRENOM="prenom";
+	public static final String MAIL="mail";
+	public static final String TELEPHONE="telephone";
+	public static final String RUE="rue";
+	public static final String CODE_POSTAL="codePostal";
+	public static final String CITY="city";
+	public static final String IHM="/WEB-INF/sinscrire.jsp";
 	
 
 	
@@ -38,8 +37,7 @@ public class ServletSinscrire extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(ihm).forward( request, response );
-		
+		this.getServletContext().getRequestDispatcher(IHM).forward( request, response );	
 	}
 
 	/**
@@ -68,7 +66,7 @@ public class ServletSinscrire extends HttpServlet {
 			//Si tout se passe bien, je vais vers la page d'accueil
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
-		} catch (BusinessException e) {
+		} catch (Exception e) {
 			//Sinon je retourne à la page d'inscrire et indiquer les problèmes:
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
