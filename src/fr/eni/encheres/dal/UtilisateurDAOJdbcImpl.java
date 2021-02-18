@@ -12,7 +12,7 @@ import fr.eni.encheres.bo.Utilisateur;
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
-	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo=?, password=?";
+	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo=?";
 	private static final String SELECT_ALL = "SELECT pseudo,mot_de_passe FROM utiliseurs;";
 
 	@Override
@@ -23,17 +23,15 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	@Override
 	public Utilisateur selectByPseudo(String pseudo) throws BusinessException {
-		Utilisateur utilisateur = new Utilisateur();
+		Utilisateur utilisateur = null;
 		try (Connection connection = ConnectionProvider.getConnection()) {
-			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_PSEUDO,
-					PreparedStatement.RETURN_GENERATED_KEYS);
+			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_PSEUDO);
 			pStatement.setString(1, pseudo);
 			ResultSet rs = pStatement.executeQuery();
-			while(rs.next()) { // on boucle sur le resultset pour transormer le result utilisateur
-
+			if(rs.next()) { // on boucle sur le resultset pour transormer le result utilisateur
 			}
-			ResultSet key = pStatement.getGeneratedKeys();// Colonne noUtilisateur generatedKey
-			utilisateur.setNoUtilisateur(rs.getInt("noUtilisateur"));
+			utilisateur=new Utilisateur();
+			utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
 			utilisateur.setPseudo(rs.getString("pseudo"));
 			utilisateur.setNom(rs.getString("nom"));
 			utilisateur.setPrenom(rs.getString("prenom"));
@@ -45,11 +43,14 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
 			utilisateur.setCredit(rs.getInt("credit"));
 			utilisateur.setAdministrateur(rs.getBoolean("administrateur"));
-		} catch (SQLException ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			BusinessException businessException = new BusinessException();
 			businessException.ajouterErreur(CodesErreursDAL.ERREURS_IDENTIFIANTS);
 			throw businessException;
+		}
+		if (utilisateur==null) {
+			System.out.println("aucun utilisateur");
 		}
 		return utilisateur;
 	}

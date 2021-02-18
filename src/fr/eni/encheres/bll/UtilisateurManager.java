@@ -25,7 +25,10 @@ public Utilisateur retournerUtilisateur(String pseudo) throws BusinessException
 {
 	return daoUtilisateur.selectByPseudo(pseudo);}
 	// Méthode pour obtenir un utilisateur de la BDD
-	public void ListeUtilisateur() {
+
+
+
+public void ListeUtilisateur() {
 		daoUtilisateur = DAOFactory.getUtilisateurDAO();
 	}
 
