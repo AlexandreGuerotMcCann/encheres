@@ -38,27 +38,27 @@ public class ServletConnexion extends HttpServlet {
 		String motDePasse = request.getParameter("motdepasse");
 		
 
-	        RequestDispatcher rd = null;
+        RequestDispatcher rd = null;
 
-	        UtilisateurManager utilisateurManager = new UtilisateurManager();
-	        Utilisateur utilisateur = null;
-	        try {
-	            utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
-	        } catch (BusinessException ex) {
-	            // TODO Auto-generated catch block
-	            ex.printStackTrace();
-	        }
+        UtilisateurManager utilisateurManager = new UtilisateurManager();
+        Utilisateur utilisateur = null;
+        try {
+            utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
+        } catch (BusinessException ex) {
+            // TODO Auto-generated catch block
+            ex.printStackTrace();
+        }
 
-	        String motPasseBDD = utilisateur.getMotDePasse();
-	        if (motDePasse.equals(motPasseBDD)) {
-	            rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
-	            rd.forward(request, response);
-	        } else {
-	            rd = request.getRequestDispatcher("/WEB-INF/erreurAuthentification.jsp");
-	            rd.forward(request, response);
+        String motPasseBDD = utilisateur.getMotDePasse();
+        if (motDePasse.equals(motPasseBDD)) {
+            rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+            rd.forward(request, response);
+        } else {
+            rd = request.getRequestDispatcher("/WEB-INF/erreurAuthentification.jsp");
+            rd.forward(request, response);
 
-	        }
-	        
+        }
+        
 
 	}
 
