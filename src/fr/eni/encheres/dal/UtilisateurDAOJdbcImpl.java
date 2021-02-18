@@ -89,10 +89,21 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		
 	}
 
-	@Override
-	public void supprimerUtilisateur(Utilisateur utilisateur) {
-		// TODO Auto-generated method stub
+	private static final String DELETE_UTILISATEUR = "DELETE FROM UTILISATEURS where no_utilisateur = ?";
 
+	@Override
+		public void supprimerUtilisateur(int no_utilisateur) throws BusinessException {
+			try(Connection connection = ConnectionProvider.getConnection())
+			{
+				PreparedStatement pStatement = connection.prepareStatement(DELETE_UTILISATEUR);
+				pStatement.setInt(1, no_utilisateur);
+				pStatement.executeUpdate();
+			} catch (SQLException ex) {
+				//ex.printStackTrace();
+				BusinessException businessException = new BusinessException();
+				businessException.ajouterErreur(CodesErreursDAL.ERREUR_SUPPRESSION_UTILISATEUR);
+				throw businessException;
+			}
 	}
 
 	@Override

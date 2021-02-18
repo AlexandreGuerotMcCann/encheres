@@ -15,7 +15,7 @@ public interface UtilisateurDAO {
 
 	void ajoutUtilisateur(Utilisateur utlisateur) throws BusinessException;
 
-	void supprimerUtilisateur(Utilisateur utilisateur);
+	public void supprimerUtilisateur(int no_utilisateur) throws BusinessException;
 
 	void modifierUtilisateur(Utilisateur utilisateur);
 

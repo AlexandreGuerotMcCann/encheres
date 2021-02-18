@@ -50,4 +50,9 @@ public void ajoutUtilisateur (String mdp, String pseudo, String nom, String pren
 	this.daoUtilisateur.ajoutUtilisateur(utilisateur);
 }
 
+
+
+public void suppressionUtilisateur(int no_utilisateur) throws BusinessException {
+	this.daoUtilisateur.supprimerUtilisateur(no_utilisateur);
+}
 }

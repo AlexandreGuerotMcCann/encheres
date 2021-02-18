@@ -8,4 +8,5 @@ public abstract class CodesErreursDAL {
 //	Message d'erreur si Les ID ne correspondent pas en BDD
 	public static final int ERREURS_IDENTIFIANTS= 10002;
 	public static final int ERREUR_INSERTION = 10003;
+	public static final int ERREUR_SUPPRESSION_UTILISATEUR = 10004;
 }
