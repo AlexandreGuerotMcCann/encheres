@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +22,12 @@
 			<li><a href="#">Vendre un article</a></li>
 			<li><a href="ServletConnexion">se connecter</a></li>
 			<li><a href="ServletSinscrire">s'inscrire</a></li>
+			<c:if test="${!empty sessionScope.sessionUtilisateur}">
+		<%-- Si l'utilisateur existe en session, alors on affiche son pseudo. --%>
+			<p class="succes">Bonjour!! : ${sessionScope.sessionUtilisateur.pseudo}</p>
+			</c:if>
+    		
+			
 
 		</ul>
 
@@ -31,6 +38,8 @@
 	<h1>ENI-Enchères</h1>
 
 	<h2>Liste des enchères</h2>
+	
+
 
 	<br>
 	<form>
