@@ -81,7 +81,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			rqt.executeUpdate();
 			
 			
-		} catch (SQLException e) {
+		} catch (Exception ex) {
 			BusinessException businessException = new BusinessException();
 			businessException.ajouterErreur(CodesErreursDAL.ERREUR_INSERTION);
 			throw businessException;
