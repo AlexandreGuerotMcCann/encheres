@@ -16,9 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ServletSinscrire")
 public class ServletSinscrire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	
-	
+
 	public static final String MDP="mdp";
 	public static final String PSEUDO ="pseudo";
 	public static final String CONFIRM_MDP="confirmMdp";
@@ -30,8 +28,6 @@ public class ServletSinscrire extends HttpServlet {
 	public static final String CODE_POSTAL="codePostal";
 	public static final String CITY="city";
 	public static final String IHM="/WEB-INF/sinscrire.jsp";
-	
-
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -56,8 +52,6 @@ public class ServletSinscrire extends HttpServlet {
 		String codePostal = request.getParameter("codePostal");
 		String city = request.getParameter("city");
 		
-		
-		
 		//J'ajoute l'utilisateur
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		try { validationMotsDePasse( mdp, confirmMdp );
@@ -71,14 +65,9 @@ public class ServletSinscrire extends HttpServlet {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
-		}
-		
-	
-		
-		
+		}		
 	
 	} 
-
 			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception {
 				 if (mdp != null && mdp.length() > 7 && mdp.equals(confirmMdp)) {
 				        
