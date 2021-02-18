@@ -58,10 +58,22 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	}
 
 	@Override
-	public void ajoutUtilisateur(Utilisateur utlisateur) {
+	public void ajoutUtilisateur(Utilisateur utilisateur) {
 		// TODO Auto-generated method stub
 		try (Connection connection=ConnectionProvider.getConnection()) {
-			PreparedStatement preparedStatement =connection.prepareStatement(INSERT,PreparedStatement.RETURN_GENERATED_KEYS);
+			PreparedStatement rqt =connection.prepareStatement(INSERT,PreparedStatement.RETURN_GENERATED_KEYS);
+			rqt.setString(1, utilisateur.getPseudo());
+			rqt.setString(2, utilisateur.getNom());
+			rqt.setString(3, utilisateur.getEmail());
+			rqt.setString(4, utilisateur.getTelephone());
+			rqt.setString(5, utilisateur.getRue() );
+			rqt.setString(6, utilisateur.getCodePostal() );
+			rqt.setString(7, utilisateur.getVille());
+			rqt.setString(8,utilisateur.getNom());
+			rqt.setString(9,utilisateur.getEmail());
+			r
+			
+			
 			
 			
 		} catch (SQLException e) {
