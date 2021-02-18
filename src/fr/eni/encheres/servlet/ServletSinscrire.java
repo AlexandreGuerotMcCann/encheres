@@ -29,7 +29,7 @@ public class ServletSinscrire extends HttpServlet {
 	public static final String RUE="rue";
 	public static final String CODE_POSTAL="codePostal";
 	public static final String CITY="city";
-	public static final String IHM="/WEB-INF/sinscrire.jsp";1
+	public static final String IHM="/WEB-INF/sinscrire.jsp";
 	
 
 	
