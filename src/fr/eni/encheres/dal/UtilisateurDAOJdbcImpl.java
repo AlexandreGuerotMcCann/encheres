@@ -58,12 +58,13 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	}
 
 	@Override
-	public void ajoutUtilisateur(Utilisateur utilisateur) {
+	public void ajoutUtilisateur(Utilisateur utilisateur) throws BusinessException {
 		// TODO Auto-generated method stub
 		try (Connection connection=ConnectionProvider.getConnection()) {
 			PreparedStatement rqt =connection.prepareStatement(INSERT,PreparedStatement.RETURN_GENERATED_KEYS);
 			rqt.setString(1, utilisateur.getPseudo());
 			rqt.setString(2, utilisateur.getNom());
+
 			rqt.setString(3, utilisateur.getEmail());
 			rqt.setString(4, utilisateur.getTelephone());
 			rqt.setString(5, utilisateur.getRue() );
@@ -73,16 +74,17 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			rqt.setString(8,utilisateur.getNom());
 			rqt.setString(9,utilisateur.getEmail());
 			
+			rqt.setInt(10, utilisateur.getCredit());
+			rqt.setBoolean(11, false);
+
 			
-			
-			
-		
-	
+			rqt.executeUpdate();
 			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			BusinessException businessException = new BusinessException();
+			businessException.ajouterErreur(CodesErreursDAL.ERREUR_INSERTION);
+			throw businessException;
 		}
 		
 	}
