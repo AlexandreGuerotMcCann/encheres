@@ -14,6 +14,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo=?";
 	private static final String SELECT_ALL = "SELECT pseudo,mot_de_passe FROM utiliseurs;";
+	private static final String INSERT = "INSERT INTO UTILISATEURS (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe,credit,administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
 	@Override
 	public List<Utilisateur> selectAll() throws BusinessException {
@@ -28,9 +29,9 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_PSEUDO);
 			pStatement.setString(1, pseudo);
 			ResultSet rs = pStatement.executeQuery();
-			if(rs.next()) { // on boucle sur le resultset pour transormer le result utilisateur
+			if (rs.next()) { // on boucle sur le resultset pour transormer le result utilisateur
 			}
-			utilisateur=new Utilisateur();
+			utilisateur = new Utilisateur();
 			utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
 			utilisateur.setPseudo(rs.getString("pseudo"));
 			utilisateur.setNom(rs.getString("nom"));
@@ -49,28 +50,37 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			businessException.ajouterErreur(CodesErreursDAL.ERREURS_IDENTIFIANTS);
 			throw businessException;
 		}
-		if (utilisateur==null) {
+		if (utilisateur == null) {
 			System.out.println("aucun utilisateur");
 		}
+
 		return utilisateur;
 	}
 
 	@Override
 	public void ajoutUtilisateur(Utilisateur utlisateur) {
 		// TODO Auto-generated method stub
+		try (Connection connection=ConnectionProvider.getConnection()) {
+			PreparedStatement preparedStatement =connection.prepareStatement(INSERT,PreparedStatement.RETURN_GENERATED_KEYS);
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	@Override
 	public void supprimerUtilisateur(Utilisateur utilisateur) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void modifierUtilisateur(Utilisateur utilisateur) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	// Lors de se connecter, il faudra vérif si le pseudo instanceOf pseudo de la

@@ -41,34 +41,31 @@ public class ServletConnexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	
 
 		String identifiant = request.getParameter("identifiant");
 		String motDePasse = request.getParameter("motdepasse");
-		RequestDispatcher rd=null;
+		
+		RequestDispatcher rd = null;
 
-	
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		Utilisateur utilisateur = null;
 		try {
 			utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
-		} catch (BusinessException e) {
+		} catch (BusinessException ex) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			ex.printStackTrace();
 		}
-		
-	
-		String motPasseBDD=utilisateur.getMotDePasse();
+
+		String motPasseBDD = utilisateur.getMotDePasse();
 		if (motDePasse.equals(motPasseBDD)) {
-			rd= request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
 		} else {
-			 rd = request.getRequestDispatcher("/WEB-INF/erreurAuthentification.jsp");
-				rd.forward(request, response);
-
+			rd = request.getRequestDispatcher("/WEB-INF/erreurAuthentification.jsp");
+			rd.forward(request, response);
 
 		}
-		
+
 //		RequestDispatcher rd=null;
 ////pseudo et mot de passe correspondent-ils au pseudo mot de passe en BDD ?
 //		try {
