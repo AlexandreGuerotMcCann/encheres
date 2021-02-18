@@ -13,5 +13,13 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
+	<servlet>
+		<servlet-name>accueil</servlet-name>
+		<jsp-file>/WEB-INF/accueil.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>accueil</servlet-name>
+		<url-pattern>/accueil</url-pattern>
+	</servlet-mapping>
 
 </web-app>

@@ -41,13 +41,13 @@ public class ServletConnexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
+	
 
 		String identifiant = request.getParameter("identifiant");
 		String motDePasse = request.getParameter("motdepasse");
 		RequestDispatcher rd=null;
 
-		session.setAttribute(identifiant, motDePasse);
+	
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		Utilisateur utilisateur = null;
 		try {
