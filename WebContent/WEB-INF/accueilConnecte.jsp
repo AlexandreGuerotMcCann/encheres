@@ -8,7 +8,7 @@
 <!-- FEUILLE CSS DE TEST -->
 <link rel="stylesheet" type="text/css"
 	href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-<title>Accueil</title>
+<title>Accueil Connecté</title>
 </head>
 <body>
 
