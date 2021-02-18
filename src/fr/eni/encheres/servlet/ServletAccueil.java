@@ -8,31 +8,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class servletConnexion
+ * Servlet implementation class ServletAccueil
  */
-@WebServlet("/ServletConnexion")
-public class ServletConnexion extends HttpServlet {
+@WebServlet("/ServletAccueil")
+public class ServletAccueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final String CONNEXION="/WEB-INF/connexion.jsp";
+	
+	public static final String ACCUEIL="/WEB-INF/accueil.jsp";
+       
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Pour récupérer les infos depuis la BDD
-		this.getServletContext().getRequestDispatcher(CONNEXION).forward( request, response );	
+		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response );
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String identifiant = request.getParameter("identifiant");		
-		String motDePasse = request.getParameter("motdepasse");
-
-		
-		//doGet(request, response);
+		doGet(request, response);
 	}
 
 }
