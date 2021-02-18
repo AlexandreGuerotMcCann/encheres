@@ -18,8 +18,8 @@ public interface UtilisateurDAO {
 	// Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon compte" (cf.maquette)
 	public void supprimerUtilisateur(int no_utilisateur) throws BusinessException;
 
-	
-	void modifierUtilisateur(Utilisateur utilisateur);
+	// Méthode à tester /!\ => à lier avec pageModifierProfil => bouton "Enregistrer" (cf.maquette p.7 & 8/13)
+	public void modifierUtilisateur(Utilisateur utilisateur) throws BusinessException;
 
 
 }

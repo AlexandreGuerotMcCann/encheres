@@ -55,4 +55,9 @@ public void ajoutUtilisateur (String mdp, String pseudo, String nom, String pren
 public void suppressionUtilisateur(int no_utilisateur) throws BusinessException {
 	this.daoUtilisateur.supprimerUtilisateur(no_utilisateur);
 }
+
+//Méthode à tester /!\ => à lier avec pageModifierProfil => bouton "Enregistrer" (cf.maquette p.7 & 8/13)
+public void modificationUtilisateur(Utilisateur utilisateur) throws BusinessException {
+	this.daoUtilisateur.modifierUtilisateur(utilisateur);
+}
 }
