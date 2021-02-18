@@ -6,6 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import fr.eni.encheres.bo.Utilisateur;
 
 /**
  * Servlet implementation class ServletAccueil
@@ -22,6 +25,7 @@ public class ServletAccueil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response );
+
 	}
 
 	/**
@@ -29,6 +33,16 @@ public class ServletAccueil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+		HttpSession session = request.getSession ();
+		String pseudo = "pseudo";
+		request.setAttribute("pseudo", pseudo);
+		pseudo = (String)session.getAttribute ( "pseudo" );
+		String motdepasse = "motdepasse";
+		request.setAttribute("motdepasse", motdepasse);
+		pseudo = (String)session.getAttribute ( "pseudo" );
+		
+		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response );
+
 	}
 
 }
