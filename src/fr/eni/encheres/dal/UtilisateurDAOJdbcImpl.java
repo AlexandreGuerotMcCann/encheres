@@ -14,7 +14,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	
 	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo=?";
 	private static final String SELECT_ALL = "SELECT pseudo,mot_de_passe FROM utiliseurs;";
-	private static final String INSERT = "INSERT INTO UTILISATEURS (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe,credit,administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String INSERT = "INSERT INTO UTILISATEURS (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	
 	// A tester les filles et les gars ;)
 	private static final String DELETE_USER = "DELETE FROM UTILISATEURS where no_utilisateur = ?";
@@ -123,6 +123,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 				pStatement.setString(8, utilisateur.getVille());
 				pStatement.setString(9, utilisateur.getMotDePasse());
 				pStatement.setInt(10, utilisateur.getNoUtilisateur()); // Pas sûre de toucher au "no_utilisateur"
+				//Com de camille : je ne pense pas car c'est une PK en BDD :)
 				pStatement.executeUpdate();
 			} catch (SQLException ex) {
 			
@@ -133,31 +134,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		}
 	}
 
-	// Lors de se connecter, il faudra vérif si le pseudo instanceOf pseudo de la
-	// table
-//Lors de la création de compte il faudra vérif que le pseudo n'est pas déjà en BDD
-//	@Override
-//	public List<Utilisateur> selectAll() throws BusinessException {
-//		List<Utilisateur> listeUtilisateur = new ArrayList<Utilisateur>();// On initialise sa liste d'utilisateurs
-//
-//		try (Connection connexion = ConnectionProvider.getConnection()) // On est miantnenant connectés à la BDD
-//		{
-//			PreparedStatement pstmt = connexion.prepareStatement(SELECT_ALL);
-//			ResultSet rs = pstmt.executeQuery();
-//
-//			while (rs.next()) { // on boucle sur le resultset pour transormer les result en liste
-//				Utilisateur utilisateur = new Utilisateur();
-//				utilisateur.setPseudo(rs.getString("pseudo")); // Fait référence aux colonnes pseudo et nom
-//				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
-//				listeUtilisateur.add(utilisateur);// On ajoute ce nouvel objet au résultat , donc à liste des
-//													// utilisateurs
-//			}
-//		} catch (SQLException ex) {
-//			ex.printStackTrace();
-//			BusinessException businessException= new BusinessException();
-//			businessException.ajouterErreur(CodesErreursDAL.ECHEC_LECTURE_LISTE_UTILISATEURS);
-//			throw businessException;
-//		}
-//		return listeUtilisateur;
+	//
 //	}
 
