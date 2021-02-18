@@ -67,11 +67,12 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			rqt.setString(3, utilisateur.getEmail());
 			rqt.setString(4, utilisateur.getTelephone());
 			rqt.setString(5, utilisateur.getRue() );
-			rqt.setString(6, utilisateur.getCodePostal() );
-			rqt.setString(7, utilisateur.getVille());
+			
+			rqt.setString(6, utilisateur.getVille());
+			rqt.setString(7, utilisateur.getCodePostal() );
 			rqt.setString(8,utilisateur.getNom());
 			rqt.setString(9,utilisateur.getEmail());
-			r
+			
 			
 			
 			
