@@ -1,11 +1,17 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import fr.eni.encheres.BusinessException;
+import fr.eni.encheres.bll.UtilisateurManager;
+import fr.eni.encheres.bo.Utilisateur;
 
 /**
  * Servlet implementation class servletConnexion
@@ -30,9 +36,30 @@ public class ServletConnexion extends HttpServlet {
 
 		String identifiant = request.getParameter("identifiant");		
 		String motDePasse = request.getParameter("motdepasse");
-
 		
-		//doGet(request, response);
+
+	        RequestDispatcher rd = null;
+
+	        UtilisateurManager utilisateurManager = new UtilisateurManager();
+	        Utilisateur utilisateur = null;
+	        try {
+	            utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
+	        } catch (BusinessException ex) {
+	            // TODO Auto-generated catch block
+	            ex.printStackTrace();
+	        }
+
+	        String motPasseBDD = utilisateur.getMotDePasse();
+	        if (motDePasse.equals(motPasseBDD)) {
+	            rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+	            rd.forward(request, response);
+	        } else {
+	            rd = request.getRequestDispatcher("/WEB-INF/erreurAuthentification.jsp");
+	            rd.forward(request, response);
+
+	        }
+	        
+
 	}
 
 }
