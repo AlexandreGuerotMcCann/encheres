@@ -23,7 +23,7 @@
 			<label for="motdepasse">Mot de	passe :</label> 
 			<input type="password" name="motdepasse" id="motdepasse" required minimumlength="8" maxlenght="30"  /> 
 				
-				<a href="ServletSinscrire"> <input type="button" class="button" value="Créer un compte"/></a>
+				<a href="ServletSinscrire" class="button"> <input type="button" class="button" value="Créer un compte"/></a>
 			<!-- A FAIRE Lien vers page "créer un compte" -->
 
 			<button type="submit" class="button">Connexion</button>
