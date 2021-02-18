@@ -80,24 +80,20 @@ public class ServletSinscrire extends HttpServlet {
             validationMotsDePasse( mdp, confirmMdp );
         } catch (Exception e) {
             /* Gérer les erreurs de validation ici. */
-	}
-	} 
+	
+	
 
 			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception{
-<<<<<<< HEAD
 				 if (mdp != null && mdp.length() >7 && mdp.equals(confirmMdp)) {
-=======
 				 if (mdp != null && mdp.length() > 7 && mdp.equals(confirmMdp)) {
 				        
->>>>>>> branch 'main' of https://github.com/camillejmr/projetEncheres.git
 				            throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
 				        } else if (mdp.length() < 8) {
 				            throw new Exception("Les mots de passe doivent contenir au moins 8 caractères.");
 				        }
-<<<<<<< HEAD
-=======
+
 				     else {
->>>>>>> branch 'main' of https://github.com/camillejmr/projetEncheres.git
+
 				        throw new Exception("Merci de saisir et confirmer votre mot de passe.");
 				        
 			}
