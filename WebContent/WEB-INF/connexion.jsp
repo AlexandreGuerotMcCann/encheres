@@ -14,6 +14,7 @@
 
 
 	<h1>Se connecter</h1>
+	<br>
 
 	<form action="ServletConnexion" method="post">
 		<!--  Encadrer les différents input dans des div ? (pour CSS flexbox) -->

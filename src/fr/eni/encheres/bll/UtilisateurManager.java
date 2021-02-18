@@ -31,10 +31,23 @@ public void ListeUtilisateur() {
 		daoUtilisateur = DAOFactory.getUtilisateurDAO();
 	}
 
-public void ajoutUtilisateur(String mdp, String pseudo, String confirmMdp, String nom, String prenom, String mail,
-		String telephone, String rue, String codePostal, String city) {
-	// TODO Auto-generated method stub
+public void ajoutUtilisateur (String mdp, String pseudo, String nom, String prenom, String mail,
+		String telephone, String rue, String codePostal, String city) throws BusinessException {
 	
+	BusinessException businessException = new BusinessException();
+	Utilisateur utilisateur = new Utilisateur();
+	utilisateur.setPseudo(pseudo);
+	utilisateur.setNom(nom);
+	utilisateur.setPrenom(prenom);
+	utilisateur.setEmail(mail);
+	utilisateur.setTelephone(telephone);
+	utilisateur.setRue(rue);
+	utilisateur.setCodePostal(codePostal);
+	utilisateur.setVille(city);
+	utilisateur.setMotDePasse(mdp);
+	utilisateur.setCredit(100);
+	utilisateur.setAdministrateur(false);
+	this.daoUtilisateur.ajoutUtilisateur(utilisateur);
 }
 
 }

@@ -58,11 +58,10 @@ public class ServletSinscrire extends HttpServlet {
 		
 		
 		
-		
 		//J'ajoute l'utilisateur
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		try {
-			utilisateurManager.ajoutUtilisateur(mdp, pseudo, confirmMdp, nom, prenom, mail, telephone, rue, codePostal, city);
+			utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone, rue, codePostal, city);
 			//Si tout se passe bien, je vais vers la page d'accueil
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);

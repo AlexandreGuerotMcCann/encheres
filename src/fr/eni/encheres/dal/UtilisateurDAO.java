@@ -13,7 +13,7 @@ public interface UtilisateurDAO {
 
 	public Utilisateur selectByPseudo(String pseudo) throws BusinessException;
 
-	void ajoutUtilisateur(Utilisateur utlisateur);
+	void ajoutUtilisateur(Utilisateur utlisateur) throws BusinessException;
 
 	void supprimerUtilisateur(Utilisateur utilisateur);
 
