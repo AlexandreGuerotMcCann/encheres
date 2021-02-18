@@ -84,13 +84,13 @@ public class ServletSinscrire extends HttpServlet {
 	} 
 
 			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception{
-				 if (mdp != null && mdp.trim().length() != 0 && confirmMdp != null && confirmMdp.trim().length() != 0) {
-				        if (mdp.equals(confirmMdp)) {
+				 if (mdp != null && mdp.length() > 7 && mdp.equals(confirmMdp)) {
+				        
 				            throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
-				        } else if (mdp.trim().length() < 3) {
+				        } else if (mdp.length() < 8) {
 				            throw new Exception("Les mots de passe doivent contenir au moins 8 caractères.");
 				        }
-				    } else {
+				     else {
 				        throw new Exception("Merci de saisir et confirmer votre mot de passe.");
 				        }
 			}
