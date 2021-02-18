@@ -57,6 +57,25 @@ public class ServletSinscrire extends HttpServlet {
 		String city = request.getParameter("city");
 		
 		
+		
+		
+		//J'ajoute l'utilisateur
+		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		try {
+			utilisateurManager.ajoutUtilisateur(mdp, pseudo, confirmMdp, nom, prenom, mail, telephone, rue, codePostal, city);
+			//Si tout se passe bien, je vais vers la page d'accueil
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+			rd.forward(request, response);
+		} catch (BusinessException e) {
+			//Sinon je retourne à la page d'inscrire et indiquer les problèmes:
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+			rd.forward(request, response);
+		}
+		
+	
+		
+		
 		try {
             validationMotsDePasse( mdp, confirmMdp );
         } catch (Exception e) {
@@ -65,13 +84,13 @@ public class ServletSinscrire extends HttpServlet {
 	} 
 
 			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception{
-				 if (mdp != null && mdp.trim().length() != 0 && confirmMdp != null && confirmMdp.trim().length() != 0) {
-				        if (mdp.equals(confirmMdp)) {
+				 if (mdp != null && mdp.length() > 7 && mdp.equals(confirmMdp)) {
+				        
 				            throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
-				        } else if (mdp.trim().length() < 3) {
+				        } else if (mdp.length() < 8) {
 				            throw new Exception("Les mots de passe doivent contenir au moins 8 caractères.");
 				        }
-				    } else {
+				     else {
 				        throw new Exception("Merci de saisir et confirmer votre mot de passe.");
 				        }
 			}
