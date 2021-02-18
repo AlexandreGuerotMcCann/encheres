@@ -51,7 +51,7 @@ public void ajoutUtilisateur (String mdp, String pseudo, String nom, String pren
 }
 
 
-
+//Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon compte" (cf.maquette)
 public void suppressionUtilisateur(int no_utilisateur) throws BusinessException {
 	this.daoUtilisateur.supprimerUtilisateur(no_utilisateur);
 }

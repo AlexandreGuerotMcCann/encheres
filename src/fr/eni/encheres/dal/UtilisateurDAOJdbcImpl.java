@@ -91,6 +91,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	private static final String DELETE_UTILISATEUR = "DELETE FROM UTILISATEURS where no_utilisateur = ?";
 
+	// Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon compte" (cf.maquette)
 	@Override
 		public void supprimerUtilisateur(int no_utilisateur) throws BusinessException {
 			try(Connection connection = ConnectionProvider.getConnection())

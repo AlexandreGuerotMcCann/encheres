@@ -15,8 +15,10 @@ public interface UtilisateurDAO {
 
 	void ajoutUtilisateur(Utilisateur utlisateur) throws BusinessException;
 
+	// Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon compte" (cf.maquette)
 	public void supprimerUtilisateur(int no_utilisateur) throws BusinessException;
 
+	
 	void modifierUtilisateur(Utilisateur utilisateur);
 
 
