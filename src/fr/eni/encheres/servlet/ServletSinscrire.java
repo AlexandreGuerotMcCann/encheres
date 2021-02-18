@@ -1,6 +1,8 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
+
+import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bll.UtilisateurManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -83,7 +85,7 @@ public class ServletSinscrire extends HttpServlet {
 	}
 	} 
 
-			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception{
+			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception {
 				 if (mdp != null && mdp.length() > 7 && mdp.equals(confirmMdp)) {
 				        
 				            throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");

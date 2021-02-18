@@ -27,9 +27,14 @@ public Utilisateur retournerUtilisateur(String pseudo) throws BusinessException
 	// Méthode pour obtenir un utilisateur de la BDD
 
 
-
 public void ListeUtilisateur() {
 		daoUtilisateur = DAOFactory.getUtilisateurDAO();
 	}
+
+public void ajoutUtilisateur(String mdp, String pseudo, String confirmMdp, String nom, String prenom, String mail,
+		String telephone, String rue, String codePostal, String city) {
+	// TODO Auto-generated method stub
+	
+}
 
 }
