@@ -27,7 +27,7 @@
 				<a href="ServletSinscrire" class="button"> <input type="button" class="button" value="Créer un compte"/></a>
 			<!-- A FAIRE Lien vers page "créer un compte" -->
 
-			<button type="submit" class="button">Connexion</button>
+			<a href="ServletAccueil" class="button"> <input type="submit" class="button" value="Connexion"></input></a>
 
 
 			<span><input type="checkbox" class="checkbox"
