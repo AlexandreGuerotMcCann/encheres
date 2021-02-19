@@ -111,6 +111,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			rqt.setBoolean(11, false);
 			
 			rqt.executeUpdate();
+			rqt.close();
 			
 		} catch (Exception ex) {
 			BusinessException businessException = new BusinessException();
