@@ -17,10 +17,10 @@
 
 		<ul>
 
-			<li><a href="#">Enchères</a></li>
-			<li><a href="#">Vendre un article</a></li>
-			<li><a href="#">Mon profil</a></li>
-			<li><a href="#">Déconnexion</a></li>
+			<li><a href="ServletEncheres">Enchères</a></li>
+			<li><a href="ServletVendreArticle">Vendre un article</a></li>
+			<li><a href="ServletMonProfil">Mon profil</a></li>
+			<li><a href="ServletAccueil">Déconnexion</a></li>
 
 		</ul>
 
