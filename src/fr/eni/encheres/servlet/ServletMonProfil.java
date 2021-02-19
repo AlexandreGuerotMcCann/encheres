@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ServletMonProfil")
 public class ServletMonProfil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final String PROFIL="/WEB-INF/profil.jsp";
+	public static final String PROFIL="/WEB-INF/pageProfil.jsp";
 
 
 	/**
