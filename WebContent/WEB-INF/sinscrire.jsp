@@ -54,8 +54,8 @@
 				<input type="text" id="city" name="city" required maxlength="30" size="15">
             
             
-                 <input type="button" class="button"  name="annuler" value="annuler" onclick="accueil.jsp"/>
-				<input type="submit" class="button" name="sinscrire" value="s'inscrire" onclick="accueil.jsp"/>
+                 <a href="ServletAccueil" class="button"><input type="button" class="button"  name="annuler" value="annuler" /></a>
+				<a href="ServletAccueil" class="button"><input type="submit" class="button" name="sinscrire" value="s'inscrire" /></a>
         </div>
 
 	</form>

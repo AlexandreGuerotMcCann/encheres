@@ -24,10 +24,12 @@
 			<li><a href="ServletConnexion">se connecter</a></li>
 			<li><a href="ServletSinscrire">s'inscrire</a></li>
 			
-		<!-- <c:if test="${!empty sessionScope.sessionUtilisateur}">
-		<%-- Si l'utilisateur existe en session, alors on affiche son pseudo. --%>
-			<p class="succes">Bonjour!! : ${sessionScope.sessionUtilisateur.pseudo}</p>
-			</c:if> -->		
+		<!--<c:if test="${!empty sessionScope.sessionUtilisateur}">
+		<p class="succes">Bonjour!! : ${sessionScope.sessionUtilisateur.pseudo}</p>
+		</c:if>
+			<li><a href="ServletMonProfil">Mon profil</a></li>
+			<li><a href="ServletAccueil">Déconnexion</a></li>
+				
 			
 		<!--<%String pseudo = (String) request.getAttribute("id"); out.println(pseudo);%> -->	
     		
