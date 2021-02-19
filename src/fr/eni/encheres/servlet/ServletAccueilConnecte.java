@@ -31,4 +31,3 @@ public class ServletAccueilConnecte extends HttpServlet {
 	}
 
 }
-EFFACER
