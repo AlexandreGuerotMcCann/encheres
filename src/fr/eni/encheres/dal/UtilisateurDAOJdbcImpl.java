@@ -14,7 +14,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo = ?";
 	private static final String SELECT_BY_ID = "SELECT * FROM utilisateurs WHERE no_utilisateur = ?";
 	private static final String SELECT_ALL = "SELECT pseudo,mot_de_passe FROM utiliseurs;";
-	private static final String INSERT = "INSERT INTO UTILISATEURS (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String INSERT = "INSERT INTO utilisateurs (pseudoooo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	
 	// A tester les filles et les gars ;)
 	private static final String DELETE_USER = "DELETE FROM UTILISATEURS where no_utilisateur = ?";
@@ -94,22 +94,23 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	@Override
 	public void ajoutUtilisateur(Utilisateur utilisateur) throws BusinessException {
 		// TODO Auto-generated method stub
-		try (Connection connection=ConnectionProvider.getConnection()) 
-		{
-			PreparedStatement pStatement =connection.prepareStatement(INSERT,PreparedStatement.RETURN_GENERATED_KEYS);
-			pStatement.setString(1, utilisateur.getPseudo());
-			pStatement.setString(2, utilisateur.getNom());
-			pStatement.setString(3, utilisateur.getPrenom());
-			pStatement.setString(4, utilisateur.getEmail());
-			pStatement.setString(5, utilisateur.getTelephone());
-			pStatement.setString(6, utilisateur.getRue());
-			pStatement.setString(7, utilisateur.getCodePostal());
-			pStatement.setString(8, utilisateur.getVille());
-			pStatement.setString(9,utilisateur.getMotDePasse());
-			pStatement.setInt(10, utilisateur.getCredit());
-			pStatement.setBoolean(11, false);
+		ResultSet rs;
+
+		try (Connection connection=ConnectionProvider.getConnection()) {
+			PreparedStatement rqt =connection.prepareStatement(INSERT,PreparedStatement.RETURN_GENERATED_KEYS);
+			rqt.setString(1, utilisateur.getPseudo());
+			rqt.setString(2, utilisateur.getNom());
+			rqt.setString(3, utilisateur.getPrenom());
+			rqt.setString(4, utilisateur.getEmail());
+			rqt.setString(5, utilisateur.getTelephone());
+			rqt.setString(6, utilisateur.getRue() );
+			rqt.setString(8, utilisateur.getCodePostal());
+			rqt.setString(7, utilisateur.getVille());
+			rqt.setString(9, utilisateur.getMotDePasse());
+			rqt.setInt(10,  utilisateur.getCredit());
+			rqt.setBoolean(11, false);
 			
-			pStatement.executeUpdate();
+			rqt.executeUpdate();
 			
 		} catch (Exception ex) {
 			BusinessException businessException = new BusinessException();

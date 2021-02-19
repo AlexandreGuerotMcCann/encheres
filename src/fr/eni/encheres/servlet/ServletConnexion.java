@@ -19,47 +19,48 @@ import fr.eni.encheres.bo.Utilisateur;
 @WebServlet("/ServletConnexion")
 public class ServletConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final String CONNEXION="/WEB-INF/connexion.jsp";
+	public static final String CONNEXION = "/WEB-INF/connexion.jsp";
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// Pour récupérer les infos depuis la BDD
-		this.getServletContext().getRequestDispatcher(CONNEXION).forward( request, response );	
+		this.getServletContext().getRequestDispatcher(CONNEXION).forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+//Méthode OK :)
 		String identifiant = request.getParameter("identifiant");		
 		String motDePasse = request.getParameter("motdepasse");
-		
-
         RequestDispatcher rd = null;
 
         UtilisateurManager utilisateurManager = new UtilisateurManager();
         Utilisateur utilisateur = null;
         try {
             utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
-        } catch (BusinessException ex) {
+            String motPasseBDD = utilisateur.getMotDePasse();
+            if (motDePasse.equals(motPasseBDD)) {
+                rd = request.getRequestDispatcher("/WEB-INF/accueilConnecte.jsp");
+                rd.forward(request, response);
+            } else {
+                rd = request.getRequestDispatcher("/WEB-INF/erreurAuthentification.jsp");
+                rd.forward(request, response);
+        } }
+            catch (BusinessException ex) {
             // TODO Auto-generated catch block
             ex.printStackTrace();
         }
 
-        String motPasseBDD = utilisateur.getMotDePasse();
-        if (motDePasse.equals(motPasseBDD)) {
-            rd = request.getRequestDispatcher("/WEB-INF/accueilConnecte.jsp");
-            rd.forward(request, response);
-        } else {
-            rd = request.getRequestDispatcher("/WEB-INF/erreurAuthentification.jsp");
-            rd.forward(request, response);
+       
 
         }
         
 
 	}
 
-}

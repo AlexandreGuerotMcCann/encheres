@@ -3,6 +3,8 @@ package fr.eni.encheres.servlet;
 import java.io.IOException;
 
 import fr.eni.encheres.bll.UtilisateurManager;
+import fr.eni.encheres.bo.Utilisateur;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,6 +31,9 @@ public class ServletSinscrire extends HttpServlet {
 	public static final String CITY="city";
 	public static final String IHM="/WEB-INF/sinscrire.jsp";
 	
+	private static final String alphaNumerique="^[A-Za-z0-9]";
+	private static final String caractesAutorisesMail="^[A-Za-z0-9._@-]"; //le - doit être à la fin ou au début de l'expression régulière
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -52,34 +57,29 @@ public class ServletSinscrire extends HttpServlet {
 		String codePostal = request.getParameter("codePostal");
 		String city = request.getParameter("city");
 		
+		
+		RequestDispatcher rd=null;
 		//J'ajoute l'utilisateur
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
-		try { validationMotsDePasse( mdp, confirmMdp );
-			utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone, rue, codePostal, city);
+		try {
+				
+			Utilisateur utilisateur=utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone, rue, codePostal, city);
+			
+			
+			
 			//Si tout se passe bien, je vais vers la page d'accueil
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+			 rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
 		} catch (Exception e) {
 			
 			//Sinon je retourne à la page s'inscrire et j'indique les problèmes:
 			
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
 		}		
 	
-	} 
-			private void validationMotsDePasse( String mdp, String confirmMdp) throws Exception {
-				 if (mdp != null && mdp.length() > 7 && mdp.equals(confirmMdp)) {
-				        
-				            throw new Exception("Les mots de passe entrés sont différents, merci de les saisir à nouveau.");
-				        } else if (mdp.length() < 8) {
-				            throw new Exception("Les mots de passe doivent contenir au moins 8 caractères.");
-				        }
-				     else {
-				        throw new Exception("Merci de saisir et confirmer votre mot de passe.");
-				        }
-			}
-			}
+	} }
+
 				
 		
 

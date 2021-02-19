@@ -22,10 +22,13 @@ public class UtilisateurManager {
 //		return this.daoUtilisateur.selectAll();
 //		}
 
-public Utilisateur retournerUtilisateurParPseudo(String pseudo) throws BusinessException
-{
-	return daoUtilisateur.selectByPseudo(pseudo);}
 	
+	public Utilisateur retournerUtilisateur(String pseudo) throws BusinessException
+	{
+		return daoUtilisateur.selectByPseudo(pseudo);}
+	
+	
+
 
 
 public Utilisateur retournerUtilisateurParId(int id) throws BusinessException
@@ -39,10 +42,10 @@ public void ListeUtilisateur() {
 		daoUtilisateur = DAOFactory.getUtilisateurDAO();
 	}
 
-public void ajoutUtilisateur (String mdp, String pseudo, String nom, String prenom, String mail,
+public Utilisateur ajoutUtilisateur (String mdp, String pseudo, String nom, String prenom, String mail,
 		String telephone, String rue, String codePostal, String city) throws BusinessException {
 	
-//	BusinessException businessException = new BusinessException();
+	BusinessException businessException = new BusinessException();
 	Utilisateur utilisateur = new Utilisateur();
 	utilisateur.setPseudo(pseudo);
 	utilisateur.setNom(nom);
@@ -55,14 +58,17 @@ public void ajoutUtilisateur (String mdp, String pseudo, String nom, String pren
 	utilisateur.setMotDePasse(mdp);
 	utilisateur.setCredit(100);
 	utilisateur.setAdministrateur(false);
+	
 	this.daoUtilisateur.ajoutUtilisateur(utilisateur);
+	
+	return utilisateur;
 }
 
-public static UtilisateurManager getInstance() { //
-	if (INSTANCE == null)//
-		INSTANCE = new UtilisateurManager();//
-	return INSTANCE;//
-}
+//public static UtilisateurManager getInstance() { //
+//	if (INSTANCE == null)//
+//		INSTANCE = new UtilisateurManager();//
+//	return INSTANCE;//
+//}
 
 
 
@@ -75,4 +81,6 @@ public void suppressionUtilisateur(int no_utilisateur) throws BusinessException 
 public void modificationUtilisateur(Utilisateur utilisateur) throws BusinessException {
 	this.daoUtilisateur.modifierUtilisateur(utilisateur);
 }
+
+
 }
