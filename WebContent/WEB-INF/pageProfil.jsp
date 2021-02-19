@@ -14,7 +14,7 @@
 		<p>Email : ${utilisateur.email}</p>
 		<p>Téléphone : ${utilisateur.telephone}</p>
 		<p>Rue : ${utilisateur.rue}</p>
-		<p>Code postal : ${utilisateur.codePostal}</p>
+		<p>Code postal : ${utilisateur.code_postal}</p>
 		<p>Ville : ${utilisateur.ville}</p>
 	</div>
 </body>
