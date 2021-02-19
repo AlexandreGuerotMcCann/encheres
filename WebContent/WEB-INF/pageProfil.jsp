@@ -1,4 +1,4 @@
-<%@page import="fr.eni.encheres.bo.Utilisateur"%>
+<%@ page import="fr.eni.encheres.bo.Utilisateur"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -35,7 +35,7 @@
 		<input id="searchsize" type="text" placeholder="Rechercher un profil par pseudo">
 	</div>
 	<div class="infosUtilisateur">
-	<!--<c:if{MODIFIER}>-->
+
 	
 		<p>Pseudo : ${utilisateur.pseudo}</p>
 		<p>Nom : ${utilisateur.nom}</p>
