@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fr.eni.encheres.BusinessException;
+import fr.eni.encheres.bll.UtilisateurManager;
 import fr.eni.encheres.bo.Utilisateur;
 
 /**
@@ -18,7 +20,8 @@ public class ServletAccueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public static final String ACCUEIL="/WEB-INF/accueil.jsp";
-       
+	
+
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

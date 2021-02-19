@@ -51,7 +51,7 @@ public class ServletConnexion extends HttpServlet {
 
         String motPasseBDD = utilisateur.getMotDePasse();
         if (motDePasse.equals(motPasseBDD)) {
-            rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+            rd = request.getRequestDispatcher("/WEB-INF/accueilConnecte.jsp");
             rd.forward(request, response);
         } else {
             rd = request.getRequestDispatcher("/WEB-INF/erreurAuthentification.jsp");

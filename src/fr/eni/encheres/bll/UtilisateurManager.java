@@ -8,6 +8,7 @@ import fr.eni.encheres.dal.DAOFactory;
 import fr.eni.encheres.dal.UtilisateurDAO;
 
 public class UtilisateurManager {
+	private static final String INSTANCE = null;//
 	// Doit disposer d'un accès à la DAL en passant par le DAOFactory => Création de
 	// la DAOFactory dans DAL
 	private UtilisateurDAO daoUtilisateur;
@@ -21,10 +22,17 @@ public class UtilisateurManager {
 //		return this.daoUtilisateur.selectAll();
 //		}
 
-public Utilisateur retournerUtilisateur(String pseudo) throws BusinessException
+public Utilisateur retournerUtilisateurParPseudo(String pseudo) throws BusinessException
 {
 	return daoUtilisateur.selectByPseudo(pseudo);}
-	// Méthode pour obtenir un utilisateur de la BDD
+	
+
+
+public Utilisateur retournerUtilisateurParId(int id) throws BusinessException
+{
+	return daoUtilisateur.selectById(id);
+}
+
 
 
 public void ListeUtilisateur() {
@@ -49,6 +57,13 @@ public void ajoutUtilisateur (String mdp, String pseudo, String nom, String pren
 	utilisateur.setAdministrateur(false);
 	this.daoUtilisateur.ajoutUtilisateur(utilisateur);
 }
+
+public static UtilisateurManager getInstance() { //
+	if (INSTANCE == null)//
+		INSTANCE = new UtilisateurManager();//
+	return INSTANCE;//
+}
+
 
 
 //Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon compte" (cf.maquette)

@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 public class ServletAccueilConnecte extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	public static final String ACCUEILCONNECTE="/WEB-INF/accueilConnecte.jsp";
+	public static final String ACCUEIL_CONNECTE="/WEB-INF/accueilConnecte.jsp";
        
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(ACCUEILCONNECTE).forward( request, response );
+		this.getServletContext().getRequestDispatcher(ACCUEIL_CONNECTE).forward( request, response );
 	}
 
 	/**

@@ -11,7 +11,8 @@ import fr.eni.encheres.bo.Utilisateur;
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	
-	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo=?";
+	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo = ?";
+	private static final String SELECT_BY_ID = "SELECT * FROM utilisateurs WHERE no_utilisateur = ?";
 	private static final String SELECT_ALL = "SELECT pseudo,mot_de_passe FROM utiliseurs;";
 	private static final String INSERT = "INSERT INTO UTILISATEURS (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	
@@ -19,6 +20,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String DELETE_USER = "DELETE FROM UTILISATEURS where no_utilisateur = ?";
 	private static final String UPDATE_USER = "UPDATE UTILISATEURS SET pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ? WHERE no_utilisateur = ?"; // "credit" et "administrateur" non modifiables via pageMonProfil
 	
+	private Utilisateur utilisateur = new Utilisateur();
 	
 	@Override
 	public List<Utilisateur> selectAll() throws BusinessException {
@@ -28,7 +30,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	@Override
 	public Utilisateur selectByPseudo(String pseudo) throws BusinessException {
-		Utilisateur utilisateur = null;
 		try (Connection connection = ConnectionProvider.getConnection()) {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_PSEUDO);
 			pStatement.setString(1, pseudo);
@@ -58,6 +59,35 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			System.out.println("aucun utilisateur");
 		}
 
+		return utilisateur;
+	}
+	
+	@Override
+	public Utilisateur selectById(int id) throws BusinessException {
+			try (Connection connection = ConnectionProvider.getConnection()) {
+				PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_ID);
+				pStatement.setInt(1, id);
+				ResultSet rs = pStatement.executeQuery();
+				while(rs.next()) {
+				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+				utilisateur.setPseudo(rs.getString("pseudo"));
+				utilisateur.setNom(rs.getString("nom"));
+				utilisateur.setPrenom(rs.getString("prenom"));
+				utilisateur.setEmail(rs.getString("email"));
+				utilisateur.setTelephone(rs.getString("telephone"));
+				utilisateur.setRue(rs.getString("rue"));
+				utilisateur.setCodePostal(rs.getString("code_postal"));
+				utilisateur.setVille(rs.getString("ville"));
+				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
+				utilisateur.setCredit(rs.getInt("credit"));
+				utilisateur.setAdministrateur(rs.getBoolean("administrateur"));
+				}
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+				BusinessException businessException = new BusinessException();
+				businessException.ajouterErreur(CodesErreursDAL.ERREUR_ID);
+				throw businessException;
+			}
 		return utilisateur;
 	}
 

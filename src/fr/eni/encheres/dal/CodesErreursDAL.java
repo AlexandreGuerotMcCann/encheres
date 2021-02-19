@@ -17,4 +17,6 @@ public abstract class CodesErreursDAL {
 	
 // Erreur lors de la mise à jour du compte de l'utilisateur
 	public static final int ERREUR_MISE_A_JOUR_UTILISATEUR = 10005;
+
+	public static final int ERREUR_ID = 10006;
 }
