@@ -4,15 +4,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>${pseudo}</title>
+	<title>Profil de ${pseudo}</title>
 </head>
 <body>
 	<div class="infosUtilisateur">
 		<p>Pseudo : ${utilisateur.pseudo}</p>
-		<p>Nom : ${utilisateur.pseudo}</p>
-		<p>Prénom : ${utilisateur.pseudo}</p>
-		<p>Email : ${utilisateur.pseudo}</p>
-		<p>Téléphone : ${utilisateur.pseudo}</p>
+		<p>Nom : ${utilisateur.nom}</p>
+		<p>Prénom : ${utilisateur.prenom}</p>
+		<p>Email : ${utilisateur.email}</p>
+		<p>Téléphone : ${utilisateur.telephone}</p>
 		<p>Rue : ${utilisateur.rue}</p>
 		<p>Code postal : ${utilisateur.codePostal}</p>
 		<p>Ville : ${utilisateur.ville}</p>
