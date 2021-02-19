@@ -4,9 +4,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="test.css">
+<!-- FEUILLE CSS DE TEST -->
+<link rel="stylesheet" type="text/css"
+	href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+<title>Enchères</title>
 </head>
 <body>
+
+	<div>
+
+		<ul>
+
+			<li><a href="ServletEncheres">Enchères</a></li>
+			<li><a href="ServletVendreArticle">Vendre un article</a></li>
+			<li><a href="ServletMonProfil">Mon profil</a></li>
+			<li><a href="ServletAccueil">Déconnexion</a></li>
+
+
+
+
+		</ul>
+
+	</div>
+
 
 </body>
 
