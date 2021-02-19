@@ -20,7 +20,7 @@ public class ServletMonProfil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(ENCHERES).forward( request, response );
+		this.getServletContext().getRequestDispatcher(PROFIL).forward( request, response );
 
 	}
 
