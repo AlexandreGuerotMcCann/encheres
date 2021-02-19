@@ -24,8 +24,6 @@
 			<li><a href="ServletAccueil">Déconnexion</a></li>
 
 
-			<!--<%//String pseudo = (String) request.getAttribute("id"); out.println(pseudo);%> -->
-
 
 
 		</ul>
