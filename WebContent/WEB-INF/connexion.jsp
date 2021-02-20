@@ -24,10 +24,10 @@
 			<label for="motdepasse">Mot de	passe :</label> 
 			<input type="password" name="motdepasse" id="motdepasse" required minimumlength="8" maxlenght="30"  /> 
 				
-				<a href="ServletSinscrire" class="button"> <input type="button" class="button" value="Créer un compte"/></a>
+				<a href="sinscrire" class="button"> <input type="button" class="button" value="Créer un compte"/></a>
 			<!-- A FAIRE Lien vers page "créer un compte" -->
 
-			<a href="ServletAccueil" class="button"> <input type="submit" class="button" value="Connexion"></input></a>
+			<a href="ServletConnexion" class="button"> <input type="submit" class="button" value="Connexion"></input></a>
 
 
 			<span><input type="checkbox" class="checkbox"

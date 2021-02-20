@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
 
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bll.UtilisateurManager;
@@ -46,6 +47,9 @@ public class ServletConnexion extends HttpServlet {
             utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
             String motPasseBDD = utilisateur.getMotDePasse();
             if (motDePasse.equals(motPasseBDD)) {
+            	
+            	request.setAttribute("user", utilisateur);
+
                 rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
                 rd.forward(request, response);
             } else {

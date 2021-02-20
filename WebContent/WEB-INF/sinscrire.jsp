@@ -54,7 +54,7 @@
 				<input type="text" id="city" name="city" required maxlength="30" size="15">
             
             
-                 <a href="ServletAccueil" class="button"><input type="button" class="button"  name="annuler" value="annuler" /></a>
+                 <a href="accueil" class="button"><input type="button" class="button"  name="annuler" value="annuler" /></a>
 				<a href="ServletAccueil" class="button"><input type="submit" class="button" name="sinscrire" value="s'inscrire" /></a>
         </div>
 

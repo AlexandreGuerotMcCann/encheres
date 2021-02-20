@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+  <%@page import="fr.eni.encheres.bo.Utilisateur"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -11,6 +12,7 @@
 <link rel="stylesheet" type="text/css"
 	href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 <title>Accueil</title>
+
 </head>
 <body>
 
@@ -21,8 +23,8 @@
 
 			<li><a href="ServletEncheres">Enchères</a></li>
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
-			<li><a href="ServletConnexion">se connecter</a></li>
-			<li><a href="ServletSinscrire">s'inscrire</a></li>
+			<li><a href="ServletConnexion">Se connecter</a></li>
+			<li><a href="ServletSinscrire">S'inscrire</a></li>
 			
 		<!--<c:if test="${!empty sessionScope.sessionUtilisateur}">
 		<p class="succes">Bonjour!! : ${sessionScope.sessionUtilisateur.pseudo}</p>
