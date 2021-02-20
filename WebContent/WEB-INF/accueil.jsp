@@ -1,3 +1,5 @@
+<%@page import="org.apache.catalina.User"%>
+<%@page import="java.rmi.server.RemoteStub"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
   <%@page import="fr.eni.encheres.bo.Utilisateur"%>
@@ -95,8 +97,14 @@
 
 		</div>
 		</div>
-		
-		
+TESTDECAMILLE:
+<%Utilisateur user=(Utilisateur)request.getAttribute("user"); 
+if (user!=null){%>
+
+
+<%=user.getPseudo() %>
+<%=user.getEmail() %>
+<%} %>
 
 	</form>
 	
