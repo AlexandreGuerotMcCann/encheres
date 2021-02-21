@@ -19,4 +19,6 @@ public abstract class CodesErreursDAL {
 	public static final int ERREUR_MISE_A_JOUR_UTILISATEUR = 10005;
 
 	public static final int ERREUR_ID = 10006;
+//Aucun utilisateur enregistré en BDD
+	public static final int ERREUR_AUCUN_UTILISATEUR = 10007;
 }

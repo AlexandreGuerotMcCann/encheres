@@ -54,7 +54,7 @@ public class ServletConnexion extends HttpServlet {
 			utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
 			String motPasseBDD = utilisateur.getMotDePasse();
 			if (motDePasse.equals(motPasseBDD)) {
-//            	clé "user" pour le code java paga accueuil
+//            	clé "user" pour le code java page accueuil
 				request.setAttribute("user", utilisateur);
 //            	clé "userTest" pour le jsp:useBean page accueuil
 				request.setAttribute("userTest", utilisateur);

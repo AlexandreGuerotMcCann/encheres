@@ -1,5 +1,6 @@
 package fr.eni.encheres.bll;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni.encheres.BusinessException;
@@ -25,7 +26,6 @@ public class UtilisateurManager {
 	public Utilisateur retournerUtilisateur(String pseudo) throws BusinessException {
 		return daoUtilisateur.selectByPseudo(pseudo);
 	}
-	
 
 	public Utilisateur retournerUtilisateurParId(int id) throws BusinessException {
 		return daoUtilisateur.selectById(id);
