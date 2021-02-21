@@ -22,47 +22,40 @@ public class UtilisateurManager {
 //		return this.daoUtilisateur.selectAll();
 //		}
 
-	
-	public Utilisateur retournerUtilisateur(String pseudo) throws BusinessException
-	{
-		return daoUtilisateur.selectByPseudo(pseudo);}
-	
+	public Utilisateur retournerUtilisateur(String pseudo) throws BusinessException {
+		return daoUtilisateur.selectByPseudo(pseudo);
+	}
 	
 
-
-
-public Utilisateur retournerUtilisateurParId(int id) throws BusinessException
-{
-	return daoUtilisateur.selectById(id);
-}
-
-
-
-public void ListeUtilisateur() {
-		daoUtilisateur = DAOFactory.getUtilisateurDAO();
+	public Utilisateur retournerUtilisateurParId(int id) throws BusinessException {
+		return daoUtilisateur.selectById(id);
 	}
 
-public Utilisateur ajoutUtilisateur (String mdp, String pseudo, String nom, String prenom, String mail,
-		String telephone, String rue, String codePostal, String city) throws BusinessException {
-	
-	BusinessException businessException = new BusinessException();
-	Utilisateur utilisateur = new Utilisateur();
-	utilisateur.setPseudo(pseudo);
-	utilisateur.setNom(nom);
-	utilisateur.setPrenom(prenom);
-	utilisateur.setEmail(mail);
-	utilisateur.setTelephone(telephone);
-	utilisateur.setRue(rue);
-	utilisateur.setCodePostal(codePostal);
-	utilisateur.setVille(city);
-	utilisateur.setMotDePasse(mdp);
-	utilisateur.setCredit(100);
-	utilisateur.setAdministrateur(false);
-	
-	this.daoUtilisateur.ajoutUtilisateur(utilisateur);
-	
-	return utilisateur;
-}
+	public List<Utilisateur> ListeUtilisateurs() throws BusinessException {
+		return daoUtilisateur.selectAll();
+	}
+
+	public Utilisateur ajoutUtilisateur(String mdp, String pseudo, String nom, String prenom, String mail,
+			String telephone, String rue, String codePostal, String city) throws BusinessException {
+
+		BusinessException businessException = new BusinessException();
+		Utilisateur utilisateur = new Utilisateur();
+		utilisateur.setPseudo(pseudo);
+		utilisateur.setNom(nom);
+		utilisateur.setPrenom(prenom);
+		utilisateur.setEmail(mail);
+		utilisateur.setTelephone(telephone);
+		utilisateur.setRue(rue);
+		utilisateur.setCodePostal(codePostal);
+		utilisateur.setVille(city);
+		utilisateur.setMotDePasse(mdp);
+		utilisateur.setCredit(100);
+		utilisateur.setAdministrateur(false);
+
+		this.daoUtilisateur.ajoutUtilisateur(utilisateur);
+
+		return utilisateur;
+	}
 
 //public static UtilisateurManager getInstance() { //
 //	if (INSTANCE == null)//
@@ -70,17 +63,14 @@ public Utilisateur ajoutUtilisateur (String mdp, String pseudo, String nom, Stri
 //	return INSTANCE;//
 //}
 
-
-
 //Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon compte" (cf.maquette)
-public void suppressionUtilisateur(int no_utilisateur) throws BusinessException {
-	this.daoUtilisateur.supprimerUtilisateur(no_utilisateur);
-}
+	public void suppressionUtilisateur(int no_utilisateur) throws BusinessException {
+		this.daoUtilisateur.supprimerUtilisateur(no_utilisateur);
+	}
 
 //Méthode à tester /!\ => à lier avec pageModifierProfil => bouton "Enregistrer" (cf.maquette p.7 & 8/13)
-public void modificationUtilisateur(Utilisateur utilisateur) throws BusinessException {
-	this.daoUtilisateur.modifierUtilisateur(utilisateur);
-}
-
+	public void modificationUtilisateur(Utilisateur utilisateur) throws BusinessException {
+		this.daoUtilisateur.modifierUtilisateur(utilisateur);
+	}
 
 }

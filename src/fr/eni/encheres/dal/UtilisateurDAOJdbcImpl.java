@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni.encheres.BusinessException;
@@ -12,8 +13,8 @@ import fr.eni.encheres.bo.Utilisateur;
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	
 	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo = ?";
-	private static final String SELECT_BY_ID = "SELECT * FROM utilisateurs WHERE no_utilisateur = ?";
-	private static final String SELECT_ALL = "SELECT pseudo,mot_de_passe FROM utiliseurs;";
+	private static final String SELECT_BY_ID = "SELECT * FROM utilisateurs";
+	private static final String SELECT_ALL = "SELECT * FROM utiliseurs;";
 	private static final String INSERT = "INSERT INTO utilisateurs (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	
 	// A tester les filles et les gars ;)
@@ -24,17 +25,12 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	
 	@Override
 	public List<Utilisateur> selectAll() throws BusinessException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Utilisateur selectByPseudo(String pseudo) throws BusinessException {
+		List<Utilisateur> listeUtilisateurs= new ArrayList<>();
 		try (Connection connection = ConnectionProvider.getConnection()) {
-			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_PSEUDO);
-			pStatement.setString(1, pseudo);
+			PreparedStatement pStatement = connection.prepareStatement(SELECT_ALL);
+			
 			ResultSet rs = pStatement.executeQuery();
-			if (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes d'utilisateurs
+			while (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes d'utilisateurs
 			}
 			utilisateur = new Utilisateur();
 			utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
@@ -50,6 +46,41 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			utilisateur.setCredit(rs.getInt("credit"));
 			utilisateur.setAdministrateur(rs.getBoolean("administrateur"));
 		} catch (Exception ex) {
+			ex.printStackTrace();
+			BusinessException businessException = new BusinessException();
+			businessException.ajouterErreur(CodesErreursDAL.ERREURS_IDENTIFIANTS);
+			throw businessException;
+		}
+		if (utilisateur == null) {
+			System.out.println("aucun utilisateur");
+		}
+
+		return utilisateur;
+	}		
+
+	@Override
+	public Utilisateur selectByPseudo(String pseudo) throws BusinessException {
+		try (Connection connection = ConnectionProvider.getConnection()) {
+			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_PSEUDO);
+			pStatement.setString(1, pseudo);
+			ResultSet rs = pStatement.executeQuery();
+			if (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes d'utilisateurs
+			
+			utilisateur = new Utilisateur();
+			utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+			utilisateur.setPseudo(rs.getString("pseudo"));
+			utilisateur.setNom(rs.getString("nom"));
+			utilisateur.setPrenom(rs.getString("prenom"));
+			utilisateur.setEmail(rs.getString("email"));
+			utilisateur.setTelephone(rs.getString("telephone"));
+			utilisateur.setRue(rs.getString("rue"));
+			utilisateur.setCodePostal(rs.getString("code_postal"));
+			utilisateur.setVille(rs.getString("ville"));
+			utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
+			utilisateur.setCredit(rs.getInt("credit"));
+			utilisateur.setAdministrateur(rs.getBoolean("administrateur"));}
+		} 
+	catch (Exception ex) {
 			ex.printStackTrace();
 			BusinessException businessException = new BusinessException();
 			businessException.ajouterErreur(CodesErreursDAL.ERREURS_IDENTIFIANTS);

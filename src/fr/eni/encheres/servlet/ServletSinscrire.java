@@ -62,11 +62,13 @@ public class ServletSinscrire extends HttpServlet {
 		//J'ajoute l'utilisateur
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		try {
-				
+//			validationPseudo(String pseudo);
+//			validationMotDePasse();
+//			validationEmail();
+//			validationMDP();
+//			validationNom();
 			Utilisateur utilisateur=utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone, rue, codePostal, city);
-			
-			
-			
+					
 			//Si tout se passe bien, je vais vers la page d'accueil
 			 rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
@@ -78,7 +80,25 @@ public class ServletSinscrire extends HttpServlet {
 			rd.forward(request, response);
 		}		
 	
-	} }
+	}
+
+//	private void validationNom() {
+//		private void validationNom( String nom ) throws Exception {
+//		    if ( nom != null && nom.trim().length() < 3 ) {
+//		        throw new Exception( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
+//		    }		
+//	}
+
+	private boolean validationPseudo() {
+		
+		return true;
+		// TODO Auto-generated method stub
+		
+	} 
+	
+
+
+}
 
 				
 		
