@@ -97,17 +97,42 @@
 
 		</div>
 		</div>
-TESTDECAMILLE:
-<%Utilisateur user=(Utilisateur)request.getAttribute("user"); 
-if (user!=null){%>
-
-
-<%=user.getPseudo() %>
-<%=user.getEmail() %>
-<%} %>
 
 	</form>
 	
+----TESTDECAMILLE :----<br><br>
+	<p>
+	AVEC CODE JAVA :
+<%Utilisateur user=(Utilisateur)request.getAttribute("user"); 
+if (user!=null){%>
+<%=user.getPseudo() %>
+email :<%=user.getEmail() %>
+credit :<%=user.getCredit() %>
+<%} %>
+</p><br>
+<br><br>
+<p>USEBEAN =
+<!-- id : crée une variable locale,
+scope: fait appel à request de notre servlet
+class: appelle la classe java. -->
+<jsp:useBean id="userTest"
+			scope="request"
+			class="fr.eni.encheres.bo.Utilisateur"
+></jsp:useBean>
+<!-- property pseudo: appelle le getter de pseudo
+name : rappel de la variable créée en id  -->
+	pseudo :<jsp:getProperty property="pseudo" name="userTest"/>
+		crédit : <jsp:getProperty property="credit" name="userTest"/>
+<br><br>	</p>
+	
+	
+	<p>Expression language: pseudo :${utilisateur.pseudo }
+		crédit ${utilisateur.credit }
+	<br><br>
+----FIN DES TEST----
+	
+	
+	 </p>
 	</body>
 	
 	<footer> Copyright 2021 des fifous du net © </footer> 

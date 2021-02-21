@@ -47,8 +47,12 @@ public class ServletConnexion extends HttpServlet {
             utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
             String motPasseBDD = utilisateur.getMotDePasse();
             if (motDePasse.equals(motPasseBDD)) {
-            	
+//            	clé "user" pour le code java paga accueuil
             	request.setAttribute("user", utilisateur);
+//            	clé "userTest" pour le jsp:useBean page accueuil
+            	request.setAttribute("userTest", utilisateur);
+//            	clé "utilisateur" pour l'expression Language page accueil
+            	request.setAttribute("utilisateur", utilisateur);
 
                 rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
                 rd.forward(request, response);
