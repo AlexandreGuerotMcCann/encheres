@@ -1,26 +1,28 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class ServletVendreArticle
  */
-@WebServlet("/ServletVendreArticle")
-public class ServletVendreArticle extends HttpServlet {
+@WebServlet("/ServletMesVentes")
+public class ServletMesVentes extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final String NEWVENTE="/WEB-INF/nouvelleVente.jsp";
+	public static final String MESVENTES="/WEB-INF/mesVentes.jsp";
  
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(NEWVENTE).forward( request, response );
+		this.getServletContext().getRequestDispatcher(MESVENTES).forward( request, response );
 	}
 
 	/**
