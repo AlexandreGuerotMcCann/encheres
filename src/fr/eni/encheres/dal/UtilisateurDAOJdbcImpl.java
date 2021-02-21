@@ -55,7 +55,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			System.out.println("aucun utilisateur");
 		}
 
-		return utilisateur;
+		return (List<Utilisateur>) utilisateur;
 	}		
 
 	@Override
