@@ -29,8 +29,18 @@ public class ServletAccueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response );
-
+		HttpSession session = request.getSession(); //
+		
+//		if (session.getAttribute("no_utilisateur")!=null) // Si utilisateur connecté
+//		{
+//			this.getServletContext().getRequestDispatcher("/ServletAccueilConnecte").forward(request, response);  // On go à l'accueil en mode connecté
+ //   	}
+//		else 
+//		{
+ //   		this.getServletContext().getRequestDispatcher("/ServletAccueilDeconnecte").forward(request, response); // Sinon on go a l'accueil en mode déconnecté
+//		} //(sans display du bouton déconnexion)
+		
+		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response ); // OK A GARDER
 	}
 
 	/**
