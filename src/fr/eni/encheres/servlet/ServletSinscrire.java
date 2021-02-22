@@ -34,6 +34,7 @@ public class ServletSinscrire extends HttpServlet {
 	public static final String CODE_POSTAL = "codePostal";
 	public static final String CITY = "city";
 	public static final String SINSCRIRE = "/WEB-INF/sinscrire.jsp";
+										
 
 	private static final String ALPHANUMERIQUE = "^[A-Za-z0-9]";
 	private static final String CARACTERES_AUTORISES_MAIL = "^[A-Za-z0-9._@-]"; // le - doit être à la fin ou au début
@@ -55,7 +56,6 @@ public class ServletSinscrire extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// doGet(request, response);
 		String pseudo = request.getParameter("pseudo");
 		String mdp = request.getParameter("mdp");
 		String confirmMdp = request.getParameter("confirmMdp");
@@ -166,15 +166,17 @@ public class ServletSinscrire extends HttpServlet {
 				}  if (validationVille(city) == false) {
 					request.setAttribute("Erreur", "La ville doit contenir moins de 50 caractères.");
 
-				}rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+				}
+				response.sendRedirect("/WEB-INF/sinscrire.jsp");
+//				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			// Sinon je retourne à la page s'inscrire et j'indique les problèmes:
-
-			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+			response.sendRedirect("/WEB-INF/sinscrire.jsp");
+//			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
 		}
 
