@@ -1,169 +1,151 @@
-* { margin: 0;
-    padding: 0;
-    font-family: ubuntu;}
-
+* {
+	margin: 0;
+	padding: 0;
+	font-family: ubuntu;
+}
 
 .wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-    background-color:aliceblue;
-    opacity:0.9;
-    border-radius: 4px;
-   
-  }
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	max-width: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: aliceblue;
+	opacity: 0.9;
+	border-radius: 4px;
+}
 
- .wrapper2 > * {
-    padding: 0.8em 0.8em;
-  }
-
-
+.wrapper2>* {
+	padding: 0.8em 0.8em;
+}
 
 .wrapper2 {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-  max-width: 1800px;
-  margin-left: auto;
-  margin-right: auto;
-    background-color:aliceblue;
-    opacity:0.9;
-    border-radius: 4px;
-    grid-gap: 0.1em;
-   
-  }
-  .wrapper > * {
-    padding: 0.8em 0.8em;
-  }
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	max-width: 1800px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: aliceblue;
+	opacity: 0.9;
+	border-radius: 4px;
+	grid-gap: 0.1em;
+}
 
-
+.wrapper>* {
+	padding: 0.8em 0.8em;
+}
 
 form {
-    display: grid;
-
+	display: grid;
 }
 
-h1 {text-align: center;}
+h1 {
+	text-align: center;
+}
 
-h2 {text-align: center;}
+h2 {
+	text-align: center;
+}
 
 .button {
-  background-color: black;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-    
+	background-color: black;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
 }
 
-.button:hover {background-color:aliceblue;
-    color:black;
+.button:hover {
+	background-color: aliceblue;
+	color: black;
 }
 
-footer {text-align: center;}
+footer {
+	text-align: center;
+}
 
-
-#TitreAccueil {text-align: left;}
-
-
+#TitreAccueil {
+	text-align: left;
+}
 
 ul {
-    text-align: center;
-    background-color: black;
-    width: 100%;
-    margin-top: 22px;
-    opacity: 0.9;
-
-
-
+	text-align: center;
+	background-color: black;
+	width: 100%;
+	margin-top: 22px;
+	opacity: 0.9;
 }
 
 ul li {
-    display: inline-block;
-
-    color: white;
-    font-size: 20px;
-    ;
-
+	display: inline-block;
+	color: white;
+	font-size: 20px;
+	;
 }
 
 li a {
-    display: inline-block;
-    color: white;
-    padding: 16px 18px;
-    text-decoration: none;
-    transition: 0.6s ease;
-
+	display: inline-block;
+	color: white;
+	padding: 16px 18px;
+	text-decoration: none;
+	transition: 0.6s ease;
 }
 
 li a:hover {
-    background-color: lightgrey;
-    color: black;
+	background-color: lightgrey;
+	color: black;
 }
 
-
 .wrapper3 {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-  max-width: 1800px;
-  margin-left: 15%;
-  margin-right: auto;
-    background-color:aliceblue;
-    opacity:0.9;
-    border-radius: 4px;
-    grid-gap: 0.1em;
-  
-   
-  }
-  
-   .wrapper3 > * {
-    padding: 0.8em 0.8em;
-  }
-  
-.checkbox {font-size: 12px;}
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	max-width: 1800px;
+	margin-left: 15%;
+	margin-right: auto;
+	background-color: aliceblue;
+	opacity: 0.9;
+	border-radius: 4px;
+	grid-gap: 0.1em;
+}
 
-#searchsize {width:188%;
-text-align:center;}
+.wrapper3>* {
+	padding: 0.8em 0.8em;
+}
 
+.checkbox {
+	font-size: 12px;
+}
+
+#searchsize {
+	width: 188%;
+	text-align: center;
+}
 
 .wrapper4 {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-  max-width: 1800px;
-  margin-left: auto;
-  margin-right: 15%;
-    background-color:aliceblue;
-    opacity:0.9;
-    border-radius: 4px;
-    grid-gap: 0.1em;
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	max-width: 1800px;
+	margin-left: auto;
+	margin-right: 15%;
+	background-color: aliceblue;
+	opacity: 0.9;
+	border-radius: 4px;
+	grid-gap: 0.1em;
+}
 
-    
-    
-   
-  }
-  
-   .wrapper4 > * {
-    padding: 0.8em 0.8em;
-    
-  }
+.wrapper4>* {
+	padding: 0.8em 0.8em;
+}
 
-  
-footer{
-
-position:absolute;
-
-bottom:0;
-
-width:100%;
-
-padding-top:50px;
-
-height:50px;
-
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding-top: 50px;
+	height: 50px;
 }

@@ -6,10 +6,18 @@ import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bo.ArticleVendu;
 import fr.eni.encheres.bo.Utilisateur;
 
-public abstract class ArticleVenduDAO {
+public interface ArticleVenduDAO {
 	
-	public abstract List<ArticleVendu> selectAll() throws BusinessException;
+	public List<ArticleVendu> selectAll() throws BusinessException;
 	
-	public Utilisateur selectByPseudo(String nomArticle) throws BusinessException;
+	public ArticleVendu selectByNom_Article(String nomArticle) throws BusinessException;
+	
+	public void ajoutArticle(ArticleVendu nomArticle) throws BusinessException;
+	
+	public void supprimerArticle(int noArticle) throws BusinessException;
+	
+	public void modifierArticle(ArticleVendu nomArticle) throws BusinessException;
+	
+	public Utilisateur selectByNoArticle(int noArticle) throws BusinessException;
 
 }

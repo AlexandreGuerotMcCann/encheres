@@ -137,8 +137,8 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			rqt.setString(4, utilisateur.getEmail());
 			rqt.setString(5, utilisateur.getTelephone());
 			rqt.setString(6, utilisateur.getRue());
-			rqt.setString(8, utilisateur.getCodePostal());
-			rqt.setString(7, utilisateur.getVille());
+			rqt.setString(7, utilisateur.getCodePostal());
+			rqt.setString(8, utilisateur.getVille());
 			rqt.setString(9, utilisateur.getMotDePasse());
 			rqt.setInt(10, utilisateur.getCredit());
 			rqt.setBoolean(11, false);
