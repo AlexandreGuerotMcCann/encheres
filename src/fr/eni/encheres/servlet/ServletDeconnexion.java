@@ -34,3 +34,5 @@ public class ServletDeconnexion extends HttpServlet {
 	}
 
 }
+
+// parametrer redirection auto vers page accueil
