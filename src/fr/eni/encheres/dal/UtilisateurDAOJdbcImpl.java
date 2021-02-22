@@ -147,9 +147,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			rqt.close();
 
 		} catch (Exception ex) {
-			BusinessException businessException = new BusinessException();
-			businessException.ajouterErreur(CodesErreursDAL.ERREUR_INSERTION);
-			throw businessException;
+			throw new BusinessException(CodesErreursDAL.ERREUR_INSERTION);
 		}
 	}
 
