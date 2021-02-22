@@ -23,6 +23,7 @@
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
 			<li><a href="ServletConnexion">Se connecter</a></li>
 			<li><a href="ServletSinscrire">S'inscrire</a></li>
+			<li><a href="ServletDeconnexion">Se déconnecter</a></li>
 			
 		<!--<c:if test="${!empty sessionScope.sessionUtilisateur}">
 		<p class="succes">Bonjour!! : ${sessionScope.sessionUtilisateur.pseudo}</p>
