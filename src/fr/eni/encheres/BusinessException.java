@@ -14,7 +14,10 @@ public class BusinessException extends Exception {
 
 	}
 
-//Ajout du code d'erreur, s'il est inexistant.
+public BusinessException(int erreurInsertion) {
+	}
+
+	//Ajout du code d'erreur, s'il est inexistant.
 	public void ajouterErreur(int codeErreur) {
 		if (!this.listeErreurs.contains(codeErreur)) {
 			this.listeErreurs.add(codeErreur);
