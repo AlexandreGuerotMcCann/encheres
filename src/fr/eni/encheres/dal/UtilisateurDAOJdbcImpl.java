@@ -21,11 +21,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String DELETE_USER = "DELETE FROM UTILISATEURS where no_utilisateur = ?";
 	private static final String UPDATE_USER = "UPDATE UTILISATEURS SET pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ? WHERE no_utilisateur = ?"; // "credit"
 																																																					// et
-																																																					// "administrateur"
-																																																					// non
-																																																					// modifiables
-																																																					// via
-																																																					// pageMonProfil
 
 	private Utilisateur utilisateur = new Utilisateur();
 
