@@ -9,7 +9,8 @@ import java.util.List;
 
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bo.Enchere;
-import fr.eni.encheres.bo.Utilisateur;
+
+
 
 public class EncheresDAOJdbcImpl implements EncheresDAO {
 	
@@ -48,4 +49,76 @@ public class EncheresDAOJdbcImpl implements EncheresDAO {
 		}
 
 		return listeEncheres;
-	}}
+	}
+
+
+
+
+@Override
+public Enchere selectByNoEnchere(int no_utilisateur) throws BusinessException {
+	try (Connection connection = ConnectionProvider.getConnection()) {
+		PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_NO_ENCHERE);
+		pStatement.setInt(1, no_utilisateur);
+		ResultSet rs = pStatement.executeQuery();
+		while (rs.next()) {
+			enchere = new Enchere();
+			enchere.setNoEncheres(rs.getInt("no_enchere"));
+			enchere.setDateEnchere(rs.getDate("date_enchere"));
+			enchere.setMontant_enchere(rs.getInt("montant_enchere"));
+			enchere.setNoArticle(rs.getInt("no_article"));
+			enchere.setNoUtilisateur(rs.getInt("no_utilisateur"));
+			
+		}
+	} catch (SQLException ex) {
+		ex.printStackTrace();
+		BusinessException businessException = new BusinessException();
+		businessException.ajouterErreur(CodesErreursDAL.ERREUR_ID);
+		
+		//ERREUR A MODIFIER/VERIFIER
+		
+		throw businessException;
+	}
+	return enchere;
+}
+
+
+public void ajoutEnchere(Enchere enchere) throws BusinessException {
+	// TODO Auto-generated method stub
+	ResultSet rs;
+
+	try (Connection connection = ConnectionProvider.getConnection()) {
+		PreparedStatement rqt = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
+		rqt.setInt(1, enchere.getNoEnchere());
+		rqt.setDate(2, enchere.getDateEnchere());
+		rqt.setInt(3, enchere.getMontant_enchere());
+		rqt.setInt(4, enchere.getNoArticle());
+		rqt.setInt(5, enchere.getNoUtilisateur());
+		
+
+		rqt.executeUpdate();
+		rqt.close();
+
+	} catch (Exception ex) {
+		throw new BusinessException(CodesErreursDAL.ERREUR_INSERTION);
+	}
+}
+
+@Override
+
+
+public void supprimerEnchere(int no_enchere) throws BusinessException {
+	try (Connection connection = ConnectionProvider.getConnection()) {
+		PreparedStatement pStatement = connection.prepareStatement(DELETE_ENCHERE); // + Voir si delete avec pseudo
+																					// aussi
+		pStatement.setInt(1, no_enchere);
+		pStatement.executeUpdate();
+	} catch (SQLException ex) {
+		// ex.printStackTrace();
+		BusinessException businessException = new BusinessException();
+		businessException.ajouterErreur(CodesErreursDAL.ERREUR_SUPPRESSION_UTILISATEUR);
+		throw businessException;
+	}
+}
+
+
+}
