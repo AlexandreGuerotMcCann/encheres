@@ -25,7 +25,7 @@
 			<li><a href="ServletSinscrire">S'inscrire</a></li>
 			<li><a href="ServletDeconnexion">Se déconnecter</a></li>
 			
-		<!--<c:if test="${!empty sessionScope.sessionUtilisateur}">
+		<!--<c:if test="${!empty sessionScope.sessionUtilisateur}"> 
 		<p class="succes">Bonjour!! : ${sessionScope.sessionUtilisateur.pseudo}</p>
 		</c:if> 
 			<li><a href="ServletMonProfil">Mon profil</a></li>
