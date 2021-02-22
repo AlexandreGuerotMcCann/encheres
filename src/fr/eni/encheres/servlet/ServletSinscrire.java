@@ -39,7 +39,7 @@ public class ServletSinscrire extends HttpServlet {
 	private static final String CARACTERES_AUTORISES_MAIL = "^[A-Za-z0-9._@-]"; // le - doit être à la fin ou au début
 																				// de
 	// l'expression régulière
- 
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -73,91 +73,105 @@ public class ServletSinscrire extends HttpServlet {
 		try {
 			if (validationPseudoBDD(pseudo) == false) {
 
-//			else if (validationPseudo(pseudo) == true) {
-//
-//			else if (validationEmailBDD(mail) == false) {
-//
-//			} else if (validationEmail(mail) == true) {
-//
-//			} else if (validationTelephoneBDD(telephone) == false) {
-//
-//			} else if (validationTelephone(telephone) == true) {
-//
-//			} else if (validationMDP(mdp, confirmMdp) == true) {
-//
-//			} else if (validationNom(nom) == true) {
-//
-//			} else if (validationPrenom(prenom) == true) {
-//
-//			} else if (validationRue(rue) == true) {
-//
-//			} else if (validationCodePostal(codePostal) == true) {
-//
-//			} else if (validationVille(city) == true) {
-//
-//			}
+				if (validationPseudo(pseudo) == true) {
 
-			Utilisateur utilisateur = utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone,
-					rue, codePostal, city);
-			utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
-			HttpSession session = request.getSession();
-			
+					if (validationEmailBDD(mail) == false) {
+
+						if (validationEmail(mail) == true) {
+
+							if (validationTelephoneBDD(telephone) == false) {
+
+								if (validationTelephone(telephone) == true) {
+
+									if (validationMDP(mdp, confirmMdp) == true) {
+
+										if (validationNom(nom) == true) {
+
+											if (validationPrenom(prenom) == true) {
+
+												if (validationRue(rue) == true) {
+
+													if (validationCodePostal(codePostal) == true) {
+
+														if (validationVille(city) == true) {
+
+															Utilisateur utilisateur = utilisateurManager
+																	.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail,
+																			telephone, rue, codePostal, city);
+															utilisateur = utilisateurManager
+																	.retournerUtilisateur(pseudo);
+															HttpSession session = request.getSession();
+
 //        	clé "user" pour le code java page accueuil
-			session.setAttribute("user", utilisateur);
+															session.setAttribute("user", utilisateur);
 //        	clé "userTest" pour le jsp:useBean page accueuil
-			session.setAttribute("userTest", utilisateur);
+															session.setAttribute("userTest", utilisateur);
 //        	clé "utilisateur" pour l'expression Language page accueil
-			session.setAttribute("utilisateur", utilisateur);
-			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
-			rd.forward(request, response);
+															session.setAttribute("utilisateur", utilisateur);
+															rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+															rd.forward(request, response);
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 
 		catch (Exception e) {
 			e.printStackTrace();
-//			try {
-//				if (validationPseudoBDD(pseudo) == true) {
-//					request.setAttribute("Erreur", "Ce Pseudo existe déjà");
-//
-//				} else if (validationPseudo(pseudo) == false) {
-//					request.setAttribute("Erreur",
-//							"Ce Pseudo est invalide. Il doit contenir moins de 30 caractères et contenir uniquement des lettres et des chiffres");
-//
-//				} else if (validationEmailBDD(mail) == true) {
-//					request.setAttribute("Erreur", "Cet email est déjà associé à un compte");
-//
-//				} else if (validationEmail(mail) == false) {
-//					request.setAttribute("Erreur", "Cet email est invalide");
-//
-//				} else if (validationTelephoneBDD(telephone) == true) {
-//					request.setAttribute("Erreur", "Ce numéro de téléphone est déjà associé à un compte");
-//
-//				} else if (validationEmail(mail) == false) {
-//					request.setAttribute("Erreur", "Cet email est invalide");
-//
-//				} else if (validationMDP(mdp, confirmMdp) == false) {
-//					request.setAttribute("Erreur",
-//							"Les mots de passe ne sont pas identiques (mininimum 8 caractères. Seules les lettres et chiffres sont autorisés.");
-//
-//				} else if (validationNom(nom) == false) {
-//					request.setAttribute("Erreur", "Votre nom doit contenir entre 2 et 30 caractères");
-//
-//				} else if (validationPrenom(prenom) == false) {
-//					request.setAttribute("Erreur", "Votre prénom doit contenir entre 2 et 30 caractères");
-//
-//				} else if (validationRue(rue) == false) {
-//					request.setAttribute("Erreur", "la rue doit contenir moins de 30 caractères");
-//
-//				} else if (validationCodePostal(codePostal) == false) {
-//					request.setAttribute("Erreur", "Le code postal doit contenir moins de 10 caractères");
-//
-//				} else if (validationVille(city) == false) {
-//					request.setAttribute("Erreur", "La ville doit contenir moins de 50 caractères.");
-//
-//				}
-//			} catch (Exception e1) {
-//				// TODO Auto-generated catch block
-//				e1.printStackTrace();
-//			}
+			try {
+				if (validationPseudoBDD(pseudo) == true) {
+					request.setAttribute("Erreur", "Ce Pseudo existe déjà");
+				}
+				if (validationPseudo(pseudo) == false) {
+					request.setAttribute("Erreur",
+							"Ce Pseudo est invalide. Il doit contenir moins de 30 caractères et contenir uniquement des lettres et des chiffres");
+				}
+				if (validationEmailBDD(mail) == true) {
+					request.setAttribute("Erreur", "Cet email est déjà associé à un compte");
+
+				}
+				if (validationEmail(mail) == false) {
+					request.setAttribute("Erreur", "Cet email est invalide");
+
+				} if (validationTelephoneBDD(telephone) == true) {
+					request.setAttribute("Erreur", "Ce numéro de téléphone est déjà associé à un compte");
+
+				} if (validationEmail(mail) == false) {
+					request.setAttribute("Erreur", "Cet email est invalide");
+
+				} if (validationMDP(mdp, confirmMdp) == false) {
+					request.setAttribute("Erreur",
+							"Les mots de passe ne sont pas identiques (mininimum 8 caractères. Seules les lettres et chiffres sont autorisés.");
+
+				} if (validationNom(nom) == false) {
+					request.setAttribute("Erreur", "Votre nom doit contenir entre 2 et 30 caractères");
+
+				}if (validationPrenom(prenom) == false) {
+					request.setAttribute("Erreur", "Votre prénom doit contenir entre 2 et 30 caractères");
+
+				} if (validationRue(rue) == false) {
+					request.setAttribute("Erreur", "la rue doit contenir moins de 30 caractères");
+
+				}  if (validationCodePostal(codePostal) == false) {
+					request.setAttribute("Erreur", "Le code postal doit contenir moins de 10 caractères");
+
+				}  if (validationVille(city) == false) {
+					request.setAttribute("Erreur", "La ville doit contenir moins de 50 caractères.");
+
+				}rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+				rd.forward(request, response);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			// Sinon je retourne à la page s'inscrire et j'indique les problèmes:
 
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -180,101 +194,101 @@ public class ServletSinscrire extends HttpServlet {
 		}
 	}
 
-//	boolean validationPseudo(String pseudo) {
-//		if (pseudo != null && pseudo.trim().length() > 0 && pseudo.trim().length() < 30
-//				&& pseudo.matches(ALPHANUMERIQUE)) {
-//			return true;
-//		} else
-//			return false;
-//	}
-//
-////Vérifie si le mail est présent en BDD
-//	boolean validationEmailBDD(String mail) throws Exception {
-//		List<String> listeMailBDD = new ArrayList<String>();
-//		UtilisateurManager utilisateurManager = new UtilisateurManager();
-//		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
-//		for (Utilisateur utilisateur : listeUser) {
-//			listeMailBDD.add(utilisateur.getEmail());
-//		}
-//		if (listeMailBDD.contains(mail)) {
-//			return true;
-//		} else {
-//			return false;
-//		}
-//	}
-//
-//	boolean validationEmail(String mail) {
-//		if (mail != null && mail.trim().length() > 0 && mail.trim().length() < 50
-//				&& mail.matches(CARACTERES_AUTORISES_MAIL)) {
-//			return true;
-//		} else
-//			return false;
-//	}
-//
-//	boolean validationMDP(String mdp, String confirmMdp) {
-//		if (mdp != null && mdp.equals(confirmMdp) && mdp.trim().length() > 7 && mdp.matches(ALPHANUMERIQUE)) {
-//
-//			return true;
-//		} else
-//			return false;
-//	}
-//
-//	private boolean validationNom(String nom) {
-//		if (nom != null && nom.trim().length() > 2 && nom.trim().length() < 30 && nom.matches(ALPHANUMERIQUE)) {
-//			return true;
-//		} else
-//			return false;
-//	}
-//
-//	private boolean validationPrenom(String prenom) {
-//		if (prenom != null && prenom.trim().length() > 2 && prenom.trim().length() < 30
-//				&& prenom.matches(ALPHANUMERIQUE)) {
-//			return true;
-//		} else
-//			return false;
-//	}
-//
-//	boolean validationTelephoneBDD(String telephone) throws Exception {
-//		List<String> listeTelephoneBDD = new ArrayList<String>();
-//		UtilisateurManager utilisateurManager = new UtilisateurManager();
-//		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
-//		for (Utilisateur utilisateur : listeUser) {
-//			listeTelephoneBDD.add(utilisateur.getEmail());
-//		}
-//		if (listeTelephoneBDD.contains(telephone)) {
-//			return true;
-//		} else {
-//			return false;
-//		}
-//	}
-//
-//	boolean validationTelephone(String telephone) {
-//		if (telephone != null && telephone.trim().length() > 0 && telephone.trim().length() < 15
-//				&& telephone.matches(CARACTERES_AUTORISES_MAIL)) {
-//			return true;
-//		} else
-//			return false;
-//	}
-//
-//	boolean validationRue(String rue) {
-//		if (rue != null && rue.trim().length() > 0 && rue.trim().length() < 30 && rue.matches(ALPHANUMERIQUE)) {
-//			return true;
-//		} else
-//			return false;
-//	}
-//
-//	boolean validationCodePostal(String codePostal) {
-//		if (codePostal != null && codePostal.trim().length() > 0 && codePostal.trim().length() < 10
-//				&& codePostal.matches(ALPHANUMERIQUE)) {
-//			return true;
-//		} else
-//			return false;
-//	}
-//
-//	boolean validationVille(String ville) {
-//		if (ville != null && ville.trim().length() > 0 && ville.trim().length() < 50 && ville.matches(ALPHANUMERIQUE)) {
-//			return true;
-//		} else
-//			return false;
-//	}
+	boolean validationPseudo(String pseudo) {
+		if (pseudo != null && pseudo.trim().length() > 0 && pseudo.trim().length() < 30
+				&& pseudo.matches(ALPHANUMERIQUE)) {
+			return true;
+		} else
+			return false;
+	}
+
+//Vérifie si le mail est présent en BDD
+	boolean validationEmailBDD(String mail) throws Exception {
+		List<String> listeMailBDD = new ArrayList<String>();
+		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
+		for (Utilisateur utilisateur : listeUser) {
+			listeMailBDD.add(utilisateur.getEmail());
+		}
+		if (listeMailBDD.contains(mail)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	boolean validationEmail(String mail) {
+		if (mail != null && mail.trim().length() > 0 && mail.trim().length() < 50
+				&& mail.matches(CARACTERES_AUTORISES_MAIL)) {
+			return true;
+		} else
+			return false;
+	}
+
+	boolean validationMDP(String mdp, String confirmMdp) {
+		if (mdp != null && mdp.equals(confirmMdp) && mdp.trim().length() > 7 && mdp.matches(ALPHANUMERIQUE)) {
+
+			return true;
+		} else
+			return false;
+	}
+
+	private boolean validationNom(String nom) {
+		if (nom != null && nom.trim().length() > 2 && nom.trim().length() < 30 && nom.matches(ALPHANUMERIQUE)) {
+			return true;
+		} else
+			return false;
+	}
+
+	private boolean validationPrenom(String prenom) {
+		if (prenom != null && prenom.trim().length() > 2 && prenom.trim().length() < 30
+				&& prenom.matches(ALPHANUMERIQUE)) {
+			return true;
+		} else
+			return false;
+	}
+
+	boolean validationTelephoneBDD(String telephone) throws Exception {
+		List<String> listeTelephoneBDD = new ArrayList<String>();
+		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
+		for (Utilisateur utilisateur : listeUser) {
+			listeTelephoneBDD.add(utilisateur.getEmail());
+		}
+		if (listeTelephoneBDD.contains(telephone)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	boolean validationTelephone(String telephone) {
+		if (telephone != null && telephone.trim().length() > 0 && telephone.trim().length() < 15
+				&& telephone.matches(CARACTERES_AUTORISES_MAIL)) {
+			return true;
+		} else
+			return false;
+	}
+
+	boolean validationRue(String rue) {
+		if (rue != null && rue.trim().length() > 0 && rue.trim().length() < 30 && rue.matches(ALPHANUMERIQUE)) {
+			return true;
+		} else
+			return false;
+	}
+
+	boolean validationCodePostal(String codePostal) {
+		if (codePostal != null && codePostal.trim().length() > 0 && codePostal.trim().length() < 10
+				&& codePostal.matches(ALPHANUMERIQUE)) {
+			return true;
+		} else
+			return false;
+	}
+
+	boolean validationVille(String ville) {
+		if (ville != null && ville.trim().length() > 0 && ville.trim().length() < 50 && ville.matches(ALPHANUMERIQUE)) {
+			return true;
+		} else
+			return false;
+	}
 }

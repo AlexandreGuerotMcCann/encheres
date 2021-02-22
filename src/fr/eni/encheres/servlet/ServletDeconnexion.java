@@ -27,13 +27,10 @@ public class ServletDeconnexion extends HttpServlet {
 		//session = request.getSession(false); // on vérifie bien que la session est invalidée
 		//response.getWriter().println("Session : " + session); // test
 		// ou HttpServletRequest.getSession().invalidate()
-<<<<<<< HEAD
+
 		// response.sendRedirect(request.getContextPath());
 		this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
-=======
-		// response.sendRedirect(request.getContextPath()); // pour rediriger vers accueil sans passer par jsp déco
-		this.getServletContext().getRequestDispatcher(DECONNEXION).forward(request, response);
->>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
+
 	}
 
 	
