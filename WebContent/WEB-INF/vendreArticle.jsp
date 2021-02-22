@@ -45,8 +45,8 @@
 		</label>
 		<label>Photo de l'article: <input type="file" id="avatar" name="avatar" style="color:transparent"   ; accept="image/png, image/jpeg" /></label>
 		<label>Mise à prix: <input style="text"></label>
-		<label>Début de l'enchère: <input style="date"></label>
-		<label>Fin de l'enchère: <input style="date"></label>
+		<label>Début de l'enchère: <input type="date"></label>
+		<label>Fin de l'enchère: <input type="date"></label>
 		
 	
 		<label>Retrait: </label> <br>
