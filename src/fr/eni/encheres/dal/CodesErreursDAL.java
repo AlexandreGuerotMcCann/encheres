@@ -3,7 +3,7 @@ package fr.eni.encheres.dal;
 public abstract class CodesErreursDAL {
 /* CONVENTION : codes entre 10000 et 19999 */
 	
-//
+///
 	public static final int ECHEC_LECTURE_LISTE_UTILISATEURS =10001;
 	
 // Erreur si Les ID ne correspondent pas en BDD
