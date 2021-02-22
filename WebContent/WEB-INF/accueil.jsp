@@ -103,7 +103,7 @@
 ----TESTDECAMILLE :----<br><br>
 	<p>
 	AVEC CODE JAVA :
-<%Utilisateur user=(Utilisateur)request.getAttribute("user"); 
+<%Utilisateur user=(Utilisateur)session.getAttribute("user"); 
 if (user!=null){%>
 <%=user.getPseudo() %>
 email :<%=user.getEmail() %>
@@ -116,7 +116,7 @@ credit :<%=user.getCredit() %>
 scope: fait appel à request de notre servlet
 class: appelle la classe java. -->
 <jsp:useBean id="userTest"
-			scope="request"
+			scope="session"
 			class="fr.eni.encheres.bo.Utilisateur"
 ></jsp:useBean>
 <!-- property pseudo: appelle le getter de pseudo

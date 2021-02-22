@@ -46,30 +46,21 @@ public class ServletConnexion extends HttpServlet {
 		String identifiant = request.getParameter("identifiant");
 		String motDePasse = request.getParameter("motdepasse");
 		RequestDispatcher rd = null;
-		Cookie[] cookies = request.getCookies();
 
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		Utilisateur utilisateur = null;
+		HttpSession session = request.getSession();
+
 		try {
 			utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
 			String motPasseBDD = utilisateur.getMotDePasse();
 			if (motDePasse.equals(motPasseBDD)) {
 //            	clé "user" pour le code java page accueuil
-				request.setAttribute("user", utilisateur);
+				session.setAttribute("user", utilisateur);
 //            	clé "userTest" pour le jsp:useBean page accueuil
-				request.setAttribute("userTest", utilisateur);
+				session.setAttribute("userTest", utilisateur);
 //            	clé "utilisateur" pour l'expression Language page accueil
-				request.setAttribute("utilisateur", utilisateur);
-//Cookies
-				if (cookies == null) {
-					for (int i = 0; i < 3; i++) {
-						Random random = new Random();
-						Cookie unCookie = new Cookie("NomCookie_" + random.nextInt(1000),
-								"ValeurCookie_" + random.nextInt(1000));
-						unCookie.setMaxAge(36000); // 36000Secondes =10H (au hasard...)
-						response.addCookie(unCookie);
-					}}
-				HttpSession session=request.getSession();
+				session.setAttribute("utilisateur", utilisateur);
 				rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 				rd.forward(request, response);
 			} else {
@@ -84,5 +75,3 @@ public class ServletConnexion extends HttpServlet {
 	}
 
 }
-
-

@@ -27,8 +27,7 @@
 			String erreur = (String) request.getAttribute("erreur");
 			if (erreur != null) {
 			%>
-			<%=erreur%>
-
+<%out.print(erreur);%>
 			<%
 			}
 			%>
