@@ -16,7 +16,7 @@
 }
 
 .wrapper2>* {
-	padding: 0.8em 0.8em;
+	padding: 0.5em 0.5em;
 }
 
 .wrapper2 {
@@ -28,7 +28,7 @@
 	background-color: aliceblue;
 	opacity: 0.9;
 	border-radius: 4px;
-	grid-gap: 0.1em;
+	grid-gap: 0em;
 }
 
 .wrapper>* {
