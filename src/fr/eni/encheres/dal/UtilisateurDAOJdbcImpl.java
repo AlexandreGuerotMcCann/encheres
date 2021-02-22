@@ -14,7 +14,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo = ?";
 	private static final String SELECT_BY_ID = "SELECT * FROM utilisateurs";
-	private static final String SELECT_ALL = "SELECT * FROM utilisateurs;";
+	private static final String SELECT_ALL = "SELECT * FROM utilisateurs";
 	private static final String INSERT = "INSERT INTO utilisateurs (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
 	// A tester les filles et les gars ;)
