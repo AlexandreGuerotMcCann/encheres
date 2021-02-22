@@ -31,7 +31,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_ALL);
 
 			ResultSet rs = pStatement.executeQuery();
-			while (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes*
+			while (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes**
 								// d'utilisateurs
 				utilisateur = new Utilisateur();
 				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
