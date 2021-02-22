@@ -123,7 +123,7 @@ public class ServletSinscrire extends HttpServlet {
 				}
 			}
 		}
-
+//Com pour commit
 		catch (Exception e) {
 			e.printStackTrace();
 			try {
