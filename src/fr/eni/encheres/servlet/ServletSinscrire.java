@@ -33,7 +33,7 @@ public class ServletSinscrire extends HttpServlet {
 	public static final String RUE = "rue";
 	public static final String CODE_POSTAL = "codePostal";
 	public static final String CITY = "city";
-	public static final String IHM = "/WEB-INF/sinscrire.jsp";
+	public static final String SINSCRIRE = "/WEB-INF/sinscrire.jsp";
 
 	private static final String ALPHANUMERIQUE = "^[A-Za-z0-9]";
 	private static final String CARACTERES_AUTORISES_MAIL = "^[A-Za-z0-9._@-]"; // le - doit être à la fin ou au début
@@ -46,7 +46,7 @@ public class ServletSinscrire extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(IHM).forward(request, response);
+		this.getServletContext().getRequestDispatcher(SINSCRIRE).forward(request, response);
 	}
 
 	/**
