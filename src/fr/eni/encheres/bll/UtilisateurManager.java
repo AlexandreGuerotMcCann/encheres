@@ -38,7 +38,7 @@ public class UtilisateurManager {
 	public Utilisateur ajoutUtilisateur(String mdp, String pseudo, String nom, String prenom, String mail,
 			String telephone, String rue, String codePostal, String city) throws BusinessException {
 
-		BusinessException businessException = new BusinessException();
+	
 		Utilisateur utilisateur = new Utilisateur();
 		utilisateur.setPseudo(pseudo);
 		utilisateur.setNom(nom);
