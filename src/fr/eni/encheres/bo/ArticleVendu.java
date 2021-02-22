@@ -19,6 +19,10 @@ public class ArticleVendu {
 			
 		}
 		
+		public ArticleVendu(int noArticle, String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres, int miseAPrix, int prixVente, String etatVente) {
+			
+		}
+		
 	// Getter et Setter		
 /**
 	 * @return the noArticle
