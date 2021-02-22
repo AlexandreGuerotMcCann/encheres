@@ -41,7 +41,7 @@ public class ServletAccueil extends HttpServlet {
 //		}   //(sans display du bouton déconnexion)
 //		
 //		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response ); // OK A GARDER
-//	}
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
