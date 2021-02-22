@@ -14,4 +14,6 @@ public interface EncheresDAO {
 
 	void supprimerEnchere(int no_enchere) throws BusinessException;
 
+	void modifierEnchere(Enchere enchere) throws BusinessException;
+
 }
