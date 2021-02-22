@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 public class ServletDeconnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	public static final String DECONNEXION = "/WEB-INF/deconnexion.jsp";
+	public static final String ACCUEIL = "/WEB-INF/accueil.jsp";
        
 
 	/**
@@ -26,7 +26,7 @@ public class ServletDeconnexion extends HttpServlet {
 		session.invalidate();
 		// ou HttpServletRequest.getSession().invalidate()
 		// response.sendRedirect(request.getContextPath());
-		this.getServletContext().getRequestDispatcher(DECONNEXION).forward(request, response);
+		this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
 	}
 
 	
