@@ -27,7 +27,7 @@
 	
 	
 	
-		<h2>Nouvelle Vente</h2>
+		<h2 class="newVente">Nouvelle Vente</h2>
 	
 	<div class="ajoutVente">
 	
@@ -49,7 +49,7 @@
 		<label>Fin de l'enchère: <input type="date"></label>
 		
 	
-		<label>Retrait: </label> <br>
+		<label class="retrait">Retirer un Article: </label> <br>
 		<label>Rue: <input style="text"></label>
 		<label>Code postal: <input style="text"></label>
 		<label>Ville: <input style="text"></label>
