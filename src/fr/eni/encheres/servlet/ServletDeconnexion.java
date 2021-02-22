@@ -27,7 +27,6 @@ public class ServletDeconnexion extends HttpServlet {
 		//session = request.getSession(false); // on vérifie bien que la session est invalidée
 		//response.getWriter().println("Session : " + session); // test
 		// ou HttpServletRequest.getSession().invalidate()
-
 		// response.sendRedirect(request.getContextPath());
 		this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
 

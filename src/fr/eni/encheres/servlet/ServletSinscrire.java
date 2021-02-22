@@ -107,11 +107,31 @@ public class ServletSinscrire extends HttpServlet {
 //        	clé "userTest" pour le jsp:useBean page accueuil
 			session.setAttribute("userTest", utilisateur);
 //        	clé "utilisateur" pour l'expression Language page accueil
+<<<<<<< HEAD
 			session.setAttribute("utilisateur", utilisateur);
 			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
 		}}
 
+=======
+															session.setAttribute("utilisateur", utilisateur);
+															rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+															rd.forward(request, response);
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+//Com pour commit
+>>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 		catch (Exception e) {
 			e.printStackTrace();
 
