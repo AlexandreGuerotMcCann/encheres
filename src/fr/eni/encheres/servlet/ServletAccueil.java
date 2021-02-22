@@ -38,7 +38,7 @@ public class ServletAccueil extends HttpServlet {
 //		else 
 //		{
  //   		this.getServletContext().getRequestDispatcher("/ServletAccueilDeconnecte").forward(request, response); // Sinon on go a l'accueil en mode déconnecté
-//		} //(sans display du bouton déconnexion)
+//		}   //(sans display du bouton déconnexion)
 		
 		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response ); // OK A GARDER
 	}
