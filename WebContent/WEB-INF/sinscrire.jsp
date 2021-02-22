@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-	<%@page import="fr.eni.encheres.servlet.ServletSinscrire"%>
+
+<%@page import="fr.eni.encheres.servlet.ServletSinscrire"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +27,9 @@
 			String erreur = (String) request.getAttribute("erreur");
 			if (erreur != null) {
 			%>
-<%out.print(erreur);%>
+			<%
+			out.print(erreur);
+			%>
 			<%
 			}
 			%>
@@ -55,10 +57,13 @@
 				type="text" id="codePostal" name="codePostal" placeholder="35000"
 				required min="5" maxlength="10" size="15"> <label for="city">Ville:
 			</label> <input type="text" id="city" name="city" required maxlength="30"
-				size="15"> <a href="accueil" class="button"><input
-				type="button" class="button" name="annuler" value="annuler" /></a> <a
-				href="ServletAccueil" class="button"><input type="submit"
-				class="button" name="sinscrire" value="s'inscrire" /></a>
+				size="15"> <a href="accueil" class="button"> <input
+				type="button" class="button" name="annuler" value="annuler" /></a> 
+				
+				
+			<button class="button 
+				type="submit"
+				name="sinscrire" > S'inscrire</button>
 		</div>
 
 	</form>
