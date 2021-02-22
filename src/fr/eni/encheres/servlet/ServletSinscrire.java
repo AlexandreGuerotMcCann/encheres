@@ -39,7 +39,7 @@ public class ServletSinscrire extends HttpServlet {
 	private static final String CARACTERES_AUTORISES_MAIL = "^[A-Za-z0-9._@-]"; // le - doit être à la fin ou au début
 																				// de
 	// l'expression régulière
-
+ 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)

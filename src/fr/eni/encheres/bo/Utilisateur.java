@@ -15,7 +15,7 @@ public class Utilisateur {
 	private int credit;
 	private boolean administrateur; // Si oui ou non est administrateur
 
-	// Constructeur sans paramètres
+	// Constructeur sans paramètres  
 	public Utilisateur() {
 
 	}
