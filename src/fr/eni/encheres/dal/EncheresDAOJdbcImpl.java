@@ -83,7 +83,7 @@ public Enchere selectByNoEnchere(int no_utilisateur) throws BusinessException {
 }
 
 
-public void ajoutEnchere(Enchere enchere) throws BusinessException {
+public void ajoutEnchere (Enchere enchere) {
 	// TODO Auto-generated method stub
 	ResultSet rs;
 
@@ -100,7 +100,7 @@ public void ajoutEnchere(Enchere enchere) throws BusinessException {
 		rqt.close();
 
 	} catch (Exception ex) {
-		throw new BusinessException(CodesErreursDAL.ERREUR_INSERTION);
+		
 	}
 }
 
@@ -109,8 +109,8 @@ public void ajoutEnchere(Enchere enchere) throws BusinessException {
 
 public void supprimerEnchere(int no_enchere) throws BusinessException {
 	try (Connection connection = ConnectionProvider.getConnection()) {
-		PreparedStatement pStatement = connection.prepareStatement(DELETE_ENCHERE); // + Voir si delete avec pseudo
-																					// aussi
+		PreparedStatement pStatement = connection.prepareStatement(DELETE_ENCHERE);
+																				
 		pStatement.setInt(1, no_enchere);
 		pStatement.executeUpdate();
 	} catch (SQLException ex) {
