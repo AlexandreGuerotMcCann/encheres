@@ -27,9 +27,9 @@ public class UtilisateurManager {
 		return daoUtilisateur.selectByPseudo(pseudo);
 	}
 
-	public Utilisateur retournerUtilisateurParId(int id) throws BusinessException {
-		return daoUtilisateur.selectById(id);
-	}
+//	public Utilisateur retournerUtilisateurParId(int id) throws BusinessException {
+//		return daoUtilisateur.selectById(id);
+//	}
 
 	public List<Utilisateur> ListeUtilisateurs() throws BusinessException {
 		return daoUtilisateur.selectAll();
@@ -70,6 +70,8 @@ public class UtilisateurManager {
 
 //Méthode à tester /!\ => à lier avec pageModifierProfil => bouton "Enregistrer" (cf.maquette p.7 & 8/13)
 	public void modificationUtilisateur(Utilisateur utilisateur) throws BusinessException {
+		
+		
 		this.daoUtilisateur.modifierUtilisateur(utilisateur);
 	}
 
