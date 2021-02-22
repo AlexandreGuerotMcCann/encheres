@@ -28,7 +28,7 @@
 			if (erreur != null) {
 			%>
 			<%
-			out.print(erreur);
+			out.print(erreur); 
 			%>
 			<%
 			}

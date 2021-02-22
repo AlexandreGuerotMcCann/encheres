@@ -66,7 +66,7 @@
 			<span class="checkbox"><input type="checkbox" class="checkbox"> Ventes terminées</span>
 		</div>
 	
-    <div class="wrapper4" style="float:right;"> 
+    <div class="wrapper4" style="float:right;">  
 			<label>Filtres : </label> <br> <input id="searchsize" type="text" placeholder="Search.."> <br>
 			<label>Catégories: </label> <select id="categorie" name="categorie">
 
