@@ -64,9 +64,9 @@
 			<label for="city">Ville: </label>
 			<input type="text" id="city" name="city" required maxlength="30" size="15"> 
 			 
-			<button class="button" name="annuler" onclick="ServletAccueil">Annuler</button>
+			<button class="button" type="button" name="annuler" onclick="window.location.href='http://localhost:8080/projetEncheres/accueil';"> Annuler</button>
 			
-			<button class="button" type="submit" name="sinscrire" onclick="ServletAccueil" > S'inscrire</button>
+			<button class="button" type="submit" name="sinscrire" onclick="ServletSinscrire" > S'inscrire</button>
 
 
 		</div>
