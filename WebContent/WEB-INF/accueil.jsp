@@ -53,8 +53,6 @@
 	<br>
 	<form>
 	
-
-
 		<div>
 		
 		<div class="wrapper3" style="float:left;">
@@ -74,9 +72,8 @@
 				type="checkbox" class="checkbox"> Ventes non débutées</span> <span class="checkbox"><input
 				type="checkbox" class="checkbox"> Mes enchères remportées</span> <span class="checkbox"><input
 				type="checkbox" class="checkbox"> Ventes terminées</span>
-
-
-</div>
+	</div>
+	
     <div class="wrapper4" style="float:right;">
 			<label>Filtres : </label> <br> <input id="searchsize" type="text" placeholder="Search.."> <br>
 			<label>Catégories: </label> <select id="categorie" name="categorie">
@@ -88,12 +85,12 @@
 			</select> <span><input type="radio"  name="achats" />Achats</span>
 			<span><input type="radio"  name="achats" />Ventes</span>
 
-			<span class="checkbox"><input type="checkbox" id="checkbox"> Enchères ouvertes</span> <span class="checkbox"><input
-				type="checkbox" id="checkbox"> Mes Ventes en cours</span> <span class="checkbox"><input
-				type="checkbox" > Mes enchères en cours</span> <span class="checkbox"><input
-				type="checkbox" class="checkbox"> Ventes non débutées</span> <span class="checkbox"><input
-				type="checkbox" class="checkbox"> Mes enchères remportées</span> <span class="checkbox"><input
-				type="checkbox" class="checkbox"> Ventes terminées</span>
+			<span class="checkbox"><input type="checkbox" id="checkbox"> Enchères ouvertes</span> 
+			<span class="checkbox"><input type="checkbox" id="checkbox"> Mes Ventes en cours</span> 
+			<span class="checkbox"><input type="checkbox" > Mes enchères en cours</span> 
+			<span class="checkbox"><input type="checkbox" class="checkbox"> Ventes non débutées</span> 
+			<span class="checkbox"><input type="checkbox" class="checkbox"> Mes enchères remportées</span> 
+			<span class="checkbox"><input type="checkbox" class="checkbox"> Ventes terminées</span>
 
 		</div>
 		</div>
