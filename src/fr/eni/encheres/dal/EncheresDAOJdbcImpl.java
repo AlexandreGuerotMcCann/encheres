@@ -130,10 +130,7 @@ public void modifierEnchere (Enchere enchere) throws BusinessException {
 		pStatement.setInt(3, enchere.getMontant_enchere());
 		pStatement.setInt(4, enchere.getNoArticle());
 		pStatement.setInt(5, enchere.getNoUtilisateur());
-		 // Pas sûre de toucher au "no_utilisateur"
-		// Com de camille : je ne pense pas car c'est une PK en BDD :)
-		// Com de Sandrine : Bien reçu ! Merci pour l'explication, du coup il faudra
-		// bien la supprimer aussi dans la constante UPDATE_USER
+		
 		pStatement.executeUpdate();
 	} catch (SQLException ex) {
 
