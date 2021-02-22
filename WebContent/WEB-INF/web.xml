@@ -11,6 +11,7 @@
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
+		
 	</welcome-file-list>
 
 	<servlet>
@@ -21,5 +22,13 @@
 		<servlet-name>accueil</servlet-name>
 		<url-pattern>/accueil</url-pattern>
 	</servlet-mapping> 
-
+	
+	<servlet>
+		<servlet-name>s'inscrire</servlet-name>
+		<jsp-file>/WEB-INF/sinscrire.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>s'inscrire</servlet-name>
+		<url-pattern>/sinscrire</url-pattern>
+	</servlet-mapping> 
 </web-app>
