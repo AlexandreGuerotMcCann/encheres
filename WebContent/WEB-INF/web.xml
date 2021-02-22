@@ -20,6 +20,6 @@
 	<servlet-mapping>
 		<servlet-name>accueil</servlet-name>
 		<url-pattern>/accueil</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> 
 
 </web-app>

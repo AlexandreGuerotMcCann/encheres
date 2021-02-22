@@ -4,7 +4,7 @@ import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
-// BusinessException = Erreur liées aux données du projets incomplètes ou manquantes 
+// BusinessException = Erreur liées aux données du projets incomplètes ou manquantes  
 public class BusinessException extends Exception {
 	private List<Integer> listeErreurs;
 

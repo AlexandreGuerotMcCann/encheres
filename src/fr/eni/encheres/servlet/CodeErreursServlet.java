@@ -6,3 +6,4 @@ public abstract class CodeErreursServlet {
 	public static final int ERREUR_AUTHENTIFICATION= 30000;
 
 }
+ 

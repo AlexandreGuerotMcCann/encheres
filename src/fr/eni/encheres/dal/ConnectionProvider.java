@@ -15,7 +15,7 @@ abstract class ConnectionProvider {
 
 	/**
 	 * Au chargement de la classe, la DataSource est recherchée dans l'arbre JNDI
-	 */
+	 */  
 	static {
 //		Création d'un objet de type context permettant de rechercher dans l'arbre JNDI ??
 		Context context;

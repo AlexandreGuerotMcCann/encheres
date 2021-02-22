@@ -19,7 +19,7 @@ import fr.eni.encheres.bll.UtilisateurManager;
 import fr.eni.encheres.bo.Utilisateur;
 
 /**
- * Servlet implementation class servletConnexion
+ * Servlet implementation class servletConnexion 
  */
 @WebServlet("/ServletConnexion")
 public class ServletConnexion extends HttpServlet {

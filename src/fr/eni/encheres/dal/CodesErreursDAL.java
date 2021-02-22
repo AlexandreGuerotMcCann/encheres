@@ -21,4 +21,4 @@ public abstract class CodesErreursDAL {
 	public static final int ERREUR_ID = 10006;
 //Aucun utilisateur enregistré en BDD
 	public static final int ERREUR_AUCUN_UTILISATEUR = 10007;
-}
+} 

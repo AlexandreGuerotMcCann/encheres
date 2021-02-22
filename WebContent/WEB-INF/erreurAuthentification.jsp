@@ -12,6 +12,6 @@
 <body>
 Erreur erreur
 </body>
-
+ 
 <footer> Copyright 2021 des fifous du net © </footer> 
 </html>
