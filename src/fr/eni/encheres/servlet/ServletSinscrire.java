@@ -34,7 +34,6 @@ public class ServletSinscrire extends HttpServlet {
 	public static final String CODE_POSTAL = "codePostal";
 	public static final String CITY = "city";
 	public static final String SINSCRIRE = "/WEB-INF/sinscrire.jsp";
-										
 
 	private static final String ALPHANUMERIQUE = "^[A-Za-z0-9]";
 	private static final String CARACTERES_AUTORISES_MAIL = "^[A-Za-z0-9._@-]"; // le - doit être à la fin ou au début
@@ -122,9 +121,7 @@ public class ServletSinscrire extends HttpServlet {
 					}
 				}
 			}
-		}
-//Com pour commit
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			try {
 				if (validationPseudoBDD(pseudo) == true) {
@@ -141,43 +138,47 @@ public class ServletSinscrire extends HttpServlet {
 				if (validationEmail(mail) == false) {
 					request.setAttribute("Erreur", "Cet email est invalide");
 
-				} if (validationTelephoneBDD(telephone) == true) {
+				}
+				if (validationTelephoneBDD(telephone) == true) {
 					request.setAttribute("Erreur", "Ce numéro de téléphone est déjà associé à un compte");
 
-				} if (validationEmail(mail) == false) {
+				}
+				if (validationEmail(mail) == false) {
 					request.setAttribute("Erreur", "Cet email est invalide");
 
-				} if (validationMDP(mdp, confirmMdp) == false) {
+				}
+				if (validationMDP(mdp, confirmMdp) == false) {
 					request.setAttribute("Erreur",
 							"Les mots de passe ne sont pas identiques (mininimum 8 caractères. Seules les lettres et chiffres sont autorisés.");
 
-				} if (validationNom(nom) == false) {
+				}
+				if (validationNom(nom) == false) {
 					request.setAttribute("Erreur", "Votre nom doit contenir entre 2 et 30 caractères");
 
-				}if (validationPrenom(prenom) == false) {
+				}
+				if (validationPrenom(prenom) == false) {
 					request.setAttribute("Erreur", "Votre prénom doit contenir entre 2 et 30 caractères");
 
-				} if (validationRue(rue) == false) {
+				}
+				if (validationRue(rue) == false) {
 					request.setAttribute("Erreur", "la rue doit contenir moins de 30 caractères");
 
-				}  if (validationCodePostal(codePostal) == false) {
+				}
+				if (validationCodePostal(codePostal) == false) {
 					request.setAttribute("Erreur", "Le code postal doit contenir moins de 10 caractères");
 
-				}  if (validationVille(city) == false) {
+				}
+				if (validationVille(city) == false) {
 					request.setAttribute("Erreur", "La ville doit contenir moins de 50 caractères.");
 
 				}
-				response.sendRedirect("/WEB-INF/sinscrire.jsp");
-//				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-				rd.forward(request, response);
+				this.getServletContext().getRequestDispatcher("/WEB-INF/sinscrire.jsp").forward(request, response);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			// Sinon je retourne à la page s'inscrire et j'indique les problèmes:
-			response.sendRedirect("/WEB-INF/sinscrire.jsp");
-//			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-			rd.forward(request, response);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/sinscrire.jsp").forward(request, response);
 		}
 
 	}
