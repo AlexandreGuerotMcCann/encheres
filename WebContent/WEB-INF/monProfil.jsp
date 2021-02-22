@@ -23,9 +23,6 @@
 			<li><a href="ServletMonProfil">Mon profil</a></li>
 			<li><a href="ServletAccueil">Déconnexion</a></li>
 
-
-
-
 		</ul>
 
 	</div>
