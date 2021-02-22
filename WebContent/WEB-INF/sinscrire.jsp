@@ -54,21 +54,20 @@
 				size="15">
 			<label for="codePostal">Code postal: </label> <input
 				type="text" id="codePostal" name="codePostal" placeholder="35000"
-<<<<<<< HEAD
+
 				required min="5" maxlength="10" size="15"> <label for="city">Ville:
 			</label> <input type="text" id="city" name="city" required maxlength="30"
 				size="15"> 
 				<a href="accueil" class="button"><input type="button" class="button" name="annuler" value="annuler" /></a> 
 				<a href="ServletAccueil" class="button"><input type="submit" class="button" name="sinscrire" value="s'inscrire" /></a>
-=======
-				required min="5" maxlength="10" size="15"> 
+
 			<label for="city">Ville:</label><input type="text" id="city" name="city" required maxlength="30"
 				size="15"> 
 			<a href="accueil" class="button"><input
 				type="button" class="button" name="annuler" value="annuler" /></a> 
 			<a href="ServletSinscrire" class="button"><input type="submit"
 				class="button" name="sinscrire" value="s'inscrire" /></a>
->>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
+
 		</div>
 
 	</form>
