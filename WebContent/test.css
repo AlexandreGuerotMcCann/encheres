@@ -13,6 +13,7 @@
 	background-color: aliceblue;
 	opacity: 0.9;
 	border-radius: 4px;
+	
 }
 
 .wrapper2>* {
@@ -29,6 +30,7 @@
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0em;
+
 }
 
 .wrapper>* {
@@ -51,7 +53,7 @@ h2 {
 	background-color: black;
 	border: none;
 	color: white;
-	padding: 15px 32px;
+	padding: 12px 32px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -272,3 +274,6 @@ text-align: center;
   line-height:2em;}
   
   .newVente {margin-top:2%;}
+  
+  
+ 
