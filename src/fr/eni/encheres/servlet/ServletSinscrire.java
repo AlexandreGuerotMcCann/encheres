@@ -71,8 +71,8 @@ public class ServletSinscrire extends HttpServlet {
 		// J'ajoute l'utilisateur
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		try {
-//			if (validationPseudoBDD(pseudo) == false) {
-//
+			if (validationPseudoBDD(pseudo) == false) {
+
 //			else if (validationPseudo(pseudo) == true) {
 //
 //			else if (validationEmailBDD(mail) == false) {
@@ -165,21 +165,21 @@ public class ServletSinscrire extends HttpServlet {
 		}
 
 	}
-//
-//	boolean validationPseudoBDD(String pseudo) throws Exception {
-//		List<String> listePseudoBDD = new ArrayList<String>();
-//		UtilisateurManager utilisateurManager = new UtilisateurManager();
-//		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
-//		for (Utilisateur utilisateur : listeUser) {
-//			listePseudoBDD.add(utilisateur.getEmail());
-//		}
-//		if (listePseudoBDD.contains(pseudo)) {
-//			return true;
-//		} else {
-//			return false;
-//		}
-//	}
-//
+
+	boolean validationPseudoBDD(String pseudo) throws Exception {
+		List<String> listePseudoBDD = new ArrayList<String>();
+		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
+		for (Utilisateur utilisateur : listeUser) {
+			listePseudoBDD.add(utilisateur.getEmail());
+		}
+		if (listePseudoBDD.contains(pseudo)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 //	boolean validationPseudo(String pseudo) {
 //		if (pseudo != null && pseudo.trim().length() > 0 && pseudo.trim().length() < 30
 //				&& pseudo.matches(ALPHANUMERIQUE)) {

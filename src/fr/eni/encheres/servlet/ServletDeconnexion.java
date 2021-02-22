@@ -15,31 +15,25 @@ import javax.servlet.http.HttpSession;
 public class ServletDeconnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	public static final String DECONNEXION = "/WEB-INF/deconnexion.jsp";
+	public static final String ACCUEIL = "/WEB-INF/accueil.jsp";
        
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(); // On récupère la session
+		HttpSession session = request.getSession(true); // On récupère la session 
 		session.invalidate();
 		session = request.getSession(false); // on vérifie bien que la session est invalidée
-		response.getWriter().println("Session : " + session); // test
-		// ou HttpServletRequest.getSession().invalidate()
-		// response.sendRedirect(request.getContextPath()); // pour rediriger vers accueil sans passer par jsp déco
-		//this.getServletContext().getRequestDispatcher(DECONNEXION).forward(request, response);
+		
+		this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
 	}
 
-	
-	// Je n'envoie rien, donc rien dans doPost
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
-
-// parametrer redirection auto vers page accueil
