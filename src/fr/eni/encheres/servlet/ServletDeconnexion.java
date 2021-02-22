@@ -24,27 +24,16 @@ public class ServletDeconnexion extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true); // On récupère la session 
 		session.invalidate();
-		//session = request.getSession(false); // on vérifie bien que la session est invalidée
-		//response.getWriter().println("Session : " + session); // test
-		// ou HttpServletRequest.getSession().invalidate()
-<<<<<<< HEAD
-		// response.sendRedirect(request.getContextPath());
+		session = request.getSession(false); // on vérifie bien que la session est invalidée
+		
 		this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
-=======
-		// response.sendRedirect(request.getContextPath()); // pour rediriger vers accueil sans passer par jsp déco
-		this.getServletContext().getRequestDispatcher(DECONNEXION).forward(request, response);
->>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 	}
 
-	
-	// Je n'envoie rien, donc rien dans doPost
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
-
-// parametrer redirection auto vers page accueil
