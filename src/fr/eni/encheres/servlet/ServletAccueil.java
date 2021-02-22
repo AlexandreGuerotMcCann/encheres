@@ -21,9 +21,6 @@ public class ServletAccueil extends HttpServlet {
 	
 	public static final String ACCUEIL="/WEB-INF/accueil.jsp";
 	
-
-     // NOTE POUR SANDRINE : avec les c : if utilisateur connecté, display bouton Déconnexion + action
-	
 	
 	/** 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

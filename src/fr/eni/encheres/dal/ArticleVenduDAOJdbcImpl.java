@@ -1,4 +1,6 @@
 package fr.eni.encheres.dal;
+
+
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Connection;
@@ -8,26 +10,50 @@ import java.util.List;
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bo.ArticleVendu;
 import fr.eni.encheres.bo.Utilisateur;
+import java.time.LocalDate;
 
 public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
-	
+
 	public class ArticleDAOjdbcimpl {
-		
+
 		private static final String SELECT_BY_NOM_ARTICLE = "SELECT * FROM ARTICLES_VENDUS WHERE nom_article = ?";
 		private static final String SELECT_BY_NO_ARTICLE = "SELECT * FROM ARTICLES_VENDUS";
-		private static final String INSERT = "INSERT INTO ARTICLES_VENDUS (no_article, nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, no_utilisateur, no_catgeorie) VALUES (?,?,?,?,?,?,?,?,?)";		
+		private static final String SELECT_ALL = "SELECT * FROM ARTICLES_VENDUS";
+		private static final String INSERT = "INSERT INTO ARTICLES_VENDUS (nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, no_utilisateur, no_categorie) VALUES (?,?,?,?,?,?,?,?)";
 		private static final String DELETE_ARTICLES_VENDUS = "DELETE FROM ARTICLES_VENDUS where no_article = ?";
-		private static final String UPDATE_ARTICLE_VENDUS = "UPDATE ARTICLES_VENDUS SET articles_vendus = ?, nom_article = ?, description = ?, date_debut_encheres = ?, date_fin_encheres = ?, prix_initial = ?, prix_vente = ?, no_utilisateur = ?, no_categorie = ? WHERE no_article = ?"; // "credit"
-																																																						// et
-		private ArticleVendu ArticleVendu = new ArticleVendu();
-		
-	}
+		private static final String UPDATE_ARTICLE_VENDUS = "UPDATE ARTICLES_VENDUS SET articles_vendus = ?, nom_article = ?, description = ?, date_debut_encheres = ?, date_fin_encheres = ?, prix_initial = ?, prix_vente = ?, no_utilisateur = ?, no_categorie = ? WHERE no_article = ?";
+		private ArticleVendu articleVendu = new ArticleVendu();
 
-	@Override
-	public List<ArticleVendu> selectAll() throws BusinessException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		public List<ArticleVendu> selectAll() throws BusinessException {
+			List<ArticleVendu> listeArticleVendu = new ArrayList<>();
+			try (Connection connection = ConnectionProvider.getConnection()) {
+				PreparedStatement pStatement = connection.prepareStatement(SELECT_ALL);
+
+				ResultSet rs = pStatement.executeQuery();
+				while (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes***
+									// d'utilisateurs
+					articleVendu = new ArticleVendu();
+					articleVendu.setNoArticle(rs.getInt("no_article"));
+					articleVendu.setNomArticle(rs.getString("nom_article"));
+					articleVendu.setDescription(rs.getString("description"));
+					articleVendu.setDateDebutEncheres(rs.getDate("date_debut_encheres"));
+					articleVendu.setDateFinEncheres(rs.getDate("date_fin_encheres"));
+					articleVendu.setMiseAPrix(rs.getInt("prix_initial"));
+					articleVendu.setPrixVente(rs.getInt("prix_vente"));
+					articleVendu.setEtatVente(rs.getString("code_postal"));
+					articleVendu.setEtatVente(rs.getString("code_postal"));
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				BusinessException businessException = new BusinessException();
+				businessException.ajouterErreur(CodesErreursDAL.ERREUR_AUCUN_UTILISATEUR);
+				throw businessException;
+			}
+
+			return listeArticleVendu;
+
+		}
+
 
 	@Override
 	public ArticleVendu selectByNom_Article(String nomArticle) throws BusinessException {
@@ -58,5 +84,3 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-}
