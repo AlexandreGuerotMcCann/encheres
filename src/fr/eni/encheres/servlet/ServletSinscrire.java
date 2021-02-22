@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ServletSinscrire
@@ -99,8 +100,14 @@ public class ServletSinscrire extends HttpServlet {
 			Utilisateur utilisateur = utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone,
 					rue, codePostal, city);
 			utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
-
-			// Si tout se passe bien, je vais vers la page d'accueil
+			HttpSession session = request.getSession();
+			
+//        	clé "user" pour le code java page accueuil
+			session.setAttribute("user", utilisateur);
+//        	clé "userTest" pour le jsp:useBean page accueuil
+			session.setAttribute("userTest", utilisateur);
+//        	clé "utilisateur" pour l'expression Language page accueil
+			session.setAttribute("utilisateur", utilisateur);
 			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
 		}

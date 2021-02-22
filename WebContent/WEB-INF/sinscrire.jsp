@@ -35,35 +35,42 @@
 			%>
 
 			<label for="nickname">Pseudo: </label> <input type="text" id="pseudo"
-				name="pseudo" required maxlength="30" size="15"> <label
-				for="mdp">Mot de passe: </label> <input type="password" id="mdp"
-				name="mdp" required min="8" maxlength="30" size="15"> <label
-				for="mdp">Confirmation Mot de passe: </label> <input type="Password"
+				name="pseudo" required maxlength="30" size="15">
+			<label for="mdp">Mot de passe: </label> <input type="password" id="mdp"
+				name="mdp" required min="8" maxlength="30" size="15"> 
+			<label for="mdp">Confirmation Mot de passe: </label> <input type="Password"
 				id="confirmMdp" name="confirmMdp" required min="8" maxlength="30"
-				size="15"> <label for="name">Nom: </label> <input
-				type="text" id="nom" name="nom" required maxlength="30" size="15">
+				size="15"> 
+			<label for="name">Nom: </label> <input type="text" id="nom" name="nom" required maxlength="30" size="15">
 
 			<label for="prenom">Prénom: </label> <input type="text" id="prenom"
-				name="prenom" required maxlength="30" size="15"> <label
-				for="mail">Email: </label> <input type="email" id="mail" name="mail"
+				name="prenom" required maxlength="30" size="15"> 
+			<label for="mail">Email: </label> <input type="email" id="mail" name="mail"
 				required placeholder="abcd@exemple.fr" maxlength="40" size="25">
 
 
 			<label for="telephone">Téléphone: </label> <input type="tel"
 				id="telephone" name="telephone" placeholder="0123456789"
-				maxlength="15" size="15" required> <label for="rue">Rue:
-			</label> <input type="text" id="rue" name="rue" required maxlength="30"
-				size="15"> <label for="codePostal">Code postal: </label> <input
+				maxlength="15" size="15" required>
+			<label for="rue">Rue: </label> <input type="text" id="rue" name="rue" required maxlength="30"
+				size="15">
+			<label for="codePostal">Code postal: </label> <input
 				type="text" id="codePostal" name="codePostal" placeholder="35000"
 				required min="5" maxlength="10" size="15"> <label for="city">Ville:
-			</label> <input type="text" id="city" name="city" required maxlength="30"
-				size="15"> <a href="accueil" class="button"> <input
+			</label>
+			 <input type="text" id="city" name="city" required maxlength="30"
+				size="15"> <a href="accueil" class="button">
+				<input
 				type="button" class="button" name="annuler" value="annuler" /></a> 
 				
+			
+			
+		
 				
-			<button class="button 
+				<button class="button 
 				type="submit"
 				name="sinscrire" > S'inscrire</button>
+
 		</div>
 
 	</form>
