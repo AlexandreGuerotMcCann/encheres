@@ -60,20 +60,7 @@
 				<label for="city">Ville:
 			</label>
 			 <input type="text" id="city" name="city" required maxlength="30"
-				size="15"> <a href="accueil" class="button">
-				<input
-				required min="5" maxlength="10" size="15"> <label for="city">Ville:
-			</label> <input type="text" id="city" name="city" required maxlength="30"
-				size="15"> 
-				<a href="accueil" class="button"><input type="button" class="button" name="annuler" value="annuler" /></a> 
-				<a href="ServletAccueil" class="button"><input type="submit" class="button" name="sinscrire" value="s'inscrire" /></a>
-
-			<label for="city">Ville:</label><input type="text" id="city" name="city" required maxlength="30"
-				size="15"> 
-				
-			<a href="accueil" class="button"><input
-
-				type="button" class="button" name="annuler" value="annuler" /></a> 
+				size="15"> <input type="button" class="button" name="annuler" value="annuler" /></a> 
 			
 				<button class="button 
 				type="submit"
