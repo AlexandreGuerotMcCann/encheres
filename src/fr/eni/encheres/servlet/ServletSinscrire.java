@@ -110,7 +110,7 @@ public class ServletSinscrire extends HttpServlet {
 			session.setAttribute("utilisateur", utilisateur);
 			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
-		}
+		}}
 
 		catch (Exception e) {
 			e.printStackTrace();
