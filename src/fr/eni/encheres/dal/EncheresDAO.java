@@ -10,4 +10,10 @@ public interface EncheresDAO {
 	List<Enchere> selectAll() throws BusinessException;
 	//todo
 
+	Enchere selectByNoEnchere(int id) throws BusinessException;
+
+	void supprimerEnchere(int no_enchere) throws BusinessException;
+
+	void modifierEnchere(Enchere enchere) throws BusinessException;
+
 }
