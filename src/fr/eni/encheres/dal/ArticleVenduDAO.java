@@ -10,7 +10,7 @@ public interface ArticleVenduDAO {
 	
 	public List<ArticleVendu> selectAll() throws BusinessException;
 	
-	public ArticleVendu selectByNom_Article(String nomArticle) throws BusinessException;
+	public ArticleVendu selectByNomArticle(String nomArticle) throws BusinessException;
 	
 	public void ajoutArticle(ArticleVendu nomArticle) throws BusinessException;
 	
@@ -18,6 +18,8 @@ public interface ArticleVenduDAO {
 	
 	public void modifierArticle(ArticleVendu nomArticle) throws BusinessException;
 	
-	public Utilisateur selectByNoArticle(int noArticle) throws BusinessException;
+	public ArticleVendu selectByNoArticle(int noArticle) throws BusinessException;
+	
+
 
 }

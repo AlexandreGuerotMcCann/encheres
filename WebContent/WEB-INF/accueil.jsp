@@ -1,9 +1,8 @@
 <%@page import="org.apache.catalina.User"%>
 <%@page import="java.rmi.server.RemoteStub"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-  <%@page import="fr.eni.encheres.bo.Utilisateur"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="fr.eni.encheres.bo.Utilisateur"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -21,18 +20,20 @@
 		<ul>
 			<li><a href="ServletEncheres">Enchères</a></li>
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
-			<li><a href="ServletConnexion">Se connecter</a></li>
-			<li><a href="ServletSinscrire">S'inscrire</a></li>
 			
-		<c:if test="${utilisateurConnecte}">	<!-- Si utilisateur connecté, bouton "Se déconnecter" visible et actif -->
+		<c:if test="${empty utilisateur.pseudo}">	<!-- Si utilisateur non connecté, boutons "Se connecter" & "S'inscrire" visibles et actifs -->
+			<li><a href="ServletConnexion">Se connecter</a></li>
+			<li><a href="ServletSinscrire">S'inscrire</a></li>	
+		</c:if>	
+		
+		<c:if test="${!empty utilisateur.pseudo}">	<!-- Si utilisateur connecté, bouton "Mon profil" visible et actif -->
+			<li><a href="ServletMonProfil">Mon profil</a></li>
+		</c:if>	
+		
+		<c:if test="${!empty utilisateur.pseudo}">	<!-- Si utilisateur connecté, bouton "Se déconnecter" visible et actif -->
 			<li><a href="ServletDeconnexion">Se déconnecter</a></li>
 		</c:if>
 			
-		<!--<c:if test="${!empty sessionScope.sessionUtilisateur}"> 
-		<p class="succes">Bonjour!! : ${sessionScope.sessionUtilisateur.pseudo}</p>
-		</c:if> 
-			<li><a href="ServletMonProfil">Mon profil</a></li>
-			<li><a href="ServletAccueil">Déconnexion</a></li>-->	
 		</ul>
 	</div>
 
@@ -44,7 +45,9 @@
 	
 	<br>
 	
-	<div th:if="${param.logout}" class="alert alert-success">Vous vous êtes déconnecté.</div>  <!-- Test pour afficher un message lors de la déconnexion -->
+	<c:if test="${empty utilisateur.pseudo}">	<!-- Test pour afficher un message si utilisateur non connecté -->
+		<p>Vous n'êtes pas connecté.</p>
+	</c:if>  
 	
 	<form>
 		<div>

@@ -13,6 +13,8 @@ public class ArticleVendu {
 	private int miseAPrix;
 	private int prixVente;
 	private String etatVente;
+	private Utilisateur utilisateur;
+	private Categorie categorie;
 	
 	
 	// Constructeur sans paramètres
@@ -20,7 +22,7 @@ public class ArticleVendu {
 			
 		}
 		
-		public ArticleVendu(int noArticle, String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres, int miseAPrix, int prixVente, String etatVente) {
+		public ArticleVendu(int noArticle, String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres, int miseAPrix, int prixVente, String etatVente, Utilisateur utilisateur, Categorie categorie) {
 			
 		}
 		
@@ -135,6 +137,22 @@ public class ArticleVendu {
 	 */
 	public void setEtatVente(String etatVente) {
 		this.etatVente = etatVente;
+	}
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
 	}
 
 
