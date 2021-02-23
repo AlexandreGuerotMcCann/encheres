@@ -15,8 +15,7 @@ import java.time.LocalDate;
 
 public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 
-	public class ArticleDAOjdbcimpl {
-
+	p
 		private static final String SELECT_BY_NOM_ARTICLE = "SELECT * FROM ARTICLES_VENDUS WHERE nom_article = ?";
 		private static final String SELECT_BY_NO_ARTICLE = "SELECT * FROM ARTICLES_VENDUS";
 		private static final String SELECT_ALL = "SELECT * FROM ARTICLES_VENDUS";
@@ -94,7 +93,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 
 		return articleVendu;
 	}
-	}
+	
 	
 	@Override
 	public Utilisateur selectByNoArticle(int noArticle) throws BusinessException {
@@ -145,5 +144,16 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 		
 	}
 
+
+
+	@Override
+	public List<ArticleVendu> selectAll() throws BusinessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	
 
 }
