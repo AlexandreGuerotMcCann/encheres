@@ -1,5 +1,6 @@
 package fr.eni.encheres.bll;
 
+import java.util.Date;
 import java.util.List;
 
 import fr.eni.encheres.BusinessException;
@@ -32,4 +33,24 @@ public class ArticleManager {
 		return daoArticleVendu.selectAll();
 	}
 
+	
+	public ArticleVendu ajoutArticleVendu (String nomArticle, String description, Date dateDebutEnchere, Date dateFinEnchere, int miseAPrix, int prixVente, int no_utilisateur, int noCategorie) throws BusinessException {
+
+		
+		ArticleVendu articleVendu = new ArticleVendu();
+		articleVendu.setNomArticle(nomArticle);;
+		articleVendu.setDescription(description);
+		articleVendu.setDateDebutEncheres(dateDebutEnchere);
+		articleVendu.setDateFinEncheres(dateFinEnchere);
+		articleVendu.setMiseAPrix(miseAPrix);
+		articleVendu.setPrixVente(prixVente);
+		articleVendu.getUtilisateur().getNoUtilisateur();
+		articleVendu.setCategorie(noCategorie);
+		
+		
+		
+		this.daoArticleVendu.ajoutArticle(articleVendu);
+
+		return articleVendu;
+	}
 }
