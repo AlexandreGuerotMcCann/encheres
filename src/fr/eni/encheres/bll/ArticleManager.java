@@ -36,7 +36,11 @@ public class ArticleManager {
 	}
 
 	
+<<<<<<< HEAD
+	public ArticleVendu ajoutArticleVendu (String nomArticle, String description, Date dateDebutEnchere, Date dateFinEnchere, int miseAPrix, int prixVente, int no_utilisateur, int no_categorie) throws BusinessException {
+=======
 	public ArticleVendu ajoutArticleVendu (String nomArticle, String description, Date dateDebutEnchere, Date dateFinEnchere, int miseAPrix, int prixVente, Utilisateur noUtilisateur, Categorie noCategorie) throws BusinessException {
+>>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 
 		
 		ArticleVendu articleVendu = new ArticleVendu();
@@ -47,7 +51,11 @@ public class ArticleManager {
 		articleVendu.setMiseAPrix(miseAPrix);
 		articleVendu.setPrixVente(prixVente);
 		articleVendu.getUtilisateur().getNoUtilisateur();
+<<<<<<< HEAD
+		articleVendu.setCategorie(no_categorie);
+=======
 		articleVendu.getCategorie().getNoCategorie();
+>>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 		
 		
 		
