@@ -1,5 +1,6 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="java.util.List"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -21,6 +22,10 @@
 	<h2>Création d'un nouveau compte</h2>
 	
 	<!-- Code pour afficher les erreurs En cas de mauvaise saisie -->
+	
+	<c:if test="${ListeErreurInscription }"></c:if>
+	
+	
 	<%
 	List<String> ListeErreurInscription = (List<String>) request.getAttribute("listeErreur");
 	if (ListeErreurInscription != null) {
