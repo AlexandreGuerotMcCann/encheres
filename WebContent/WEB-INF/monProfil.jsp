@@ -27,9 +27,9 @@
 
 	</div>
 
-	<h1>Mes informations</h1>
+	<h1 class="titre" >Mes informations</h1>
 	<div class="rechercheProfil">
-		<input id="searchsize" type="text" placeholder="Rechercher un profil par pseudo">
+		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo">
 	</div>
 	<div class="infosUtilisateur">
 
@@ -42,9 +42,10 @@
 		<p>Rue : ${utilisateur.rue}</p>
 		<p>Code postal : ${utilisateur.code_postal}</p>
 		<p>Ville : ${utilisateur.ville}</p>
+		  <a href="#" class="button">Suppression de compte</a>
 	</div>
 
-	<div class="suppressionCompte">Suppression de compte</div>
+	
 </body>
 
 <footer> Copyright 2021 des fifous du net © </footer>

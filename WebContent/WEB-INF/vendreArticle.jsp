@@ -27,9 +27,9 @@
 	
 	
 	
-		<h2>Nouvelle Vente</h2>
+		<h2 class="newVente">Nouvelle Vente</h2>
 	
-	<div class="nouvelleVente">
+	<div class="ajoutVente">
 	
 		<label>Article: <input style="text"></label>
 		<label>Description: <input style="text" class="descriptionArticle"></label>
@@ -43,27 +43,26 @@
 			    <option value="#">#</option>
 				</select>
 		</label>
-		<label>Photo de l'article: <input></label>
-		<label>Mise à prix: <input style="text"></label>
-		<label>Début de l'enchère: <input style="date"></label>
-		<label>Fin de l'enchère: <input style="date"></label>
+		<label>Photo de l'article: <input type="file" id="avatar" name="avatar" style="color:transparent"   ; accept="image/png, image/jpeg" /></label>
+		<label>Mise à prix: <input type="number"></label>
+		<label>Début de l'enchère: <input type="date"></label>
+		<label>Fin de l'enchère: <input type="date"></label>
 		
-	</div>
 	
-	<div class="retrait">
-		<a>Retrait: </a>
+		<label class="retrait">Retirer un Article: </label> <br>
 		<label>Rue: <input style="text"></label>
 		<label>Code postal: <input style="text"></label>
 		<label>Ville: <input style="text"></label>
 
 	
+	<a href="ServletAccueil" class="button3"><input type="submit" class="button" value="Annuler"> </a>
+        <a href="ServletMesVentes" class="button3"> <input type="submit" class="button" value="Enregistrer"></a>
 	
 	</div>
 
-	<a href="ServletMesVentes" class="button"> <input type="submit" class="button" value="Enregistrer"></input></a>
-	<a href="ServletAccueil" class="button"> <input type="submit" class="button" value="Annuler"></input></a>
+	
 
 </body>
 
-	<footer> Copyright 2021 des fifous du net © </footer> 
+	
 </html>

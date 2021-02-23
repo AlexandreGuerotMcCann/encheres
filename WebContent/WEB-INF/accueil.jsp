@@ -23,7 +23,10 @@
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
 			<li><a href="ServletConnexion">Se connecter</a></li>
 			<li><a href="ServletSinscrire">S'inscrire</a></li>
+			
+		<c:if test="${utilisateurConnecte}">	<!-- Si utilisateur connecté, bouton "Se déconnecter" visible et actif -->
 			<li><a href="ServletDeconnexion">Se déconnecter</a></li>
+		</c:if>
 			
 		<!--<c:if test="${!empty sessionScope.sessionUtilisateur}"> 
 		<p class="succes">Bonjour!! : ${sessionScope.sessionUtilisateur.pseudo}</p>
@@ -40,6 +43,8 @@
 	<h2>Liste des enchères</h2>
 	
 	<br>
+	
+	<div th:if="${param.logout}" class="alert alert-success">Vous vous êtes déconnecté.</div>  <!-- Test pour afficher un message lors de la déconnexion -->
 	
 	<form>
 		<div>
