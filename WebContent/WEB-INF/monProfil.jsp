@@ -10,7 +10,7 @@
 <!-- FEUILLE CSS DE TEST -->
 <link rel="stylesheet" type="text/css"
 	href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-<title>Profil de ${pseudo}</title>
+<title>Profil de ${utilisateur.pseudo}</title>
 </head>
 <body>
 
@@ -25,7 +25,7 @@
 
 	<h1 class="titre" >Mes informations</h1>
 	<div class="rechercheProfil">
-		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo">
+		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo...">
 	</div>
 	<div class="infosUtilisateur">
 
