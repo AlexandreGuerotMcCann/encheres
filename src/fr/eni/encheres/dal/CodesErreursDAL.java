@@ -37,5 +37,15 @@ public abstract class CodesErreursDAL {
 	public static final int ERREUR_SUPPRESSION_ARTICLE = 10012;
 	
 // Erreur lors de la mise à jour du compte de l'utilisateur
-	public static final int ERREUR_MISE_A_JOUR_ARTICLE = 10013;	
+	public static final int ERREUR_MISE_A_JOUR_ARTICLE = 10013;
+
+	public static final int ERREUR_AUCUNE_ENCHERES = 10014;
+
+	public static final int ERREUR_NO_ENCHERE = 10015;
+
+	public static final int ERREUR_SUPPRESSION_ENCHERE =10016;
+
+	public static final int ERREUR_MISE_A_JOUR_ENCHERE = 10017;
+
+	public static final int ERREUR_AJOUT_ENCHERE = 10018;	
 } 

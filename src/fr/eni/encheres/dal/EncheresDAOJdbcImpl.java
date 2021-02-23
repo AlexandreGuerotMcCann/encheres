@@ -44,7 +44,7 @@ public class EncheresDAOJdbcImpl implements EncheresDAO {
 			ex.printStackTrace();
 			BusinessException businessException = new BusinessException();
 			//CODE ERREUR A MODIFIER ET VERIFIER
-			businessException.ajouterErreur(CodesErreursDAL.ERREUR_AUCUN_UTILISATEUR);
+			businessException.ajouterErreur(CodesErreursDAL.ERREUR_AUCUNE_ENCHERES);
 			throw businessException;
 		}
 
@@ -72,7 +72,7 @@ public Enchere selectByNoEnchere(int no_utilisateur) throws BusinessException {
 	} catch (SQLException ex) {
 		ex.printStackTrace();
 		BusinessException businessException = new BusinessException();
-		businessException.ajouterErreur(CodesErreursDAL.ERREUR_ID);
+		businessException.ajouterErreur(CodesErreursDAL.ERREUR_NO_ENCHERE);
 		
 		//ERREUR A MODIFIER/VERIFIER
 		
@@ -82,24 +82,30 @@ public Enchere selectByNoEnchere(int no_utilisateur) throws BusinessException {
 }
 
 
-public void ajoutEnchere (Enchere enchere) {
+public void ajoutEnchere (Enchere enchere) throws BusinessException {
 	// TODO Auto-generated method stub
 	ResultSet rs;
 
-	try (Connection connection = ConnectionProvider.getConnection()) {
-		PreparedStatement rqt = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
-		rqt.setInt(1, enchere.getNoEnchere());
-		rqt.setDate(2, enchere.getDateEnchere());
-		rqt.setInt(3, enchere.getMontant_enchere());
-		rqt.setInt(4, enchere.getNoArticle());
-		rqt.setInt(5, enchere.getNoUtilisateur());
-		
+	try {
+		try (Connection connection = ConnectionProvider.getConnection()) {
+			PreparedStatement rqt = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
+			rqt.setInt(1, enchere.getNoEnchere());
+			rqt.setDate(2, enchere.getDateEnchere());
+			rqt.setInt(3, enchere.getMontant_enchere());
+			rqt.setInt(4, enchere.getNoArticle());
+			rqt.setInt(5, enchere.getNoUtilisateur());
+			
 
-		rqt.executeUpdate();
-		rqt.close();
+			rqt.executeUpdate();
+			rqt.close();
 
-	} catch (Exception ex) {
-		
+		} catch (Exception ex) {
+			throw new BusinessException(CodesErreursDAL.ERREUR_AJOUT_ENCHERE);
+			
+		}
+	} catch (BusinessException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
 }
 
@@ -115,7 +121,7 @@ public void supprimerEnchere(int no_enchere) throws BusinessException {
 	} catch (SQLException ex) {
 		// ex.printStackTrace();
 		BusinessException businessException = new BusinessException();
-		businessException.ajouterErreur(CodesErreursDAL.ERREUR_SUPPRESSION_UTILISATEUR);
+		businessException.ajouterErreur(CodesErreursDAL.ERREUR_SUPPRESSION_ENCHERE);
 		throw businessException;
 	}
 }
@@ -134,7 +140,7 @@ public void modifierEnchere (Enchere enchere) throws BusinessException {
 	} catch (SQLException ex) {
 
 		BusinessException businessException = new BusinessException();
-		businessException.ajouterErreur(CodesErreursDAL.ERREUR_MISE_A_JOUR_UTILISATEUR);
+		businessException.ajouterErreur(CodesErreursDAL.ERREUR_MISE_A_JOUR_ENCHERE);
 		throw businessException;
 	}
 }

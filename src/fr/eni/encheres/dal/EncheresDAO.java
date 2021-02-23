@@ -16,6 +16,6 @@ public interface EncheresDAO {
 
 	public void modifierEnchere(Enchere enchere) throws BusinessException;
 
-	void ajoutEnchere(Enchere enchere);
+	void ajoutEnchere(Enchere enchere) throws BusinessException;
 
 }
