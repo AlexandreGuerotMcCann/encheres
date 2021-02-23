@@ -38,7 +38,7 @@
 		<p>Rue : ${utilisateur.rue}</p>
 		<p>Code postal : ${utilisateur.codePostal}</p>
 		<p>Ville : ${utilisateur.ville}</p>
-		
+		 
 		<br>
 		
 		  <a href="#" class="button">Modifier</a>
