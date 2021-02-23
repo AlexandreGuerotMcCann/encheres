@@ -72,9 +72,7 @@ public class ServletSinscrire extends HttpServlet {
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		try {
 			if (validationPseudoBDD(pseudo) == false) {
-//
-//				if (validationPseudo(pseudo) == true) {
-//
+
 //					if (validationEmailBDD(mail) == false) {
 //
 //						if (validationEmail(mail) == true) {
@@ -129,14 +127,14 @@ public class ServletSinscrire extends HttpServlet {
 			e.printStackTrace();
 			try {
 				if (validationPseudoBDD(pseudo) == true) {
-					listeErreursInscription.add("Ce Pseudo existe déjà");
+					request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
 
 					
 				}
-//				if (validationPseudo(pseudo) == false) {
-//					request.setAttribute("Erreur",
-//							"Ce Pseudo est invalide. Il doit contenir moins de 30 caractères et contenir uniquement des lettres et des chiffres");
-//				}
+				if (validationPseudo(pseudo) == false) {
+					request.setAttribute("pseudo", "Ce Pseudo est invalide. Il doit contenir moins de 30 caractères et contenir uniquement des lettres et des chiffres");
+
+				}
 //				if (validationEmailBDD(mail) == true) {
 //					request.setAttribute("Erreur", "Cet email est déjà associé à un compte");
 //
@@ -170,17 +168,18 @@ public class ServletSinscrire extends HttpServlet {
 //					request.setAttribute("Erreur", "La ville doit contenir moins de 50 caractères.");
 //
 //				}
-				listeErreursInscription.add("Ce Pseudo existe déjà");
-				request.setAttribute("listeErreur", listeErreursInscription);
+				request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
+				
+				
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
-				e1.printStackTrace();
+				e1.printStackTrace();// Sinon je retourne à la page s'inscrire et j'indique les problèmes:
+				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+				rd.forward(request, response);
 			}
-			// Sinon je retourne à la page s'inscrire et j'indique les problèmes:
-			rd = request.getRequestDispatcher("/WEB-INF/connexion.jsp");
-			rd.forward(request, response);
+			
 		}
 
 	}
