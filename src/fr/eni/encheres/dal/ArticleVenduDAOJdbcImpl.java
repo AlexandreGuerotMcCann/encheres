@@ -1,21 +1,20 @@
 package fr.eni.encheres.dal;
 
 
-import java.sql.SQLException;
-import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bo.ArticleVendu;
 import fr.eni.encheres.bo.Categorie;
 import fr.eni.encheres.bo.Utilisateur;
-import java.time.LocalDate;
 
 public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 
-	p
 		private static final String SELECT_BY_NOM_ARTICLE = "SELECT * FROM ARTICLES_VENDUS WHERE nom_article = ?";
 		private static final String SELECT_BY_NO_ARTICLE = "SELECT * FROM ARTICLES_VENDUS";
 		private static final String SELECT_ALL = "SELECT * FROM ARTICLES_VENDUS";
