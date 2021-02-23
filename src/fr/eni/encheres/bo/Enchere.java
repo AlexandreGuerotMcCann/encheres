@@ -29,19 +29,19 @@ public class Enchere {
 	}
 
 
-	public void setNoEncheres(int int1) {
+	public void setNoEncheres(int no_enchere) {
 		// TODO Auto-generated method stub
 		
 	}
 
 
-	public void setNoArticle(int int1) {
+	public void setNoArticle(int no_article) {
 		// TODO Auto-generated method stub
 		
 	}
 
 
-	public void setNoUtilisateur(int int1) {
+	public void setNoUtilisateur(int no_utiilisateur) {
 		// TODO Auto-generated method stub
 		
 	}
