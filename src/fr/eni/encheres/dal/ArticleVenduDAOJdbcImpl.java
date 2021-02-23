@@ -31,7 +31,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 
 				ResultSet rs = pStatement.executeQuery();
 				UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
-				CategorieDAO categorieDAO = DAOFactory.getCategorieDAO();
+				CategoriesDAO categorieDAO = DAOFactory.getCategorieDAO();
 				
 				while (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes***
 									// d'utilisateurs
@@ -67,7 +67,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			pStatement.setString(1, nomArticle);
 			ResultSet rs = pStatement.executeQuery(); 
 			UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
-			CategorieDAO categorieDAO = DAOFactory.getCategorieDAO();
+			CategoriesDAO categorieDAO = DAOFactory.getCategorieDAO();
 			if (rs.next()) {
 
 				articleVendu = new ArticleVendu();
@@ -102,7 +102,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			pStatement.setInt(1, noArticle);
 			ResultSet rs = pStatement.executeQuery();
 			UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
-			CategorieDAO categorieDAO = DAOFactory.getCategorieDAO();
+			CategoriesDAO categorieDAO = DAOFactory.getCategorieDAO();
 			while (rs.next()) {
 				articleVendu = new ArticleVendu();
 				articleVendu.setNoArticle(rs.getInt("no_article"));
@@ -130,7 +130,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 	public void ajoutArticle(ArticleVendu nomArticle) throws BusinessException {
 		ResultSet rs;
 
-		CategorieDAO categorieDAO = DAOFactory.getCategorieDAO();
+		CategoriesDAO categorieDAO = DAOFactory.getCategorieDAO();
 		try (Connection connection = ConnectionProvider.getConnection()) {
 		Utilisateur utilisateur = new Utilisateur();
 		Categorie categorie = new Categorie();
