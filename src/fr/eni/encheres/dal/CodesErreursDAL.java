@@ -21,4 +21,12 @@ public abstract class CodesErreursDAL {
 	public static final int ERREUR_ID = 10006;
 //Aucun utilisateur enregistré en BDD
 	public static final int ERREUR_AUCUN_UTILISATEUR = 10007;
+	
+//Aucun article enregistré en BDD
+	public static final int ERREUR_AUCUN_ARTICLE = 10008;
+	
+// Errreur si les noms d'article ne correspondent pas en BDD
+	public static final int ERREUR_NOM_DARTICLE = 10009;
+	
+	public static final int ERREUR_NO_ARTICLE = 10010;
 } 
