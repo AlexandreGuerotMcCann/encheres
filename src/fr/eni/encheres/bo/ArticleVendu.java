@@ -14,14 +14,10 @@ public class ArticleVendu {
 	private int miseAPrix;
 	private int prixVente;
 	private String etatVente;
-<<<<<<< HEAD
-	private Utilisateur utilisateur;
-	private int Categorie;
-=======
+
 	private Utilisateur noUtilisateur;
-	private Categorie Categorie;
->>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
-	
+	private Categorie noCategorie;
+
 	
 	// Constructeur sans paramètres
 		public ArticleVendu() {
@@ -153,21 +149,15 @@ public class ArticleVendu {
 		this.noUtilisateur = utilisateur;
 	}
 
-<<<<<<< HEAD
 	public int getCategorie() {
-=======
 	public Categorie getCategorie() {
->>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 		return Categorie;
 	}
 
-<<<<<<< HEAD
 	public void setCategorie(int no_categorie) {
 		this.Categorie = no_categorie;
-=======
 	public void setCategorie(Categorie Categorie) {
 		this.Categorie = Categorie;
->>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 	}
 
 	
