@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ServletEncheres
+ * Servlet implementation class ServletEncheres    
  */
 @WebServlet("/ServletEncheres")
 public class ServletEncheres extends HttpServlet {
@@ -20,7 +20,7 @@ public class ServletEncheres extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.getServletContext().getRequestDispatcher(ENCHERES).forward( request, response );
-	}
+	}      
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
