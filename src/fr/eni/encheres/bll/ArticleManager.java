@@ -53,4 +53,19 @@ public class ArticleManager {
 
 		return articleVendu;
 	}
+	
+	public void supprimerArticle(int no_Article) throws BusinessException {
+		this.daoArticleVendu.supprimerArticle(no_Article);
+}
+	
+	public void modifierArticle (ArticleVendu articleVendu) throws BusinessException {
+		
+		
+		this.daoArticleVendu.modifierArticle(articleVendu);
+	}
+
+	
+	
+	
+	
 }
