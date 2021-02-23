@@ -14,7 +14,7 @@ public class ArticleVendu {
 	private int prixVente;
 	private String etatVente;
 	private Utilisateur utilisateur;
-	private int categorie;
+	private String Categorie;
 	
 	
 	// Constructeur sans paramètres
@@ -147,13 +147,15 @@ public class ArticleVendu {
 		this.utilisateur = utilisateur;
 	}
 
-	public int getCategorie() {
-		return categorie;
+	public String getCategorie() {
+		return Categorie;
 	}
 
-	public void setCategorie(int noCategorie) {
-		this.categorie = noCategorie;
+	public void setCategorie(String Categorie) {
+		this.Categorie = Categorie;
 	}
+
+	
 
 
 }
