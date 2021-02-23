@@ -124,12 +124,13 @@ public class ServletSinscrire extends HttpServlet {
 //			}
 		}
 		catch (Exception e) {
-			List<String>listeErreursInscription = new ArrayList<String>();
-			
+			ArrayList<String>listeErreursInscription = new ArrayList<String>();
+		
 			e.printStackTrace();
 			try {
 				if (validationPseudoBDD(pseudo) == true) {
 					listeErreursInscription.add("Ce Pseudo existe déjà");
+
 					
 				}
 //				if (validationPseudo(pseudo) == false) {
@@ -169,6 +170,7 @@ public class ServletSinscrire extends HttpServlet {
 //					request.setAttribute("Erreur", "La ville doit contenir moins de 50 caractères.");
 //
 //				}
+				listeErreursInscription.add("Ce Pseudo existe déjà");
 				request.setAttribute("listeErreur", listeErreursInscription);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
@@ -177,7 +179,7 @@ public class ServletSinscrire extends HttpServlet {
 				e1.printStackTrace();
 			}
 			// Sinon je retourne à la page s'inscrire et j'indique les problèmes:
-			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+			rd = request.getRequestDispatcher("/WEB-INF/connexion.jsp");
 			rd.forward(request, response);
 		}
 

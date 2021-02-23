@@ -1,10 +1,11 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@page import="fr.eni.encheres.servlet.ServletSinscrire"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,25 +21,38 @@
 	<h1>ENI Enchères</h1>
 
 	<h2>Création d'un nouveau compte</h2>
-	
+
 	<!-- Code pour afficher les erreurs En cas de mauvaise saisie -->
-	
-	<c:if test="${ListeErreurInscription }"></c:if>
-	
-	
-	<%
-	List<String> ListeErreurInscription = (List<String>) request.getAttribute("listeErreur");
-	if (ListeErreurInscription != null) {
-		for (String erreur : ListeErreurInscription) {
+<%
+ArrayList<String> listeErreurInscription = (ArrayList<String>) request.getAttribute("listeErreur");
+%>
+	<c:if test="${!empty ListeErreurInscription }">
+
+		<%
+		for (int i = 0; i < listeErreurInscription.size(); i++) {
+			out.print(listeErreurInscription.get(i));%>
+		<%=listeErreurInscription.toString()%>
+			<% }
+		%>
+	</c:if>
+	<c:if test="${empty ListeErreurInscription }">
+
+		<p>TESTTEST</p>
+
+
+	</c:if>
+
+
+	<!-- if (ListeErreurInscription != null) {
+	for (String erreur : ListeErreurInscription) {
 			out.println(erreur);
-		}
-	}
-	%>
+		} -->
+
 
 	<form action="ServletSinscrire" method="post" name="connexion">
 
 		<div class="wrapper">
-			
+
 
 
 			<label for="nickname">Pseudo: </label> <input type="text" required
