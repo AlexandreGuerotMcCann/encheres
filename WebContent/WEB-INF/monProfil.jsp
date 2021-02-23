@@ -36,7 +36,7 @@
 		<p>Email : ${utilisateur.email}</p>
 		<p>Téléphone : ${utilisateur.telephone}</p>
 		<p>Rue : ${utilisateur.rue}</p>
-		<p>Code postal : ${utilisateur.code_postal}</p>
+		<p>Code postal : ${utilisateur.codePostal}</p>
 		<p>Ville : ${utilisateur.ville}</p>
 		  <a href="#" class="button">Suppression de compte</a>
 	</div>
