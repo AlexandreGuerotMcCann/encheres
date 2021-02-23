@@ -29,4 +29,13 @@ public abstract class CodesErreursDAL {
 	public static final int ERREUR_NOM_DARTICLE = 10009;
 	
 	public static final int ERREUR_NO_ARTICLE = 10010;
+	
+// Erreur lors de l'ajout d'un article
+	public static final int ERREUR_AJOUT = 10011;
+	
+// Erreur lors de la suppression de l'article
+	public static final int ERREUR_SUPPRESSION_ARTICLE = 10012;
+	
+// Erreur lors de la mise à jour du compte de l'utilisateur
+	public static final int ERREUR_MISE_A_JOUR_ARTICLE = 10013;	
 } 
