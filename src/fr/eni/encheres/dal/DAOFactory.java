@@ -16,4 +16,9 @@ public class DAOFactory {
 	public static ArticleVenduDAO getArticleVenduDAO() {
 		return new ArticleVenduDAOJdbcImpl();
 	}
+
+	public static EncheresDAO getEncheresDAO() {
+		
+		return new EncheresDAOJdbcImpl();
+	}
 }
