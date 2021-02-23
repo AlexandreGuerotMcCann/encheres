@@ -29,7 +29,7 @@ public class ArticleManager {
 		return daoArticleVendu.selectByNomArticle(nomArticle);
 	}
 	
-	public List<ArticleVendu> listeArticlesArticleVendus() throws BusinessException {
+	public List<ArticleVendu> listeArticles() throws BusinessException {
 		return daoArticleVendu.selectAll();
 	}
 
