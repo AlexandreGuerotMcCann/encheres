@@ -25,9 +25,13 @@
 	<%
 	String erreurPseudoBDD = (String) request.getAttribute("pseudoBDD");
 	String erreurPseudo = (String) request.getAttribute("pseudo");
+	
 	%>
+	<%=erreurPseudoBDD%>
 	<c:if test="${!empty erreurPseudoBDD }">
-		<%=erreurPseudoBDD%></c:if>
+		<%=erreurPseudoBDD%>
+		</c:if>
+		
 	<c:if test="${!empty erreurPseudo}">
 		<%=erreurPseudo%>
 	</c:if>
