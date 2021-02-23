@@ -48,4 +48,6 @@ public abstract class CodesErreursDAL {
 	public static final int ERREUR_MISE_A_JOUR_ENCHERE = 10017;
 
 	public static final int ERREUR_AJOUT_ENCHERE = 10018;	
+	
+	public static final int ERREUR_AUCUNE_CATEGORIE = 10019;
 } 

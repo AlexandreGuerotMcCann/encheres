@@ -26,9 +26,10 @@ public class CategoriesDAOJdbcImpl implements CategoriesDAO {
 	private Categorie categories = new Categorie();
 
 	
+
 	@Override
 	public List<Categorie> selectAll() throws BusinessException {
-		List<Categorie> listeUtilisateurs = new ArrayList<>();
+		List<Categorie> listeCategorie = new ArrayList<>();
 		try (Connection connection = ConnectionProvider.getConnection()) {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_ALL);
 
@@ -43,11 +44,11 @@ public class CategoriesDAOJdbcImpl implements CategoriesDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			BusinessException businessException = new BusinessException();
-			businessException.ajouterErreur(CodesErreursDAL.ERREUR_AUCUN_UTILISATEUR);
+			businessException.ajouterErreur(CodesErreursDAL.ERREUR_AUCUNE_CATEGORIE);
 			throw businessException;
 		}
 
-		return listeUtilisateurs;
+		return listeCategorie;
 	}
 	
 
