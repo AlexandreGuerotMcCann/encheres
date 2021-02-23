@@ -34,7 +34,6 @@ public class ServletSinscrire extends HttpServlet {
 	public static final String CODE_POSTAL = "codePostal";
 	public static final String CITY = "city";
 	public static final String SINSCRIRE = "/WEB-INF/sinscrire.jsp";
-										
 
 	private static final String ALPHANUMERIQUE = "^[A-Za-z0-9]";
 	private static final String CARACTERES_AUTORISES_MAIL = "^[A-Za-z0-9._@-]"; // le - doit être à la fin ou au début
@@ -93,22 +92,16 @@ public class ServletSinscrire extends HttpServlet {
 //
 //														if (validationVille(city) == true) {
 
-															Utilisateur utilisateur = utilisateurManager
-																	.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail,
-																			telephone, rue, codePostal, city);
-															utilisateur = utilisateurManager
-																	.retournerUtilisateur(pseudo);
-															HttpSession session = request.getSession();
-
-//        	clé "user" pour le code java page accueuil
-															session.setAttribute("user", utilisateur);
-//        	clé "userTest" pour le jsp:useBean page accueuil
-															session.setAttribute("userTest", utilisateur);
-//        	clé "utilisateur" pour l'expression Language page accueil
-															session.setAttribute("utilisateur", utilisateur);
-															rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
-															rd.forward(request, response);
-														}
+				Utilisateur utilisateur = utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone,
+						rue, codePostal, city);
+				utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
+				HttpSession session = request.getSession();
+				session.setAttribute("user", utilisateur);
+				session.setAttribute("userTest", utilisateur);
+				session.setAttribute("utilisateur", utilisateur);
+				rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+				rd.forward(request, response);
+			}
 //													}
 //												}
 //											}
@@ -120,66 +113,20 @@ public class ServletSinscrire extends HttpServlet {
 //					}
 //				}
 //			}
-		}
-		catch (Exception e) {
-			ArrayList<String>listeErreursInscription = new ArrayList<String>();
+		} catch (Exception e) {
 		
+
 			e.printStackTrace();
 			try {
 				if (validationPseudoBDD(pseudo) == true) {
-					listeErreursInscription.add("Ce Pseudo existe déjà");
-
-					
-				}
-				if (validationPseudo(pseudo) == false) {
-					request.setAttribute("pseudo", "Ce Pseudo est invalide. Il doit contenir moins de 30 caractères et contenir uniquement des lettres et des chiffres");
-
-				}
-//				if (validationEmailBDD(mail) == true) {
-//					request.setAttribute("Erreur", "Cet email est déjà associé à un compte");
-//
-//				}
-//				if (validationEmail(mail) == false) {
-//					request.setAttribute("Erreur", "Cet email est invalide");
-//
-//				} if (validationTelephoneBDD(telephone) == true) {
-//					request.setAttribute("Erreur", "Ce numéro de téléphone est déjà associé à un compte");
-//
-//				} if (validationEmail(mail) == false) {
-//					request.setAttribute("Erreur", "Cet email est invalide");
-//
-//				} if (validationMDP(mdp, confirmMdp) == false) {
-//					request.setAttribute("Erreur",
-//							"Les mots de passe ne sont pas identiques (mininimum 8 caractères. Seules les lettres et chiffres sont autorisés.");
-//
-//				} if (validationNom(nom) == false) {
-//					request.setAttribute("Erreur", "Votre nom doit contenir entre 2 et 30 caractères");
-//
-//				}if (validationPrenom(prenom) == false) {
-//					request.setAttribute("Erreur", "Votre prénom doit contenir entre 2 et 30 caractères");
-//
-//				} if (validationRue(rue) == false) {
-//					request.setAttribute("Erreur", "la rue doit contenir moins de 30 caractères");
-//
-//				}  if (validationCodePostal(codePostal) == false) {
-//					request.setAttribute("Erreur", "Le code postal doit contenir moins de 10 caractères");
-//
-//				}  if (validationVille(city) == false) {
-//					request.setAttribute("Erreur", "La ville doit contenir moins de 50 caractères.");
-//
-//				}
-				request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
-				
-				
-				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+					request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");}
+					rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
-				e1.printStackTrace();// Sinon je retourne à la page s'inscrire et j'indique les problèmes:
-				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-				rd.forward(request, response);
+						e1.printStackTrace();
 			}
-			
+
 		}
 
 	}
@@ -189,7 +136,7 @@ public class ServletSinscrire extends HttpServlet {
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
 		for (Utilisateur utilisateur : listeUser) {
-			listePseudoBDD.add(utilisateur.getEmail());
+			listePseudoBDD.add(utilisateur.getPseudo());
 		}
 		if (listePseudoBDD.contains(pseudo)) {
 			return true;
