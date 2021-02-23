@@ -34,7 +34,7 @@ public class ArticleManager {
 	}
 
 	
-	public ArticleVendu ajoutArticleVendu (String nomArticle, String description, Date dateDebutEnchere, Date dateFinEnchere, int miseAPrix, int prixVente, int no_utilisateur, String Categorie) throws BusinessException {
+	public ArticleVendu ajoutArticleVendu (String nomArticle, String description, Date dateDebutEnchere, Date dateFinEnchere, int miseAPrix, int prixVente, int no_utilisateur, int no_categorie) throws BusinessException {
 
 		
 		ArticleVendu articleVendu = new ArticleVendu();
@@ -45,7 +45,7 @@ public class ArticleManager {
 		articleVendu.setMiseAPrix(miseAPrix);
 		articleVendu.setPrixVente(prixVente);
 		articleVendu.getUtilisateur().getNoUtilisateur();
-		articleVendu.setCategorie(Categorie);
+		articleVendu.setCategorie(no_categorie);
 		
 		
 		
