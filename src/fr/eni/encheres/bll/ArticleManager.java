@@ -1,5 +1,7 @@
 package fr.eni.encheres.bll;
 
+import java.util.List;
+
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bo.ArticleVendu;
 import fr.eni.encheres.bo.Enchere;
@@ -24,6 +26,10 @@ public class ArticleManager {
 	
 	public ArticleVendu retournerArticle(String nomArticle) throws BusinessException {
 		return daoArticleVendu.selectByNomArticle(nomArticle);
+	}
+	
+	public List<ArticleVendu> listeArticlesArticleVendus() throws BusinessException {
+		return daoArticleVendu.selectAll();
 	}
 
 }
