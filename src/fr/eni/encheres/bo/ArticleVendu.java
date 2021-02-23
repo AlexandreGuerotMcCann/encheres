@@ -1,6 +1,7 @@
 package fr.eni.encheres.bo;
 
 import java.time.LocalDate;
+import fr.eni.encheres.bo.Categorie;
 import java.util.Date;
 
 public class ArticleVendu {
@@ -13,9 +14,10 @@ public class ArticleVendu {
 	private int miseAPrix;
 	private int prixVente;
 	private String etatVente;
-	private Utilisateur utilisateur;
-	private String Categorie;
-	
+
+	private Utilisateur noUtilisateur;
+	private Categorie noCategorie;
+
 	
 	// Constructeur sans paramètres
 		public ArticleVendu() {
@@ -140,19 +142,21 @@ public class ArticleVendu {
 	}
 
 	public Utilisateur getUtilisateur() {
-		return utilisateur;
+		return noUtilisateur;
 	}
 
 	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
+		this.noUtilisateur = utilisateur;
 	}
 
-	public String getCategorie() {
-		return Categorie;
+	
+	public Categorie getCategorie() {
+		return noCategorie;
 	}
 
-	public void setCategorie(String Categorie) {
-		this.Categorie = Categorie;
+
+	public void setCategorie(Categorie Categorie) {
+		this.noCategorie = Categorie;
 	}
 
 	
