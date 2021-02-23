@@ -2,8 +2,8 @@
 <%@page import="java.rmi.server.RemoteStub"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  <%@page import="fr.eni.encheres.bo.Utilisateur"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="fr.eni.encheres.bo.Utilisateur"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -24,12 +24,12 @@
 			<li><a href="ServletConnexion">Se connecter</a></li>
 			<li><a href="ServletSinscrire">S'inscrire</a></li>
 			
-		<c:if test="${utilisateurConnecte}">	<!-- Si utilisateur connecté, bouton "Se déconnecter" visible et actif -->
+		<c:if test="${!empty utilisateur.pseudo}">	<!-- Si utilisateur connecté, bouton "Se déconnecter" visible et actif -->
 			<li><a href="ServletDeconnexion">Se déconnecter</a></li>
 		</c:if>
 			
 		<!--<c:if test="${!empty sessionScope.sessionUtilisateur}"> 
-		<p class="succes">Bonjour!! : ${sessionScope.sessionUtilisateur.pseudo}</p>
+		<p class="succes">Bonjour!! : ${sessionScope.sessionUtilisateur.pseudo}</p>   
 		</c:if> 
 			<li><a href="ServletMonProfil">Mon profil</a></li>
 			<li><a href="ServletAccueil">Déconnexion</a></li>-->	
