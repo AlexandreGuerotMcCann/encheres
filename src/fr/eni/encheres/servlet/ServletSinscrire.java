@@ -45,10 +45,9 @@ public class ServletSinscrire extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		RequestDispatcher rd = request.getRequestDispatcher(SINSCRIRE);
-		rd.forward(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		this.getServletContext().getRequestDispatcher(SINSCRIRE).forward(request, response);
 	}
 
 	/**
@@ -67,7 +66,8 @@ public class ServletSinscrire extends HttpServlet {
 		String rue = request.getParameter("rue");
 		String codePostal = request.getParameter("codePostal");
 		String city = request.getParameter("city");
-		
+
+		RequestDispatcher rd = null;
 		// J'ajoute l'utilisateur
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		try {
@@ -108,7 +108,7 @@ public class ServletSinscrire extends HttpServlet {
 															session.setAttribute("userTest", utilisateur);
 //        	clé "utilisateur" pour l'expression Language page accueil
 															session.setAttribute("utilisateur", utilisateur);
-															RequestDispatcher rd = request.getRequestDispatcher(SINSCRIRE);
+															rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 															rd.forward(request, response);
 														}
 //													}
@@ -123,23 +123,15 @@ public class ServletSinscrire extends HttpServlet {
 //				}
 //			}
 		}
-<<<<<<< Updated upstream
 		catch (Exception e) {
 			List<String>listeErreursInscription = new ArrayList<String>();
 			
-=======
-//Com pour commit
-		catch (Exception e) 
-		{
->>>>>>> Stashed changes
 			e.printStackTrace();
-			try 
-			{
+			try {
 				if (validationPseudoBDD(pseudo) == true) {
 					listeErreursInscription.add("Ce Pseudo existe déjà");
 					
 				}
-<<<<<<< Updated upstream
 //				if (validationPseudo(pseudo) == false) {
 //					request.setAttribute("Erreur",
 //							"Ce Pseudo est invalide. Il doit contenir moins de 30 caractères et contenir uniquement des lettres et des chiffres");
@@ -179,24 +171,15 @@ public class ServletSinscrire extends HttpServlet {
 //				}
 				request.setAttribute("listeErreur", listeErreursInscription);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-=======
-				
-				RequestDispatcher rd = request.getRequestDispatcher(SINSCRIRE);
->>>>>>> Stashed changes
 				rd.forward(request, response);
-				
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-			
+			}
 			// Sinon je retourne à la page s'inscrire et j'indique les problèmes:
-<<<<<<< Updated upstream
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-=======
-			RequestDispatcher rd = request.getRequestDispatcher(SINSCRIRE);
->>>>>>> Stashed changes
 			rd.forward(request, response);
-		}}
+		}
 
 	}
 
