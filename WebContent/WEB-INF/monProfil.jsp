@@ -10,7 +10,7 @@
 <!-- FEUILLE CSS DE TEST -->
 <link rel="stylesheet" type="text/css"
 	href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-<title>Profil de ${pseudo}</title>
+<title>Profil de ${utilisateur.pseudo}</title>
 </head>
 <body>
 
@@ -19,13 +19,13 @@
 			<li><a href="ServletEncheres">Enchères</a></li>
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
 			<li><a href="ServletMonProfil">Mon profil</a></li>
-			<li><a href="ServletAccueil">Déconnexion</a></li>
+			<li><a href="ServletDeconnexion">Déconnexion</a></li>
 		</ul>
 	</div>
 
 	<h1 class="titre" >Mes informations</h1>
 	<div class="rechercheProfil">
-		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo">
+		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo...">
 	</div>
 	<div class="infosUtilisateur">
 
@@ -36,11 +36,14 @@
 		<p>Email : ${utilisateur.email}</p>
 		<p>Téléphone : ${utilisateur.telephone}</p>
 		<p>Rue : ${utilisateur.rue}</p>
-		<p>Code postal : ${utilisateur.code_postal}</p>
+		<p>Code postal : ${utilisateur.codePostal}</p>
 		<p>Ville : ${utilisateur.ville}</p>
-		  <a href="#" class="button">Suppression de compte</a>
-	</div>
+		 
+		<br>
+		
+		  <a href="#" class="button">Modifier</a>
 
+	</div>
 	
 </body>
 

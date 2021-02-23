@@ -5,7 +5,9 @@ import java.util.List;
 
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bo.ArticleVendu;
+import fr.eni.encheres.bo.Categorie;
 import fr.eni.encheres.bo.Enchere;
+import fr.eni.encheres.bo.Utilisateur;
 import fr.eni.encheres.dal.ArticleVenduDAO;
 import fr.eni.encheres.dal.DAOFactory;
 
@@ -34,18 +36,26 @@ public class ArticleManager {
 	}
 
 	
+<<<<<<< HEAD
 	public ArticleVendu ajoutArticleVendu (String nomArticle, String description, Date dateDebutEnchere, Date dateFinEnchere, int miseAPrix, int prixVente, int no_utilisateur, int no_categorie) throws BusinessException {
+=======
+	public ArticleVendu ajoutArticleVendu (String nomArticle, String description, Date dateDebutEnchere, Date dateFinEnchere, int miseAPrix, int prixVente, Utilisateur noUtilisateur, Categorie noCategorie) throws BusinessException {
+>>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 
 		
 		ArticleVendu articleVendu = new ArticleVendu();
-		articleVendu.setNomArticle(nomArticle);;
+		articleVendu.setNomArticle(nomArticle);
 		articleVendu.setDescription(description);
 		articleVendu.setDateDebutEncheres(dateDebutEnchere);
 		articleVendu.setDateFinEncheres(dateFinEnchere);
 		articleVendu.setMiseAPrix(miseAPrix);
 		articleVendu.setPrixVente(prixVente);
 		articleVendu.getUtilisateur().getNoUtilisateur();
+<<<<<<< HEAD
 		articleVendu.setCategorie(no_categorie);
+=======
+		articleVendu.getCategorie().getNoCategorie();
+>>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 		
 		
 		

@@ -1,6 +1,7 @@
 package fr.eni.encheres.bo;
 
 import java.time.LocalDate;
+import fr.eni.encheres.bo.Categorie;
 import java.util.Date;
 
 public class ArticleVendu {
@@ -13,8 +14,13 @@ public class ArticleVendu {
 	private int miseAPrix;
 	private int prixVente;
 	private String etatVente;
+<<<<<<< HEAD
 	private Utilisateur utilisateur;
 	private int Categorie;
+=======
+	private Utilisateur noUtilisateur;
+	private Categorie Categorie;
+>>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 	
 	
 	// Constructeur sans paramètres
@@ -140,19 +146,28 @@ public class ArticleVendu {
 	}
 
 	public Utilisateur getUtilisateur() {
-		return utilisateur;
+		return noUtilisateur;
 	}
 
 	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
+		this.noUtilisateur = utilisateur;
 	}
 
+<<<<<<< HEAD
 	public int getCategorie() {
+=======
+	public Categorie getCategorie() {
+>>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 		return Categorie;
 	}
 
+<<<<<<< HEAD
 	public void setCategorie(int no_categorie) {
 		this.Categorie = no_categorie;
+=======
+	public void setCategorie(Categorie Categorie) {
+		this.Categorie = Categorie;
+>>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 	}
 
 	

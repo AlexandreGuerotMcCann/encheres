@@ -31,7 +31,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 
 				ResultSet rs = pStatement.executeQuery();
 				UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
-				CategorieDAO categorieDAO = DAOFactory.getCategorieDAO();
+				CategoriesDAO categoriesDAO = DAOFactory.getCategorieDAO();
 				
 				while (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes***
 									// d'utilisateurs
@@ -44,7 +44,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 					articleVendu.setMiseAPrix(rs.getInt("prix_initial"));
 					articleVendu.setPrixVente(rs.getInt("prix_vente"));
 					articleVendu.setUtilisateur(utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
-					articleVendu.setCategorie((Categorie) categorieDAO.selectById(rs.getInt("no_categorie")));
+					articleVendu.setCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
 //REVENIR QUAND INTERFACE DONE
 					
 				}
@@ -67,7 +67,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			pStatement.setString(1, nomArticle);
 			ResultSet rs = pStatement.executeQuery(); 
 			UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
-			CategorieDAO categorieDAO = DAOFactory.getCategorieDAO();
+			CategoriesDAO categoriesDAO = DAOFactory.getCategorieDAO();
 			if (rs.next()) {
 
 				articleVendu = new ArticleVendu();
@@ -79,7 +79,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 				articleVendu.setMiseAPrix(rs.getInt("prix_initial"));
 				articleVendu.setPrixVente(rs.getInt("prix_vente"));
 				articleVendu.setUtilisateur(utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
-				articleVendu.setCategorie((Categorie) categorieDAO.selectById(rs.getInt("no_categorie")));
+				articleVendu.setCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -102,7 +102,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			pStatement.setInt(1, noArticle);
 			ResultSet rs = pStatement.executeQuery();
 			UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
-			CategorieDAO categorieDAO = DAOFactory.getCategorieDAO();
+			CategoriesDAO categoriesDAO = DAOFactory.getCategorieDAO();
 			while (rs.next()) {
 				articleVendu = new ArticleVendu();
 				articleVendu.setNoArticle(rs.getInt("no_article"));
@@ -113,7 +113,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 				articleVendu.setMiseAPrix(rs.getInt("prix_initial"));
 				articleVendu.setPrixVente(rs.getInt("prix_vente"));
 				articleVendu.setUtilisateur(utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
-				articleVendu.setCategorie((Categorie) categorieDAO.selectById(rs.getInt("no_categorie")));
+				articleVendu.setCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -130,7 +130,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 	public void ajoutArticle(ArticleVendu nomArticle) throws BusinessException {
 		ResultSet rs;
 
-		CategorieDAO categorieDAO = DAOFactory.getCategorieDAO();
+		CategoriesDAO categoriesDAO = DAOFactory.getCategorieDAO();
 		try (Connection connection = ConnectionProvider.getConnection()) {
 		Utilisateur utilisateur = new Utilisateur();
 		Categorie categorie = new Categorie();

@@ -9,8 +9,8 @@ public class DAOFactory {
 		return new UtilisateurDAOJdbcImpl();
 	}
 
-	public static CategorieDAO getCategorieDAO() {
-		return new CategorieDAOJdbcImpl();
+	public static CategoriesDAO getCategorieDAO() {
+		return new CategoriesDAOJdbcImpl();
 	}
 	
 	public static ArticleVenduDAO getArticleVenduDAO() {
