@@ -149,15 +149,14 @@ public class ArticleVendu {
 		this.noUtilisateur = utilisateur;
 	}
 
-	public int getCategorie() {
+	
 	public Categorie getCategorie() {
-		return Categorie;
+		return noCategorie;
 	}
 
-	public void setCategorie(int no_categorie) {
-		this.Categorie = no_categorie;
+
 	public void setCategorie(Categorie Categorie) {
-		this.Categorie = Categorie;
+		this.noCategorie = Categorie;
 	}
 
 	
