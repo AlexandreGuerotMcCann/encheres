@@ -39,7 +39,7 @@ public class EncheresManager {
 		
 			Enchere enchere = new Enchere();
 			enchere.setNoEncheres(no_enchere);
-			enchere.setDateEnchere(date_enchere);
+			enchere.setDateEnchere((java.sql.Date) date_enchere);
 			enchere.setMontant_enchere(montant_enchere);
 			enchere.setNoArticle(no_article);
 			enchere.setNoUtilisateur(no_utilisateur);
