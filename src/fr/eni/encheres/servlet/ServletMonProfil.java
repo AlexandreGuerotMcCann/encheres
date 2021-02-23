@@ -23,10 +23,6 @@ public class ServletMonProfil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String identifiant = request.getParameter("identifiant");
-		String motDePasse = request.getParameter("motdepasse");
-		HttpSession session = request.getSession();
-		RequestDispatcher rd = null;
 		this.getServletContext().getRequestDispatcher(PROFIL).forward( request, response );
 	}
 

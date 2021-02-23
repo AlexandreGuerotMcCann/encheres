@@ -2,7 +2,6 @@ package fr.eni.encheres.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,10 +22,6 @@ public class ServletModifierProfil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String identifiant = request.getParameter("identifiant");
-		String motDePasse = request.getParameter("motdepasse");
-		HttpSession session = request.getSession();
-		RequestDispatcher rd = null;
 		this.getServletContext().getRequestDispatcher(MODIFIER_PROFIL).forward( request, response );
 	}
 
@@ -34,6 +29,8 @@ public class ServletModifierProfil extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		
 		doGet(request, response);
 	}
 
