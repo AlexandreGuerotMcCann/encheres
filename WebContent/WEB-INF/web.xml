@@ -24,11 +24,11 @@
 	</servlet-mapping> 
 	
 	<servlet>
-		<servlet-name>s'inscrire</servlet-name>
+		<servlet-name>sinscrire</servlet-name>
 		<jsp-file>/WEB-INF/sinscrire.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>s'inscrire</servlet-name>
+		<servlet-name>sinscrire</servlet-name>
 		<url-pattern>/sinscrire</url-pattern>
 	</servlet-mapping> 
 </web-app>
