@@ -15,8 +15,6 @@ import java.time.LocalDate;
 
 public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 
-	public class ArticleDAOjdbcimpl {
-
 		private static final String SELECT_BY_NOM_ARTICLE = "SELECT * FROM ARTICLES_VENDUS WHERE nom_article = ?";
 		private static final String SELECT_BY_NO_ARTICLE = "SELECT * FROM ARTICLES_VENDUS";
 		private static final String SELECT_ALL = "SELECT * FROM ARTICLES_VENDUS";
@@ -94,7 +92,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 
 		return articleVendu;
 	}
-	}
+	
 	
 	@Override
 	public Utilisateur selectByNoArticle(int noArticle) throws BusinessException {
@@ -129,10 +127,28 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 
 	@Override
 	public void ajoutArticle(ArticleVendu nomArticle) throws BusinessException {
-		// TODO Auto-generated method stub
-		
-	}
+		ResultSet rs;
 
+		try (Connection connection = ConnectionProvider.getConnection()) {
+			PreparedStatement rqt = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
+			rqt.setString(1, articleVendu.getPseudo());
+			rqt.setString(2, articleVendu.getNom());
+			rqt.setString(3, articleVendu.getPrenom());
+			rqt.setString(4, articleVendu.getEmail());
+			rqt.setString(5, articleVendu.getTelephone());
+			rqt.setString(6, articleVendu.getRue());
+			rqt.setString(7, articleVendu.getCodePostal());
+			rqt.setString(8, articleVendu.getVille());
+			rqt.setString(9, articleVendu.getMotDePasse());
+		
+
+			rqt.executeUpdate();
+			rqt.close();
+
+		} catch (Exception ex) {
+			throw new BusinessException(CodesErreursDAL.ERREUR_INSERTION);
+		}
+	}
 	@Override
 	public void supprimerArticle(int noArticle) throws BusinessException {
 		// TODO Auto-generated method stub
