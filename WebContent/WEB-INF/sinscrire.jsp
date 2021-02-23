@@ -1,6 +1,4 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -23,24 +21,17 @@
 	<h2>Création d'un nouveau compte</h2>
 
 	<!-- Code pour afficher les erreurs En cas de mauvaise saisie -->
-<%
-ArrayList<String> listeErreurInscription = (ArrayList<String>) request.getAttribute("listeErreur");
-%>
-	<c:if test="${!empty ListeErreurInscription }">
 
-		<%
-		for (int i = 0; i < listeErreurInscription.size(); i++) {
-			out.print(listeErreurInscription.get(i));%>
-		<%=listeErreurInscription.toString()%>
-			<% }
-		%>
+	<%
+	String erreurPseudoBDD = (String) request.getAttribute("pseudoBDD");
+	String erreurPseudo = (String) request.getAttribute("pseudo");
+	%>
+	<c:if test="${!empty erreurPseudoBDD }">
+		<%=erreurPseudoBDD%></c:if>
+	<c:if test="${!empty erreurPseudo}">
+		<%=erreurPseudo%>
 	</c:if>
-	<c:if test="${empty ListeErreurInscription }">
 
-		<p>TESTTEST</p>
-
-
-	</c:if>
 
 
 	<!-- if (ListeErreurInscription != null) {
@@ -91,7 +82,6 @@ ArrayList<String> listeErreurInscription = (ArrayList<String>) request.getAttrib
 		</div>
 
 	</form>
-
 </body>
 <br>
 

@@ -50,4 +50,14 @@ public abstract class CodesErreursDAL {
 	public static final int ERREUR_AJOUT_ENCHERE = 10018;	
 	
 	public static final int ERREUR_AUCUNE_CATEGORIE = 10019;
+	
+	public static final int ERREUR_ID_CATEGORIE = 10020;
+	
+	public static final int ERREURS_LIBELLE = 10021;
+	
+	public static final int ERREUR_INSERTION_LIBELLE = 10022;
+	
+	public static final int ERREUR_SUPPRESSION_CATEGORIE = 10023;
+	
+	public static final int ERREUR_MISE_A_JOUR_CATEGORIE = 10024;
 } 
