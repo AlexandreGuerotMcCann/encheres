@@ -1,6 +1,7 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -118,18 +119,19 @@ public class ServletSinscrire extends HttpServlet {
 
 			e.printStackTrace();
 			try {
-				if (validationPseudoBDD(pseudo) == true) {
-					request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");}
+				if (validationPseudoBDD(pseudo) == false) {
+					request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
 					rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-				rd.forward(request, response);
+				rd.forward(request, response);}
 			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-						e1.printStackTrace();
+				request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
+				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+			rd.forward(request, response);}
 			}
 
 		}
 
-	}
+	
 
 	boolean validationPseudoBDD(String pseudo) throws Exception {
 		List<String> listePseudoBDD = new ArrayList<String>();

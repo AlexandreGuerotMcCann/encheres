@@ -65,5 +65,7 @@ public class ServletEncheres extends HttpServlet {
 		Enchere enchere= EncheresManager.ajoutEnchere(no_enchere, date_enchere, montant_enchere, no_article, no_utilisateur);
 		enchere = encheresManager.retournerEnchere(no_enchere);
 		HttpSession session = request.getSession();
+		session.setAttribute("enchere", enchere);
+		rd.forward(request, response);
 
 }}
