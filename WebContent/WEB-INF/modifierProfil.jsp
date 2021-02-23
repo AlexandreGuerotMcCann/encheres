@@ -50,5 +50,9 @@
 			<label for="confirmation_mdp">Confirmation : 
 			<input type="password" name="confirmation_mdp"></label>
 		</div>
+		
+		<button class="button" type="submit" name="enregistrer">Enregistrer</button>
+		<a href="ServletAccueil" class="button">Supprimer mon compte</a> <!-- A faire inclure méthode supprimer compte -->
+		
 </body>
 </html>
