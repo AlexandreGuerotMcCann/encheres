@@ -23,12 +23,12 @@ public class ServletAccueil extends HttpServlet {
 	
 	
 	/** 
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)    
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(); //
 		
-//		if (session.getAttribute("no_utilisateur")!=null) // Si utilisateur connecté
+//		if (session.getAttribute("no_utilisateur")!=null) // Si utilisateur connecté  
 //		{
 //			this.getServletContext().getRequestDispatcher("/ServletAccueilConnecte").forward(request, response);  // On go à l'accueil en mode connecté
  //   	}
