@@ -127,7 +127,7 @@ public class ServletSinscrire extends HttpServlet {
 			e.printStackTrace();
 			try {
 				if (validationPseudoBDD(pseudo) == true) {
-					request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
+					listeErreursInscription.add("Ce Pseudo existe déjà");
 
 					
 				}
