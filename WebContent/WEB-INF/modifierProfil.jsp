@@ -9,9 +9,46 @@
 	<title>Modifier mon profil</title>
 </head>
 <body>
+	<h1>Mon Profil</h1>
 
-<h1>MODIFIER PROFIL PAGE A FAIRE !!!</h1>
-<p>Pseudo : ${utilisateur.pseudo}</p>
-		<p>Nom : ${utilisateur.nom}</p>
+		<div class="left_text">
+			<label for="pseudo">Pseudo :
+			<input type="text" name="pseudo" value="${utilisateur.pseudo}"></label>
+			
+			<label for="prenom">Prénom :
+			<input type="text" name="prenom" value="${utilisateur.prenom }"></label>
+			
+			<label for="telephone">Téléphone :
+			<input type="tel" name="telephone" value="${utilisateur.telephone }"></label>
+			
+			<label for="codePostal">Code Postal :
+			<input type="text" name="codePostal" value="${utilisateur.codePostal }"></label>
+			
+			<label for="motdepasse">Mot de passe actuel :
+			<input type="password" name="motdepasse"></label>
+			
+			<label for="nouveau_motdepasse">Nouveau mot de passe :
+			<input type="password" name="nouveau_motdepasse"></label>
+			
+			<p>Crédit : ${utilisateur.credit }</p>
+		</div>
+	
+		<div class="right_text">
+			<label for="nom">Nom :
+			<input type="text" name="nom" value="${utilisateur.nom}"></label>
+			
+			<label for="email">E-mail :
+			<input type="email" name="email" value="${utilisateur.email}"></label>
+			
+			<label for="rue">Rue :
+			<input type="text" name="rue" value="${utilisateur.rue}"></label>
+			
+			<label for="ville">Ville :
+			<input type="text" name="ville" value="${utilisateur.ville}"></label>
+
+
+			<label for="confirmation_mdp">Confirmation : 
+			<input type="password" name="confirmation_mdp"></label>
+		</div>
 </body>
 </html>
