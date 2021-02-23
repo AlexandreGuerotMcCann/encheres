@@ -19,7 +19,7 @@
 			<li><a href="ServletEncheres">Enchères</a></li>
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
 			<li><a href="ServletMonProfil">Mon profil</a></li>
-			<li><a href="ServletAccueil">Déconnexion</a></li>
+			<li><a href="ServletDeconnexion">Déconnexion</a></li>
 		</ul>
 	</div>
 
@@ -38,6 +38,7 @@
 		<p>Rue : ${utilisateur.rue}</p>
 		<p>Code postal : ${utilisateur.codePostal}</p>
 		<p>Ville : ${utilisateur.ville}</p>
+		<br>
 		  <a href="#" class="button">Suppression de compte</a>
 	</div>
 
