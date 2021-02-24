@@ -50,6 +50,7 @@ h2 {
 	color: #DB4D69;
 	display:block;
 	
+	
 }
 
 .button {
@@ -196,6 +197,7 @@ footer {
     opacity: 0.8;}
     
     .ajoutVente { text-align: center;
+   
     display:block;
     line-height: 1.5em;
     position: absolute;
