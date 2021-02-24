@@ -116,7 +116,8 @@ li a:hover {
 .left-text{
 
 	display: grid;
-	grid-template-columns:repeat(2, 1fr);;
+	grid-template-columns:1fr, auto;
+	
 	max-width: 1500px;
 	margin-left: auto;
 	margin-right: auto;
@@ -162,7 +163,7 @@ li a:hover {
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
-	z-index:-1;
+	;
 }
 
 .wrapper4>* {
@@ -173,7 +174,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	padding-top: 50px;
+	padding-top: 80px;
 	height: 50px;
 }
 
@@ -333,6 +334,11 @@ text-align: center;
  
  }
  
+ 
+.infosUtilisateur {zoom:90%;}
+ 
+ 
+ 
 .wrapper2 {position:absolute;
 top:45%;
     left: 50%;
@@ -348,17 +354,19 @@ min-width:500px;
 z-index: -1;}
  
  .wrapper3 {position:absolute;
-top:68%;
+top:72%;
     left: 35%;
     transform: translate(-50%, -50%);
 min-width:500px;
-z-index: 0;}
+}
+
 
 .wrapper4 {position:absolute;
-top:120%;
+top:130%;
     left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
+
 }
 
 
@@ -382,6 +390,15 @@ min-width:500px;
 }
 
 .logo {margin-top:2%;}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding-top: 450px;
+	height: 50px;
+	z-index:-1;
+}
 
 .navbar a {
   float: right;
@@ -426,6 +443,7 @@ min-width:500px;
   z-index:1;
   
 }
+
 
 .dropdown-content a {
   float: none;

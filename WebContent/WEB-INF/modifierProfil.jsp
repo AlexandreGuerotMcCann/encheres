@@ -61,16 +61,16 @@
 	<div class="wrapper" >
 		<div class="left_text">
 			<label for="pseudo">Pseudo :</label>
-			<input type="text" name="pseudo"maxlength="30" size="15" value="${utilisateur.pseudo}">
+			<input type="text" readonly name="pseudo"maxlength="30" size="15" value="${utilisateur.pseudo}">
 			
 			<label for="prenom">Prénom :</label>
 			<input type="text" name="prenom" maxlength="30" size="15"value="${utilisateur.prenom }">
 			
 			<label for="telephone">Téléphone :</label>
-			<input type="tel" name="telephone" maxlength="30" size="15" value="${utilisateur.telephone }">
+			<input type="tel" name="telephone" maxlength="10" size="15" value="${utilisateur.telephone }">
 			
 			<label for="codePostal">Code Postal :</label>
-			<input type="text" name="codePostal"maxlength="30" size="15" value="${utilisateur.codePostal }">
+			<input type="text" name="codePostal"maxlength="5" size="15" value="${utilisateur.codePostal }">
 			
 			<label for="motdepasse">Mot de passe actuel :</label>
 			<input type="password"maxlength="30" size="15" name="motdepasse">
@@ -86,13 +86,13 @@
 			<input type="text" name="nom" maxlength="30" size="15"value="${utilisateur.nom}">
 			
 			<label for="email">E-mail :</label>
-			<input type="email" name="email" maxlength="30" size="15"value="${utilisateur.email}">
+			<input type="email" name="email" maxlength="50" size="15"value="${utilisateur.email}">
 			
 			<label for="rue">Rue :</label>
 			<input type="text" name="rue" maxlength="30" size="15"value="${utilisateur.rue}">
 			
 			<label for="ville">Ville :</label>
-			<input type="text" name="ville" maxlength="30" size="15"value="${utilisateur.ville}">
+			<input type="text" name="ville" maxlength="50" size="15"value="${utilisateur.ville}">
 
 
 			<label for="confirmation_mdp">Confirmation : 

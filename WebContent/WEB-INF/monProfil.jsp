@@ -59,7 +59,9 @@
 		<p>Ville : ${utilisateur.ville}</p>
 		 
 			
-			<a href="ServletModifierProfil" class="button">Modifier</a> <!-- Redirige vers la servletModifierProfil qui envoie vers modifierProfil.jsp -->
+			<a href="ServletModifierProfil" class="button"> <input type="button" class="button" value="Modifier Profil" onclick="ServletModifierProfil"/></a>
+			
+			 <!-- Redirige vers la servletModifierProfil qui envoie vers modifierProfil.jsp -->
 
 	</div>
 	

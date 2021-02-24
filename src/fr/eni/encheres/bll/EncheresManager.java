@@ -34,12 +34,12 @@ public class EncheresManager {
 		}
 		
 		
-		public Enchere ajoutEnchere (int no_enchere, Date date_enchere, int montant_enchere, int no_article, int no_utilisateur) throws BusinessException {
+		public Enchere ajoutEnchere (int no_enchere, Date dateEnchere, int montant_enchere, int no_article, int no_utilisateur) throws BusinessException {
 
 		
 			Enchere enchere = new Enchere();
 			enchere.setNoEncheres(no_enchere);
-			enchere.setDateEnchere((java.sql.Date) date_enchere);
+			enchere.setDateEnchere(dateEnchere);
 			enchere.setMontant_enchere(montant_enchere);
 			enchere.setNoArticle(no_article);
 			enchere.setNoUtilisateur(no_utilisateur);
