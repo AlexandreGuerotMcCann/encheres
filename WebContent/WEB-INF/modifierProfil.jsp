@@ -52,7 +52,7 @@
 		</div>
 		
 		<button class="button" type="submit" name="enregistrer">Enregistrer</button> <!-- A faire : inclure méthode UPDATE compte -->
-		<a href="ServletAccueil" class="button">Supprimer mon compte</a> <!-- A faire : inclure méthode supprimer compte -->
+		<a href="ServletSupprimerUtilisateur?noUtilisateur=${utilisateur.noUtilisateur}" class="button">Supprimer mon compte</a> <!-- Redirige vers ServletSupprimerUtilisateur WHERE noUtilisateur = noUtilisateur en cours -->
 		
 </body>
 </html>

@@ -154,11 +154,11 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	// Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon
 	// compte" (cf.maquette)
 	@Override
-	public void supprimerUtilisateur(int no_utilisateur) throws BusinessException {
+	public void supprimerUtilisateur(Utilisateur utilisateur) throws BusinessException {
 		try (Connection connection = ConnectionProvider.getConnection()) {
 			PreparedStatement pStatement = connection.prepareStatement(DELETE_USER); // + Voir si delete avec pseudo
 																						// aussi
-			pStatement.setInt(1, no_utilisateur);
+			pStatement.setInt(1, utilisateur.getNoUtilisateur());
 			pStatement.executeUpdate();
 		} catch (SQLException ex) {
 			// ex.printStackTrace();

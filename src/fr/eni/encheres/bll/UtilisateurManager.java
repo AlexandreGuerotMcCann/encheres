@@ -9,7 +9,7 @@ import fr.eni.encheres.dal.DAOFactory;
 import fr.eni.encheres.dal.UtilisateurDAO;
 
 public class UtilisateurManager {
-	private static final String INSTANCE = null;//
+
 	// Doit disposer d'un accès à la DAL en passant par le DAOFactory => Création de
 	// la DAOFactory dans DAL
 	private UtilisateurDAO daoUtilisateur;
@@ -27,9 +27,9 @@ public class UtilisateurManager {
 		return daoUtilisateur.selectByPseudo(pseudo);
 	}
 
-//	public Utilisateur retournerUtilisateurParId(int id) throws BusinessException {
-//		return daoUtilisateur.selectById(id);
-//	}
+	public Utilisateur retournerUtilisateurParId(int id) throws BusinessException {
+		return daoUtilisateur.selectById(id);
+	}
 
 	public List<Utilisateur> ListeUtilisateurs() throws BusinessException {
 		return daoUtilisateur.selectAll();
@@ -57,15 +57,9 @@ public class UtilisateurManager {
 		return utilisateur;
 	}
 
-//public static UtilisateurManager getInstance() { //
-//	if (INSTANCE == null)//
-//		INSTANCE = new UtilisateurManager();//
-//	return INSTANCE;//
-//}
-
 //Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon compte" (cf.maquette)
-	public void suppressionUtilisateur(int no_utilisateur) throws BusinessException {
-		this.daoUtilisateur.supprimerUtilisateur(no_utilisateur);
+	public void suppressionUtilisateur(Utilisateur utilisateur) throws BusinessException {
+		this.daoUtilisateur.supprimerUtilisateur(utilisateur);
 	}
 
 //Méthode à tester /!\ => à lier avec pageModifierProfil => bouton "Enregistrer" (cf.maquette p.7 & 8/13)
