@@ -3,6 +3,7 @@ package fr.eni.encheres.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import fr.eni.encheres.BusinessException;
@@ -70,8 +71,9 @@ public class ServletSinscrire extends HttpServlet {
 		RequestDispatcher rd = null;
 		// J'ajoute l'utilisateur
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		
 		try {
-			if (validationPseudoBDD(pseudo) == false) {
+			validationPseudoBDD(pseudo);
 
 //					if (validationEmailBDD(mail) == false) {
 //
@@ -119,7 +121,10 @@ public class ServletSinscrire extends HttpServlet {
 
 			e.printStackTrace();
 			try {
-				if (validationPseudoBDD(pseudo) == false) {
+				HashMap<String, String> listeErreurs=new HashMap<String, String>();
+				
+					listeErreurs.put("pseudoBDD", "Ce pseudo existe déjà");
+					request.setAttribute("listeErreurs", listeErreurs);
 					request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
 					rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);}
@@ -133,7 +138,7 @@ public class ServletSinscrire extends HttpServlet {
 
 	
 
-	boolean validationPseudoBDD(String pseudo) throws Exception {
+	void validationPseudoBDD(String pseudo) throws Exception {
 		List<String> listePseudoBDD = new ArrayList<String>();
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
@@ -141,11 +146,8 @@ public class ServletSinscrire extends HttpServlet {
 			listePseudoBDD.add(utilisateur.getPseudo());
 		}
 		if (listePseudoBDD.contains(pseudo)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+			throw new Exception("Ce pseudo existe déjà.");
+	}}
 
 	boolean validationPseudo(String pseudo) {
 		if (pseudo != null && pseudo.trim().length() > 0 && pseudo.trim().length() < 30
