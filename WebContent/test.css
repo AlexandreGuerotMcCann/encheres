@@ -210,7 +210,7 @@ footer {
     color: black;
     font-size: 20px;
     font-weight:500;
-    z-index:-1;
+   
     min-width:400px;}
     
 
@@ -228,7 +228,7 @@ footer {
    
     line-height: 1.5em;
     position: absolute;
-    top:110%;
+    top:95%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #f2f2f2;
@@ -348,18 +348,20 @@ min-width:500px;
 z-index: -1;}
  
  .wrapper3 {position:absolute;
-top:65%;
+top:68%;
     left: 35%;
     transform: translate(-50%, -50%);
 min-width:500px;
-z-index: -1;}
+z-index: 0;}
 
 .wrapper4 {position:absolute;
 top:120%;
     left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
-z-index: -1;}
+}
+
+
 
 
  
