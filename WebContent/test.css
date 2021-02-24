@@ -10,7 +10,7 @@
 	max-width: 1500px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: aliceblue;
+	background-color: #f2f2f2;
 	opacity: 0.9;
 	border-radius: 4px;
 	
@@ -26,7 +26,7 @@
 	max-width: 1800px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: aliceblue;
+	background-color: #f2f2f2;
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0em;
@@ -47,6 +47,7 @@ h1 {
 
 h2 {
 	text-align: center;
+	color: #DB4D69;
 }
 
 .button {
@@ -109,7 +110,8 @@ li a:hover {
 	max-width: 1800px;
 	margin-left: 15%;
 	margin-right: auto;
-	background-color: aliceblue;
+	background-color: #f2f2f2;
+	
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
@@ -133,7 +135,7 @@ li a:hover {
 	max-width: 1800px;
 	margin-left: auto;
 	margin-right: 15%;
-	background-color: aliceblue;
+	background-color: #f2f2f2;
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
@@ -176,7 +178,7 @@ footer {
     left: 50%;
     width: 25%;
     transform: translate(-50%, -50%);
-    background-color: aliceblue;
+    background-color: #f2f2f2;
     border-radius: 4px;
     opacity: 0.9;
     color: black;
@@ -198,7 +200,7 @@ footer {
     top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: aliceblue;
+    background-color: #f2f2f2;
     border-radius: 4px;
     opacity: 0.9;
     color: black;
