@@ -8,17 +8,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="test.css">
-<link rel="stylesheet" type="text/css"
-	href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="test.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<title>S'inscrire</title>
+	<title>S'inscrire</title>
 </head>
-<body>
 
+<body>
 
 	<div class="logo">
 		<a href="accueil"><img src="images/logoProjet.png" alt="accueil"
@@ -27,13 +25,12 @@
 
 	<div class="navbar">
 		<div class="dropdown">
-			<button class="dropbtn">
-				MENU <i class="fa fa-bars" aria-hidden="true"></i>
-			</button>
+			<button class="dropbtn"> MENU <i class="fa fa-bars" aria-hidden="true"></i></button>
 			<div class="dropdown-content">
-				<a href="ServletEncheres">Encheres</a> <a
-					href="ServletVendreArticle">Vendre</a> <a href="ServletConnexion">Se
-					connecter</a> <a href="ServletSinscrire">S'inscrire</a>
+				<a href="ServletEncheres">Encheres</a> 
+				<a href="ServletVendreArticle">Vendre</a> 
+				<a href="ServletConnexion">Se connecter</a> 
+				<a href="ServletSinscrire">S'inscrire</a>
 			</div>
 		</div>
 	</div>
@@ -57,22 +54,21 @@
 
 	<h2>Création d'un nouveau compte</h2>
 
+	<!-- INTEGRER LES MESSAGES D ERREURS -->
 	<c:if test="${erreur != 0}"> 
 		<p>${listeErreurs}</p>
 	</c:if>
-
 
 	<form action="ServletSinscrire" method="post" name="connexion">
 
 		<div class="wrapper">
 
-
-
-			<label for="pseudo">Pseudo: </label> <input type="text" required
-				id="pseudo" name="pseudo" maxlength="30" size="15"> <label
-				for="mdp">Mot de passe: </label> <input type="password" required
-				id="mdp" name="mdp" min="8" maxlength="30" size="15"> <label
-				for="mdp">Confirmation Mot de passe: </label> <input type="Password"
+			<label for="pseudo">Pseudo: </label> 
+			<input type="text" required id="pseudo" name="pseudo" maxlength="30" size="15"> 
+			
+			<label for="mdp">Mot de passe: </label> 
+			<input type="password" required id="mdp" name="mdp" min="8" maxlength="30" size="15"> 
+			<label for="mdp">Confirmation Mot de passe: </label> <input type="Password"
 				required id="confirmMdp" name="confirmMdp" min="8" maxlength="30"
 				size="15"> <label for="name">Nom: </label> <input
 				type="text" required id="nom" name="nom" maxlength="30" size="15">

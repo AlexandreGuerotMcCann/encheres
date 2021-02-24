@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bll.UtilisateurManager;
@@ -34,7 +35,7 @@ public class ServletSinscrire extends HttpServlet {
 	private static final String ALPHA = "^[A-Za-z]";
 	private static final String NUMERIQUE = "^[0-9]";
 
-	HashMap<String, String> listeErreurs = new HashMap<String, String>();
+	Map<String, String> listeErreurs = new HashMap<String, String>();
 
 
 	/**
@@ -114,7 +115,8 @@ public class ServletSinscrire extends HttpServlet {
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
-					
+				
+		
 			if (mail == null || mail.trim().length() > 50 || !mail.matches(CARACTERES_AUTORISES_MAIL))
 			{
 				erreur ++;
