@@ -56,7 +56,6 @@ public class ServletSinscrire extends HttpServlet {
 		RequestDispatcher rd = null;
 		UtilisateurManager utilisateurManager = new UtilisateurManager();	
 		
-		int erreur = 0;
 		
 		String pseudo = request.getParameter("pseudo");
 		String mdp = request.getParameter("mdp");
@@ -74,9 +73,8 @@ public class ServletSinscrire extends HttpServlet {
 		
 		//Pseudo
 		try {
-			if (utilisateurManager.retournerUtilisateur(pseudo) == null)
+			if (utilisateurManager.retournerUtilisateur(pseudo) != null)
 			 {
-				erreur ++;
 				listeErreurs.put("pseudoBDD", "Ce pseudo existe déjà");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -84,9 +82,8 @@ public class ServletSinscrire extends HttpServlet {
 			 }
 			
 			// Mail
-			if (utilisateurManager.retournerUtilisateur(mail) == null)
+			else if (utilisateurManager.retournerUtilisateur(mail) != null)
 			{
-				erreur ++;
 				listeErreurs.put("mailBDD", "Cet email existe déjà, veuillez vous connecter.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -94,9 +91,8 @@ public class ServletSinscrire extends HttpServlet {
 			}
 			
 			// Téléphone
-			if (utilisateurManager.retournerUtilisateur(telephone) == null)
+			else if (utilisateurManager.retournerUtilisateur(telephone) != null)
 			{
-				erreur ++;
 				listeErreurs.put("telephoneBDD", "Ce numéro existe déjà");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -106,27 +102,24 @@ public class ServletSinscrire extends HttpServlet {
 			
 // VERIFS AUTRES
 			
-		if (pseudo == null || pseudo.trim().length() < 3 || pseudo.trim().length() > 30 || !pseudo.matches(ALPHANUMERIQUE))
+			else if (pseudo == null || pseudo.trim().length() < 3 || pseudo.trim().length() > 30 || !pseudo.matches(ALPHANUMERIQUE))
 			{
-				erreur ++;
 				listeErreurs.put("pseudo", "Le pseudo doit contenir entre 3 et 30 chiffres et lettres");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
 					
-			if (mail == null || mail.trim().length() > 50 || !mail.matches(CARACTERES_AUTORISES_MAIL))
+			else if (mail == null || mail.trim().length() > 50 || !mail.matches(CARACTERES_AUTORISES_MAIL))
 			{
-				erreur ++;
 				listeErreurs.put("mail", "Votre email est incorrect, veuillez le ressaisir.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
 			
-			if (telephone == null || telephone.trim().length() > 15 || !telephone.matches(NUMERIQUE))
+			else if (telephone == null || telephone.trim().length() > 15 || !telephone.matches(NUMERIQUE))
 			{
-				erreur ++;
 				listeErreurs.put("telephone", "Le numéro de téléphone est incorrect, veuillez le ressaisir.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -135,70 +128,64 @@ public class ServletSinscrire extends HttpServlet {
 			
 			
 			// A REVOIR POUR FAIRE L INVERSE PEUT ETRE
-			if (mdp == null || !mdp.equals(confirmMdp) || mdp.trim().length() < 7 || !mdp.matches(ALPHANUMERIQUE))
+			else if (mdp == null || !mdp.equals(confirmMdp) || mdp.trim().length() < 7 || !mdp.matches(ALPHANUMERIQUE))
 				// if (mdp != null && mdp.equals(confirmMdp) && mdp.trim().length() > 7 && mdp.matches(ALPHANUMERIQUE)) 
 			{
-				erreur ++;
 				listeErreurs.put("motdepasse", "Le mot de passe et la confirmation sont différents.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
 			
-			if (nom == null || nom.trim().length() < 2 || nom.trim().length() > 30 || !nom.matches(ALPHANUMERIQUE))
+			else if (nom == null || nom.trim().length() < 2 || nom.trim().length() > 30 || !nom.matches(ALPHANUMERIQUE))
 			{
-				erreur ++;
 				listeErreurs.put("nom", "Votre nom doit contenir entre 2 et 30 lettres.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
 			
-			if (prenom == null || prenom.trim().length() < 2 || prenom.trim().length() > 30 || !prenom.matches(ALPHA))
+			else if (prenom == null || prenom.trim().length() < 2 || prenom.trim().length() > 30 || !prenom.matches(ALPHA))
 			{
-				erreur ++;
 				listeErreurs.put("prenom", "Votre prénom doit contenir entre 2 et 30 lettres.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
 			
-			if (rue == null || rue.trim().length() > 30 || !rue.matches(ALPHANUMERIQUE))
+			else if (rue == null || rue.trim().length() > 30 || !rue.matches(ALPHANUMERIQUE))
 			{
-				erreur ++;
 				listeErreurs.put("rue", "la rue doit contenir entre 2 et 30 lettres.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
 			
-			if (codePostal == null || codePostal.trim().length() != 5 || !codePostal.matches(NUMERIQUE))
+			else if (codePostal == null || codePostal.trim().length() != 5 || !codePostal.matches(NUMERIQUE))
 			{
-				erreur ++;
 				listeErreurs.put("codePostal", "le code postal doit contenir 5 chiffres.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
 			
-			if (ville == null || ville.trim().length() > 50 || !ville.matches(ALPHA))
+			else if (ville == null || ville.trim().length() > 50 || !ville.matches(ALPHA))
 			{
-				erreur ++;
 				listeErreurs.put("ville", "La ville doit contenir moins de 50 caractères.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
 			
-			else if (erreur == 0)
+			else 
 			{
 				Utilisateur utilisateur;
 			
 					utilisateur = utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone, rue, codePostal, ville);
 					utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
 					HttpSession session = request.getSession();
-					//session.setAttribute("user", utilisateur);
-					//session.setAttribute("userTest", utilisateur);
+					session.setAttribute("user", utilisateur);
+					session.setAttribute("userTest", utilisateur);
 					session.setAttribute("utilisateur", utilisateur);
 					rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 					rd.forward(request, response);
