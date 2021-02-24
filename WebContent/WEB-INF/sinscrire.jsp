@@ -51,6 +51,7 @@
 
 	</div>
 
+	<br>
 	<h1>ENI Enchères</h1>
 
 	<h2>Création d'un nouveau compte</h2>

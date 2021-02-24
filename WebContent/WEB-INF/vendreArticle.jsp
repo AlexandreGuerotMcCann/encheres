@@ -78,14 +78,11 @@
 		<label>Ville: <input style="text"></label>
 
 	
-	<a href="accueil" class="button3"><input type="submit" class="button" value="Annuler"> </a>
+		<a href="accueil" class="button3"><input type="submit" class="button" value="Annuler"> </a>
         <a href="ServletMesVentes" class="button3"> <input type="submit" class="button" value="Enregistrer"></a>
 	
 	</div>
 
-
-
 </body>
-
 	
 </html>
