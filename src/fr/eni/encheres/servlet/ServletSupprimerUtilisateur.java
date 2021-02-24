@@ -39,12 +39,10 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 			//Redirection vers accueil en mode déconnecté
 			this.getServletContext().getRequestDispatcher("/ServletAccueil").forward(request, response);
 			
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (BusinessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (NumberFormatException ex) {
+			ex.printStackTrace();
+		} catch (BusinessException ex) {
+			ex.printStackTrace();
 		}
 	}
 
@@ -52,7 +50,6 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
