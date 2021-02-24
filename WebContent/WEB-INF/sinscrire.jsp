@@ -21,7 +21,46 @@
 	<div class="logo">
 		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
 	</div>
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">MENU
+     <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="ServletEncheres">Encheres</a>
+      <a href="ServletVendreArticle">Vendre</a>
+      <a href="ServletConnexion">Se connecter</a>
+      <a href="ServletSinscrire">S'inscrire</a>
+    </div>
+    </div>
+  </div> 
+	
+	<div>
+	
+		<ul>
+		
+			<li><a href="ServletEncheres">Enchères</a></li>
+			<li><a href="ServletVendreArticle">Vendre un article</a></li>
+			
+		<c:if test="${empty utilisateur.pseudo}">	<!-- Si utilisateur non connecté, boutons "Se connecter" & "S'inscrire" visibles et actifs -->
+			<li><a href="ServletConnexion">Se connecter</a></li>
+			<li><a href="ServletSinscrire">S'inscrire</a></li>	
+		</c:if>	
+		
+		<c:if test="${!empty utilisateur.pseudo}">	<!-- Si utilisateur connecté, bouton "Mon profil" visible et actif -->
+			<li><a href="ServletMonProfil">Mon profil</a></li>
+		</c:if>	
+		
+		<c:if test="${!empty utilisateur.pseudo}">	<!-- Si utilisateur connecté, bouton "Se déconnecter" visible et actif -->
+			<li><a href="ServletDeconnexion">Se déconnecter</a></li>
+		</c:if>
+			
+		</ul>
+	</div>
 
+
+
+	<br>
 	<h1>ENI Enchères</h1>
 
 	<h2>Création d'un nouveau compte</h2>
