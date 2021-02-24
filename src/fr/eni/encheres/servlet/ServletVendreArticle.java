@@ -1,6 +1,8 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import fr.eni.encheres.bll.ArticleManager;
 import fr.eni.encheres.bll.EncheresManager;
 import fr.eni.encheres.bo.ArticleVendu;
+import fr.eni.encheres.bo.Categorie;
 import fr.eni.encheres.bo.Enchere;
 import fr.eni.encheres.bo.Utilisateur;
 
@@ -39,14 +42,16 @@ public class ServletVendreArticle extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomArticle = request.getParameter("nomArticle");
 		String description = request.getParameter("description");
-		String dateDebutEnchere = request.getParameter("dateDebutEnchere");
-		String dateFinEnchere = request.getParameter("dateFinEnchere");
+		Date dateDebutEnchere = new SimpleDateFormat("yyyy-MM-dd").parse(getInitParameter("dateDebutEnchere"));
+		Date dateFinEnchere = new SimpleDateFormat("yyyy-MM-dd").parse(getInitParameter("dateFinEnchere"));
 		String misAPrix = request.getParameter("miseAPrix");
 		int miseAPrix= Integer.parseInt(misAPrix);
 		String prixDepart = request.getParameter("prixVente");
 		int prixVente= Integer.parseInt(prixDepart);
-		String noUtilisateur = request.getParameter("noUtilisateur");
-		String noCategorie = request.getParameter("noCategorie");
+		Utilisateur noUtilisateur = Utilisateur.parseInt("noUtilisateur");
+		Categorie noCategorie = Categorie.parseInt("noCategorie");
+		
+
 		
 		/** String DATE a Convertir au format DATE ou LocalDate ligne 42 et 43.
 		 * Modifier ensuite paramètre méthode ajoutArticleVendu ligne 58 **/
