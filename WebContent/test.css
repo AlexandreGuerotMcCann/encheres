@@ -76,6 +76,9 @@ h2 {
 
 footer {
 	text-align: center;
+	display:inline-block;
+	position:absolute;
+	top:90%;
 }
 
 #TitreAccueil {
