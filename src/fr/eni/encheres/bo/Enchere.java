@@ -1,7 +1,6 @@
 package fr.eni.encheres.bo;
 
 import java.sql.Date;
-import java.time.LocalDate;
 
 public class Enchere {
 	
@@ -18,8 +17,8 @@ public class Enchere {
 	public Date getDateEnchere() {
 		return dateEnchere;
 	}
-	public void setDateEnchere(Date date_enchere) {
-		this.dateEnchere = date_enchere;
+	public void setDateEnchere(Date dateEnchere) {
+		this.dateEnchere = dateEnchere;
 	}
 	public int getMontant_enchere() {
 		return montant_enchere;

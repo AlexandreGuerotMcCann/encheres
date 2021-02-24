@@ -2,6 +2,7 @@ package fr.eni.encheres.servlet;
 
 import java.io.IOException;
 import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Formatter;
@@ -42,10 +43,10 @@ public class ServletEncheres extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String n_enchere= request.getParameter("no_enchere");
 		int no_enchere= Integer.parseInt(n_enchere);
-		String date_enchere = request.getParameter("date_enchere");
-		Date date = Date.parse(date_enchere);
+		Date dateEnchere = new SimpleDateFormat("dd-MM-yyyy").parse(getInitParameter("dateEnchere"));
 		String montantEnchere = request.getParameter("montant_enchere");
 		int montant_enchere  = Integer.parseInt(montantEnchere);
 		String article = request.getParameter("no_article");
@@ -62,7 +63,7 @@ public class ServletEncheres extends HttpServlet {
 		 * dans les param de la méthode "ajoutEnchere() ligne 65 **/
 		
 
-		Enchere enchere= EncheresManager.ajoutEnchere(no_enchere, date_enchere, montant_enchere, no_article, no_utilisateur);
+		Enchere enchere= EncheresManager.ajoutEnchere(no_enchere, dateEnchere, montant_enchere, no_article, no_utilisateur);
 		enchere = encheresManager.retournerEnchere(no_enchere);
 		HttpSession session = request.getSession();
 		session.setAttribute("enchere", enchere);
