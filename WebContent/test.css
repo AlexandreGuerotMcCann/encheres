@@ -334,6 +334,11 @@ text-align: center;
  
  }
  
+ 
+
+ 
+ 
+ 
 .wrapper2 {position:absolute;
 top:45%;
     left: 50%;
@@ -427,6 +432,7 @@ min-width:500px;
   z-index:1;
   
 }
+
 
 .dropdown-content a {
   float: none;
