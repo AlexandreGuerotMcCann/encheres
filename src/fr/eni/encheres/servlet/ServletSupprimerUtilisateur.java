@@ -27,9 +27,9 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		HttpSession session = request.getSession(); 
 		
-		try {
 			// On va chercher méthode de la BLL qui descend jusqu'à la BDD  
 			// Types doivent être cohérents !
 			utilisateur.suppressionUtilisateur(utilisateur.retournerUtilisateurParId(Integer.valueOf(request.getParameter("noUtilisateur"))));
@@ -40,11 +40,6 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 			//Redirection vers accueil en mode déconnecté
 			this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
 			
-		} catch (NumberFormatException ex) {
-			ex.printStackTrace();
-		} catch (BusinessException ex) {
-			ex.printStackTrace();
-		}
 	}
 
 	/**
