@@ -32,7 +32,7 @@
 		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo...">
 	</div>
 	<div class="infosUtilisateur">
- 
+   
 	
 		<p>Pseudo : ${utilisateur.pseudo}</p>
 		<p>Nom : ${utilisateur.nom}</p>
@@ -44,7 +44,7 @@
 		<p>Ville : ${utilisateur.ville}</p>
 		 
 		<br>		
-			<a href="ServletModifierProfil" class="button">Modifier</a> <!-- Redirige vers la servletModifierProfil qui envoie vers modifierProfil.jsp -->
+			<a href="/WEB-INF/modifierProfil" class="button">Modifier</a> <!-- Redirige vers la servletModifierProfil qui envoie vers modifierProfil.jsp -->
 
 	</div>
 	
