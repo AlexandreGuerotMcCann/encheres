@@ -299,13 +299,15 @@ text-align: center;
  
  @media screen and (max-width: 1100px) {
  
- .ajoutVente { top:130%;
+ .ajoutVente { top:110%;
  min-width:600px;
  position: absolute;
+ z-index:-1;
+ 
  
  }
  
- .newVente {margin-top:10%;}
+ 
  
  ul {display:none;}
  
@@ -338,6 +340,7 @@ text-align: center;
 .dropdown {
   float: Right;
   overflow: hidden;
+  display:block;
  
 
 }
@@ -360,7 +363,7 @@ text-align: center;
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color:white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index:1;
