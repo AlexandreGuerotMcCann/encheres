@@ -14,6 +14,7 @@
 	background-color: #f2f2f2;
 	opacity: 0.9;
 	border-radius: 4px;
+	z-index:-1;
 	
 }
 
@@ -31,6 +32,7 @@
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0em;
+	z-index:-1;
 
 }
 
@@ -108,6 +110,8 @@ li a:hover {
 	color: black;
 }
 
+
+
 .wrapper3 {
 	display: grid;
 	grid-template-columns: 2fr 2fr;
@@ -115,10 +119,11 @@ li a:hover {
 	margin-left: 15%;
 	margin-right: auto;
 	background-color: #f2f2f2;
-	
+	position:relative;
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
+	z-index:-1;
 }
 
 .wrapper3>* {
@@ -143,6 +148,7 @@ li a:hover {
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
+	z-index:-1;
 }
 
 .wrapper4>* {
