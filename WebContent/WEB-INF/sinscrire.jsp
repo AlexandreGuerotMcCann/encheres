@@ -57,35 +57,9 @@
 
 	<h2>Création d'un nouveau compte</h2>
 
-	<!-- Code pour afficher les erreurs En cas de mauvaise saisie -->
-	<%
-	HashMap<String, String> listeErreurs = (HashMap<String, String>) request.getAttribute("listeErreurs");
-	%>
-	<c:forEach items="${listeErreurs}" var="erreur">
-		<c:out value="${erreur.value}" />
-		<br />
-	</c:forEach>
-
-
-	<%
-	String erreurPseudoBDD = (String) request.getAttribute("pseudoBDD");
-	String erreurPseudo = (String) request.getAttribute("pseudo");
-	%>
-
-	<c:if test="${!empty erreurPseudoBDD }">
-		<%=erreurPseudoBDD%>
+	<c:if test="${erreur != 0}"> 
+		<p>${listeErreurs}</p>
 	</c:if>
-
-	<c:if test="${!empty erreurPseudo}">
-		<%=erreurPseudo%>
-	</c:if>
-
-
-
-	<!-- if (ListeErreurInscription != null) {
-	for (String erreur : ListeErreurInscription) {
-			out.println(erreur);
-		} -->
 
 
 	<form action="ServletSinscrire" method="post" name="connexion">
@@ -94,7 +68,7 @@
 
 
 
-			<label for="nickname">Pseudo: </label> <input type="text" required
+			<label for="pseudo">Pseudo: </label> <input type="text" required
 				id="pseudo" name="pseudo" maxlength="30" size="15"> <label
 				for="mdp">Mot de passe: </label> <input type="password" required
 				id="mdp" name="mdp" min="8" maxlength="30" size="15"> <label
@@ -115,8 +89,8 @@
 
 			<label for="codePostal">Code postal: </label> <input type="text"
 				required id="codePostal" name="codePostal" placeholder="35000"
-				min="5" maxlength="5" size="15"> <label for="city">Ville:
-			</label> <input type="text" required id="city" name="city" maxlength="50"
+				min="5" maxlength="5" size="15"> <label for="ville">Ville:
+			</label> <input type="text" required id="ville" name="ville" maxlength="50"
 				size="15">
 
 			<button class="button" type="button" name="annuler"
