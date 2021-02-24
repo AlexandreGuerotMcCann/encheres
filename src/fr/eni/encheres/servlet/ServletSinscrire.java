@@ -76,11 +76,21 @@ public class ServletSinscrire extends HttpServlet {
 
 		RequestDispatcher rd = null;
 		// J'ajoute l'utilisateur
+		
+		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		
+		// OK fonctionne selon si pseudo déjà présent en BDD ou non !
 		try {
-			validationPseudoBDD(pseudo);
+			if (utilisateurManager.retournerUtilisateur(pseudo) != null);
 		} catch (Exception e) {
 			listeErreurs.put("pseudoBDD", "Ce pseudo existe déjà");
 		}
+			
+	/*	try {
+			validationPseudoBDD(pseudo);
+		} catch (Exception e) {
+			listeErreurs.put("pseudoBDD", "Ce pseudo existe déjà");
+		}*/
 		try {
 			validationPseudo(pseudo);
 		} catch (Exception e) {
@@ -136,11 +146,11 @@ public class ServletSinscrire extends HttpServlet {
 		} catch (Exception e) {
 			listeErreurs.put("ville", "La ville doit contenir moins de 50 caractères.");
 		}
-		if (listeErreurs.isEmpty()) {
+		if (listeErreurs == null) {
 
 			Utilisateur utilisateur;
 			try {
-				UtilisateurManager utilisateurManager = new UtilisateurManager();
+				//UtilisateurManager utilisateurManager = new UtilisateurManager();
 				utilisateur = utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone, rue,
 						codePostal, city);
 				utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
@@ -167,18 +177,20 @@ public class ServletSinscrire extends HttpServlet {
 	}
 
 //Méthodes de vérification
-	private void validationPseudoBDD(String pseudo) throws Exception {
+	/*private void validationPseudoBDD() throws Exception {
 		List<String> listePseudoBDD = new ArrayList<String>();
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
-		for (Utilisateur utilisateur : listeUser) {
-			listePseudoBDD.add(utilisateur.getPseudo());
-		}
-		if (listePseudoBDD.contains(pseudo)) {
+			for (Utilisateur utilisateur : listeUser) 
+			{
+				listePseudoBDD.add(utilisateur.getPseudo());
+			}
+		//if (listePseudoBDD.contains(pseudo)) 
+			if (utilisateurManager.retournerUtilisateur(pseudo) != null)
+		{
 			throw new Exception();
-
 		}
-	}
+	}*/
 
 	private void validationPseudo(String pseudo) throws Exception {
 		if (pseudo == null) {
