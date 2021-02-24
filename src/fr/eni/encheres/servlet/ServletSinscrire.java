@@ -41,7 +41,11 @@ public class ServletSinscrire extends HttpServlet {
 
 	private static final String ALPHANUMERIQUE = "^[A-Za-z0-9]";
 	private static final String CARACTERES_AUTORISES_MAIL = "^[A-Za-z0-9._@-]"; // le - doit être à la fin ou au début
-	private String erreurMessage=null;												// de
+	private static final String ALPHA = "^[A-Za-z]";
+	private static final String NUMERIQUE = "^[0-9]";
+
+	HashMap<String, String> listeErreurs = new HashMap<String, String>();
+// de
 	// l'expression régulière
 
 	/**
@@ -72,23 +76,73 @@ public class ServletSinscrire extends HttpServlet {
 
 		RequestDispatcher rd = null;
 		// J'ajoute l'utilisateur
-		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		try {
 			validationPseudoBDD(pseudo);
+		} catch (Exception e) {
+			listeErreurs.put("pseudoBDD", "Ce pseudo existe déjà");
+		}
+		try {
 			validationPseudo(pseudo);
+		} catch (Exception e) {
+			listeErreurs.put("pseudo", "Le pseudo doit contenir moins de 30 chiffres et lettres");
+		}
+		try {
 			validationEmailBDD(mail);
+		} catch (Exception e) {
+			listeErreurs.put("mailBDD", "Cet email existe déjà, veuillez vous connecter.");
+		}
+		try {
 			validationEmail(mail);
+		} catch (Exception e) {
+			listeErreurs.put("mail", "Votre email est incorrect, veuillez le ressaisir.");
+		}
+		try {
 			validationTelephoneBDD(telephone);
+		} catch (Exception e) {
+			listeErreurs.put("telephoneBDD", "Ce numéro existe déjà");
+		}
+		try {
 			validationTelephone(telephone);
+		} catch (Exception e) {
+			listeErreurs.put("telephone", "Le numéro de téléphone est incorrect, veuillez le ressaisir.");
+		}
+		try {
 			validationMDP(mdp, confirmMdp);
+		} catch (Exception e) {
+			listeErreurs.put("motdepasse", "Le mot de passe et la confirmation sont différents.");
+		}
+		try {
 			validationNom(nom);
+		} catch (Exception e) {
+			listeErreurs.put("nom", "Votre nom doit contenir entre 2 et 30 lettres.");
+		}
+		try {
 			validationPrenom(prenom);
+		} catch (Exception e) {
+			listeErreurs.put("prenom", "Votre prénom doit contenir entre 2 et 30 lettres.");
+		}
+		try {
 			validationRue(rue);
+		} catch (Exception e) {
+			listeErreurs.put("rue", "la rue doit contenir entre 2 et 30 lettres.");
+		}
+		try {
 			validationCodePostal(codePostal);
+		} catch (Exception e) {
+			listeErreurs.put("codePostal", "le code postal doit contenir 5 chiffres.");
+		}
+		try {
 			validationVille(city);
+		} catch (Exception e) {
+			listeErreurs.put("ville", "La ville doit contenir moins de 50 caractères.");
+		}
+		if (listeErreurs.size()>1) {
 
-				Utilisateur utilisateur = utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone,
-						rue, codePostal, city);
+			Utilisateur utilisateur;
+			try {
+				UtilisateurManager utilisateurManager = new UtilisateurManager();
+				utilisateur = utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone, rue,
+						codePostal, city);
 				utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
 				HttpSession session = request.getSession();
 				session.setAttribute("user", utilisateur);
@@ -96,13 +150,24 @@ public class ServletSinscrire extends HttpServlet {
 				session.setAttribute("utilisateur", utilisateur);
 				rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 				rd.forward(request, response);
-			}	
-		catch (Exception e) {
-			HashMap<String, String> listeErreurs= new HashMap<String, String>();
-			listeErreurs.put("erreur", erreurMessage);
-		}}
+				utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
 
-private	void validationPseudoBDD(String pseudo) throws Exception {
+			} catch (BusinessException e) {
+
+				e.printStackTrace();
+
+			}
+
+		} else {
+			request.setAttribute("listeErreurs", listeErreurs);
+			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+			rd.forward(request, response);
+
+		}
+	}
+
+//Méthodes de vérification
+	private void validationPseudoBDD(String pseudo) throws Exception {
 		List<String> listePseudoBDD = new ArrayList<String>();
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
@@ -110,20 +175,22 @@ private	void validationPseudoBDD(String pseudo) throws Exception {
 			listePseudoBDD.add(utilisateur.getPseudo());
 		}
 		if (listePseudoBDD.contains(pseudo)) {
-		throw new Exception("Ce pseudo existe déjà en BDD");
-		
-	}}
+			throw new Exception();
 
-	boolean validationPseudo(String pseudo) {
+		}
+	}
+
+	private void validationPseudo(String pseudo) throws Exception {
 		if (pseudo != null && pseudo.trim().length() > 0 && pseudo.trim().length() < 30
 				&& pseudo.matches(ALPHANUMERIQUE)) {
-			return true;
-		} else
-			return false;
+
+		} else {
+			throw new Exception();
+		}
 	}
 
 //Vérifie si le mail est présent en BDD
-	boolean validationEmailBDD(String mail) throws Exception {
+	private void validationEmailBDD(String mail) throws Exception {
 		List<String> listeMailBDD = new ArrayList<String>();
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
@@ -131,44 +198,39 @@ private	void validationPseudoBDD(String pseudo) throws Exception {
 			listeMailBDD.add(utilisateur.getEmail());
 		}
 		if (listeMailBDD.contains(mail)) {
-			return true;
-		} else {
-			return false;
+			throw new Exception();
 		}
 	}
 
-	boolean validationEmail(String mail) {
+	private void validationEmail(String mail) throws Exception {
 		if (mail != null && mail.trim().length() > 0 && mail.trim().length() < 50
 				&& mail.matches(CARACTERES_AUTORISES_MAIL)) {
-			return true;
 		} else
-			return false;
+			throw new Exception();
 	}
 
-	boolean validationMDP(String mdp, String confirmMdp) {
+	private void validationMDP(String mdp, String confirmMdp) throws Exception {
 		if (mdp != null && mdp.equals(confirmMdp) && mdp.trim().length() > 7 && mdp.matches(ALPHANUMERIQUE)) {
 
-			return true;
 		} else
-			return false;
+			throw new Exception();
 	}
 
-	private boolean validationNom(String nom) {
+	private void validationNom(String nom) throws Exception {
 		if (nom != null && nom.trim().length() > 2 && nom.trim().length() < 30 && nom.matches(ALPHANUMERIQUE)) {
-			return true;
+
 		} else
-			return false;
+			throw new Exception();
 	}
 
-	private boolean validationPrenom(String prenom) {
-		if (prenom != null && prenom.trim().length() > 2 && prenom.trim().length() < 30
-				&& prenom.matches(ALPHANUMERIQUE)) {
-			return true;
+	private void validationPrenom(String prenom) throws Exception {
+		if (prenom != null && prenom.trim().length() > 2 && prenom.trim().length() < 30 && prenom.matches(ALPHA)) {
+
 		} else
-			return false;
+			throw new Exception();
 	}
 
-	boolean validationTelephoneBDD(String telephone) throws Exception {
+	private void validationTelephoneBDD(String telephone) throws Exception {
 		List<String> listeTelephoneBDD = new ArrayList<String>();
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
@@ -176,39 +238,36 @@ private	void validationPseudoBDD(String pseudo) throws Exception {
 			listeTelephoneBDD.add(utilisateur.getEmail());
 		}
 		if (listeTelephoneBDD.contains(telephone)) {
-			return true;
-		} else {
-			return false;
+			throw new Exception();
 		}
 	}
 
-	boolean validationTelephone(String telephone) {
+	private void validationTelephone(String telephone) throws Exception {
 		if (telephone != null && telephone.trim().length() > 0 && telephone.trim().length() < 15
-				&& telephone.matches(CARACTERES_AUTORISES_MAIL)) {
-			return true;
+				&& telephone.matches(NUMERIQUE)) {
+
 		} else
-			return false;
+			throw new Exception();
 	}
 
-	boolean validationRue(String rue) {
+	private void validationRue(String rue) throws Exception {
 		if (rue != null && rue.trim().length() > 0 && rue.trim().length() < 30 && rue.matches(ALPHANUMERIQUE)) {
-			return true;
 		} else
-			return false;
+			throw new Exception();
 	}
 
-	boolean validationCodePostal(String codePostal) {
-		if (codePostal != null && codePostal.trim().length() > 0 && codePostal.trim().length() < 10
-				&& codePostal.matches(ALPHANUMERIQUE)) {
-			return true;
+	private void validationCodePostal(String codePostal) throws Exception {
+		if (codePostal != null && codePostal.trim().length() > 0 && codePostal.trim().length() == 5
+				&& codePostal.matches(NUMERIQUE)) {
+
 		} else
-			return false;
+			throw new Exception();
 	}
 
-	boolean validationVille(String ville) {
-		if (ville != null && ville.trim().length() > 0 && ville.trim().length() < 50 && ville.matches(ALPHANUMERIQUE)) {
-			return true;
+	private void validationVille(String ville) throws Exception {
+		if (ville != null && ville.trim().length() > 0 && ville.trim().length() < 50 && ville.matches(ALPHA)) {
+
 		} else
-			return false;
+			throw new Exception();
 	}
 }
