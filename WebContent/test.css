@@ -201,7 +201,7 @@ footer {
     display:block;
     line-height: 1.5em;
     position: absolute;
-    margin-top:32%;
+    margin-top:35%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #f2f2f2;
@@ -209,6 +209,8 @@ footer {
     opacity: 0.9;
     color: black;
     font-size: 20px;
+    min-width:600px;
+    
 width: 40%;}
 
 .ajoutVente input {width: 90%;
@@ -296,7 +298,7 @@ text-align: center;
  @media screen and (max-width: 1100px) {
  
  .ajoutVente {margin-top:48%;
- min-width:500px;
+ min-width:600px;
  position: absolute}
  
  ul {display:none;}

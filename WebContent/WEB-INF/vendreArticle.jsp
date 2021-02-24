@@ -50,6 +50,7 @@
 	
 	
 		<h2 class="newVente">Nouvelle Vente</h2>
+		
 	
 	<div class="ajoutVente">
 	
