@@ -64,30 +64,44 @@
 		<div class="wrapper">
 
 			<label for="pseudo">Pseudo: </label> 
-			<input type="text" required id="pseudo" name="pseudo" maxlength="30" size="15"> 
+			<input type="text" required id="pseudo" name="pseudo" pattern=".{3,30}.[A-Za-z0-9 -]" size="30" 
+			title="Le pseudo doit contenir entre 5 et 30 caractères alphanumériques." /> 
 			
 			<label for="mdp">Mot de passe: </label> 
-			<input type="password" required id="mdp" name="mdp" min="8" maxlength="30" size="15"> 
-			<label for="mdp">Confirmation Mot de passe: </label> <input type="Password"
-				required id="confirmMdp" name="confirmMdp" min="8" maxlength="30"
-				size="15"> <label for="name">Nom: </label> <input
-				type="text" required id="nom" name="nom" maxlength="30" size="15">
+			<input type="password" required id="mdp" name="mdp" pattern=".{8,30}.[A-Za-z0-9]" size="30"
+			title="Le mot de passe doit contenir au moins 8 caractères alphanumériques (les symboles ne sont pas acceptés)."/> 
+			
+			<label for="mdp">Confirmation Mot de passe: </label> 
+			<input type="Password" required id="confirmMdp" name="confirmMdp" size="30"> 
+			
+			<label for="name">Nom: </label> 
+			<input type="text" required id="nom" name="nom" pattern=".{1,30}.[A-Za-z -]" size="30"
+			title="Votre nom ne doit pas excéder 30 caractères."/> 
+			
+			<label for="prenom">Prénom: </label> 
+			<input type="text" required id="prenom" name="prenom" pattern=".{1,30}.[A-Za-z -]" size="30" 
+			title="Votre prénom ne doit pas excéder 30 caractères."/> 
+			
+			<label for="mail">Email: </label> 
+			<input type="email" required id="mail" name="mail" placeholder="email@exemple.fr" maxlength="50" size="50"
+			title="Votre e-mail ne doit pas excéder 50 caractères."/> 
+			
+			<label for="telephone">Téléphone: </label> 
+			<input type="tel" required id="telephone" name="telephone" placeholder="0600000000" pattern=".{10}.[0-9]" size="30" 
+			title="10 caractères numériques sont attendus."/> 
+			
+			<label for="rue">Rue: </label> 
+			<input type="text" required id="rue" name="rue" pattern=".{3,30}.[A-Za-z0-9 -]" size="30"
+			title="La rue ne doit pas excéder 30 caractères (les caractères spéciaux ne sont pas acceptés. Seuls les - et les espaces sont permis)."/>
 
-			<label for="prenom">Prénom: </label> <input type="text" required
-				id="prenom" name="prenom" maxlength="30" size="15"> <label
-				for="mail">Email: </label> <input type="email" required id="mail"
-				name="mail" placeholder="abcd@exemple.fr" maxlength="50" size="25">
+			<label for="codePostal">Code postal: </label> 
+			<input type="text" required id="codePostal" name="codePostal" placeholder="35000" pattern=".{5}.[0-9]" size="30"
+			title="5 caractères numériques sont attendus."/> 
+			
+			<label for="ville">Ville: </label> 
+			<input type="text" required id="ville" name="ville" pattern=".{1,50}.[A-Za-z -]" size="50"
+			title="La ville ne doit pas excéder 50 caractères. (Les caractères spéciaux ne sont pas acceptés. Seuls les - et les espaces sont permis)."/>
 
-			<label for="telephone">Téléphone: </label> <input type="tel" required
-				id="telephone" name="telephone" placeholder="0123456789"
-				maxlength="10" size="15"> <label for="rue">Rue: </label> <input
-				type="text" required id="rue" name="rue" maxlength="30" size="15">
-
-			<label for="codePostal">Code postal: </label> <input type="text"
-				required id="codePostal" name="codePostal" placeholder="35000"
-				min="5" maxlength="5" size="15"> <label for="ville">Ville:
-			</label> <input type="text" required id="ville" name="ville" maxlength="50"
-				size="15">
 
 			<button class="button" type="button" name="annuler"
 				onclick="window.location.href='http://localhost:8080/projetEncheres/accueil';">

@@ -101,50 +101,47 @@ public class ServletSinscrire extends HttpServlet {
 			}
 			
 			
-// VERIFS AUTRES
+// VERIFS AUTRES, EFFECTUEES DANS CODE HTML DE LA JSP sinscrire.jsp
 			
-			else if (pseudo == null || pseudo.trim().length() < 3 || pseudo.trim().length() > 30 || !pseudo.matches(ALPHANUMERIQUE))
+		/*	else if (pseudo == null || pseudo.trim().length() < 3 || pseudo.trim().length() > 30 || !pseudo.matches(ALPHANUMERIQUE))
 			{
 				listeErreurs.put("pseudo", "Le pseudo doit contenir entre 3 et 30 chiffres et lettres");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
-			}
-<<<<<<< HEAD
+			}*/
+
 				
-		
-			if (mail == null || mail.trim().length() > 50 || !mail.matches(CARACTERES_AUTORISES_MAIL))
-=======
 					
-			else if (mail == null || mail.trim().length() > 50 || !mail.matches(CARACTERES_AUTORISES_MAIL))
->>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
+		/*	else if (mail == null || mail.trim().length() > 50 || !mail.matches(CARACTERES_AUTORISES_MAIL))
+
 			{
 				listeErreurs.put("mail", "Votre email est incorrect, veuillez le ressaisir.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
-			}
+			}*/
 			
-			else if (telephone == null || telephone.trim().length() > 15 || !telephone.matches(NUMERIQUE))
+		/*	else if (telephone == null || telephone.trim().length() > 15 || !telephone.matches(NUMERIQUE))
 			{
 				listeErreurs.put("telephone", "Le numéro de téléphone est incorrect, veuillez le ressaisir.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
-			}
+			}*/
 			
 			
 			// A REVOIR POUR FAIRE L INVERSE PEUT ETRE
-			else if (mdp == null || !mdp.equals(confirmMdp) || mdp.trim().length() < 7 || !mdp.matches(ALPHANUMERIQUE))
+		/*	else if (mdp == null || !mdp.equals(confirmMdp) || mdp.trim().length() < 7 || !mdp.matches(ALPHANUMERIQUE))
 				// if (mdp != null && mdp.equals(confirmMdp) && mdp.trim().length() > 7 && mdp.matches(ALPHANUMERIQUE)) 
 			{
 				listeErreurs.put("motdepasse", "Le mot de passe et la confirmation sont différents.");
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
-			}
+			}*/
 			
-			else if (nom == null || nom.trim().length() < 2 || nom.trim().length() > 30 || !nom.matches(ALPHANUMERIQUE))
+		/*	else if (nom == null || nom.trim().length() < 2 || nom.trim().length() > 30 || !nom.matches(ALPHANUMERIQUE))
 			{
 				listeErreurs.put("nom", "Votre nom doit contenir entre 2 et 30 lettres.");
 				request.setAttribute("listeErreurs", listeErreurs);
@@ -158,9 +155,9 @@ public class ServletSinscrire extends HttpServlet {
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
-			}
+			}*/
 			
-			else if (rue == null || rue.trim().length() > 30 || !rue.matches(ALPHANUMERIQUE))
+			/*else if (rue == null || rue.trim().length() > 30 || !rue.matches(ALPHANUMERIQUE))
 			{
 				listeErreurs.put("rue", "la rue doit contenir entre 2 et 30 lettres.");
 				request.setAttribute("listeErreurs", listeErreurs);
@@ -182,7 +179,7 @@ public class ServletSinscrire extends HttpServlet {
 				request.setAttribute("listeErreurs", listeErreurs);
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
-			}
+			}*/
 			
 			else 
 			{
