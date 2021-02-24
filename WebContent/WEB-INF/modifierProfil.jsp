@@ -61,7 +61,7 @@
 	<div class="wrapper" >
 		<div class="left_text">
 			<label for="pseudo">Pseudo :</label>
-			<input type="text" name="pseudo"maxlength="30" size="15" value="${utilisateur.pseudo}">
+			<input type="text" readonly name="pseudo"maxlength="30" size="15" value="${utilisateur.pseudo}">
 			
 			<label for="prenom">Prénom :</label>
 			<input type="text" name="prenom" maxlength="30" size="15"value="${utilisateur.prenom }">
