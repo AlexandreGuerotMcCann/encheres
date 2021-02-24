@@ -38,7 +38,7 @@
 			
 			<p>Crédit : ${utilisateur.credit }</p>
 		</div>
-	
+	 
 		<div class="right_text">
 			<label for="nom">Nom :
 			<input type="text" name="nom" value="${utilisateur.nom}"></label>
