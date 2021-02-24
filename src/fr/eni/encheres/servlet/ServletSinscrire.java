@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
+
 /**
  * Servlet implementation class ServletSinscrire
  ***/
@@ -39,7 +41,7 @@ public class ServletSinscrire extends HttpServlet {
 
 	private static final String ALPHANUMERIQUE = "^[A-Za-z0-9]";
 	private static final String CARACTERES_AUTORISES_MAIL = "^[A-Za-z0-9._@-]"; // le - doit être à la fin ou au début
-																				// de
+	private String erreurMessage=null;												// de
 	// l'expression régulière
 
 	/**
@@ -71,29 +73,19 @@ public class ServletSinscrire extends HttpServlet {
 		RequestDispatcher rd = null;
 		// J'ajoute l'utilisateur
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
-		
 		try {
 			validationPseudoBDD(pseudo);
-
-//					if (validationEmailBDD(mail) == false) {
-//
-//						if (validationEmail(mail) == true) {
-//
-//							if (validationTelephoneBDD(telephone) == false) {
-//
-//								if (validationTelephone(telephone) == true) {
-//
-//									if (validationMDP(mdp, confirmMdp) == true) {
-//
-//										if (validationNom(nom) == true) {
-//
-//											if (validationPrenom(prenom) == true) {
-//
-//												if (validationRue(rue) == true) {
-//
-//													if (validationCodePostal(codePostal) == true) {
-//
-//														if (validationVille(city) == true) {
+			validationPseudo(pseudo);
+			validationEmailBDD(mail);
+			validationEmail(mail);
+			validationTelephoneBDD(telephone);
+			validationTelephone(telephone);
+			validationMDP(mdp, confirmMdp);
+			validationNom(nom);
+			validationPrenom(prenom);
+			validationRue(rue);
+			validationCodePostal(codePostal);
+			validationVille(city);
 
 				Utilisateur utilisateur = utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone,
 						rue, codePostal, city);
@@ -104,41 +96,13 @@ public class ServletSinscrire extends HttpServlet {
 				session.setAttribute("utilisateur", utilisateur);
 				rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 				rd.forward(request, response);
-			}
-//													}
-//												}
-//											}
-//										}
-//									}
-//								}
-//							}
-//						}
-//					}
-//				}
-//			}
-		} catch (Exception e) {
-		
+			}	
+		catch (Exception e) {
+			HashMap<String, String> listeErreurs= new HashMap<String, String>();
+			listeErreurs.put("erreur", erreurMessage);
+		}}
 
-			e.printStackTrace();
-			try {
-				HashMap<String, String> listeErreurs=new HashMap<String, String>();
-				
-					listeErreurs.put("pseudoBDD", "Ce pseudo existe déjà");
-					request.setAttribute("listeErreurs", listeErreurs);
-					request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
-					rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-				rd.forward(request, response);}
-			} catch (Exception e1) {
-				request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
-				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-			rd.forward(request, response);}
-			}
-
-		}
-
-	
-
-	void validationPseudoBDD(String pseudo) throws Exception {
+private	void validationPseudoBDD(String pseudo) throws Exception {
 		List<String> listePseudoBDD = new ArrayList<String>();
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
@@ -146,7 +110,8 @@ public class ServletSinscrire extends HttpServlet {
 			listePseudoBDD.add(utilisateur.getPseudo());
 		}
 		if (listePseudoBDD.contains(pseudo)) {
-			throw new Exception("Ce pseudo existe déjà.");
+		throw new Exception("Ce pseudo existe déjà en BDD");
+		
 	}}
 
 	boolean validationPseudo(String pseudo) {
