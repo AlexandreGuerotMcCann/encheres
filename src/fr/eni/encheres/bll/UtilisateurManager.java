@@ -57,10 +57,7 @@ public class UtilisateurManager {
 		return utilisateur;
 	}
 
-//Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon compte" (cf.maquette)
-//	public void suppressionUtilisateur(Utilisateur utilisateur) throws BusinessException {
-//		this.daoUtilisateur.supprimerUtilisateur(utilisateur);
-//	}
+
 
 //Méthode à tester /!\ => à lier avec pageModifierProfil => bouton "Enregistrer" (cf.maquette p.7 & 8/13)
 	public void modificationUtilisateur(Utilisateur utilisateur) throws BusinessException {
@@ -69,7 +66,7 @@ public class UtilisateurManager {
 		this.daoUtilisateur.modifierUtilisateur(utilisateur);
 	}
 
-	public void suppressionUtilisateurTest(String pseudo) throws BusinessException {
+	public void suppressionUtilisateur(String pseudo) throws BusinessException {
 		this.daoUtilisateur.supprimerUtilisateur(pseudo);
 	}
 
