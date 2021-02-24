@@ -17,6 +17,11 @@
 </head>
 <body>
 
+
+	<div class="logo">
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="300" width="300"></img></a>
+	</div>
+
 	<h1>ENI Enchères</h1>
 
 	<h2>Création d'un nouveau compte</h2>
