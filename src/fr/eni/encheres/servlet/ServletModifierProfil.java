@@ -74,7 +74,7 @@ public class ServletModifierProfil extends HttpServlet {
 			String confirmation_mdp = request.getParameter("confirmation_mdp");
 			String email = request.getParameter("email");
 			try {
-				utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
+				utilisateur=utilisateurManager.retournerUtilisateur(identifiant);
 			} catch (BusinessException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
