@@ -32,7 +32,7 @@
 		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo...">
 	</div>
 	<div class="infosUtilisateur">
- 
+   
 	
 		<p>Pseudo : ${utilisateur.pseudo}</p>
 		<p>Nom : ${utilisateur.nom}</p>
