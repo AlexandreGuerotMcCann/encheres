@@ -113,7 +113,9 @@ li a:hover {
 	color: black;
 }
 
-
+.left-text{float:left_text;
+    width:60%;}
+.right-text{margin-left:60% ;}
 
 .wrapper3 {
 	display: grid;
