@@ -31,4 +31,12 @@
 		<servlet-name>sinscrire</servlet-name>
 		<url-pattern>/sinscrire</url-pattern>
 	</servlet-mapping> 
+	<servlet>
+		<servlet-name>modifierProfil</servlet-name>
+		<jsp-file>/WEB-INF/modifierProfil.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>modifierProfil</servlet-name>
+		<url-pattern>/modifierprofil</url-pattern>
+	</servlet-mapping> 
 </web-app>

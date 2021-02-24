@@ -44,7 +44,7 @@
 		<p>Ville : ${utilisateur.ville}</p>
 		 
 		<br>		
-			<a href="/WEB-INF/modifierProfil" class="button">Modifier</a> <!-- Redirige vers la servletModifierProfil qui envoie vers modifierProfil.jsp -->
+			<a href="ServletModifierProfil" class="button">Modifier</a> <!-- Redirige vers la servletModifierProfil qui envoie vers modifierProfil.jsp -->
 
 	</div>
 	
