@@ -46,8 +46,8 @@ public class ArticleManager {
 		articleVendu.setDateFinEncheres(dateFinEnchere);
 		articleVendu.setMiseAPrix(miseAPrix);
 		articleVendu.setPrixVente(prixVente);
-		articleVendu.getUtilisateur().getNoUtilisateur();
-		articleVendu.getCategorie().getNoCategorie();
+		articleVendu.getNoUtilisateur().getNoUtilisateur();
+		articleVendu.getNoCategorie().getNoCategorie();
 		
 		
 		

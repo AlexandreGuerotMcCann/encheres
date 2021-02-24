@@ -43,8 +43,8 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 					articleVendu.setDateFinEncheres(rs.getDate("date_fin_encheres"));
 					articleVendu.setMiseAPrix(rs.getInt("prix_initial"));
 					articleVendu.setPrixVente(rs.getInt("prix_vente"));
-					articleVendu.setUtilisateur(utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
-					articleVendu.setCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
+					articleVendu.setNoUtilisateur((Utilisateur)utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
+					articleVendu.setNoCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
 //REVENIR QUAND INTERFACE DONE
 					
 				}
@@ -78,8 +78,8 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 				articleVendu.setDateFinEncheres(rs.getDate("date_fin_encheres"));
 				articleVendu.setMiseAPrix(rs.getInt("prix_initial"));
 				articleVendu.setPrixVente(rs.getInt("prix_vente"));
-				articleVendu.setUtilisateur(utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
-				articleVendu.setCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
+				articleVendu.setNoUtilisateur(utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
+				articleVendu.setNoCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -112,8 +112,8 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 				articleVendu.setDateFinEncheres(rs.getDate("date_fin_encheres"));
 				articleVendu.setMiseAPrix(rs.getInt("prix_initial"));
 				articleVendu.setPrixVente(rs.getInt("prix_vente"));
-				articleVendu.setUtilisateur(utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
-				articleVendu.setCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
+				articleVendu.setNoUtilisateur(utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
+				articleVendu.setNoCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();

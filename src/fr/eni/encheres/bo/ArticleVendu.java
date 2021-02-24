@@ -24,7 +24,7 @@ public class ArticleVendu {
 			
 		}
 		
-		public ArticleVendu(int noArticle, String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres, int miseAPrix, int prixVente, String etatVente, Utilisateur utilisateur, Categorie categorie) {
+		public ArticleVendu(int noArticle, String nomArticle, String description, Date dateDebutEncheres, Date dateFinEncheres, int miseAPrix, int prixVente, String etatVente, Utilisateur noUtilisateur, Categorie noCategorie) {
 			
 		}
 		
@@ -141,21 +141,21 @@ public class ArticleVendu {
 		this.etatVente = etatVente;
 	}
 
-	public Utilisateur getUtilisateur() {
+	public Utilisateur getNoUtilisateur() {
 		return noUtilisateur;
 	}
 
-	public void setUtilisateur(Utilisateur utilisateur) {
+	public void setNoUtilisateur(Utilisateur utilisateur) {
 		this.noUtilisateur = utilisateur;
 	}
 
 	
-	public Categorie getCategorie() {
+	public Categorie getNoCategorie() {
 		return noCategorie;
 	}
 
 
-	public void setCategorie(Categorie Categorie) {
+	public void setNoCategorie(Categorie Categorie) {
 		this.noCategorie = Categorie;
 	}
 

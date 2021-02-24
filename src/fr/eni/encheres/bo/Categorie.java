@@ -36,4 +36,8 @@ public class Categorie {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
+
+	public static Categorie parseInt(String string) {
+		return null;
+	}
 }

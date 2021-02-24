@@ -121,4 +121,8 @@ public class Utilisateur {
 		this.administrateur = administrateur;
 	}
 
+	public static Utilisateur parseInt(String string) {
+		return null;
+	}
+
 }

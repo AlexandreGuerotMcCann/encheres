@@ -45,8 +45,8 @@ public class ServletVendreArticle extends HttpServlet {
 		int miseAPrix= Integer.parseInt(misAPrix);
 		String prixDepart = request.getParameter("prixVente");
 		int prixVente= Integer.parseInt(prixDepart);
-		String utilisateur = request.getParameter("noUtilisateur");
-		String categorie = request.getParameter("noCategorie");
+		String noUtilisateur = request.getParameter("noUtilisateur");
+		String noCategorie = request.getParameter("noCategorie");
 		
 		/** String DATE a Convertir au format DATE ou LocalDate ligne 42 et 43.
 		 * Modifier ensuite paramètre méthode ajoutArticleVendu ligne 58 **/
@@ -55,7 +55,7 @@ public class ServletVendreArticle extends HttpServlet {
 		
 		ArticleManager articleManager = new ArticleManager();
 		
-		ArticleVendu articleVendu= ArticleManager.ajoutArticleVendu(nomArticle, description, dateDebutEnchere, dateFinEnchere, miseAPrix, prixVente, utilisateur, categorie);
+		ArticleVendu articleVendu= ArticleManager.ajoutArticleVendu(nomArticle, description, dateDebutEnchere, dateFinEnchere, miseAPrix, prixVente, noUtilisateur, noCategorie);
 	 
 
 		rd.forward(request, response);
