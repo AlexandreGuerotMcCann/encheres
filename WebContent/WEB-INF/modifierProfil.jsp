@@ -66,42 +66,49 @@
 	<div class="wrapper" >
 		<div class="left_text">
 			<label for="pseudo">Pseudo :</label>
-			<input type="text" readonly name="pseudo"maxlength="30" size="15" value="${utilisateur.pseudo}">
+			<input type="text" readonly name="pseudo"maxlength="30" size="30" value="${utilisateur.pseudo}">
 			
 			<label for="prenom">Prénom :</label>
-			<input type="text" name="prenom" maxlength="30" size="15"value="${utilisateur.prenom }">
+			<input type="text" name="prenom" pattern=".{1,30}.[A-Za-z -]" size="30" value="${utilisateur.prenom }"
+			title="Votre prénom ne doit pas excéder 30 caractères."/>
 			
 			<label for="telephone">Téléphone :</label>
-			<input type="tel" name="telephone" maxlength="10" size="15" value="${utilisateur.telephone }">
+			<input type="tel" name="telephone" pattern=".{8}.[0-9]" size="30" value="${utilisateur.telephone }"
+			title="10 caractères numériques sont attendus."/>
 			
 			<label for="codePostal">Code Postal :</label>
-			<input type="text" name="codePostal"maxlength="5" size="15" value="${utilisateur.codePostal }">
+			<input type="text" name="codePostal" pattern=".{3}.[0-9]" size="30" value="${utilisateur.codePostal }"
+			title="5 caractères numériques sont attendus."/>
 			
 			<label for="motdepasse">Mot de passe actuel :</label>
-			<input type="password"maxlength="30" size="15" name="motdepasse">
+			<input type="password" name="motdepasse" pattern=".{6,30}.[A-Za-z0-9]" size="30"
+			title="Le mot de passe doit contenir au moins 8 caractères alphanumériques (les symboles ne sont pas acceptés)."/> 
 			
 			<label for="nouveau_motdepasse">Nouveau mot de passe :</label>
-			<input type="password" maxlength="30" size="15"name="nouveau_motdepasse">
+			<input type="password" size="30" name="nouveau_motdepasse">
 			
 			<p>Crédit : ${utilisateur.credit }</p>
 		</div>
 	 
 		<div class="right_text">
 			<label for="nom">Nom :</label>
-			<input type="text" name="nom" maxlength="30" size="15"value="${utilisateur.nom}">
+			<input type="text" name="nom" pattern=".{1,30}.[A-Za-z -]" size="30" value="${utilisateur.nom}"
+			title="Votre nom ne doit pas excéder 30 caractères."/> 
 			
 			<label for="email">E-mail :</label>
-			<input type="email" name="email" maxlength="50" size="15"value="${utilisateur.email}">
+			<input type="email" name="email" maxlength="50" size="50"value="${utilisateur.email}"
+			title="Votre e-mail ne doit pas excéder 50 caractères."/> 
 			
 			<label for="rue">Rue :</label>
-			<input type="text" name="rue" maxlength="30" size="15"value="${utilisateur.rue}">
+			<input type="text" name="rue" pattern=".{3,30}.[A-Za-z0-9 -]" size="30" value="${utilisateur.rue}"
+			title="La rue ne doit pas excéder 30 caractères (les caractères spéciaux ne sont pas acceptés. Seuls les - et les espaces sont permis)."/>
 			
 			<label for="ville">Ville :</label>
-			<input type="text" name="ville" maxlength="50" size="15"value="${utilisateur.ville}">
-
+			<input type="text" name="ville" pattern=".{1,50}.[A-Za-z -]" size="50" value="${utilisateur.ville}"
+			title="La ville ne doit pas excéder 50 caractères. (Les caractères spéciaux ne sont pas acceptés. Seuls les - et les espaces sont permis)."/>
 
 			<label for="confirmation_mdp">Confirmation : 
-			<input type="password" maxlength="30" size="15"name="confirmation_mdp"></label>
+			<input type="password" size="30" name="confirmation_mdp"></label>		
 		</div>
 		
 		<button class="button" type="submit" onclick="ServletModifierProfil"name="modifier">Enregistrer les modifications</button> <!-- A faire : inclure méthode UPDATE compte -->
