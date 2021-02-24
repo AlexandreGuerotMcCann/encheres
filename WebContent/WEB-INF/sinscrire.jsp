@@ -19,7 +19,7 @@
 
 
 	<div class="logo">
-		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="300" width="300"></img></a>
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
 	</div>
 
 	<h1>ENI Enchères</h1>

@@ -12,6 +12,10 @@
 </head>
 <body>
 
+	<div class="logo">
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
+	</div>
+
 	<div>
 
 		<ul>
@@ -25,9 +29,6 @@
 
 	</div>
 
-	<div class="logo">
-		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="300" width="300"></img></a>
-	</div>
 
 </body>
 
