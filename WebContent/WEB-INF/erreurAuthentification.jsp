@@ -10,6 +10,11 @@
 + redirection vers page authentification
 +Redirection vers mot de passe oublié -->
 <body>
+
+	<div class="logo">
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="300" width="300"></img></a>
+	</div>
+
 Erreur erreur
 </body>
  

@@ -21,13 +21,13 @@
 			<li><a href="ServletMonProfil">Mon profil</a></li>
 			<li><a href="ServletAccueil">Déconnexion</a></li>
 
-
-
-
 		</ul>
 
 	</div>
 
+	<div class="logo">
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="300" width="300"></img></a>
+	</div>
 
 </body>
 
