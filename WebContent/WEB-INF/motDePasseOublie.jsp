@@ -25,6 +25,10 @@
 
 	</div>
 
+	<div class="logo">
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="300" width="300"></img></a>
+	</div>
+
 			<label for="mail">Email: </label> <input type="email" id="mail" name="mail"
 			required placeholder="abcd@exemple.fr" maxlength="40" size="25">
 

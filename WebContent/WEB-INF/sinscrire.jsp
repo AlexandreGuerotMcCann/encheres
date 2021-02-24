@@ -1,3 +1,4 @@
+<%@page import="java.util.HashMap"%>
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,12 +17,22 @@
 </head>
 <body>
 
+
+	<div class="logo">
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="300" width="300"></img></a>
+	</div>
+
 	<h1>ENI Enchères</h1>
 
 	<h2>Création d'un nouveau compte</h2>
 
 	<!-- Code pour afficher les erreurs En cas de mauvaise saisie -->
-
+<%HashMap<String,String> listeErreurs=(HashMap<String,String>)request.getAttribute("listeErreurs"); %>
+	<c:forEach items="${listeErreurs}" var="erreur">
+    <c:out value="${erreur.value}"/> <br />
+    </c:forEach> 
+	
+	
 	<%
 	String erreurPseudoBDD = (String) request.getAttribute("pseudoBDD");
 	String erreurPseudo = (String) request.getAttribute("pseudo");

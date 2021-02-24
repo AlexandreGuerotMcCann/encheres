@@ -12,7 +12,10 @@
 </head>
 <body>
 
-
+	<div class="logo">
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="300" width="300"></img></a>
+	</div>
+	
 	<h1>Se connecter</h1>
 	<br>
 

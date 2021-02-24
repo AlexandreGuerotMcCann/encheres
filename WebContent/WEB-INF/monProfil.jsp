@@ -22,6 +22,11 @@
 		</ul>
 	</div>
 
+	<div class="logo">
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="300" width="300"></img></a>
+	</div>
+
+
 	<h1 class="titre" >Mes informations</h1>
 	<div class="rechercheProfil">
 		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo...">
