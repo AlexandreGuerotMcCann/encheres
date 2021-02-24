@@ -316,7 +316,7 @@ text-align: center;
  
  @media screen and (max-width: 1100px) {
  
- .ajoutVente { top:110%;
+ .ajoutVente { top:100%;
  min-width:600px;
  position: absolute;
  z-index:-1;
