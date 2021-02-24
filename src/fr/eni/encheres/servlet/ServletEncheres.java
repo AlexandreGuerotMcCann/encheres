@@ -58,7 +58,7 @@ public class ServletEncheres extends HttpServlet {
 		
 		EncheresManager encheresManager = new EncheresManager();
 		
-		/**Probleme ici avec la conversion de la date ligne 48. Pour le moment on ne peut pas remplacer "date_enchere" par "date" 
+		/**Probleme ici avec la conversion de la date (String to Date) ligne 48. Pour le moment on ne peut pas remplacer "date_enchere" par "date" 
 		 * dans les param de la méthode "ajoutEnchere() ligne 65 **/
 		
 
