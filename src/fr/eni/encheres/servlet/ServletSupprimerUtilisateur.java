@@ -29,7 +29,7 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 		HttpSession session = request.getSession(); 
 		
 		try {
-			// On va chercher méthode de la BLL qui descend jusqu'à la BDD
+			// On va chercher méthode de la BLL qui descend jusqu'à la BDD  
 			// Types doivent être cohérents !
 			utilisateur.suppressionUtilisateur(utilisateur.retournerUtilisateurParId(Integer.valueOf(request.getParameter("id"))));
 			
