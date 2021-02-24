@@ -300,7 +300,7 @@ text-align: center;
  @media screen and (max-width: 1100px) {
  
  .ajoutVente { top:113%;
- min-width:400px;
+ min-width:600px;
  position: absolute}
  
  ul {display:none;}
