@@ -9,6 +9,12 @@
 	<title>Modifier mon profil</title>
 </head>
 <body>
+
+	<div class="logo">
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="300" width="300"></img></a>
+	</div>
+
+
 	<h1>Mon Profil</h1>
 
 		<div class="left_text">
@@ -51,8 +57,8 @@
 			<input type="password" name="confirmation_mdp"></label>
 		</div>
 		
-		<button class="button" type="submit" name="enregistrer">Enregistrer</button>
-		<a href="ServletAccueil" class="button">Supprimer mon compte</a> <!-- A faire inclure méthode supprimer compte -->
+		<button class="button" type="submit" name="enregistrer">Enregistrer</button> <!-- A faire : inclure méthode UPDATE compte -->
+		<a href="ServletAccueil" class="button">Supprimer mon compte</a> <!-- A faire : inclure méthode supprimer compte -->
 		
 </body>
 </html>
