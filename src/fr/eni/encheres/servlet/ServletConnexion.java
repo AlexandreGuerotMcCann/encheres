@@ -51,7 +51,7 @@ public class ServletConnexion extends HttpServlet {
 			if (motDePasse.equals(motPasseBDD)) {
 //            	clé "user" pour le code java page accueuil
 				session.setAttribute("user", utilisateur);
-//            	clé "userTest" pour le jsp:useBean page accueuil
+//            	clé "userTespt" pour le jsp:useBean page accueuil
 				session.setAttribute("userTest", utilisateur);
 //            	clé "utilisateur" pour l'expression Language page accueil
 				session.setAttribute("utilisateur", utilisateur);

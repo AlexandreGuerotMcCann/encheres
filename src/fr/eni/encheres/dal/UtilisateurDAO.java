@@ -16,7 +16,7 @@ public interface UtilisateurDAO {
 
 	// Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon*
 	// compte" (cf.maquette)
-	public void supprimerUtilisateur(Utilisateur utilisateur) throws BusinessException;
+	public void supprimerUtilisateur(String pseudo) throws BusinessException;
 
 	// Méthode à tester /!\ => à lier avec pageModifierProfil => bouton
 	// "Enregistrer" (cf.maquette p.7 & 8/13)

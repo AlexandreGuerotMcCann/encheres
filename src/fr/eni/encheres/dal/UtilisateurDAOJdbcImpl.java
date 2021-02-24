@@ -18,7 +18,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String INSERT = "INSERT INTO utilisateurs (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
 	// A tester les filles et les gars ;)
-	private static final String DELETE_USER = "DELETE FROM UTILISATEURS where no_utilisateur = ?";
+	private static final String DELETE_USER = "DELETE FROM UTILISATEURS where pseudo = ?";
 	private static final String UPDATE_USER = "UPDATE UTILISATEURS SET pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ? WHERE no_utilisateur = ?"; // "credit"
 																																																					// et
 
@@ -154,14 +154,14 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	// Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon
 	// compte" (cf.maquette)
 	@Override
-	public void supprimerUtilisateur(Utilisateur utilisateur) throws BusinessException {
+	public void supprimerUtilisateur(String pseudo) throws BusinessException {
 		try (Connection connection = ConnectionProvider.getConnection()) {
 			PreparedStatement pStatement = connection.prepareStatement(DELETE_USER); // + Voir si delete avec pseudo
 																						// aussi
-			pStatement.setInt(1, utilisateur.getNoUtilisateur());
+			pStatement.setString(1, pseudo);
 			pStatement.executeUpdate();
 		} catch (SQLException ex) {
-			// ex.printStackTrace();
+			ex.printStackTrace();
 			BusinessException businessException = new BusinessException();
 			businessException.ajouterErreur(CodesErreursDAL.ERREUR_SUPPRESSION_UTILISATEUR);
 			throw businessException;

@@ -2,6 +2,7 @@ package fr.eni.encheres.servlet;
 
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bll.UtilisateurManager;
+import fr.eni.encheres.bo.Utilisateur;
 
 import java.io.IOException;
 
@@ -18,9 +19,11 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ServletSupprimerUtilisateur")
 public class ServletSupprimerUtilisateur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+	UtilisateurManager utilisateurManager = new UtilisateurManager();
+	Utilisateur utilisateur= null;
+//	private static UtilisateurManager utilisateur ;
+
 	public static final String ACCUEIL = "/WEB-INF/accueil.jsp";
-	private static UtilisateurManager utilisateur ;
 
 	// On inclut la méthode pour supprimer l'utilisateur et ses données
 	/**
@@ -28,25 +31,7 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(); 
-		
-			// On va chercher méthode de la BLL qui descend jusqu'à la BDD  
-			// Types doivent être cohérents !
-			try {
-				utilisateur.suppressionUtilisateur(utilisateur.retournerUtilisateur(request.getParameter("pseudo")));
-			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (BusinessException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			// On déconnecte la session
-			session.invalidate();
-
-			//Redirection vers accueil en mode déconnecté
-			this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
+	
 			
 	}
 
@@ -54,7 +39,27 @@ public class ServletSupprimerUtilisateur extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		HttpSession session = request.getSession(); 
+		String identifiant=request.getParameter("pseudo");
+		
+			// On va chercher méthode de la BLL qui descend jusqu'à la BDD  
+			// Types doivent être cohérents !
+			try {
+				utilisateur= utilisateurManager.retournerUtilisateur(identifiant);
+				
+				utilisateurManager.suppressionUtilisateurTest(identifiant);
+				// On déconnecte la session
+				session.invalidate();
+
+				//Redirection vers accueil en mode déconnecté
+				this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
+		
+			} catch (BusinessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
 	}
 
 }
