@@ -19,7 +19,6 @@
 		<ul>
 			<li><a href="ServletEncheres">Enchères</a></li>
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
-			<li><a href="ServletMonProfil">Mon profil</a></li>
 			<li><a href="ServletDeconnexion">Déconnexion</a></li>
 		</ul>
 	</div>

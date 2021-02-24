@@ -84,7 +84,7 @@ public class ServletSinscrire extends HttpServlet {
 		try {
 			validationPseudo(pseudo);
 		} catch (Exception e) {
-			listeErreurs.put("pseudo", "Le pseudo doit contenir moins de 30 chiffres et lettres");
+			listeErreurs.put("pseudo", "Le pseudo doit contenir entre 3 et 30 chiffres et lettres");
 		}
 		try {
 			validationEmailBDD(mail);
@@ -136,7 +136,7 @@ public class ServletSinscrire extends HttpServlet {
 		} catch (Exception e) {
 			listeErreurs.put("ville", "La ville doit contenir moins de 50 caractères.");
 		}
-		if (listeErreurs.size()>1) {
+		if (listeErreurs.isEmpty()) {
 
 			Utilisateur utilisateur;
 			try {
@@ -181,11 +181,20 @@ public class ServletSinscrire extends HttpServlet {
 	}
 
 	private void validationPseudo(String pseudo) throws Exception {
-		if (pseudo != null && pseudo.trim().length() > 0 && pseudo.trim().length() < 30
-				&& pseudo.matches(ALPHANUMERIQUE)) {
-
-		} else {
+		if (pseudo == null) {
 			throw new Exception();
+		}
+		if (pseudo.trim().length() <3) {
+			throw new Exception();
+
+		}
+		if (pseudo.trim().length() > 30) {
+			throw new Exception();
+
+		}
+		if (!pseudo.matches(ALPHANUMERIQUE)) {
+			throw new Exception();
+
 		}
 	}
 
