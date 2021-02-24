@@ -14,7 +14,7 @@
 	background-color: #f2f2f2;
 	opacity: 0.9;
 	border-radius: 4px;
-	z-index:-1;
+	
 	
 }
 
@@ -32,7 +32,7 @@
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0em;
-	z-index:-1;
+	z-index:0;
 
 }
 
@@ -128,7 +128,7 @@ li a:hover {
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
-	z-index:-1;
+	
 }
 
 .wrapper3>* {
@@ -324,7 +324,35 @@ text-align: center;
  
  }
  
+.wrapper2 {position:absolute;
+top:45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+min-width:500px;
+z-index: -1;}
+
+.wrapper {position:absolute;
+top:80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+min-width:500px;
+z-index: -1;}
  
+ .wrapper3 {position:absolute;
+top:65%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+min-width:500px;
+z-index: -1;}
+
+.wrapper4 {position:absolute;
+top:120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+min-width:500px;
+z-index: -1;}
+
+
  
  ul {display:none;}
  
@@ -371,6 +399,7 @@ text-align: center;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
