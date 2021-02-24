@@ -12,7 +12,8 @@
 <link rel="stylesheet" type="text/css" href="test.css">
 <link rel="stylesheet" type="text/css"
 	href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <title>S'inscrire</title>
 </head>
@@ -20,24 +21,24 @@
 
 
 	<div class="logo">
-		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil"
+			height="80" width="150"></img></a>
 	</div>
-	
+
 	<div class="navbar">
-  <div class="dropdown">
-    <button class="dropbtn">MENU
-     <i class="fa fa-bars" aria-hidden="true"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="ServletEncheres">Encheres</a>
-      <a href="ServletVendreArticle">Vendre</a>
-      <a href="ServletConnexion">Se connecter</a>
-      <a href="ServletSinscrire">S'inscrire</a>
-    </div>
-    </div>
-  </div> 
-	
-	
+		<div class="dropdown">
+			<button class="dropbtn">
+				MENU <i class="fa fa-bars" aria-hidden="true"></i>
+			</button>
+			<div class="dropdown-content">
+				<a href="ServletEncheres">Encheres</a> <a
+					href="ServletVendreArticle">Vendre</a> <a href="ServletConnexion">Se
+					connecter</a> <a href="ServletSinscrire">S'inscrire</a>
+			</div>
+		</div>
+	</div>
+
+
 	<div>
 
 		<ul>
@@ -46,7 +47,7 @@
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
 			<li><a href="ServletConnexion">Se connecter</a></li>
 			<li><a href="ServletSinscrire">S'inscrire</a></li>
-    		
+
 		</ul>
 
 	</div>
@@ -57,22 +58,24 @@
 	<h2>Création d'un nouveau compte</h2>
 
 	<!-- Code pour afficher les erreurs En cas de mauvaise saisie -->
-<%HashMap<String,String> listeErreurs=(HashMap<String,String>)request.getAttribute("listeErreurs"); %>
+	<%
+	HashMap<String, String> listeErreurs = (HashMap<String, String>) request.getAttribute("listeErreurs");
+	%>
 	<c:forEach items="${listeErreurs}" var="erreur">
-    <c:out value="${erreur.value}"/> <br />
-    </c:forEach> 
-	
-	
+		<c:out value="${erreur.value}" />
+		<br />
+	</c:forEach>
+
+
 	<%
 	String erreurPseudoBDD = (String) request.getAttribute("pseudoBDD");
 	String erreurPseudo = (String) request.getAttribute("pseudo");
-	
 	%>
-	<%=erreurPseudoBDD%>
+
 	<c:if test="${!empty erreurPseudoBDD }">
 		<%=erreurPseudoBDD%>
-		</c:if>
-		
+	</c:if>
+
 	<c:if test="${!empty erreurPseudo}">
 		<%=erreurPseudo%>
 	</c:if>
@@ -103,17 +106,17 @@
 			<label for="prenom">Prénom: </label> <input type="text" required
 				id="prenom" name="prenom" maxlength="30" size="15"> <label
 				for="mail">Email: </label> <input type="email" required id="mail"
-				name="mail" placeholder="abcd@exemple.fr" maxlength="40" size="25">
+				name="mail" placeholder="abcd@exemple.fr" maxlength="50" size="25">
 
 			<label for="telephone">Téléphone: </label> <input type="tel" required
 				id="telephone" name="telephone" placeholder="0123456789"
-				maxlength="15" size="15"> <label for="rue">Rue: </label> <input
+				maxlength="10" size="15"> <label for="rue">Rue: </label> <input
 				type="text" required id="rue" name="rue" maxlength="30" size="15">
 
 			<label for="codePostal">Code postal: </label> <input type="text"
 				required id="codePostal" name="codePostal" placeholder="35000"
-				min="5" maxlength="10" size="15"> <label for="city">Ville:
-			</label> <input type="text" required id="city" name="city" maxlength="30"
+				min="5" maxlength="5" size="15"> <label for="city">Ville:
+			</label> <input type="text" required id="city" name="city" maxlength="50"
 				size="15">
 
 			<button class="button" type="button" name="annuler"

@@ -116,7 +116,8 @@ li a:hover {
 .left-text{
 
 	display: grid;
-	grid-template-columns:repeat(2, 1fr);;
+	grid-template-columns:1fr, auto;
+	
 	max-width: 1500px;
 	margin-left: auto;
 	margin-right: auto;
