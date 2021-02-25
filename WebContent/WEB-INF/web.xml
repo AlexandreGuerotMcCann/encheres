@@ -20,7 +20,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>accueil</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/accueil</url-pattern>
 	</servlet-mapping> 
 	<servlet>
 		<servlet-name>connexion</servlet-name>
