@@ -76,14 +76,19 @@ public class ServletSinscrire extends HttpServlet {
 			rd.forward(request, response);
 		}
 		
-		// Renvoie sur page blanche
+		// Vérifie si pseudo existe déjà en BDD
 		try {
 			if (validationPseudoBDD(pseudo) == true) {
 				request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
+		} catch (Exception e) {
+			// TODO Mettre messages d'erreurs ??? 
+			e.printStackTrace();
+		}
 		
+		// Vérifie si mail existe déjà en BDD
 		try {
 			if (validationEmailBDD(mail) == true)
 			{
@@ -92,10 +97,10 @@ public class ServletSinscrire extends HttpServlet {
 				rd.forward(request, response);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+		// Vérifie si téléphone existe déjà en BDD
 		try {
 			if (validationTelephoneBDD(telephone) == true)
 			{
@@ -104,7 +109,7 @@ public class ServletSinscrire extends HttpServlet {
 				rd.forward(request, response);
 			}
 				
-			
+
 			/*if (utilisateurManager.retournerUtilisateur(pseudo) != null)
 			 {	
 				request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
@@ -138,7 +143,6 @@ else {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
 		}
 } 
 
