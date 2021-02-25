@@ -11,9 +11,19 @@
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
-		
+		 
 	</welcome-file-list>
+ 
+	<servlet>
+        <servlet-name>accueilHome</servlet-name>
+        <jsp-file>/WEB-INF/accueil.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>accueil</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping> 
 
+<<<<<<< Upstream, based on origin/main
 	<servlet>
 		<servlet-name>accueilHome</servlet-name>
 		<jsp-file>/WEB-INF/accueil.jsp</jsp-file>
@@ -37,6 +47,18 @@
 	
 	
 	<servlet>
+=======
+    <servlet>
+        <servlet-name>accueil</servlet-name>
+        <jsp-file>/WEB-INF/accueil.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>accueil</servlet-name>
+        <url-pattern>/accueil</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+>>>>>>> 1e577f8 _
 		<servlet-name>connexion</servlet-name>
 		<jsp-file>/WEB-INF/connexion.jsp</jsp-file>
 	</servlet>
