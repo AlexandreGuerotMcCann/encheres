@@ -66,6 +66,8 @@ public class ServletVendreArticle extends HttpServlet {
 			e.printStackTrace();
 		}
 
+		
+		
 	}
 
 }

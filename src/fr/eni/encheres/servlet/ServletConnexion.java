@@ -47,6 +47,7 @@ public class ServletConnexion extends HttpServlet {
 
 		try {
 			utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
+			
 			String motPasseBDD = utilisateur.getMotDePasse();
 			if (motDePasse.equals(motPasseBDD)) {
 //            	clé "user" pour le code java page accueuil

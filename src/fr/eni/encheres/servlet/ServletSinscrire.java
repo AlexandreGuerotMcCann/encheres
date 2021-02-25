@@ -83,7 +83,7 @@ public class ServletSinscrire extends HttpServlet {
 			rd.forward(request, response);
 		}
 		
-		// Vérifie si email existe déjà en BDD
+		// Vérifie si email existe déjà en BDD 
 		else if (validationEmailBDD(mail))
 		{
 			request.setAttribute("mailBDD", "ERREUR : Cet e-mail existe déjà, veuillez vous connecter.");

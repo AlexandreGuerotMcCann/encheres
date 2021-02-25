@@ -66,7 +66,7 @@
 			    <option value="#">Motorisés</option>
 				</select>
 		</label>
-		<label>Photo de l'article: <input type="file" id="avatar" name="avatar" style="color:transparent"   ; accept="image/png, image/jpeg" /></label>
+		<label>Photo de l'article: <input type="file" id="avatar" name="avatar" style="color:transparent"   ; accept="image/png, image/jpeg, image/gif, image/pdf, image/svg" /></label>
 		<label>Mise à prix: <input type="number"></label>
 		<label>Début de l'enchère: <input type="date"></label>
 		<label>Fin de l'enchère: <input type="date"></label>
@@ -78,11 +78,11 @@
 		<label>Ville: <input style="text"></label>
 
 	
-		<a href="accueil" class="button3"><input type="submit" class="button" value="Annuler"> </a>
-        <a href="ServletMesVentes" class="button3"> <input type="submit" class="button" value="Enregistrer"></a>
+		<button class="button3" type="submit" onclick="window.location.href='http://localhost:8080/projetEncheres/accueil';"name="annuler">Annuler</button>
+        <button class="button3" type="submit" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletMesVentes';"name="enregistrer">Enregistrer</button>
 	
 	</div>
 
 </body>
-	
+		<footer> Copyright 2021 des fifous du net © </footer> 
 </html>
