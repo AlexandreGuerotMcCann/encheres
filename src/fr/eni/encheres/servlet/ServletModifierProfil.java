@@ -82,16 +82,17 @@ public class ServletModifierProfil extends HttpServlet {
 			String nouveau_motdepasse = request.getParameter("nouveau_motdepasse");
 			String confirmation_mdp = request.getParameter("confirmation_mdp");
 			String mail = request.getParameter("email");
-			String motDePasseUpdate=null;
+			String motDePasseUpdate = null;
 			try {
 				utilisateur = utilisateurManager.retournerUtilisateur(identifiant);
 				String motdePasseBDD = utilisateur.getMotDePasse();
 				validationMotDePasseBDD(motdepasse, motdePasseBDD);
 				validationMDP(nouveau_motdepasse, confirmation_mdp);
-				if (validationMDP(nouveau_motdepasse, confirmation_mdp)==true) {
-					motDePasseUpdate=nouveau_motdepasse;
-					
-				} else {motDePasseUpdate=motdepasse;
+				if (validationMDP(nouveau_motdepasse, confirmation_mdp) == true) {
+					motDePasseUpdate = nouveau_motdepasse;
+
+				} else {
+					motDePasseUpdate = motdepasse;
 
 				}
 				validationTelBDD(telephone);
