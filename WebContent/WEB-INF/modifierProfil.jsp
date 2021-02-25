@@ -65,6 +65,8 @@
 	
 	
 	<p class="erreur">
+	<c:if test="${!empty erreur }">${erreur}</c:if>
+	
 	<c:forEach items="${listeErreurs}" var="entry">
 	${entry.value}<br>
 </c:forEach><p>
