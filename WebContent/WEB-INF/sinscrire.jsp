@@ -56,19 +56,19 @@
 
 	<!-- INTEGRER LES MESSAGES D ERREURS -->
 	<c:if test="${!empty requestScope.erreurMDP}"> 
-		<p>${erreurMDP}</p>
+		<h3>${erreurMDP}</h3>
 	</c:if>
 	
 	<c:if test="${!empty requestScope.pseudoBDD}"> 
-		<p>${pseudoBDD}</p>
+		<h3>${pseudoBDD}</h3>
 	</c:if>
 	
 	<c:if test="${!empty requestScope.mailBDD}"> 
-		<p>${mailBDD}</p>
+		<h3>${mailBDD}</h3>
 	</c:if>
 	
 	<c:if test="${!empty requestScope.telephoneBDD}"> 
-		<p>${telephoneBDD}</p>
+		<h3>${telephoneBDD}</h3>
 	</c:if>
 	
 

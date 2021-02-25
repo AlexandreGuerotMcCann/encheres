@@ -13,6 +13,7 @@ import fr.eni.encheres.bo.Utilisateur;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -67,7 +68,7 @@ public class ServletSinscrire extends HttpServlet {
 		String ville = request.getParameter("ville");
 		
 		
-		try {
+		try {	
 			
 			if (!mdp.equals(confirmMdp))
 			{
@@ -76,8 +77,8 @@ public class ServletSinscrire extends HttpServlet {
 				rd.forward(request, response);
 			}
 			
-			if (utilisateurManager.retournerUtilisateur(pseudo) != null)
-			 {
+			/*if (utilisateurManager.retournerUtilisateur(pseudo) != null)
+			 {	
 				request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
@@ -95,10 +96,10 @@ public class ServletSinscrire extends HttpServlet {
 				request.setAttribute("telephoneBDD", "Ce numéro existe déjà");
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
-			}
+			}*/
 			
-			// METHODE POUR INSCRIPTION + REDIRECTION VERS PAGE ACCUEIL
-			else {
+// METHODE POUR INSCRIPTION + REDIRECTION VERS PAGE ACCUEIL
+		else {	
 			utilisateur = utilisateurManager.ajoutUtilisateur(mdp, pseudo, nom, prenom, mail, telephone, rue, codePostal, ville);
 			utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
 			HttpSession session = request.getSession();
@@ -110,8 +111,56 @@ public class ServletSinscrire extends HttpServlet {
 			e.printStackTrace();
 		}
 } 
+
+
+/*private void validationPseudoBDD(String pseudo) throws Exception {
+	List<String> listePseudoBDD = new ArrayList<String>();
+	UtilisateurManager utilisateurManager = new UtilisateurManager();
+	List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
+		for (Utilisateur utilisateur : listeUser) 
+		{
+			listePseudoBDD.add(utilisateur.getPseudo());
+		}
+		if (listePseudoBDD.contains(pseudo)) 
+	{
+		
+			request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
+			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+			rd.forward(request, response);
+	}
 }
 
+private void validationEmailBDD(String mail) throws Exception {
+	List<String> listeMailBDD = new ArrayList<String>();
+	UtilisateurManager utilisateurManager = new UtilisateurManager();
+	List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
+	for (Utilisateur utilisateur : listeUser) {
+		listeMailBDD.add(utilisateur.getEmail());
+	}
+	if (listeMailBDD.contains(mail)) {
+		RequestDispatcher rd = null;
+		ServletRequest request;
+		request.setAttribute("mailBDD", "Cet e-mail existe déjà, veuillez vous connecter.");
+		rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+		rd.forward(request, response);
+	}
+}
+
+private void validationTelephoneBDD(String telephone) throws Exception {
+	List<String> listeTelephoneBDD = new ArrayList<String>();
+	UtilisateurManager utilisateurManager = new UtilisateurManager();
+	List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
+	for (Utilisateur utilisateur : listeUser) {
+		listeTelephoneBDD.add(utilisateur.getEmail());
+	}
+	if (listeTelephoneBDD.contains(telephone)) {
+		RequestDispatcher rd = null;
+		ServletRequest request;
+		request.setAttribute("telephoneBDD", "Ce numéro existe déjà");
+		rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
+		rd.forward(request, response);
+	}*/
+}
 
 
 		
