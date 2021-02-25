@@ -32,7 +32,7 @@ public class ServletAccueil extends HttpServlet {
 //			this.getServletContext().getRequestDispatcher("/ServletAccueilConnecte").forward(request, response);  // On go à l'accueil en mode connecté
  //   	}
 //		else 
-//		{
+//		{fdsfsdfsd
  //   		this.getServletContext().getRequestDispatcher("/ServletAccueilDeconnecte").forward(request, response); // Sinon on go a l'accueil en mode déconnecté
 //		}   //(sans display du bouton déconnexion)
 //		
