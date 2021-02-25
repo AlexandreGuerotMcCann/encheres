@@ -69,7 +69,7 @@ public class ServletSinscrire extends HttpServlet {
 		String codePostal = request.getParameter("codePostal");
 		String ville = request.getParameter("ville");
 		
-		 
+ 		 
 	try {
 		// METHODE VérifMDP OK FONCTIONNE PARFAITEMENT !
 		if (!mdp.equals(confirmMdp))
