@@ -15,7 +15,7 @@
 <body>
 
 	<div class="logo">
-		<a href="ServletAccueil"><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
 	</div>
 	<div class="navbar">
   <div class="dropdown">
@@ -78,7 +78,7 @@
 		<label>Ville: <input style="text"></label>
 
 	
-		<button class="button3" type="submit" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletAccueil';"name="annuler">Annuler</button>
+		<button class="button3" type="submit" onclick="window.location.href='http://localhost:8080/projetEncheres/accueil';"name="annuler">Annuler</button>
         <button class="button3" type="submit" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletMesVentes';"name="enregistrer">Enregistrer</button>
 	
 	</div>

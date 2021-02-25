@@ -26,7 +26,7 @@ public class ServletAccueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)    
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response );
+		HttpSession session = request.getSession(); //
 		
 //		if (session.getAttribute("no_utilisateur")!=null) // Si utilisateur connecté  
 //		{
@@ -44,8 +44,6 @@ public class ServletAccueil extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		
 		doGet(request, response);
 		HttpSession session = request.getSession ();
 		String pseudo = "pseudo";
@@ -55,7 +53,7 @@ public class ServletAccueil extends HttpServlet {
 		request.setAttribute("motdepasse", motdepasse);
 		pseudo = (String)session.getAttribute ( "pseudo" );
 		
-
+		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response );
 
 	}
 
