@@ -139,7 +139,6 @@ private boolean validationPseudoBDD(String pseudo) throws Exception {
 }
 
 private boolean validationEmailBDD(String mail) throws Exception {
-	boolean emailEnBDD;
 	List<String> listeMailBDD = new ArrayList<String>();
 	UtilisateurManager utilisateurManager = new UtilisateurManager();
 	List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
