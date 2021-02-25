@@ -76,7 +76,6 @@
 			<br>
 			<label>Ma proposition: </label> 
 			<button class="button" type="submit" name="sinscrire" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletMesVentes';" >Surenchérir</button>
-		
 
 	
 		</div>
