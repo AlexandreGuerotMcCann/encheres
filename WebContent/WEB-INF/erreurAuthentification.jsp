@@ -15,7 +15,7 @@
 		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
 	</div>
 
-Erreur erreur
+<label> Erreur lors de la connection, veuillez réessayer.</label>
 </body>
  
 <footer> Copyright 2021 des fifous du net © </footer> 
