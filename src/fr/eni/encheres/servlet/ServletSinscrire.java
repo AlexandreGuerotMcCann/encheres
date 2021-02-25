@@ -74,23 +74,23 @@ public class ServletSinscrire extends HttpServlet {
 		// METHODE VérifMDP OK FONCTIONNE PARFAITEMENT !
 		if (!mdp.equals(confirmMdp))
 		{
-			request.setAttribute("erreurMDP", "ERREUR : Les mots de passe ne correspondent pas.");
+			request.setAttribute("erreur", "ERREUR : Les mots de passe ne correspondent pas.");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
 		}
-		
+		   
 		// Vérifie si pseudo existe déjà en BDD
 		else if (pseudoEnBDD) 
 		{ 
-			request.setAttribute("pseudoBDD", "ERREUR : Ce pseudo existe déjà.");
+			request.setAttribute("erreur", "ERREUR : Ce pseudo existe déjà.");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
 		}
-		
+		       
 		// Vérifie si email existe déjà en BDD 
 		else if (emailEnBDD)
 		{
-			request.setAttribute("mailBDD", "ERREUR : Cet e-mail existe déjà, veuillez vous connecter.");
+			request.setAttribute("erreur", "ERREUR : Cet e-mail existe déjà, veuillez vous connecter.");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
 		}
@@ -98,7 +98,7 @@ public class ServletSinscrire extends HttpServlet {
 		// Vérifie si téléphone existe déjà en BDD
 		else if (telephoneEnBDD)
 		{
-			request.setAttribute("telephoneBDD", "ERREUR : Ce numéro existe déjà");
+			request.setAttribute("erreur", "ERREUR : Ce numéro existe déjà");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
 		}

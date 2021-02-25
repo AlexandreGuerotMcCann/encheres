@@ -19,7 +19,7 @@
 <body>
 
 	<div class="logo">
-		<a href="accueil"><img src="images/logoProjet.png" alt="accueil"
+		<a href="ServletAccueil"><img src="images/logoProjet.png" alt="accueil"
 			height="80" width="150"></img></a>
 	</div>
 
@@ -55,11 +55,11 @@
 	<h2>Création d'un nouveau compte</h2>
 
 	<!-- INTEGRER LES MESSAGES D ERREURS -->
-	<c:if test="${!empty erreurMDP}"> 
-		<h3>${erreurMDP}</h3>
+	<c:if test="${!empty erreur}"> 
+		<h3>${erreur}</h3>
 	</c:if>
 	
-	<c:if test="${!empty pseudoBDD}"> 
+	<!--<c:if test="${!empty pseudoBDD}"> 
 		<h3>${pseudoBDD}</h3> 
 	</c:if>
 	
@@ -69,7 +69,7 @@
 	
 	<c:if test="${!empty telephoneBDD}"> 
 		<h3>${telephoneBDD}</h3>
-	</c:if>
+	</c:if>-->
 	
 
 	<form action="ServletSinscrire" method="post" name="connexion">
@@ -116,7 +116,7 @@
 			title="La ville ne doit pas excéder 50 caractères. (Les caractères spéciaux ne sont pas acceptés. Seuls les - et les espaces sont permis)."/>
 
 
-			<button class="button" type="button" name="annuler" onclick="window.location.href='http://localhost:8080/projetEncheres/accueil';">
+			<button class="button" type="button" name="annuler" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletAccueil';">
 				Annuler</button>
 
 			<button class="button" type="submit" name="sinscrire"
