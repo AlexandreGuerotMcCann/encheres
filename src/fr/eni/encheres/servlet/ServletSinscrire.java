@@ -29,6 +29,10 @@ import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
 public class ServletSinscrire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	boolean pseudoEnBDD;
+	boolean emailEnBDD;
+	boolean telephoneEnBDD;
+	
 	public static final String SINSCRIRE = "/WEB-INF/sinscrire.jsp";
 
 	//Map<String, String> listeErreurs = new HashMap<String, String>();
@@ -76,7 +80,7 @@ public class ServletSinscrire extends HttpServlet {
 		}
 		
 		// Vérifie si pseudo existe déjà en BDD
-		else if (validationPseudoBDD(pseudo)) 
+		else if (pseudoEnBDD) 
 		{
 			request.setAttribute("pseudoBDD", "ERREUR : Ce pseudo existe déjà");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -84,7 +88,7 @@ public class ServletSinscrire extends HttpServlet {
 		}
 		
 		// Vérifie si email existe déjà en BDD 
-		else if (validationEmailBDD(mail))
+		else if (emailEnBDD)
 		{
 			request.setAttribute("mailBDD", "ERREUR : Cet e-mail existe déjà, veuillez vous connecter.");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -92,7 +96,7 @@ public class ServletSinscrire extends HttpServlet {
 		}
 
 		// Vérifie si téléphone existe déjà en BDD
-		else if (validationTelephoneBDD(telephone))
+		else if (telephoneEnBDD)
 		{
 			request.setAttribute("telephoneBDD", "ERREUR : Ce numéro existe déjà");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -118,10 +122,7 @@ public class ServletSinscrire extends HttpServlet {
 }
 
  
-
-
 private boolean validationPseudoBDD(String pseudo) throws Exception {
-	boolean pseudoEnBDD;
 	List<String> listePseudoBDD = new ArrayList<String>();
 	UtilisateurManager utilisateurManager = new UtilisateurManager();
 	List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
@@ -133,7 +134,7 @@ private boolean validationPseudoBDD(String pseudo) throws Exception {
 			pseudoEnBDD = true;
 		}
 		else {
-			pseudoEnBDD = true;
+			pseudoEnBDD = false;
 		}
 		return pseudoEnBDD;
 }
@@ -156,7 +157,6 @@ private boolean validationEmailBDD(String mail) throws Exception {
 }
 
 private boolean validationTelephoneBDD(String telephone) throws Exception {
-	boolean telephoneEnBDD;
 	List<String> listeTelephoneBDD = new ArrayList<String>();
 	UtilisateurManager utilisateurManager = new UtilisateurManager();
 	List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
@@ -173,28 +173,4 @@ private boolean validationTelephoneBDD(String telephone) throws Exception {
 	}
 }
 
-
-
-
-/*if (utilisateurManager.retournerUtilisateur(pseudo) != null)
-{	
-	request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
-	rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-	rd.forward(request, response);
-}
-
-else if (utilisateurManager.retournerUtilisateur(mail) != null)
-{
-	request.setAttribute("mailBDD", "Cet e-mail existe déjà, veuillez vous connecter.");
-	rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-	rd.forward(request, response);
-}
-
-else if (utilisateurManager.retournerUtilisateur(telephone) != null)
-{
-	request.setAttribute("telephoneBDD", "Ce numéro existe déjà");
-	rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
-	rd.forward(request, response);
-}*/
-		
 	
