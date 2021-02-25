@@ -31,7 +31,6 @@ public class ServletAccueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)    
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response );
 		
 		RequestDispatcher rd = null;
 		ArticleManager articleManager = new ArticleManager();
@@ -67,7 +66,7 @@ public class ServletAccueil extends HttpServlet {
 //		{
  //   		this.getServletContext().getRequestDispatcher("/ServletAccueilDeconnecte").forward(request, response); // Sinon on go a l'accueil en mode déconnecté
 //		}   //(sans display du bouton déconnexion)
-//		    
+//		
 //		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response ); // OK A GARDER
 	}
 
@@ -84,7 +83,7 @@ public class ServletAccueil extends HttpServlet {
 		request.setAttribute("motdepasse", motdepasse);
 		pseudo = (String)session.getAttribute ( "pseudo" );
 		
-
+		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response );
 
 	}
 
