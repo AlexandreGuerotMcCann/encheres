@@ -19,7 +19,7 @@
 <body>
 
 	<div class="logo">
-		<a href="accueil"><img src="images/logoProjet.png" alt="accueil"
+		<a href="ServletAccueil"><img src="images/logoProjet.png" alt="accueil"
 			height="80" width="150"></img></a>
 	</div>
 
@@ -116,7 +116,7 @@
 			title="La ville ne doit pas excéder 50 caractères. (Les caractères spéciaux ne sont pas acceptés. Seuls les - et les espaces sont permis)."/>
 
 
-			<button class="button" type="button" name="annuler" onclick="window.location.href='http://localhost:8080/projetEncheres/accueil';">
+			<button class="button" type="button" name="annuler" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletAccueil';">
 				Annuler</button>
 
 			<button class="button" type="submit" name="sinscrire"
