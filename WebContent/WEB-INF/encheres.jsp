@@ -82,7 +82,7 @@
 	<h2>ARTICLES</h2>
 	
     <div class="wrapper5"> 
-     	<a href="accueil"><img src="images/lampe.png" alt="articleLampe" height="120" width="150"></img></a>
+     	<a href="#"><img src="images/lampe.png" alt="articleLampe" height="120" width="150"></img></a>
 
 	</div>
 		
