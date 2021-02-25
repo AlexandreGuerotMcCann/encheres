@@ -26,7 +26,7 @@
 <body>
 	
 	<div class="logo">
-		<a href=""><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
+		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
 	</div>
 	
 	<div class="navbar">

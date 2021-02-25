@@ -118,8 +118,8 @@
 			<input type="password" size="30" name="confirmation_mdp">	
 		
 		
+		<button  class="button2" type="submit" onclick="ServletModifierProfil"name="supprimer">Supprimer mon profil</button>
 		<button class="button" type="submit" onclick="ServletModifierProfil"name="modifier">Enregistrer les modifications</button> <!-- A faire : inclure méthode UPDATE compte -->
-		<button class="button" type="submit" onclick="ServletModifierProfil"name="supprimer">Supprimer mon profil</button>
 	</div>
 	<!--	<a href="ServletModifierProfil" class="button">Supprimer mon compte</a> <!-- Redirige vers ServletSupprimerUtilisateur
 			 <input type="submit" class="button" value="Connexion"></input></a>
