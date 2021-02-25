@@ -49,6 +49,56 @@
 		</ul>
 
 	</div>
+	
+	<h2>Liste des enchères</h2>
+	
+	<br>
+	
+	<c:if test="${empty utilisateur.pseudo}">	<!-- Test pour afficher un message si utilisateur non connecté -->
+		<h3>Vous n'êtes pas connecté.</h3>
+	</c:if>  
+	
+	<form>
+		<div>
+		<div class="wrapper3" style="float:center;">
+			<label>Filtres :</label> 
+			<br> 
+			<input id="searchsize" type="text" placeholder="Search.."> 
+			<br>
+			<label>Catégories: </label> 
+			
+			<select id="categorie" name="categorie">
+				<option value="0">--</option>
+				<option value="1">Décoration</option>
+				<option value="2">Mobilier</option>
+				<option value="3">Extérieur</option>
+				<option value="4">Textile</option>
+				<option value="5">Jeux</option>
+				<option value="6">Motorisés</option>
+			</select> 
+			
+		</div>
+	
+	<h2>ARTICLES</h2>
+	
+    <div class="wrapper5"> 
+     	<a href="accueil"><img src="images/lampe.png" alt="articleLampe" height="120" width="150"></img></a>
+
+	</div>
+		
+		<div class="wrapper6">
+ 
+			
+
+		</div>
+		
+		<div class="wrapper7">
+			
+		</div>
+		
+	</div>
+
+	</form>
 
 
 </body>

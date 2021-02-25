@@ -57,13 +57,13 @@
 		<label>Article: <input style="text"></label>
 		<label>Description: <input style="text" class="descriptionArticle"></label>
 		<label><select name="categorie" id="categorie">
-   			 	<option value="">Catégorie</option>
-			    <option value="#">#</option>
-			    <option value="#">#</option>
-			    <option value="#">#</option>
-			    <option value="#">#</option>
-			    <option value="#">#</option>
-			    <option value="#">#</option>
+   			 	<option value="">--</option>
+			    <option value="#">Décoration</option>
+			    <option value="#">Mobilier</option>
+			    <option value="#">Extérieur</option>
+			    <option value="#">Textile</option>
+			    <option value="#">Jeux</option>
+			    <option value="#">Motorisés</option>
 				</select>
 		</label>
 		<label>Photo de l'article: <input type="file" id="avatar" name="avatar" style="color:transparent"   ; accept="image/png, image/jpeg" /></label>
