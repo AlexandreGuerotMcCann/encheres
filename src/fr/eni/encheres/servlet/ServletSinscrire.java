@@ -76,16 +76,13 @@ public class ServletSinscrire extends HttpServlet {
 			rd.forward(request, response);
 		}
 		
+		// Renvoie sur page blanche
 		try {
 			if (validationPseudoBDD(pseudo) == true) {
 				request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
 				rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 				rd.forward(request, response);
 			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		try {
 			if (validationEmailBDD(mail) == true)
@@ -141,6 +138,7 @@ else {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
 		}
 } 
 
