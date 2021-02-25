@@ -129,6 +129,9 @@
 		
 		<c:forEach items="${listeArticlesVendus}" var="article">
    ${article.nomArticle}<br>
+   ${article.miseAPrix}<br>
+   dateFinEncheres = ${article.dateFinEncheres}<br>
+   vendeur= ${article.noUtilisateur}<br>
 		</c:forEach>
 	
 
