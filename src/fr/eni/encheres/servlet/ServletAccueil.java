@@ -34,17 +34,15 @@ public class ServletAccueil extends HttpServlet {
 		
 		RequestDispatcher rd = null;
 		ArticleManager articleManager = new ArticleManager();
-		List<ArticleVendu>  listeArticleVendu = null;
-		HttpSession session = request.getSession();
+		List<ArticleVendu>  listeArticlesVendus = null;
+//		HttpSession session = request.getSession();
 		try {
-			listeArticleVendu = articleManager.listeArticles();
-			session.setAttribute("listeArticle", listeArticleVendu);
+			listeArticlesVendus = articleManager.listeArticles();
+			request.setAttribute("listeArticlesVendus", listeArticlesVendus);
 			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
 			
-			
-			
-			
+				
 		} catch (BusinessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
