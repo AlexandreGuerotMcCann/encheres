@@ -142,7 +142,7 @@ li a:hover {
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
-	
+	font-size:25px;
 }
 
 .wrapper3>* {
@@ -167,7 +167,7 @@ li a:hover {
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
-	;
+	font-size:25px;
 }
 
 .wrapper4>* {
