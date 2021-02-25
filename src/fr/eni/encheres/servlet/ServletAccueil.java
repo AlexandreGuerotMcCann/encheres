@@ -21,7 +21,6 @@ public class ServletAccueil extends HttpServlet {
 	
 	public static final String ACCUEIL="/WEB-INF/accueil.jsp";
 	 
-	dsfds<fds<f<dsfsdfqsqdsq
 	/** 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)    
 	 */
