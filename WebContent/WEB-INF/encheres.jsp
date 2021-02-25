@@ -63,7 +63,9 @@
 		<div class="wrapper3" style="float:center;">
 			<label>Filtres :</label> 
 			<br> 
-			<input id="searchsize" type="text" placeholder="Search.."> 
+			<span class="checkbox"><input type="checkbox" id="checkbox"> Enchères ouvertes</span> 
+			<span class="checkbox"><input type="checkbox" id="checkbox"> Ventes en cours</span> 
+			<span class="checkbox"><input type="checkbox" class="checkbox"> Ventes terminées</span>
 			<br>
 			<label>Catégories: </label> 
 			

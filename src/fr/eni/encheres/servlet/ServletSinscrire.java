@@ -68,7 +68,7 @@ public class ServletSinscrire extends HttpServlet {
 		String ville = request.getParameter("ville");
 		
 		
-		// METHODE OK FONCTIONNE PARFAITEMENT !
+		// METHODE OK FONCTIONNE PARFAITEMENT ! 
 		if (!mdp.equals(confirmMdp))
 		{
 			request.setAttribute("erreurMDP", "Les mots de passe ne correspondent pas.");
@@ -76,6 +76,7 @@ public class ServletSinscrire extends HttpServlet {
 			rd.forward(request, response);
 		}
 		
+		// Vérifie si pseudo existe déjà en BDD
 		try {
 			if (validationPseudoBDD(pseudo) == true) {
 				request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
@@ -83,10 +84,11 @@ public class ServletSinscrire extends HttpServlet {
 				rd.forward(request, response);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			// TODO Mettre messages d'erreurs ??? 
 			e.printStackTrace();
 		}
 		
+		// Vérifie si mail existe déjà en BDD
 		try {
 			if (validationEmailBDD(mail) == true)
 			{
@@ -95,10 +97,10 @@ public class ServletSinscrire extends HttpServlet {
 				rd.forward(request, response);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
+		// Vérifie si téléphone existe déjà en BDD
 		try {
 			if (validationTelephoneBDD(telephone) == true)
 			{
@@ -107,7 +109,7 @@ public class ServletSinscrire extends HttpServlet {
 				rd.forward(request, response);
 			}
 				
-			
+
 			/*if (utilisateurManager.retournerUtilisateur(pseudo) != null)
 			 {	
 				request.setAttribute("pseudoBDD", "Ce pseudo existe déjà");
