@@ -82,7 +82,7 @@ public class ServletSinscrire extends HttpServlet {
 		// Vérifie si pseudo existe déjà en BDD
 		else if (pseudoEnBDD) 
 		{ 
-			request.setAttribute("pseudoBDD", "ERREUR : Ce pseudo existe déjà");
+			request.setAttribute("pseudoBDD", "ERREUR : Ce pseudo existe déjà.");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
 		}
@@ -118,7 +118,6 @@ public class ServletSinscrire extends HttpServlet {
 	} catch (Exception ex) {
 		ex.printStackTrace();
 	}
-	
 }
 
  
