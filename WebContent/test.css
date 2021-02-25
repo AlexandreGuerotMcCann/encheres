@@ -142,11 +142,11 @@ li a:hover {
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
-	
+	font-size:25px;
 }
 
 .wrapper3>* {
-	padding: 0.8em 0.8em;
+	padding: 0.5em 0.5em;
 }
 
 .checkbox {
@@ -167,11 +167,11 @@ li a:hover {
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
-	;
+	font-size:25px;
 }
 
 .wrapper4>* {
-	padding: 0.8em 0.8em;
+	padding: 0.5em 0.5em;
 }
 
 footer {
