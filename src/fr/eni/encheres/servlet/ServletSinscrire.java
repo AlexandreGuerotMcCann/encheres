@@ -68,7 +68,7 @@ public class ServletSinscrire extends HttpServlet {
 		String ville = request.getParameter("ville");
 		
 		
-		// METHODE OK FONCTIONNE PARFAITEMENT !
+		// METHODE OK FONCTIONNE PARFAITEMENT ! 
 		if (!mdp.equals(confirmMdp))
 		{
 			request.setAttribute("erreurMDP", "Les mots de passe ne correspondent pas.");
