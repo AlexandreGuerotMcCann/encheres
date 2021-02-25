@@ -65,11 +65,12 @@
 	
 	
 	<p class="erreur">
-	<c:if test="${!empty erreur }">${erreur}</c:if>
+	<c:if test="${!empty erreurMDP}"> 
+		${erreurMDP}
+	</c:if>
 	
-	<c:forEach items="${listeErreurs}" var="entry">
-	${entry.value}<br>
-</c:forEach><p>
+	
+	</p>
 <form action="ServletModifierProfil" method="post">
 	
 		<div class="modifProfil1">
@@ -79,20 +80,20 @@
 			<label for="prenom">Prénom :</label>
 			<input type="text" name="prenom" pattern=".{1,30}.[A-Za-z -]" size="30" value="${utilisateur.prenom }"
 			title="Votre prénom ne doit pas excéder 30 caractères."/>
+			<label for="nom">Nom :</label>
+			<input type="text" name="nom" pattern=".{1,30}.[A-Za-z -]" size="30" value="${utilisateur.nom}"
+			title="Votre nom ne doit pas excéder 30 caractères."/> 
 			
 			<label for="telephone">Téléphone :</label>
-			<input type="tel" name="telephone" pattern=".{8}.[0-9]" size="30" value="${utilisateur.telephone }"
+			<input type="tel" name="telephone" readonly pattern=".{8}.[0-9]" size="30" value="${utilisateur.telephone }"
 			title="10 caractères numériques sont attendus."/>
 			
 			
 			<p>Crédit : ${utilisateur.credit }</p><br>
 	
-			<label for="nom">Nom :</label>
-			<input type="text" name="nom" pattern=".{1,30}.[A-Za-z -]" size="30" value="${utilisateur.nom}"
-			title="Votre nom ne doit pas excéder 30 caractères."/> 
 			
 			<label for="email">E-mail :</label>
-			<input type="email" name="email" maxlength="50" size="50"value="${utilisateur.email}"
+			<input type="email" name="email" readonly  maxlength="50" size="50"value="${utilisateur.email}"
 			title="Votre e-mail ne doit pas excéder 50 caractères."/> 
 			
 			<label for="rue">Rue :</label>
@@ -108,7 +109,7 @@
 			title="5 caractères numériques sont attendus."/>
 			
 			<label for="motdepasse">Mot de passe actuel :</label>
-			<input type="password" name="motdepasse" pattern=".{6,30}.[A-Za-z0-9]" size="30" value="${utilisateur.motDePasse }
+			<input type="password" readonly name="motdepasse" pattern=".{6,30}.[A-Za-z0-9]" size="30" value="${utilisateur.motDePasse }"
 			title="Le mot de passe doit contenir au moins 8 caractères alphanumériques (les symboles ne sont pas acceptés)."/> 
 			
 			<label for="nouveau_motdepasse">Nouveau mot de passe :</label>
