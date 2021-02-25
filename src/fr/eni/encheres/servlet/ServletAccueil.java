@@ -1,6 +1,9 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.eni.encheres.BusinessException;
+import fr.eni.encheres.bll.ArticleManager;
 import fr.eni.encheres.bll.UtilisateurManager;
+import fr.eni.encheres.bo.ArticleVendu;
 import fr.eni.encheres.bo.Utilisateur;
 
 /**
@@ -26,7 +31,29 @@ public class ServletAccueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)    
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(); //
+		
+		RequestDispatcher rd = null;
+		ArticleManager articleManager = new ArticleManager();
+		List<ArticleVendu>  listeArticleVendu = null;
+		HttpSession session = request.getSession();
+		try {
+			listeArticleVendu = articleManager.listeArticles();
+			session.setAttribute("listeArticle", listeArticleVendu);
+			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+			rd.forward(request, response);
+			
+			
+		} catch (BusinessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+		
+		//
 		
 //		if (session.getAttribute("no_utilisateur")!=null) // Si utilisateur connecté  
 //		{

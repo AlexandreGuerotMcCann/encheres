@@ -45,7 +45,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 					articleVendu.setPrixVente(rs.getInt("prix_vente"));
 					articleVendu.setNoUtilisateur((Utilisateur)utilisateurDAO.selectById(rs.getInt("noUtilisateur")));
 					articleVendu.setNoCategorie((Categorie) categoriesDAO.selectById(rs.getInt("noCategorie")));
-
+                     listeArticleVendu.add(articleVendu);
 					
 				}
 			} catch (Exception ex) {
