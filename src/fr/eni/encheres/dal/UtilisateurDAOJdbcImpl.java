@@ -13,7 +13,7 @@ import fr.eni.encheres.bo.Utilisateur;
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	private static final String SELECT_BY_PSEUDO = "SELECT * FROM utilisateurs WHERE pseudo = ?";
-	private static final String SELECT_BY_ID = "SELECT * FROM utilisateurs";
+	private static final String SELECT_BY_ID = "SELECT * FROM utilisateurs WHERE no_utilisateur = ?";
 	private static final String SELECT_ALL = "SELECT * FROM utilisateurs";
 	private static final String INSERT = "INSERT INTO utilisateurs (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -96,10 +96,10 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	}
 
 	@Override
-	public Utilisateur selectById(int id) throws BusinessException {
+	public Utilisateur selectById(int noUtilisateur) throws BusinessException {
 		try (Connection connection = ConnectionProvider.getConnection()) {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_ID);
-			pStatement.setInt(1, id);
+			pStatement.setInt(1,noUtilisateur);
 			ResultSet rs = pStatement.executeQuery();
 			while (rs.next()) {
 				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
