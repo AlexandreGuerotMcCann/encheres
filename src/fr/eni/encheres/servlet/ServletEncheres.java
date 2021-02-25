@@ -2,6 +2,7 @@ package fr.eni.encheres.servlet;
 
 import java.io.IOException;
 import java.text.Format;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
@@ -15,8 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bll.EncheresManager;
 import fr.eni.encheres.bll.UtilisateurManager;
+import fr.eni.encheres.bo.ArticleVendu;
 import fr.eni.encheres.bo.Enchere;
 import fr.eni.encheres.bo.Utilisateur;
 
@@ -32,6 +35,7 @@ public class ServletEncheres extends HttpServlet {
 	public static final String ENCHERES="/WEB-INF/encheres.jsp";
 	
 	
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -44,18 +48,17 @@ public class ServletEncheres extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+	try {		
 		String n_enchere= request.getParameter("no_enchere");
 		int no_enchere= Integer.parseInt(n_enchere);
 		Date dateEnchere = new SimpleDateFormat("dd-MM-yyyy").parse(getInitParameter("dateEnchere"));
 		String montantEnchere = request.getParameter("montant_enchere");
 		int montant_enchere  = Integer.parseInt(montantEnchere);
-		String article = request.getParameter("no_article");
-		int no_article = Integer.parseInt(article);
-		String utilisateur = request.getParameter("no_utilisateur");
-		int no_utilisateur = Integer.parseInt(utilisateur);
+		ArticleVendu noArticle = ArticleVendu.parseInt("noArticle");
+		Utilisateur noUtilisateur = Utilisateur.parseInt("noUtilisateur");
 		
 		
-		RequestDispatcher rd = null;
+
 		
 		EncheresManager encheresManager = new EncheresManager();
 		
@@ -63,10 +66,15 @@ public class ServletEncheres extends HttpServlet {
 		 * dans les param de la méthode "ajoutEnchere() ligne 65 **/
 		
 
-		Enchere enchere= EncheresManager.ajoutEnchere(no_enchere, dateEnchere, montant_enchere, no_article, no_utilisateur);
+		Enchere enchere= encheresManager.ajoutEnchere(no_enchere, dateEnchere, montant_enchere, noArticle, noUtilisateur);
 		enchere = encheresManager.retournerEnchere(no_enchere);
 		HttpSession session = request.getSession();
 		session.setAttribute("enchere", enchere);
+		RequestDispatcher rd = null;
 		rd.forward(request, response);
+		
+		} catch (ParseException | BusinessException e1) {
+			e1.printStackTrace();
+		}
 
 }}

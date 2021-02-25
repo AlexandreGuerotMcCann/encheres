@@ -6,9 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Date;
 
 import fr.eni.encheres.BusinessException;
+import fr.eni.encheres.bo.ArticleVendu;
 import fr.eni.encheres.bo.Enchere;
+import fr.eni.encheres.bo.Utilisateur;
+
 
 
 
@@ -16,9 +20,9 @@ public class EncheresDAOJdbcImpl implements EncheresDAO {
 	
 	private static final String SELECT_BY_NO_ENCHERE = "SELECT * FROM encheres WHERE no_enchere = ?";
 	private static final String SELECT_ALL = "SELECT * FROM encheres;";
-	private static final String INSERT = "INSERT INTO encheres (no_enchere, date_enchere, montant_enchere, no_article, no_utilisateur) VALUES (?,?,?,?,?)";
+	private static final String INSERT = "INSERT INTO encheres (no_enchere, date_enchere, montant_enchere, noArticle, noUtilisateur) VALUES (?,?,?,?,?)";
 	private static final String DELETE_ENCHERE = "DELETE FROM encheres WHERE no_enchere = ?";
-	private static final String UPDATE_ENCHERE= "UPDATE encheres SET no_enchere = ?, date_enchere= ?, montant_enchere = ?, no_article = ?, no_utilisateur = ?";
+	private static final String UPDATE_ENCHERE= "UPDATE encheres SET no_enchere = ?, date_enchere= ?, montant_enchere = ?, noArticle = ?, noUtilisateur = ?";
 
 	private Enchere enchere = new Enchere();
 
@@ -29,16 +33,20 @@ public class EncheresDAOJdbcImpl implements EncheresDAO {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_ALL);
 
 			ResultSet rs = pStatement.executeQuery();
+			UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
+			ArticleVenduDAO ArticleVenduDAO = DAOFactory.getArticleVenduDAO();
+			
 			while (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes***
+				
+
 							
 				enchere = new Enchere();
 				enchere.setNoEncheres(rs.getInt("no_enchere"));
 				enchere.setDateEnchere(rs.getDate("date_enchere"));
 				enchere.setMontant_enchere(rs.getInt("montant_enchere"));
-				enchere.setNoArticle(rs.getInt("no_article"));
-				enchere.setNoUtilisateur(rs.getInt("no_utilisateur"));
-				
-			}
+				enchere.setNoArticle((ArticleVendu)ArticleVenduDAO.selectByNoArticle(rs.getInt("noArticle")));			
+				enchere.setNoUtilisateur((Utilisateur)utilisateurDAO.selectById(rs.getInt("noUtilisateur")));	
+				}		
 			listeEncheres.add(enchere);
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -60,13 +68,15 @@ public Enchere selectByNoEnchere(int no_utilisateur) throws BusinessException {
 		PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_NO_ENCHERE);
 		pStatement.setInt(1, no_utilisateur);
 		ResultSet rs = pStatement.executeQuery();
+		UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
+		ArticleVenduDAO ArticleVenduDAO = DAOFactory.getArticleVenduDAO();
 		while (rs.next()) {
 			enchere = new Enchere();
 			enchere.setNoEncheres(rs.getInt("no_enchere"));
 			enchere.setDateEnchere(rs.getDate("date_enchere"));
 			enchere.setMontant_enchere(rs.getInt("montant_enchere"));
-			enchere.setNoArticle(rs.getInt("no_article"));
-			enchere.setNoUtilisateur(rs.getInt("no_utilisateur"));
+			enchere.setNoArticle((ArticleVendu)ArticleVenduDAO.selectByNoArticle(rs.getInt("noArticle")));			
+			enchere.setNoUtilisateur((Utilisateur)utilisateurDAO.selectById(rs.getInt("noUtilisateur")));	
 			
 		}
 	} catch (SQLException ex) {
@@ -88,12 +98,14 @@ public void ajoutEnchere (Enchere enchere) throws BusinessException {
 
 	try {
 		try (Connection connection = ConnectionProvider.getConnection()) {
+			Utilisateur utilisateur = new Utilisateur();
+			ArticleVendu articleVendu = new ArticleVendu();
 			PreparedStatement rqt = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			rqt.setInt(1, enchere.getNoEnchere());
-			rqt.setDate(2, enchere.getDateEnchere());
+			rqt.setDate(2, (Date) enchere.getDateEnchere());
 			rqt.setInt(3, enchere.getMontant_enchere());
-			rqt.setInt(4, enchere.getNoArticle());
-			rqt.setInt(5, enchere.getNoUtilisateur());
+			rqt.setInt(4, articleVendu.getNoArticle());
+			rqt.setInt(5, utilisateur.getNoUtilisateur());
 			
 
 			rqt.executeUpdate();
@@ -129,12 +141,14 @@ public void supprimerEnchere(int no_enchere) throws BusinessException {
 
 public void modifierEnchere (Enchere enchere) throws BusinessException {
 	try (Connection connection = ConnectionProvider.getConnection()) {
+		Utilisateur utilisateur = new Utilisateur();
+		ArticleVendu articleVendu = new ArticleVendu();
 		PreparedStatement pStatement = connection.prepareStatement(UPDATE_ENCHERE);
 		pStatement.setInt(1, enchere.getNoEnchere());
-		pStatement.setDate(2, enchere.getDateEnchere());
+		pStatement.setDate(2, (Date) enchere.getDateEnchere());
 		pStatement.setInt(3, enchere.getMontant_enchere());
-		pStatement.setInt(4, enchere.getNoArticle());
-		pStatement.setInt(5, enchere.getNoUtilisateur());
+		pStatement.setInt(4, articleVendu.getNoArticle());
+		pStatement.setInt(5, utilisateur.getNoUtilisateur());
 		
 		pStatement.executeUpdate();
 	} catch (SQLException ex) {

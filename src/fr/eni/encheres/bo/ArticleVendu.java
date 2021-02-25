@@ -146,8 +146,8 @@ public class ArticleVendu {
 		return noUtilisateur;
 	}
 
-	public void setNoUtilisateur(Utilisateur utilisateur) {
-		this.noUtilisateur = utilisateur;
+	public void setNoUtilisateur(Utilisateur noUtilisateur) {
+		this.noUtilisateur = noUtilisateur;
 	}
 
 	
@@ -158,6 +158,11 @@ public class ArticleVendu {
 
 	public void setNoCategorie(Categorie Categorie) {
 		this.noCategorie = Categorie;
+	}
+
+	public static ArticleVendu parseInt(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

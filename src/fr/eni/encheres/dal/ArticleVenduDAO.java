@@ -18,7 +18,7 @@ public interface ArticleVenduDAO {
 	
 	public void modifierArticle(ArticleVendu nomArticle) throws BusinessException;
 	
-	public ArticleVendu selectByNoArticle(int noArticle) throws BusinessException;
+	public  ArticleVendu selectByNoArticle(int noArticle) throws BusinessException;
 	
 
 

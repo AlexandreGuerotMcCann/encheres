@@ -8,7 +8,6 @@ import fr.eni.encheres.bo.Enchere;
 public interface EncheresDAO {
 
 	List<Enchere> selectAll() throws BusinessException;
-	//todo
 
 	Enchere selectByNoEnchere(int no_enchere) throws BusinessException;
 

@@ -19,9 +19,9 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 		private static final String SELECT_BY_NOM_ARTICLE = "SELECT * FROM ARTICLES_VENDUS WHERE nom_article = ?";
 		private static final String SELECT_BY_NO_ARTICLE = "SELECT * FROM ARTICLES_VENDUS";
 		private static final String SELECT_ALL = "SELECT * FROM ARTICLES_VENDUS";
-		private static final String INSERT = "INSERT INTO ARTICLES_VENDUS (nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, no_utilisateur, no_categorie) VALUES (?,?,?,?,?,?,?,?)";
+		private static final String INSERT = "INSERT INTO ARTICLES_VENDUS (nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, noUtilisateur, noCategorie) VALUES (?,?,?,?,?,?,?,?)";
 		private static final String DELETE_ARTICLE_VENDU = "DELETE FROM ARTICLES_VENDUS where no_article = ?";
-		private static final String UPDATE_ARTICLE_VENDU = "UPDATE ARTICLES_VENDUS SET articles_vendus = ?, nom_article = ?, description = ?, date_debut_encheres = ?, date_fin_encheres = ?, prix_initial = ?, prix_vente = ?, no_utilisateur = ?, no_categorie = ? WHERE no_article = ?";
+		private static final String UPDATE_ARTICLE_VENDU = "UPDATE ARTICLES_VENDUS SET articles_vendus = ?, nom_article = ?, description = ?, date_debut_encheres = ?, date_fin_encheres = ?, prix_initial = ?, prix_vente = ?, noUtilisateur = ?, noCategorie = ? WHERE no_article = ?";
 		private ArticleVendu articleVendu = new ArticleVendu();
 
 		public List<ArticleVendu> selectAll() throws BusinessException {
@@ -43,9 +43,9 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 					articleVendu.setDateFinEncheres(rs.getDate("date_fin_encheres"));
 					articleVendu.setMiseAPrix(rs.getInt("prix_initial"));
 					articleVendu.setPrixVente(rs.getInt("prix_vente"));
-					articleVendu.setNoUtilisateur((Utilisateur)utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
-					articleVendu.setNoCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
-//REVENIR QUAND INTERFACE DONE
+					articleVendu.setNoUtilisateur((Utilisateur)utilisateurDAO.selectById(rs.getInt("noUtilisateur")));
+					articleVendu.setNoCategorie((Categorie) categoriesDAO.selectById(rs.getInt("noCategorie")));
+
 					
 				}
 			} catch (Exception ex) {
@@ -78,8 +78,8 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 				articleVendu.setDateFinEncheres(rs.getDate("date_fin_encheres"));
 				articleVendu.setMiseAPrix(rs.getInt("prix_initial"));
 				articleVendu.setPrixVente(rs.getInt("prix_vente"));
-				articleVendu.setNoUtilisateur(utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
-				articleVendu.setNoCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
+				articleVendu.setNoUtilisateur(utilisateurDAO.selectById(rs.getInt("noUtilisateur")));
+				articleVendu.setNoCategorie((Categorie) categoriesDAO.selectById(rs.getInt("noCategorie")));
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -95,7 +95,6 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 	}
 	
 	
-	@Override
 	public ArticleVendu selectByNoArticle(int noArticle) throws BusinessException {
 		try (Connection connection = ConnectionProvider.getConnection()) {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_NO_ARTICLE);
@@ -103,6 +102,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 			ResultSet rs = pStatement.executeQuery();
 			UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
 			CategoriesDAO categoriesDAO = DAOFactory.getCategorieDAO();
+			
 			while (rs.next()) {
 				articleVendu = new ArticleVendu();
 				articleVendu.setNoArticle(rs.getInt("no_article"));
@@ -112,8 +112,8 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 				articleVendu.setDateFinEncheres(rs.getDate("date_fin_encheres"));
 				articleVendu.setMiseAPrix(rs.getInt("prix_initial"));
 				articleVendu.setPrixVente(rs.getInt("prix_vente"));
-				articleVendu.setNoUtilisateur(utilisateurDAO.selectById(rs.getInt("no_utilisateur")));
-				articleVendu.setNoCategorie((Categorie) categoriesDAO.selectById(rs.getInt("no_categorie")));
+				articleVendu.setNoUtilisateur(utilisateurDAO.selectById(rs.getInt("noUtilisateur")));
+				articleVendu.setNoCategorie((Categorie) categoriesDAO.selectById(rs.getInt("noCategorie")));
 			}
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -129,8 +129,7 @@ public class ArticleVenduDAOJdbcImpl implements ArticleVenduDAO {
 	@Override
 	public void ajoutArticle(ArticleVendu nomArticle) throws BusinessException {
 		ResultSet rs;
-
-		CategoriesDAO categoriesDAO = DAOFactory.getCategorieDAO();
+		
 		try (Connection connection = ConnectionProvider.getConnection()) {
 		Utilisateur utilisateur = new Utilisateur();
 		Categorie categorie = new Categorie();
