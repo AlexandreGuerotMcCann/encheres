@@ -129,5 +129,7 @@
 	 </p>
 	</body>
 	
+	<!-- DEUX LETTRES -->
+	
 	<footer> Copyright 2021 des fifous du net © </footer> 
 	</html>
