@@ -1,9 +1,15 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.awt.List"%>
 <%@page import="org.apache.catalina.User"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="fr.eni.encheres.bo.Utilisateur"%>
+<%@page import="fr.eni.encheres.bo.ArticleVendu"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import="fr.eni.encheres.servlet.ServletAccueil"%>
 
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,9 +76,13 @@
 	
 	<br>
 	
-	<c:if test="${empty utilisateur.pseudo}">	<!-- Test pour afficher un message si utilisateur non connecté -->
+	<c:if test="${empty utilisateur.pseudo}">	<!-- Affiche un message si utilisateur non connecté -->
 		<h3>Vous n'êtes pas connecté.</h3>
 	</c:if>  
+	
+	<c:if test="${!empty utilisateur.pseudo}">	<!-- Affiche un message si utilisateur connecté -->
+		<h3>Connecté en tant que "${utilisateur.pseudo}"</h3>
+	</c:if>
 	
 	<form>
 		<div>
@@ -107,38 +117,14 @@
 		</div>
 
 	</form>
-	
-----TESTDECAMILLE :----<br><br>
-	<p>
-	AVEC CODE JAVA :
-<%Utilisateur user=(Utilisateur)session.getAttribute("user"); 
-if (user!=null){%>
-<%=user.getPseudo() %>
-email :<%=user.getEmail() %>
-credit :<%=user.getCredit() %>
-<%} %>
-</p><br>
-<br><br>
-<p>USEBEAN =
-<!-- id : crée une variable locale,
-scope: fait appel à request de notre servlet
-class: appelle la classe java. -->
-<jsp:useBean id="userTest"
-			scope="session"
-			class="fr.eni.encheres.bo.Utilisateur"
-></jsp:useBean>
-<!-- property pseudo: appelle le getter de pseudo
-name : rappel de la variable créée en id  -->
-	pseudo :<jsp:getProperty property="pseudo" name="userTest"/>
-		crédit : <jsp:getProperty property="credit" name="userTest"/>
-<br><br>	</p>
-	
-	
-	<p>Expression language: pseudo :${utilisateur.pseudo }
-		crédit ${utilisateur.credit }
-	<br><br>
-----FIN DES TEST----
-	
+                
+              
+
+        <p>    
+         
+		<c:forEach items="${listeArticleVendu}" var="listeArticle">
+			${entry.value}<br>
+			</c:forEach>
 	
 	 </p>
 	</body>

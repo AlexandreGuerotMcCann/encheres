@@ -18,7 +18,7 @@ public class UtilisateurManager {
 		daoUtilisateur = DAOFactory.getUtilisateurDAO();
 	}
 
-//	// Méthode pour obtenir la liste des utilisateurs présents en BDD
+//	// Méthode pour obtenir la liste des utilisateurs présents en BDD 
 //	public List<Utilisateur> getListeUtilisateurs() throws BusinessException {
 //		return this.daoUtilisateur.selectAll();
 //		}

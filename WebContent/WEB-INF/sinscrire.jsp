@@ -55,21 +55,21 @@
 	<h2>Création d'un nouveau compte</h2>
 
 	<!-- INTEGRER LES MESSAGES D ERREURS -->
-	<c:if test="${!empty requestScope.erreurMDP}"> 
-		<h3>${erreurMDP}</h3>
+	<c:if test="${!empty erreur}"> 
+		<h3>${erreur}</h3>
 	</c:if>
 	
-	<c:if test="${!empty requestScope.pseudoBDD}"> 
-		<h3>${pseudoBDD}</h3>
+	<!--<c:if test="${!empty pseudoBDD}"> 
+		<h3>${pseudoBDD}</h3> 
 	</c:if>
 	
-	<c:if test="${!empty requestScope.mailBDD}"> 
+	<c:if test="${!empty mailBDD}"> 
 		<h3>${mailBDD}</h3>
 	</c:if>
 	
-	<c:if test="${!empty requestScope.telephoneBDD}"> 
+	<c:if test="${!empty telephoneBDD}"> 
 		<h3>${telephoneBDD}</h3>
-	</c:if>
+	</c:if>-->
 	
 
 	<form action="ServletSinscrire" method="post" name="connexion">

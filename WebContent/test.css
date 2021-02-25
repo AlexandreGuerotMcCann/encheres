@@ -84,9 +84,25 @@ h3
 	margin: 4px 2px;
 	cursor: pointer;
 }
+.button2 {
+	background-color: #DB4D69;
+	border: none;
+	color: white;
+	padding: 12px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
 
 .button:hover {
 	background-color: aliceblue;
+	color: black;
+}
+.button2:hover {
+	background-color: #AA9C8F;
 	color: black;
 }
 

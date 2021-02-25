@@ -1,6 +1,9 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.eni.encheres.BusinessException;
+import fr.eni.encheres.bll.ArticleManager;
 import fr.eni.encheres.bll.UtilisateurManager;
+import fr.eni.encheres.bo.ArticleVendu;
 import fr.eni.encheres.bo.Utilisateur;
 
 /**
@@ -20,24 +25,46 @@ public class ServletAccueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public static final String ACCUEIL="/WEB-INF/accueil.jsp";
-	 
+	
+	
 	/** 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)    
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response );
+		
+		RequestDispatcher rd = null;
+		ArticleManager articleManager = new ArticleManager();
+		List<ArticleVendu>  listeArticlesVendus = null;
+//		HttpSession session = request.getSession();
+		try {
+			listeArticlesVendus = articleManager.listeArticles();
+			request.setAttribute("listeArticlesVendus", listeArticlesVendus);
+			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+			rd.forward(request, response);
+			
+				
+		} catch (BusinessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+		
+		//
 		
 //		if (session.getAttribute("no_utilisateur")!=null) // Si utilisateur connecté  
 //		{
 //			this.getServletContext().getRequestDispatcher("/ServletAccueilConnecte").forward(request, response);  // On go à l'accueil en mode connecté
  //   	}
 //		else 
-//		{fdsfsdfsd
+//		{
  //   		this.getServletContext().getRequestDispatcher("/ServletAccueilDeconnecte").forward(request, response); // Sinon on go a l'accueil en mode déconnecté
 //		}   //(sans display du bouton déconnexion)
 //		
 //		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response ); // OK A GARDER
-		// 
 	}
 
 	/**
