@@ -82,7 +82,7 @@
 	<h2>ARTICLES</h2>
 	
     <div class="wrapper5"> 
-     	<a href="#"><img src="images/lampe.png" alt="articleLampe" height="120" width="150"></img></a>
+     	<!--  TEST pour présentation de la page -> faire afficher articles de la BDD sur cette page <a href="#"><img src="images/lampe.png" alt="articleLampe" height="120" width="150"></img></a>-->
 
 	</div>
 		
