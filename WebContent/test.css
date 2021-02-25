@@ -20,12 +20,14 @@
 .wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	max-width: 1500px;
+	min-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #f2f2f2;
 	opacity: 0.9;
 	border-radius: 4px;
+	margin-top:5%;
+	grid-gap:0.3em;
 	
 	
 }
@@ -106,12 +108,6 @@ h3
 	color: black;
 }
 
-footer {
-	text-align: center;
-	display:inline-block;
-	position:absolute;
-	top:90%;
-}
 
 #TitreAccueil {
 	text-align: left;
@@ -204,6 +200,10 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+		text-align: center;
+	display:inline-block;
+	position:absolute;
+	top:180%;
 	padding-top: 2%;
 }
 
@@ -385,7 +385,7 @@ min-width:500px;
 z-index: -1;}
 
 .wrapper {position:absolute;
-top:80%;
+top:82%;
     left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
@@ -493,6 +493,16 @@ min-width:500px;
  
 }
  
+ footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+		text-align: center;
+	display:inline-block;
+	position:absolute;
+	top:190%;
+	padding-top: 2%;
+}
  
  }
  
