@@ -43,6 +43,8 @@ public class ServletAccueil extends HttpServlet {
 			rd.forward(request, response);
 			
 			
+			
+			
 		} catch (BusinessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
