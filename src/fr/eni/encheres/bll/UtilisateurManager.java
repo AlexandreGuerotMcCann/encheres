@@ -27,8 +27,8 @@ public class UtilisateurManager {
 		return daoUtilisateur.selectByPseudo(pseudo);
 	}
 
-	public Utilisateur retournerUtilisateurParId(int id) throws BusinessException {
-		return daoUtilisateur.selectById(id);
+	public Utilisateur retournerUtilisateurParId(int noUtilisateur) throws BusinessException {
+		return daoUtilisateur.selectById(noUtilisateur);
 	}
 
 	public List<Utilisateur> ListeUtilisateurs() throws BusinessException {

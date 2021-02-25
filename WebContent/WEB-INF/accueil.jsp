@@ -119,7 +119,20 @@
 	</form>
 
 
+<p>
+	
+		<c:if test="${empty listeArticlesVendus }">
+			<h3>Aucun article en vente actuellement. Revenez un peu plus
+				tard. Vous pouvez aussi vendre un article.</h3>
+		</c:if>
+		
+		
+		<c:forEach items="${listeArticlesVendus}" var="article">
+   ${article.nomArticle}<br>
+		</c:forEach>
+	
 
+	</p>
 
 	
 

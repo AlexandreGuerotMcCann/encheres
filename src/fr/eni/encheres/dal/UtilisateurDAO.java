@@ -22,6 +22,6 @@ public interface UtilisateurDAO {
 	// "Enregistrer" (cf.maquette p.7 & 8/13)
 	public void modifierUtilisateur(Utilisateur utilisateur) throws BusinessException;
 
-	public Utilisateur selectById(int id) throws BusinessException;
+	public Utilisateur selectById(int noUtilisateur) throws BusinessException;
 
 }
