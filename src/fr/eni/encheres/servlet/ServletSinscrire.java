@@ -86,7 +86,8 @@ public class ServletSinscrire extends HttpServlet {
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
 		}
-		       
+		  
+		
 		// Vérifie si email existe déjà en BDD 
 		else if (emailEnBDD)
 		{

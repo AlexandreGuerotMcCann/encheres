@@ -36,16 +36,19 @@ public class ServletAccueil extends HttpServlet {
 		RequestDispatcher rd = null;
 		ArticleManager articleManager = new ArticleManager();
 		List<ArticleVendu>  listeArticlesVendus = null;
-//		HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 		try {
 			listeArticlesVendus = articleManager.listeArticles();
 			request.setAttribute("listeArticlesVendus", listeArticlesVendus);
 			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
 			
-				
+			
+			
+			
 		} catch (BusinessException e) {
-			// TODO Auto-generated catch block
+			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+
 			e.printStackTrace();
 		}
 		
@@ -60,11 +63,11 @@ public class ServletAccueil extends HttpServlet {
 //		{
 //			this.getServletContext().getRequestDispatcher("/ServletAccueilConnecte").forward(request, response);  // On go à l'accueil en mode connecté
  //   	}
-//		else 
+//		else   
 //		{
  //   		this.getServletContext().getRequestDispatcher("/ServletAccueilDeconnecte").forward(request, response); // Sinon on go a l'accueil en mode déconnecté
 //		}   //(sans display du bouton déconnexion)
-//		
+//		    
 //		this.getServletContext().getRequestDispatcher(ACCUEIL).forward( request, response ); // OK A GARDER
 	}
 

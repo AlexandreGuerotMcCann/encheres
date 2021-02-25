@@ -66,7 +66,7 @@
 	<c:if test="${!empty mailBDD}"> 
 		<h3>${mailBDD}</h3>
 	</c:if>
-	
+	  
 	<c:if test="${!empty telephoneBDD}"> 
 		<h3>${telephoneBDD}</h3>
 	</c:if>-->
