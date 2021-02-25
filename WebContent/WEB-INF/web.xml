@@ -15,6 +15,15 @@
 	</welcome-file-list>
 
 	<servlet>
+		<servlet-name>accueilHome</servlet-name>
+		<jsp-file>/WEB-INF/accueil.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>accueil</servlet-name>
+		<url-pattern></url-pattern>
+	</servlet-mapping> 
+	
+	<servlet>
 		<servlet-name>accueil</servlet-name>
 		<jsp-file>/WEB-INF/accueil.jsp</jsp-file>
 	</servlet>
@@ -22,6 +31,11 @@
 		<servlet-name>accueil</servlet-name>
 		<url-pattern>/accueil</url-pattern>
 	</servlet-mapping> 
+	
+	
+	
+	
+	
 	<servlet>
 		<servlet-name>connexion</servlet-name>
 		<jsp-file>/WEB-INF/connexion.jsp</jsp-file>
