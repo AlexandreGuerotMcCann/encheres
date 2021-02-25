@@ -55,9 +55,22 @@
 	<h2>Création d'un nouveau compte</h2>
 
 	<!-- INTEGRER LES MESSAGES D ERREURS -->
-	<c:if test="${erreur != 0}"> 
-		<p>${listeErreurs}</p>
+	<c:if test="${!empty requestScope.erreurMDP}"> 
+		<p>${erreurMDP}</p>
 	</c:if>
+	
+	<c:if test="${!empty requestScope.pseudoBDD}"> 
+		<p>${pseudoBDD}</p>
+	</c:if>
+	
+	<c:if test="${!empty requestScope.mailBDD}"> 
+		<p>${mailBDD}</p>
+	</c:if>
+	
+	<c:if test="${!empty requestScope.telephoneBDD}"> 
+		<p>${telephoneBDD}</p>
+	</c:if>
+	
 
 	<form action="ServletSinscrire" method="post" name="connexion">
 
@@ -72,7 +85,7 @@
 			title="Le mot de passe doit contenir au moins 8 caractères alphanumériques (les symboles ne sont pas acceptés)."/> 
 			
 			<label for="mdp">Confirmation Mot de passe: </label> 
-			<input type="Password" required id="confirmMdp" name="confirmMdp" size="30"> 
+			<input type="Password" required id="confirmMdp" name="confirmMdp" size="30"/> 
 			
 			<label for="name">Nom: </label> 
 			<input type="text" required id="nom" name="nom" pattern=".{1,30}.[A-Za-z -]" size="30"
@@ -91,7 +104,7 @@
 			title="10 caractères numériques sont attendus."/> 
 			
 			<label for="rue">Rue: </label> 
-			<input type="text" required id="rue" name="rue" pattern=".{3,30}.[A-Za-z0-9 -]" size="30"
+			<input type="text" required id="rue" name="rue" pattern=".{1,30}.[A-Za-z0-9 -]" size="30"
 			title="La rue ne doit pas excéder 30 caractères (les caractères spéciaux ne sont pas acceptés. Seuls les - et les espaces sont permis)."/>
 
 			<label for="codePostal">Code postal: </label> 
@@ -103,8 +116,7 @@
 			title="La ville ne doit pas excéder 50 caractères. (Les caractères spéciaux ne sont pas acceptés. Seuls les - et les espaces sont permis)."/>
 
 
-			<button class="button" type="button" name="annuler"
-				onclick="window.location.href='http://localhost:8080/projetEncheres/accueil';">
+			<button class="button" type="button" name="annuler" onclick="window.location.href='http://localhost:8080/projetEncheres/accueil';">
 				Annuler</button>
 
 			<button class="button" type="submit" name="sinscrire"
