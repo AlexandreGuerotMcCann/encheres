@@ -122,17 +122,12 @@
 
 
 	
-<<<<<<< HEAD
-	 </p>
+
+	
 	</body>
 	
 	<!-- DEUX LETTRES -->
 	
 	<footer> Copyright 2021 des fifous du net © </footer> 
 	</html>
-=======
-</body>
 
-<footer> Copyright 2021 des fifous du net © </footer>
-</html>
->>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
