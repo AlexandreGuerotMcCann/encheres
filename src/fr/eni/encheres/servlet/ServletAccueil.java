@@ -20,8 +20,8 @@ public class ServletAccueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public static final String ACCUEIL="/WEB-INF/accueil.jsp";
-	
-	
+	 
+	dsfds<fds<f<dsfsdfqsqdsq
 	/** 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)    
 	 */
