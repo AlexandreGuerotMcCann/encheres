@@ -14,10 +14,12 @@ public class ArticleVendu {
 	private Date dateFinEncheres;
 	private int miseAPrix;
 	private int prixVente;
+	private int noCategorie;
+	private int noUtilisateur;
 	private String etatVente;
 
-	private Utilisateur noUtilisateur;
-	private Categorie noCategorie;
+	private Utilisateur utilisateur;
+	private Categorie categorie;
 
 	
 	// Constructeur sans paramètres
@@ -142,22 +144,38 @@ public class ArticleVendu {
 		this.etatVente = etatVente;
 	}
 
-	public Utilisateur getNoUtilisateur() {
+	public int getNoUtilisateur() {
 		return noUtilisateur;
 	}
 
-	public void setNoUtilisateur(Utilisateur noUtilisateur) {
+	public void setNoUtilisateur(int noUtilisateur) {
 		this.noUtilisateur = noUtilisateur;
 	}
 
 	
-	public Categorie getNoCategorie() {
+	public int getNoCategorie() {
 		return noCategorie;
 	}
 
 
-	public void setNoCategorie(Categorie Categorie) {
+	public void setNoCategorie(int Categorie) {
 		this.noCategorie = Categorie;
+	}
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
 	}
 
 	public static ArticleVendu parseInt(String string) {
