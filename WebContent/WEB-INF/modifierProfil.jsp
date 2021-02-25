@@ -62,9 +62,15 @@
 
 
 	<h2>Mon Profil</h2>
+	
+	
+	<p class="erreur">
+	<c:forEach items="${listeErreurs}" var="entry">
+	${entry.value}<br>
+</c:forEach>
 <form action="ServletModifierProfil" method="post">
-	<div class="wrapper" >
-		<div class="left_text">
+	
+		<div class="modifProfil1">
 			<label for="pseudo">Pseudo :</label>
 			<input type="text" readonly name="pseudo"maxlength="30" size="30" value="${utilisateur.pseudo}">
 			
@@ -76,21 +82,9 @@
 			<input type="tel" name="telephone" pattern=".{8}.[0-9]" size="30" value="${utilisateur.telephone }"
 			title="10 caractères numériques sont attendus."/>
 			
-			<label for="codePostal">Code Postal :</label>
-			<input type="text" name="codePostal" pattern=".{3}.[0-9]" size="30" value="${utilisateur.codePostal }"
-			title="5 caractères numériques sont attendus."/>
 			
-			<label for="motdepasse">Mot de passe actuel :</label>
-			<input type="password" name="motdepasse" pattern=".{6,30}.[A-Za-z0-9]" size="30"
-			title="Le mot de passe doit contenir au moins 8 caractères alphanumériques (les symboles ne sont pas acceptés)."/> 
-			
-			<label for="nouveau_motdepasse">Nouveau mot de passe :</label>
-			<input type="password" size="30" name="nouveau_motdepasse">
-			
-			<p>Crédit : ${utilisateur.credit }</p>
-		</div>
-	 
-		<div class="right_text">
+			<p>Crédit : ${utilisateur.credit }</p><br>
+	
 			<label for="nom">Nom :</label>
 			<input type="text" name="nom" pattern=".{1,30}.[A-Za-z -]" size="30" value="${utilisateur.nom}"
 			title="Votre nom ne doit pas excéder 30 caractères."/> 
@@ -107,20 +101,27 @@
 			<input type="text" name="ville" pattern=".{1,50}.[A-Za-z -]" size="50" value="${utilisateur.ville}"
 			title="La ville ne doit pas excéder 50 caractères. (Les caractères spéciaux ne sont pas acceptés. Seuls les - et les espaces sont permis)."/>
 
-			<label for="confirmation_mdp">Confirmation : 
-			<input type="password" size="30" name="confirmation_mdp"></label>		
-		</div>
+			<label for="codePostal">Code Postal :</label>
+			<input type="text" name="codePostal" pattern=".{3}.[0-9]" size="30" maxlength=5 value="${utilisateur.codePostal }"
+			title="5 caractères numériques sont attendus."/>
+			
+			<label for="motdepasse">Mot de passe actuel :</label>
+			<input type="password" name="motdepasse" pattern=".{6,30}.[A-Za-z0-9]" size="30" value="${utilisateur.motDePasse }
+			title="Le mot de passe doit contenir au moins 8 caractères alphanumériques (les symboles ne sont pas acceptés)."/> 
+			
+			<label for="nouveau_motdepasse">Nouveau mot de passe :</label>
+			<input type="password" size="30" name="nouveau_motdepasse">
+			<label for="confirmation_mdp">Confirmation : </label>	
+			<input type="password" size="30" name="confirmation_mdp">	
+		
 		
 		<button class="button" type="submit" onclick="ServletModifierProfil"name="modifier">Enregistrer les modifications</button> <!-- A faire : inclure méthode UPDATE compte -->
 		<button class="button" type="submit" onclick="ServletModifierProfil"name="supprimer">Supprimer mon profil</button>
-	
+	</div>
 	<!--	<a href="ServletModifierProfil" class="button">Supprimer mon compte</a> <!-- Redirige vers ServletSupprimerUtilisateur
 			 <input type="submit" class="button" value="Connexion"></input></a>
 			 -->
-			</div>
 			</form>
-			<c:if test="${!empty listeErreurs}" var="erreur"> 
-		<p>${listeErreurs}</p>
-	</c:if>
+			
 </body>
 </html>
