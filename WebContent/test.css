@@ -178,8 +178,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	padding-top: 80px;
-	height: 50px;
+	padding-top: 2%;
 }
 
 #searchsize2 {
@@ -404,14 +403,6 @@ min-width:500px;
 
 .logo {margin-top:2%;}
 
-footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	padding-top: 450px;
-	height: 50px;
-	z-index:-1;
-}
 
 .navbar a {
   float: right;

@@ -43,8 +43,10 @@
 		</ul>
 
 	</div>
+	<br>
 	
 	<h1>Se connecter</h1>
+	<br>
 	<br>
 
 	<form action="ServletConnexion" method="post">
