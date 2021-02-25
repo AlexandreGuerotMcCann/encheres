@@ -60,7 +60,7 @@
 	</c:if>
 	
 	<c:if test="${!empty pseudoBDD}"> 
-		<h3>${pseudoBDD}</h3>
+		<h3>${pseudoBDD}</h3> 
 	</c:if>
 	
 	<c:if test="${!empty mailBDD}"> 
