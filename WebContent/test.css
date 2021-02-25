@@ -9,9 +9,14 @@
 	color :#ff6961;
 	font-weight :bold;
 	text-align:center;
+	}
 	
+.erreur2{
+	margin-top:10%;
+	color :#ff6961;
+	font-weight :bold;
+	text-align:center;}
 	
-}
 .wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr;

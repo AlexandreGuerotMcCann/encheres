@@ -67,7 +67,7 @@
 	<p class="erreur">
 	<c:forEach items="${listeErreurs}" var="entry">
 	${entry.value}<br>
-</c:forEach>
+</c:forEach><p>
 <form action="ServletModifierProfil" method="post">
 	
 		<div class="modifProfil1">

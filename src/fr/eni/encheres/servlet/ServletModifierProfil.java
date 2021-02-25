@@ -46,6 +46,7 @@ public class ServletModifierProfil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String identifiant = request.getParameter("pseudo");
 
 		RequestDispatcher rd = null;
