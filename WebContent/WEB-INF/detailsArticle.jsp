@@ -57,7 +57,7 @@
 	<form>
 		
 		<div class="wrapper3" style="float:center;">
-			<img src="#" alt="#">
+			<img src="images/lampe.png" alt="#">
 			<label>Nom de l'article: </label> 
 			<br> 
 			<label>Description</label>  
