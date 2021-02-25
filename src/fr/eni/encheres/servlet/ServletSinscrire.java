@@ -103,7 +103,7 @@ public class ServletSinscrire extends HttpServlet {
 			rd.forward(request, response);
 		}
 	
-					
+		 		 	
 		// SINON, si tout est OK : METHODE POUR INSCRIPTION + REDIRECTION VERS PAGE ACCUEIL
 		else 
 		{	
