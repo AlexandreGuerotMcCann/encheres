@@ -6,7 +6,7 @@
 	<display-name>projetEncheres</display-name>
 	<welcome-file-list>
 		<welcome-file>accueil.jsp</welcome-file>
-		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
@@ -20,7 +20,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>accueil</servlet-name>
-		<url-pattern>/accueil</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping> 
 	<servlet>
 		<servlet-name>connexion</servlet-name>
