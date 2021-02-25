@@ -52,8 +52,12 @@ h2 {
 	text-align: center;
 	color: #DB4D69;
 	display:block;
-	
-	
+}
+
+h3
+{
+	text-align: center;
+	color: grey;
 }
 
 .button {
@@ -311,11 +315,22 @@ text-align: center;
   .newVente {margin-top:2%;}
   
   
- .logo{
+ .logo
+ {
  position:absolute;
  z-index: 1;
- margin-top:0.1%;
+ margin-top:0.4%;
  margin-left:5%;
+ 	-webkit-transform: scale(1); /*Pour préparer zoom logo au survol*/
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+ }
+ 
+ .logo:hover
+ {
+ 	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
  }
  
  

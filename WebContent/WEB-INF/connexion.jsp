@@ -61,7 +61,7 @@
 			<a href="ServletConnexion" class="button"> <input type="submit" class="button" value="Connexion"></input></a>
 
 			<span><input type="checkbox" class="checkbox"
-				name="sesouvenir" />Se souvenir de moi </span> <a href="">Mot de passe 
+				name="sesouvenir" /> Se souvenir de moi </span> <a href="">Mot de passe 
 				oublié</a>
 			<!-- Lien vers MDP oublié -->
 

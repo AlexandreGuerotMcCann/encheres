@@ -1,10 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="fr.eni.encheres.bo.Utilisateur"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="test.css">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="test.css">
 <!-- FEUILLE CSS DE TEST -->
 <link rel="stylesheet" type="text/css"
 	href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
@@ -22,12 +24,14 @@
     <button class="dropbtn">MENU
      <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
-    <div class="dropdown-content">
+    
+    <!--  <div class="dropdown-content">
       <a href="ServletEncheres">Encheres</a>
       <a href="ServletVendreArticle">Vendre</a>
       <a href="ServletConnexion">Se connecter</a>
       <a href="ServletSinscrire">S'inscrire</a>
-    </div>
+
+    </div> -->
     </div>
   </div> 
 
@@ -37,9 +41,11 @@
 
 			<li><a href="ServletEncheres">Enchères</a></li>
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
+			
+		<c:if test="${!empty utilisateur.pseudo}">
 			<li><a href="ServletMonProfil">Mon profil</a></li>
 			<li><a href="ServletAccueil">Déconnexion</a></li>
-
+		</c:if>
 		</ul>
 
 	</div>
