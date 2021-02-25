@@ -13,15 +13,17 @@
 		<welcome-file>default.jsp</welcome-file>
 		 
 	</welcome-file-list>
-
+	
 	<servlet>
-		<servlet-name>accueilHome</servlet-name>
-		<jsp-file>/WEB-INF/accueil.jsp</jsp-file>
+		<servlet-name>ServletAccueil</servlet-name>
+		<servlet-class>fr.eni.encheres.servlet</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
-		<servlet-name>accueil</servlet-name>
+		<servlet-name>ServletAccueil</servlet-name>
 		<url-pattern></url-pattern>
-	</servlet-mapping> 
+	</servlet-mapping>
+ 
 	
 	<servlet>
 		<servlet-name>accueil</servlet-name>

@@ -82,6 +82,11 @@ public class ServletModifierProfil extends HttpServlet {
 			String confirmation_mdp = request.getParameter("confirmation_mdp");
 			String mail = request.getParameter("email");
 			try {
+				if ((nouveau_motdepasse.length()>0& nouveau_motdepasse.length()<8)| (confirmation_mdp.length()>0&confirmation_mdp.length()<8 )) {
+					request.setAttribute("erreurMDP", "ERREUR : Le nouveau mot de passe doit avoir entre 8 et 30 caractères.");
+					rd = request.getRequestDispatcher("/WEB-INF/modifierProfil.jsp");
+					rd.forward(request, response);
+				}
 				if (nouveau_motdepasse.length() > 7 ) {
 					if (!nouveau_motdepasse.equals(confirmation_mdp)) {
 						request.setAttribute("erreurMDP", "ERREUR : Les mots de passe ne correspondent pas.");
@@ -99,6 +104,8 @@ public class ServletModifierProfil extends HttpServlet {
 						utilisateur.setVille(ville);
 						utilisateur.setMotDePasse(nouveau_motdepasse);
 						utilisateurManager.modificationUtilisateur(utilisateur);
+						utilisateur=utilisateurManager.retournerUtilisateur(identifiant);
+						session.setAttribute("utilisateur", utilisateur);
 						rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 						rd.forward(request, response);
 					}
@@ -114,6 +121,9 @@ public class ServletModifierProfil extends HttpServlet {
 					utilisateur.setVille(ville);
 					utilisateur.setMotDePasse(motdepasse);
 					utilisateurManager.modificationUtilisateur(utilisateur);
+					utilisateur=utilisateurManager.retournerUtilisateur(identifiant);
+					session.setAttribute("utilisateur", utilisateur);
+
 					rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 					rd.forward(request, response);
 				}
