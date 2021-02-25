@@ -4,7 +4,14 @@
 	font-family: ubuntu;
 	
 }
-
+.erreur{
+	margin-top:1%;
+	color :#ff6961;
+	font-weight :bold;
+	text-align:center;
+	
+	
+}
 .wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -116,20 +123,18 @@ li a:hover {
 	background-color: lightgrey;
 	color: black;
 }
-
-.left-text{
-
+.modifProfil1 { 
 	display: grid;
-	grid-template-columns:1fr, auto;
-	
-	max-width: 1500px;
+	margin-top:2%;
+	grid-template-columns: 1fr 1fr;
+	max-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #f2f2f2;
 	opacity: 0.9;
 	border-radius: 4px;
-    }
-.right-text{margin-left:60% ;}
+	}
+.modifProfil1>*{padding: 1em 1em;}
 
 .wrapper3 {
 	display: grid;

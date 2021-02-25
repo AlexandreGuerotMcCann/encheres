@@ -15,7 +15,9 @@
 		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
 	</div>
 
-Erreur erreur
+<p class="erreur"><a href="http://localhost:8080/projetEncheres/connexion"> Erreur lors de la connection, veuillez réessayer.</a></p>
+
+                  
 </body>
  
 <footer> Copyright 2021 des fifous du net © </footer> 
