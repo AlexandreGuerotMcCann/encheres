@@ -15,7 +15,7 @@
 		<a href="accueil"><img src="images/logoProjet.png" alt="accueil" height="80" width="150"></img></a>
 	</div>
 
-<a href="connexion" class="erreur"> Erreur lors de la connection, veuillez réessayer.</a>
+<p class="erreur"><a href="http://localhost:8080/projetEncheres/connexion"> Erreur lors de la connection, veuillez réessayer.</a></p>
 
                   
 </body>

@@ -31,8 +31,6 @@ public class ServletModifierProfil extends HttpServlet {
 	private static final String NUMERIQUE = "^[0-9]";
 	HashMap<String, String> listeErreurs = new HashMap<String, String>();
 
-	HashMap<String, String> listeNullErreurs = new HashMap<String, String>();
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -135,7 +133,7 @@ public class ServletModifierProfil extends HttpServlet {
 		if (listeMailBDD.contains(mail)) {
 			listeErreurs.put("mail", "Cet email est déjà présent en BDD.");
 		} else
-			listeNullErreurs.put("null", "");
+			listeErreurs.put("null", "");
 	}
 
 	private void validationTelBDD(String telephone) throws Exception {
@@ -148,19 +146,19 @@ public class ServletModifierProfil extends HttpServlet {
 		if (listeMailTel.contains(telephone)) {
 			listeErreurs.put("telBDD", "Ce numéro existe déjà.");
 		} else
-			listeNullErreurs.put("null", "");
+			listeErreurs.put("null", "");
 	}
 
 	private void validationMotDePasseBDD(String motdepasse, String motdePasseBDD) {
 		if (motdepasse.equals(motdePasseBDD)) {
-			listeNullErreurs.put("null", "");
+			listeErreurs.put("null", "");
 		} else
 			listeErreurs.put("mdpBDD", "Le mot de passe actuel est incorrect.");
 	}
 
 	private boolean validationMDP(String nouveau_motdepasse, String confirmMdp) {
 		if (nouveau_motdepasse.equals(confirmMdp)) {
-			listeNullErreurs.put("null", "");
+			listeErreurs.put("null", "");
 			return true;
 		} else
 			listeErreurs.put("mdp", "Les mots de passe de correspondent pas.");
