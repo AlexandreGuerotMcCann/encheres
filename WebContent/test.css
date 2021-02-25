@@ -400,7 +400,7 @@ z-index: -1;}
  
  .wrapper3 {position:absolute;
 top:72%;
-    left: 35%;
+    left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
 }
