@@ -9,7 +9,7 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="fr.eni.encheres.servlet.ServletAccueil"%>
 
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
