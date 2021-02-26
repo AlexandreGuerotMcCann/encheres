@@ -16,8 +16,8 @@ public class CategorieManager {
 
 	}
 
-	public Categorie retournerCategorie(String libelle) throws BusinessException {
-		return daoCategories.selectByLibelle(libelle);
+	public Categorie retournerCategorie(int noCategorie) throws BusinessException {
+		return daoCategories.selectById(noCategorie);
 	}
 
 	public Categorie retournerUtilisateurParId(int noCatgeorie) throws BusinessException {

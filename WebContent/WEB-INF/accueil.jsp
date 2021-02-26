@@ -38,9 +38,18 @@
 				MENU <i class="fa fa-bars" aria-hidden="true"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="ServletEncheres">Encheres</a> <a
-					href="ServletVendreArticle">Vendre</a> <a href="ServletConnexion">Se
-					connecter</a> <a href="ServletSinscrire">S'inscrire</a>
+				<a href="ServletEncheres">Encheres</a> 
+				<a href="ServletVendreArticle">Vendre</a> 
+				<c:if test="${empty utilisateur.pseudo}">
+				<a href="ServletConnexion">Se connecter</a> 
+				<a href="ServletSinscrire">S'inscrire</a>
+				</c:if>
+				<c:if test="${!empty utilisateur.pseudo}">
+				<!-- Si utilisateur connecté, bouton "Se déconnecter" visible et actif -->
+				<a href="ServletDeconnexion">Se déconnecter</a>
+			</c:if>
+				
+				
 			</div>
 		</div>
 	</div>
@@ -140,7 +149,8 @@
    ${article.nomArticle}<br>
    ${article.miseAPrix}<br>
    dateFinEncheres = ${article.dateFinEncheres}<br>
-   vendeur= ${article.noUtilisateur}<br>
+   ${article.description}<br> <!-- A modifier Visible seulement si le user est connecté -->
+   vendeur= <a href="ServletAfficherProfilVendeur">${article.pseudo}</a><br>
 		</c:forEach>
 	
 

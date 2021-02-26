@@ -27,8 +27,8 @@
     <div class="dropdown-content">
       <a href="ServletEncheres">Encheres</a>
       <a href="ServletVendreArticle">Vendre</a>
-      <a href="ServletConnexion">Se connecter</a>
-      <a href="ServletSinscrire">S'inscrire</a>
+      <a href="ServletMonProfil">Mon profil</a>
+      <a href="ServletDeconnexion">Se déconnecter</a>
     </div>
     </div>
   </div> 
@@ -37,7 +37,7 @@
 			<li><a href="ServletEncheres">Enchères</a></li>
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
 			<li><a href="ServletMonProfil">Mon profil</a></li>
-			<li><a href="ServletDeconnexion">Déconnexion</a></li>
+			<li><a href="ServletDeconnexion">Se déconnecter</a></li>
 		</ul>
 	</div>
 

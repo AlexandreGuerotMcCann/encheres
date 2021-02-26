@@ -16,6 +16,7 @@ public class ArticleVendu {
 	private int prixVente;
 	private int noCategorie;
 	private int noUtilisateur;
+	private String pseudo;
 	private String etatVente;
 
 	private Utilisateur utilisateur;
@@ -176,6 +177,14 @@ public class ArticleVendu {
 
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
+	}
+
+	public String getPseudo() {
+		return pseudo;
+	}
+
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
 	}
 
 	public static ArticleVendu parseInt(String string) {
