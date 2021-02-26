@@ -11,7 +11,7 @@
   grid-template-columns: repeat(3, 0.5fr);
   grid-gap: 50px;
         position: absolute;
-    top: 215%;
+    top: 290%;
     left: 50%;
     width:1200px;
     transform: translate(-50%, -50%);
@@ -224,7 +224,7 @@ li a:hover {
 .wrapper3 {
 	
 	
-	 top: 80%;
+	 top: 110%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -556,7 +556,7 @@ min-width:500px;
 z-index: -1;}
  
  .wrapper3 {position:absolute;
-top:90%;
+top:100%;
     left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
@@ -704,7 +704,7 @@ min-width:500px;
   grid-template-columns: repeat(1, 0.5fr);
   grid-gap: 20px;
         position: absolute;
-    top: 350%;
+    top: 420%;
     left: 52%;
     min-width:200px;
     transform: translate(-50%, -50%);
