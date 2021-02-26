@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 public class ServletDeconnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	public static final String ACCUEIL = "/WEB-INF/ServletAccueil";
+	public static final String ACCUEIL = "/ServletAccueil";
        
 
 	/**
@@ -24,16 +24,11 @@ public class ServletDeconnexion extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true); // On récupère la session 
 		session.invalidate();
-		//session = request.getSession(false); // on vérifie bien que la session est invalidée
-		//response.getWriter().println("Session : " + session); // test
-		// ou HttpServletRequest.getSession().invalidate()  
-		// response.sendRedirect(request.getContextPath());    
 		this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
 
 	}
 
 	
-	// Je n'envoie rien, donc rien dans doPost
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -43,4 +38,3 @@ public class ServletDeconnexion extends HttpServlet {
 
 }
 
-// parametrer redirection auto vers page accueil
