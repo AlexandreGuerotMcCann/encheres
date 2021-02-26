@@ -24,8 +24,14 @@
     <div class="dropdown-content">
       <a href="ServletEncheres">Encheres</a>
       <a href="ServletVendreArticle">Vendre</a>
+      <c:if test="${empty utilisateur.pseudo}">
       <a href="ServletConnexion">Se connecter</a>
       <a href="ServletSinscrire">S'inscrire</a>
+      </c:if>
+      <c:if test="${!empty utilisateur.pseudo}">	
+	<a href="ServletDeconnexion">Se déconnecter</a>
+	</c:if>
+    
     </div>
     </div>
   </div> 
