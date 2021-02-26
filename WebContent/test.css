@@ -370,8 +370,8 @@ footer {
 
 .infosUtilisateur { text-align: center;
      border-style:inset;
-     border-width:0.8em;
-     border-color:black;
+     border-width:0.2em;
+     border-color:lightgrey;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
     line-height: 1.8em;
     position: absolute;
