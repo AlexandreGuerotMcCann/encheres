@@ -35,8 +35,9 @@
     padding: 50px 50px;
     opacity:0.9;
      border-style: inset;
-      border-color: black;
+      border-color: #606060;
   border-width: 0.3em;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
 
@@ -235,8 +236,9 @@ li a:hover {
 	font-size:30px;
 	width:38%;
 	border-style: inset;
-      border-color: black;
+      border-color: #606060;
   border-width: 0.2em;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
 .wrapper3>* {
