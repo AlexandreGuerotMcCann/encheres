@@ -1,26 +1,20 @@
 package fr.eni.encheres.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bll.UtilisateurManager;
 import fr.eni.encheres.bo.Utilisateur;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
 
 /**
  * Servlet implementation class ServletSinscrire
@@ -32,10 +26,7 @@ public class ServletSinscrire extends HttpServlet {
 	boolean pseudoEnBDD;
 	boolean emailEnBDD;
 	boolean telephoneEnBDD;
-	
 	public static final String SINSCRIRE = "/WEB-INF/sinscrire.jsp";
-
-	//Map<String, String> listeErreurs = new HashMap<String, String>();   
 
 
 	/**
@@ -71,7 +62,7 @@ public class ServletSinscrire extends HttpServlet {
 		
  		 
 	try {
-		// METHODE VérifMDP OK FONCTIONNE PARFAITEMENT !
+		// Vérifie si mdp correspond à confirmationMdp
 		if (!mdp.equals(confirmMdp))
 		{
 			request.setAttribute("erreur", "ERREUR : Les mots de passe ne correspondent pas.");
@@ -82,7 +73,7 @@ public class ServletSinscrire extends HttpServlet {
 		validationEmailBDD(mail);
 		validationTelephoneBDD(telephone);
 		// Vérifie si pseudo existe déjà en BDD
-		if (pseudoEnBDD==false) 
+		if (pseudoEnBDD==true) 
 		{ 
 			request.setAttribute("erreur", "ERREUR : Ce pseudo existe déjà.");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");

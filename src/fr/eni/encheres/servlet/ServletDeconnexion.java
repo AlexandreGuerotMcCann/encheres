@@ -25,7 +25,6 @@ public class ServletDeconnexion extends HttpServlet {
 		HttpSession session = request.getSession(true); // On récupère la session 
 		session.invalidate();
 		this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
-
 	}
 
 	
@@ -35,6 +34,5 @@ public class ServletDeconnexion extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
 
