@@ -633,7 +633,7 @@ min-width:500px;
 		text-align: center;
 	display:inline-block;
 	position:absolute;
-	top:190%;
+	top:270%;
 	padding-top: 2%;
 }
 
@@ -667,6 +667,23 @@ min-width:500px;
 }
 
 
+
+.wrapper444 { display: grid;
+  grid-template-columns: repeat(3, 0.5fr);
+  grid-gap: 20px;
+        position: absolute;
+    top: 202%;
+    left: 50%;
+    min-width:200px;
+    transform: translate(-50%, -50%);
+  justify-content: center;
+}
+
+
+.item {  background-color: #f2f2f2;
+    padding: 50px 50px;
+    opacity:0.9;
+}
 
 
  
