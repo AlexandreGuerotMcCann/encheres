@@ -59,7 +59,9 @@
 			
 		</ul>
 	</div>
-
+	
+	<br>
+		
     	<h1>ENI Enchères</h1>
 	<h2>Modifier mon Profil</h2>
 	
