@@ -44,9 +44,7 @@
 
 
 	<h1 class="titre" >Mes informations</h1>
-	<div class="rechercheProfil">
-		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo...">
-	</div>
+	
 	<div class="infosUtilisateur">
    
 	

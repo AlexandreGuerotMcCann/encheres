@@ -10,7 +10,7 @@
 <!-- FEUILLE CSS DE TEST -->
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Profil de ${utilisateur.pseudo}</title>
+	<title>Profil de ${vendeur.pseudo}</title>
 </head>
 
 <body>
@@ -43,9 +43,7 @@
 
 
 	<h1 class="titre" >Mes informations</h1>
-	<div class="rechercheProfil">
-		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo...">
-	</div>
+	
 	<div class="infosUtilisateur">
    
 	

@@ -49,6 +49,7 @@ public class ServletAccueil extends HttpServlet {
 				int noVendeur = articleVendu.getNoUtilisateur();
 		vendeur=utilisateurManager.retournerUtilisateurParId(noVendeur);
 						articleVendu.setPseudo(vendeur.getPseudo());
+						articleVendu.setUtilisateur(vendeur);
 	
 			}
 			session.setAttribute("vendeur", vendeur);
@@ -62,8 +63,6 @@ public class ServletAccueil extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
-
 
 
 	/**
