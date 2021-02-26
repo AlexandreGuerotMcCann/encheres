@@ -100,6 +100,7 @@
 				<label style="font-weight:1000;">Filtres :</label> <br> <input id="searchsize"
 					type="text" placeholder="Rechercher une enchère..." style="font-size:25px;"> <br> <label style="font-weight:1000;">Catégories:
 				</label> <select id="categorie" name="categorie">
+				<option value="0">Selectionnez</option>
 					<option value="0">Decoration</option>
 				<option value="0">Textile</option>
 				<option value="0">Jeux</option>
