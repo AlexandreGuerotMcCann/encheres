@@ -77,7 +77,7 @@
 
 	<h1>ENI Enchères</h1>
 
-	<h2>Liste des enchères</h2>
+	<h2>Liste des enchères</h2> 
 
 	<br>
 
