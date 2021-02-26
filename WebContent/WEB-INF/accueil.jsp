@@ -91,6 +91,8 @@
 		<h4>Connecté en tant que "${utilisateur.pseudo}"</h4>
 	</c:if>
 
+	<br>
+	
 	<form>
 		<div>
 		
