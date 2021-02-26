@@ -46,7 +46,7 @@
 
 	</div>
 	
-	<h2>Liste des enchères</h2>
+	<h1 style="margin-top:2%;">Liste des enchères</h1>
 	
 	<br>
 	
