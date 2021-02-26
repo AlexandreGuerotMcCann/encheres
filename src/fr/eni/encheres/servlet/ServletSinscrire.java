@@ -76,7 +76,7 @@ public class ServletSinscrire extends HttpServlet {
 		validationEmailBDD(mail);
 		validationTelephoneBDD(telephone);
 		// Vérifie si pseudo existe déjà en BDD
-		if (pseudoEnBDD==false) 
+		if (pseudoEnBDD==true) 
 		{ 
 			request.setAttribute("erreur", "ERREUR : Ce pseudo existe déjà.");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
