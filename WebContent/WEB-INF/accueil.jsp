@@ -38,12 +38,12 @@
 				MENU <i class="fa fa-bars" aria-hidden="true"></i>
 			</button>
 			<div class="dropdown-content">
-				<a href="ServletEncheres">Encheres</a> 
-				
-				 <c:if test="${!empty utilisateur.pseudo}">
-				<a href="ServletVendreArticle">Vendre</a>
+				<a href="ServletEncheres">Encheres</a>
+
+				<c:if test="${!empty utilisateur.pseudo}">
+					<a href="ServletVendreArticle">Vendre</a>
 				</c:if>
-				
+
 				<c:if test="${empty utilisateur.pseudo}">
 					<a href="ServletConnexion">Se connecter</a>
 					<a href="ServletSinscrire">S'inscrire</a>
@@ -63,8 +63,8 @@
 		<ul>
 
 			<li><a href="ServletEncheres">Enchères</a></li>
-			 <c:if test="${!empty utilisateur.pseudo}">
-			<li><a href="ServletVendreArticle">Vendre un article</a></li>
+			<c:if test="${!empty utilisateur.pseudo}">
+				<li><a href="ServletVendreArticle">Vendre un article</a></li>
 			</c:if>
 
 			<c:if test="${empty utilisateur.pseudo}">
@@ -165,12 +165,22 @@
 	</p>
 
 
-	<form action="ServletAfficherProfilVendeur" method="post">
+	
 		<div class="wrapper444">
 			<c:forEach items="${listeArticlesVendus}" var="article">
 				<div class="item">
 					<p style="font-weight: 800;">Article :</p>
-					<p>${article.nomArticle}</p>
+					<c:if test="${empty utilisateur.pseudo}">
+						<!--s  Affiche le nom de l'article (pas de lien) si utilisateur non connecté -->
+						<p>${article.nomArticle}</p>
+					</c:if>
+
+					<c:if test="${!empty utilisateur.pseudo}">
+						<!-- Lien sur le nom de l'article si utilisateur connecté -->
+						<p>
+							<a href="ServletDescriptionArticle?nom=${article.nomArticle}"
+								style="color: #db4d69;">${article.nomArticle}</a>
+					</c:if>
 					<p style="font-weight: 800;">Prix :</p>
 					<p>${article.miseAPrix}</p>
 					<p style="font-weight: 800;">Date de fin de l'enchère :</p>
@@ -183,7 +193,7 @@
 				</div>
 			</c:forEach>
 		</div>
-	</form>
+	
 
 
 

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="fr.eni.encheres.bo.Utilisateur"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -78,16 +78,18 @@
 	</div>
 </head>
 <body>
+
 		<div class="modifProfil1">
-		<p>Pseudo : </p>
-		<p>Nom : </p>>
-		<p>Prénom : </p>
-		<p>Email : </p>
-		<p>Téléphone :</p>
-		<p>Rue : </p>
+		<p style="color: #db4d69;">${article.nomArticle }</p>
+		<p>Description : ${article.description } </p>
+		<p>Catégorie : </p> <!-- import à faire  -->
+		<p>Mise à prix : ${article.miseAPrix } </p> <!-- import à faire  -->
+		<p>Fin de l'enchère : ${article.dateFinEncheres }</p>
+		<p>Retrait : </p> <!-- import à faire -->
 		<p>Code postal : </p>
-		<p>Ville :</p>
-		</div>
+		<p>Vendeur : ${article.pseudo}</p>
+		<p>Ma proposition : </p><!-- faire un menu déroulant avec le crédit+ méthode pour vérifier si l'acheteur à assez de crédit -->
+		<button class="button" type="submit" name="Enchérir" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletEncherir';" >Enchérir</div>
 
 
 
