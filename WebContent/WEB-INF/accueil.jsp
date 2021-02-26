@@ -150,7 +150,7 @@
    ${article.miseAPrix}<br>
    dateFinEncheres = ${article.dateFinEncheres}<br>
    ${article.description}<br> <!-- A modifier Visible seulement si le user est connecté -->
-   vendeur= ${article.pseudo}<br>
+   vendeur= <a href="ServletAfficherProfil">${article.pseudo}</a><br>
 		</c:forEach>
 	
 
