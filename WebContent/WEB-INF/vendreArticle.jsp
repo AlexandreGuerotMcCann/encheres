@@ -77,8 +77,8 @@
 		<label>Ville: <input style="text"></label>
 
 	
-		<button class="button3" type="submit" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletAccueil';"name="annuler">Annuler</button>
-        <button class="button3" type="submit" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletMesVentes';"name="enregistrer">Enregistrer</button>
+		<button class="button4" type="submit" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletAccueil';"name="annuler">Annuler</button>
+        <button class="button4" type="submit" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletMesVentes';"name="enregistrer">Enregistrer</button>
 	
 	</div>
 

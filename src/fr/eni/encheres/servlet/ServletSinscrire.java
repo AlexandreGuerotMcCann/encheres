@@ -116,11 +116,9 @@ public class ServletSinscrire extends HttpServlet {
 			utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
 			HttpSession session = request.getSession();
 			session.setAttribute("utilisateur", utilisateur);
-<<<<<<< HEAD
-			rd = request.getRequestDispatcher("/ServletAccueil");
-=======
+
 			rd = request.getRequestDispatcher("ServletAccueil");
->>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
+
 			rd.forward(request, response);
 		}
 		

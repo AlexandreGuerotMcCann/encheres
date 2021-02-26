@@ -54,12 +54,13 @@
 		<!--  Encadrer les différents input dans des div ? (pour CSS flexbox) -->
 		<div class="wrapper2">
 			<label for="identifiant"> Identifiant :</label> 
-			<input type="text" id="identifiant" name="identifiant" required maxlenght="30"  autofocus="autofocus" />
+			<input type="text" id="identifiant" name="identifiant" required maxlength="30"  autofocus="autofocus" /> 
 			<label for="motdepasse">Mot de	passe :</label> 
-			<input type="password" name="motdepasse" id="motdepasse" required minimumlength="8" maxlenght="30"  /> 
+			<input type="password" name="motdepasse" id="motdepasse" required maxlength="30"  /> 
 				
-				 
-			<button class="button4" type="button" name="sinscrire" onclick="ServletSinscrire">Créer un compte</button>
+				
+			<button class="button4" type="button" name="sinscrire" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletSinscrire';">
+				Créer un compte</button>
 
 			<button class="button4" type="submit" name="connexion"
 				onclick="ServletConnexion">Se connecter</button>
