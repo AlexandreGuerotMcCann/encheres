@@ -48,6 +48,11 @@
 			<li><a href="ServletConnexion">Se connecter</a></li>
 			<li><a href="ServletSinscrire">S'inscrire</a></li>
 			</c:if>
+			
+			<c:if test="${!empty utilisateur.pseudo}">
+				<!-- Si utilisateur connecté, bouton "Se déconnecter" visible et actif -->
+				<li><a href="ServletDeconnexion">Se déconnecter</a></li>
+			</c:if>
     		
 		</ul>
 
