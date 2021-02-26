@@ -88,7 +88,7 @@
 
 	<c:if test="${!empty utilisateur.pseudo}">
 		<!-- Affiche un message si utilisateur connecté -->
-		<h4>Connecté en tant que "${utilisateur.pseudo}"</h4>
+		<h4>Connecté(e) en tant que "${utilisateur.pseudo}"</h4>
 	</c:if>
 
 	<br>
