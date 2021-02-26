@@ -11,7 +11,7 @@
   grid-template-columns: repeat(3, 0.5fr);
   grid-gap: 50px;
         position: absolute;
-    top: 215%;
+    top: 290%;
     left: 50%;
     width:1200px;
     transform: translate(-50%, -50%);
@@ -205,6 +205,7 @@ li a:hover {
 	color: black;
 }
 .modifProfil1 { 
+	    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 	display: grid;
 	margin-top:2%;
 	grid-template-columns: 0.5fr 1fr;
@@ -223,7 +224,7 @@ li a:hover {
 .wrapper3 {
 	
 	
-	 top: 80%;
+	 top: 110%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -282,7 +283,7 @@ li a:hover {
 .wrapper66 {
 	    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 	
-	 top: 65%;
+	 top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -354,7 +355,7 @@ footer {
     font-size:18px;
     width:23%;
     color:black;
-    top: 32%;
+    top: 38%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
@@ -369,12 +370,12 @@ footer {
 
 .infosUtilisateur { text-align: center;
      border-style:inset;
-     border-width:0.8em;
-     border-color:black;
+     border-width:0.2em;
+     border-color:lightgrey;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
     line-height: 1.8em;
     position: absolute;
-    top: 72%;
+    top: 85%;
     left: 50%;
     width: 25%;
     transform: translate(-50%, -50%);
@@ -390,7 +391,7 @@ footer {
 
 .titre {text-align: center;
     position: absolute;
-    top: 23%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: none;
@@ -403,7 +404,7 @@ footer {
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
     line-height: 1.5em;
     position: absolute;
-    top:120%;
+    top:150%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #f2f2f2;
@@ -527,7 +528,7 @@ text-align: center;
  
  @media screen and (max-width: 1200px) {
  
- .ajoutVente { top:125%;
+ .ajoutVente { top:150%;
  min-width:600px;
  position: absolute;
  z-index:-1;
@@ -548,14 +549,14 @@ min-width:500px;
 z-index: -1;}
 
 .wrapper {position:absolute;
-top:95%;
+top:120%;
     left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
 z-index: -1;}
  
  .wrapper3 {position:absolute;
-top:90%;
+top:100%;
     left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
@@ -673,7 +674,7 @@ min-width:500px;
 
 
 	
-	 top: 70%;
+	 top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -703,7 +704,7 @@ min-width:500px;
   grid-template-columns: repeat(1, 0.5fr);
   grid-gap: 20px;
         position: absolute;
-    top: 350%;
+    top: 420%;
     left: 52%;
     min-width:200px;
     transform: translate(-50%, -50%);
