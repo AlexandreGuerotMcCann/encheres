@@ -119,8 +119,6 @@ public class ServletSinscrire extends HttpServlet {
 
 			rd = request.getRequestDispatcher("ServletAccueil");
 
-			rd = request.getRequestDispatcher("ServletAccueil");
-
 			rd.forward(request, response);
 		}
 		
