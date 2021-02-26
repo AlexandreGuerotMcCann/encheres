@@ -58,11 +58,11 @@
 			<label for="motdepasse">Mot de	passe :</label> 
 			<input type="password" name="motdepasse" id="motdepasse" required minimumlength="8" maxlenght="30"  /> 
 				
-				
+				 
 			<button class="button4" type="button" name="sinscrire" onclick="ServletSinscrire">Créer un compte</button>
 
 			<button class="button4" type="submit" name="connexion"
-				onclick="ServletConnexion">S'inscrire</button>
+				onclick="ServletConnexion">Se connecter</button>
 				
 	
 
