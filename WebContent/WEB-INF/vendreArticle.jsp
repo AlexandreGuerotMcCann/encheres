@@ -45,9 +45,10 @@
 
 	</div>
 	
-	
-
-		<h2 class="newVente">Nouvelle Vente</h2>
+		<br>
+		<h1>ENI Enchères</h1>
+		
+		<h2>Nouvelle Vente</h2>
 		
 	
 	<div class="ajoutVente">
