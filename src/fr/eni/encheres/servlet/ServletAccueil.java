@@ -52,7 +52,7 @@ public class ServletAccueil extends HttpServlet {
 						articleVendu.setUtilisateur(vendeur);
 	
 			}
-			session.setAttribute("vendeur", vendeur);
+			
 			session.setAttribute("listeArticlesVendus", listeArticlesVendus);
 			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
@@ -72,15 +72,15 @@ public class ServletAccueil extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
-		HttpSession session = request.getSession();
-		String pseudo = "pseudo";
-		request.setAttribute("pseudo", pseudo);
-		pseudo = (String) session.getAttribute("pseudo");
-		String motdepasse = "motdepasse";
-		request.setAttribute("motdepasse", motdepasse);
-		pseudo = (String) session.getAttribute("pseudo");
-
-		this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
+//		HttpSession session = request.getSession();
+//		String pseudo = "pseudo";
+//		request.setAttribute("pseudo", pseudo);
+//		pseudo = (String) session.getAttribute("pseudo");
+//		String motdepasse = "motdepasse";
+//		request.setAttribute("motdepasse", motdepasse);
+//		pseudo = (String) session.getAttribute("pseudo");
+//
+//		this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
 
 	}
 

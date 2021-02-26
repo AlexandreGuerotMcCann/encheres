@@ -27,14 +27,7 @@ public class ServletAfficherProfilVendeur extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(PROFIL).forward( request, response );
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String pseudoVendeur=request.getParameter("vendeur");
+		String pseudoVendeur=request.getParameter("nom");
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		RequestDispatcher rd = null;
 
@@ -46,11 +39,29 @@ public class ServletAfficherProfilVendeur extends HttpServlet {
 		rd.forward(request, response);
 		
 	} catch (BusinessException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
 	
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		String pseudoVendeur=request.getParameter("nom");
+		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		RequestDispatcher rd = null;
+
+		Utilisateur vendeur=new Utilisateur();
+	try {
+		vendeur= utilisateurManager.retournerUtilisateur(pseudoVendeur);
+		request.setAttribute("vendeur", vendeur);
+		rd = request.getRequestDispatcher("/WEB-INF/profilVendeur.jsp");
+		rd.forward(request, response);
 		
-		doGet(request, response);
+	} catch (BusinessException e) {
+		e.printStackTrace();
+	}
+	
+
 	}
 }
