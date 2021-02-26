@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@page import="fr.eni.encheres.bo.Utilisateur"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +25,9 @@
     </button>
     <div class="dropdown-content">
       <a href="ServletEncheres">Encheres</a>
+       <c:if test="${!empty utilisateur.pseudo}">
       <a href="ServletVendreArticle">Vendre</a>
+      </c:if>
       <a href="ServletConnexion">Se connecter</a>
       <a href="ServletSinscrire">S'inscrire</a>
     </div>
@@ -36,7 +40,9 @@
 		<ul>
 
 			<li><a href="ServletEncheres">Enchères</a></li>
+			 <c:if test="${!empty utilisateur.pseudo}">
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
+			</c:if>
 			<li><a href="ServletConnexion">Se connecter</a></li>
 			<li><a href="ServletSinscrire">S'inscrire</a></li>
     		
