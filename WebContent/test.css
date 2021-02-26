@@ -11,7 +11,7 @@
   grid-template-columns: repeat(3, 0.5fr);
   grid-gap: 50px;
         position: absolute;
-    top: 150%;
+    top: 220%;
     left: 50%;
     width:1200px;
     transform: translate(-50%, -50%);
@@ -22,7 +22,7 @@
 
 .wrapper444 p {font-size:18px;}
 
-.wrapper444 p:hover {background-color:lightgrey;}
+.wrapper444 p:hover {background-color:#a9a9a9;}
 
 
 .item {  background-color: #f2f2f2;
@@ -231,9 +231,9 @@ li a:hover {
 	padding: 0.5em 0.5em;
 }
 
-.wrapper3 label:hover{background-color:lightgrey;}
+.wrapper3 label:hover{background-color: #a9a9a9;}
 
-.wrapper3 span:hover{background-color:lightgrey;}
+.wrapper3 span:hover{background-color: #a9a9a9;}
 
 
 
@@ -679,14 +679,15 @@ min-width:500px;
 
 
 .wrapper444 { display: grid;
-  grid-template-columns: repeat(3, 0.5fr);
+  grid-template-columns: repeat(1, 0.5fr);
   grid-gap: 20px;
         position: absolute;
-    top: 202%;
-    left: 50%;
+    top: 350%;
+    left: 52%;
     min-width:200px;
     transform: translate(-50%, -50%);
   justify-content: center;
+  cursor:crosshair;
 }
 
 
