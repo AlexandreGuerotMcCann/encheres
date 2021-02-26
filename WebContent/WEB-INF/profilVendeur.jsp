@@ -51,10 +51,9 @@
 	</div>
 
 
-	<h1 class="titre" >Mes informations</h1>
-	<div class="rechercheProfil">
-		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo...">
-	</div>
+	<h1 >Profil de </h1>
+	<h2>${vendeur.pseudo}</h2>
+	
 	<div class="infosUtilisateur">
    
 	
@@ -67,8 +66,8 @@
 		<p>Code postal : ${vendeur.codePostal}</p>
 		<p>Ville : ${vendeur.ville}</p>
 		 
-			<button class="button4" type="submit" name="modifier_profil"
-				onclick="window.location.href='http://localhost:8080/projetEncheres/ServletModifierProfil';">Modifier le profil</button>
+			<button class="button4" type="submit" name="Accueil"
+				onclick="window.location.href='http://localhost:8080/projetEncheres/ServletAccueil';">Accueil</button>
 			
 			
 			 <!-- Redirige vers la servletModifierProfil qui envoie vers modifierProfil.jsp -->
