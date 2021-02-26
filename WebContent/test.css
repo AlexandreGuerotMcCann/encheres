@@ -50,8 +50,16 @@
 	border-radius: 4px;
 	grid-gap: 0em;
 	z-index:0;
+	widht:50%;
 
 }
+
+.wrapper2 input {padding:20px 20px;
+font-size:18px;}
+
+.wrapper2 label {font-weight:bold;
+text-align:center;
+font-size:20px;}
 
 .wrapper>* {
 	padding: 0.8em 0.8em;
@@ -441,7 +449,7 @@ text-align: center;
  
  
 .wrapper2 {position:absolute;
-top:45%;
+top:55%;
     left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
