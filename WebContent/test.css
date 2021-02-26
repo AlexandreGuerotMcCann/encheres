@@ -704,7 +704,7 @@ min-width:500px;
   grid-template-columns: repeat(1, 0.5fr);
   grid-gap: 20px;
         position: absolute;
-    top: 420%;
+    top: 450%;
     left: 52%;
     min-width:200px;
     transform: translate(-50%, -50%);
