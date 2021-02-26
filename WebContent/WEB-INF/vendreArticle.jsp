@@ -57,7 +57,7 @@
 		<label>Article: <input style="text"></label>
 		<label>Description: <input style="text" class="descriptionArticle"></label>
 		<label><select name="categorie" id="categorie">
-   			 	<option value="">--</option>
+   			 	<option value="">Selectionnez</option>
 			    <option value="#">Décoration</option>
 			    <option value="#">Mobilier</option>
 			    <option value="#">Extérieur</option>

@@ -56,7 +56,7 @@
 	
 	<form>
 		<div>
-		<div class="wrapper3" style="float:center;">
+		<div class="wrapper66" style="float:center;">
 			<label>Filtres :</label> 
 			<br> 
 			<span class="checkbox"><input type="checkbox" id="checkbox"> Enchères ouvertes</span> 
@@ -66,7 +66,7 @@
 			<label>Catégories: </label> 
 			
 			<select id="categorie" name="categorie">
-				<option value="0">--</option>
+				<option value="0">Selectionnez</option>
 				<option value="1">Décoration</option>
 				<option value="2">Mobilier</option>
 				<option value="3">Extérieur</option>
@@ -76,8 +76,9 @@
 			</select> 
 			
 		</div>
+		<br>
 	
-	<h2>ARTICLES</h2>
+	<h2>Articles en Vente</h2>
 	
     <div class="wrapper5"> 
      	<!--  TEST pour présentation de la page -> faire afficher articles de la BDD sur cette page <a href="#"><img src="images/lampe.png" alt="articleLampe" height="120" width="150"></img></a>-->

@@ -19,8 +19,8 @@
 	
 .wrapper {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	min-width: 1000px;
+	grid-template-columns: 0.5fr 1fr;
+	min-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #f2f2f2;
@@ -28,9 +28,12 @@
 	border-radius: 4px;
 	margin-top:5%;
 	grid-gap:0.3em;
+	margin-top:2%;
 	
 	
 }
+
+.wrapper label {font-weight:bold;}
 
 .wrapper2>* {
 	padding: 0.5em 0.5em;
@@ -156,7 +159,7 @@ li a:hover {
 .wrapper3 {
 	
 	
-	 top: 70%;
+	 top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     
@@ -170,21 +173,55 @@ li a:hover {
 	opacity: 0.9;
 	border-radius: 4px;
 	grid-gap: 0.1em;
-	font-size:25px;
-	width:35%;
+	font-size:30px;
+	width:38%;
 }
 
 .wrapper3>* {
 	padding: 0.5em 0.5em;
 }
 
+
+.wrapper66 {
+	
+	
+	 top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	max-width: 1800px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f2f2f2;
+	position:absolute;
+	opacity: 0.9;
+	border-radius: 4px;
+	grid-gap: 0.1em;
+	font-size:30px;
+	width:36%;
+}
+
+.wrapper66 label {font-weight:bold;}
+.wrapper66>* {
+	padding: 0.5em 0.5em;
+}
+
 .checkbox {
-	font-size: 12px;
+	  position: relative;
+	padding-left: 2.3em;
+	font-size: 1.05em;
+	line-height: 1.7;
+	cursor: pointer; 
+	font-size: 15px;
+
 }
 
 #searchsize {
-	width: 188%;
-	text-align: center;}
+	width: 189%;
+	text-align: center;
+	padding-top: 20px;}
 
 .wrapper4 {
 	display: grid;
@@ -210,7 +247,7 @@ footer {
 		text-align: center;
 	display:inline-block;
 	position:absolute;
-	top:180%;
+	top:220%;
 	padding-top: 2%;
 }
 
@@ -265,7 +302,7 @@ footer {
    
     line-height: 1.5em;
     position: absolute;
-    top:105%;
+    top:120%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #f2f2f2;
@@ -274,14 +311,32 @@ footer {
     color: black;
     font-size: 20px;
     min-width:600px;
-   width: 40%;}
+   width: 45%;}
 
 .ajoutVente input {width: 90%;
 display:block;
 text-align: center;
+font-size:25px;
 margin-left:auto;
 margin-right:auto;
 padding: 10px 10px;}
+
+
+.button4 {background-color: black;
+	border: none;
+	color: white;
+	padding: 25px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;}
+	
+	.button4:hover {
+	background-color: #DB4D69;
+	color: black;
+}
 
 #avatar { text-align:center;
   
@@ -297,14 +352,15 @@ padding: 10px 10px;}
     
 	border: none;
 	color: white;
-	padding: 10px 20px;
+	padding: 30px 30px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
 	margin: 5px 2px;
+	
 	cursor: pointer;
-    width: 25%;
+    width: 40%;
     margin-left:auto;
     margin-right:auto;
     margin-top:4%;
@@ -325,7 +381,7 @@ text-align: center;
   -webkit-appearance: none;
     display:block;
     font-size:20px;
-    padding:10px 10px;
+    padding:20px 20px;
     margin-top: 10px;
     margin-bottom:10px;
       background-color: black;
@@ -371,7 +427,7 @@ text-align: center;
  
  @media screen and (max-width: 1200px) {
  
- .ajoutVente { top:110%;
+ .ajoutVente { top:125%;
  min-width:600px;
  position: absolute;
  z-index:-1;
@@ -392,14 +448,14 @@ min-width:500px;
 z-index: -1;}
 
 .wrapper {position:absolute;
-top:82%;
+top:90%;
     left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
 z-index: -1;}
  
  .wrapper3 {position:absolute;
-top:72%;
+top:85%;
     left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
@@ -510,6 +566,37 @@ min-width:500px;
 	top:190%;
 	padding-top: 2%;
 }
+
+
+
+.wrapper66 {
+	
+	
+	 top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	max-width: 1800px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f2f2f2;
+	position:absolute;
+	opacity: 0.9;
+	border-radius: 4px;
+	grid-gap: 0.1em;
+	font-size:30px;
+	width:36%;
+	min-width:600px;
+}
+
+.wrapper66 label {font-weight:bold;}
+.wrapper66>* {
+	padding: 0.5em 0.5em;
+}
+
+
  
  }
  

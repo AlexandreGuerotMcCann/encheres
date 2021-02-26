@@ -93,15 +93,21 @@
 
 	<form>
 		<div>
+		
+		
+		
 			<div class="wrapper3" style="float: left;">
-				<label>Filtres :</label> <br> <input id="searchsize"
-					type="text" placeholder="Search.."> <br> <label>Catégories:
+				<label style="font-weight:1000;">Filtres :</label> <br> <input id="searchsize"
+					type="text" placeholder="Rechercher une enchère..." style="font-size:25px;"> <br> <label style="font-weight:1000;">Catégories:
 				</label> <select id="categorie" name="categorie">
-					<option value="0">categorie1</option>
-					<option value="1">categorie2</option>
-					<option value="2">categorie3</option>
-				</select> <span><input type="radio" name="achats" />Achats</span> <span><input
-					type="radio" name="achats" />Ventes</span> <span class="checkbox"><input
+					<option value="0">Decoration</option>
+				<option value="0">Textile</option>
+				<option value="0">Jeux</option>
+				<option value="0">Mobilier</option>
+				<option value="0">Immobilier</option>
+				
+				</select> <span style="font-weight:1000;"><input type="radio" name="achats" style="height:30px; width:30px; vertical-align: middle;" /> Achats</span> <span style="font-weight:1000;"><input
+					type="radio" name="achats" style="height:30px; width:30px; vertical-align: middle;" /> Ventes</span> <span class="checkbox"><input
 					type="checkbox" id="checkbox"> Enchères ouvertes</span> <span
 					class="checkbox"><input type="checkbox" id="checkbox">
 					Mes Ventes en cours</span> <span class="checkbox"><input

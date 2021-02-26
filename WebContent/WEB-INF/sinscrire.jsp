@@ -116,10 +116,10 @@
 			title="La ville ne doit pas excéder 50 caractères. (Les caractères spéciaux ne sont pas acceptés. Seuls les - et les espaces sont permis)."/>
 
 
-			<button class="button" type="button" name="annuler" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletAccueil';">
+			<button class="button4" type="button" name="annuler" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletAccueil';">
 				Annuler</button>
 
-			<button class="button" type="submit" name="sinscrire"
+			<button class="button4" type="submit" name="sinscrire"
 				onclick="ServletSinscrire">S'inscrire</button>
 
 
