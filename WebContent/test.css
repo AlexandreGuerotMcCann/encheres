@@ -35,6 +35,8 @@
 
 .wrapper label {font-weight:bold;}
 
+.wrapper input {padding: 15px 15px;}
+
 .wrapper2>* {
 	padding: 0.5em 0.5em;
 }
@@ -160,15 +162,18 @@ li a:hover {
 .modifProfil1 { 
 	display: grid;
 	margin-top:2%;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 0.5fr 1fr;
 	max-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #f2f2f2;
 	opacity: 0.9;
 	border-radius: 4px;
+	grid-gap: 0.5em;
 	}
 .modifProfil1>*{padding: 1em 1em;}
+
+.modifProfil1 input {padding: 20px 20px;}
 
 .wrapper3 {
 	
