@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   <%@page import="fr.eni.encheres.bo.Utilisateur"%>
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +24,9 @@
 			<li><a href="ServletEncheres">Enchères</a></li>
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
 			<li><a href="ServletMonProfil">Mon profil</a></li>
+			<c:if test="${!empty utilisateur.pseudo}">
 			<li><a href="ServletAccueil">Déconnexion</a></li>
+			</c:if>
 
 		</ul>
 
