@@ -56,7 +56,7 @@ public class ServletConnexion extends HttpServlet {
 				session.setAttribute("userTest", utilisateur);
 //            	clé "utilisateur" pour l'expression Language page accueil
 				session.setAttribute("utilisateur", utilisateur);
-				rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+				rd = request.getRequestDispatcher("/WEB-INF/ServletAccueil");
 				rd.forward(request, response);
 			} else {
 				rd = request.getRequestDispatcher("/WEB-INF/erreurAuthentification.jsp");
