@@ -160,7 +160,7 @@
 		<p style="font-weight:800;"> Article : </p> <p>${article.nomArticle}</p>
 		<p style="font-weight:800;">Prix : </p><p>${article.miseAPrix}</p>
 		<p style="font-weight:800;">Date de fin de l'enchère : </p><p> ${article.dateFinEncheres}</p>
-		<p style="font-weight:800;">Vendeur : <a href="ServletAfficherProfilVendeur" style="color: purple;">${article.pseudo}</a></p>
+		<p style="font-weight:800;">Vendeur : <a href="ServletAfficherProfilVendeur" style="color: #db4d69;">${article.pseudo}</a></p>
 		</div>
 		</form>
 		</c:forEach>
