@@ -41,7 +41,7 @@
 			<li><a href="ServletSinscrire">S'inscrire</a></li>
     		
 		</ul>
-
+ 
 	</div>
 	<br>
 	<h1>ENI Enchères</h1>
