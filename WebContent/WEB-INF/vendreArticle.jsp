@@ -70,13 +70,12 @@
 		<label>Article: <input style="text"></label>
 		<label>Description: <input style="text" class="descriptionArticle"></label>
 		<label><select name="categorie" id="categorie">
-   			 	<option value="">Selectionnez</option>
-			    <option value="#">Décoration</option>
-			    <option value="#">Mobilier</option>
-			    <option value="#">Extérieur</option>
-			    <option value="#">Textile</option>
-			    <option value="#">Jeux</option>
-			    <option value="#">Motorisés</option>
+   			 	<option value="0">Selectionnez</option>
+			    <option value="0">Vêtements</option>
+			    <option value="0">Sport et Loisirs</option>
+			    <option value="0">Ameublement</option>
+			    <option value="0">Informatique</option>
+			    <option value="0">Décoration</option>
 				</select>
 		</label>
 		<label>Photo de l'article: <input type="file" id="avatar" name="avatar" style="color:transparent"   ; accept="image/png, image/jpeg, image/gif, image/pdf, image/svg" /></label>

@@ -112,11 +112,11 @@
 					type="text" placeholder="Rechercher une enchère..." style="font-size:25px;"> <br> <label style="font-weight:1000;">Catégories:
 				</label> <select id="categorie" name="categorie">
 				<option value="0">Selectionnez</option>
-					<option value="0">Decoration</option>
-				<option value="0">Textile</option>
-				<option value="0">Jeux</option>
-				<option value="0">Mobilier</option>
-				<option value="0">Immobilier</option>
+				<option value="0">Vêtements</option>
+				<option value="0">Sport et Loisirs</option>
+				<option value="0">Ameublement</option>
+				<option value="0">Informatique</option>
+				<option value="0">Décoration</option>
 				
 				</select> <span style="font-weight:1000;"><input type="radio" name="achats" style="height:30px; width:30px; vertical-align: middle;" /> Achats</span> <span style="font-weight:1000;"><input
 					type="radio" name="achats" style="height:30px; width:30px; vertical-align: middle;" /> Ventes</span> <span class="checkbox"><input
