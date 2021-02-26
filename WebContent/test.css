@@ -535,7 +535,7 @@ min-width:500px;
 z-index: -1;}
  
  .wrapper3 {position:absolute;
-top:85%;
+top:90%;
     left: 50%;
     transform: translate(-50%, -50%);
 min-width:500px;
@@ -687,7 +687,7 @@ min-width:500px;
     min-width:200px;
     transform: translate(-50%, -50%);
   justify-content: center;
-  cursor:crosshair;
+ 
 }
 
 
