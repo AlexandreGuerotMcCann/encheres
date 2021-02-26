@@ -6,6 +6,25 @@
 }
 
 
+
+.wrapper444 { display: grid;
+  grid-template-columns: repeat(3, 0.5fr);
+  grid-gap: 50px;
+        position: absolute;
+    top: 200%;
+    left: 50%;
+    width:800px;
+    transform: translate(-50%, -50%);
+  justify-content: center;
+}
+
+
+.item {  background-color: #f2f2f2;
+    padding: 50px 50px;
+    opacity:0.9;
+}
+
+
 body {background-color: #fdfdfd;
 
 }
@@ -299,7 +318,7 @@ footer {
 		text-align: center;
 	display:inline-block;
 	position:absolute;
-	top:220%;
+	top:280%;
 	padding-top: 2%;
 }
 
@@ -646,6 +665,8 @@ min-width:500px;
 .wrapper66>* {
 	padding: 0.5em 0.5em;
 }
+
+
 
 
  
