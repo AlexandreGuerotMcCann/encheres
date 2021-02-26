@@ -62,7 +62,7 @@ public class ServletModifierProfil extends HttpServlet {
 				session.invalidate();
 
 				// Redirection vers accueil en mode déconnecté
-				rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+				rd = request.getRequestDispatcher("ServletAccueil");
 				rd.forward(request, response);
 
 			} catch (BusinessException e) {
@@ -106,7 +106,7 @@ public class ServletModifierProfil extends HttpServlet {
 						utilisateurManager.modificationUtilisateur(utilisateur);
 						utilisateur=utilisateurManager.retournerUtilisateur(identifiant);
 						session.setAttribute("utilisateur", utilisateur);
-						rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+						rd = request.getRequestDispatcher("ServletAccueil");
 						rd.forward(request, response);
 					}
 				} else {
@@ -124,7 +124,7 @@ public class ServletModifierProfil extends HttpServlet {
 					utilisateur=utilisateurManager.retournerUtilisateur(identifiant);
 					session.setAttribute("utilisateur", utilisateur);
 
-					rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+					rd = request.getRequestDispatcher("ServletAccueil");
 					rd.forward(request, response);
 				}
 			} catch (Exception e) {

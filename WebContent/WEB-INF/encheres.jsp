@@ -54,7 +54,7 @@
 	<br>
 	
 	<c:if test="${empty utilisateur.pseudo}">	<!-- Test pour afficher un message si utilisateur non connecté -->
-		<h3>Vous n'êtes pas connecté.</h3>
+		<h4>Vous n'êtes pas connecté(e).</h4>
 	</c:if>  
 	
 	<form>

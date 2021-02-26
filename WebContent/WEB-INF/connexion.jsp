@@ -41,7 +41,7 @@
 			<li><a href="ServletSinscrire">S'inscrire</a></li>
     		
 		</ul>
-
+ 
 	</div>
 	<br>
 	<h1>ENI Enchères</h1>
@@ -58,10 +58,13 @@
 			<label for="motdepasse">Mot de	passe :</label> 
 			<input type="password" name="motdepasse" id="motdepasse" required minimumlength="8" maxlenght="30"  /> 
 				
-				<a href="sinscrire" class="button"> <input type="button" class="button" value="Créer un compte"/></a>
-			<!-- A FAIRE Lien vers page "créer un compte" -->
+				
+			<button class="button4" type="button" name="sinscrire" onclick="ServletSinscrire">Créer un compte</button>
 
-			<a href="ServletConnexion" class="button"> <input type="submit" class="button" value="Connexion"></input></a>
+			<button class="button4" type="submit" name="connexion"
+				onclick="ServletConnexion">S'inscrire</button>
+				
+	
 
 			<span><input type="checkbox" class="checkbox"
 				name="sesouvenir" /> Se souvenir de moi </span> <a href="">Mot de passe 

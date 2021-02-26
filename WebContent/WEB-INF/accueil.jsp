@@ -75,22 +75,24 @@
 
 	<br>
 
-	<h1>ENI-Enchères</h1>
+	<h1>ENI Enchères</h1>
 
-	<h2>Liste des enchères</h2>
+	<h2>Liste des enchères</h2> 
 
 	<br>
 
 	<c:if test="${empty utilisateur.pseudo}">
 		<!-- Affiche un message si utilisateur non connecté -->
-		<h3>Vous n'êtes pas connecté(e).</h3>
+		<h4>Vous n'êtes pas connecté(e).</h4>
 	</c:if>
 
 	<c:if test="${!empty utilisateur.pseudo}">
 		<!-- Affiche un message si utilisateur connecté -->
-		<h3>Connecté en tant que "${utilisateur.pseudo}"</h3>
+		<h4>Connecté(e) en tant que "${utilisateur.pseudo}"</h4>
 	</c:if>
 
+	<br>
+	
 	<form>
 		<div>
 		
