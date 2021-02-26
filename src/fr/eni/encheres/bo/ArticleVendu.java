@@ -159,8 +159,8 @@ public class ArticleVendu {
 	}
 
 
-	public void setNoCategorie(int Categorie) {
-		this.noCategorie = Categorie;
+	public void setNoCategorie(int noCategorie) {
+		this.noCategorie = noCategorie;
 	}
 
 	public Utilisateur getUtilisateur() {
