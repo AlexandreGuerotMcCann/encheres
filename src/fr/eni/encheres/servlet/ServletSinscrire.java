@@ -35,7 +35,7 @@ public class ServletSinscrire extends HttpServlet {
 	
 	public static final String SINSCRIRE = "/WEB-INF/sinscrire.jsp";
 
-	//Map<String, String> listeErreurs = new HashMap<String, String>();
+	//Map<String, String> listeErreurs = new HashMap<String, String>();   
 
 
 	/**
