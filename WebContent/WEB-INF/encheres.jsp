@@ -26,8 +26,11 @@
     <div class="dropdown-content">
       <a href="ServletEncheres">Encheres</a>
       <a href="ServletVendreArticle">Vendre</a>
+      
+       <c:if test="${empty utilisateur.pseudo}">
       <a href="ServletConnexion">Se connecter</a>
       <a href="ServletSinscrire">S'inscrire</a>
+      </c:if>
     </div>
     </div>
   </div> 
@@ -39,8 +42,11 @@
 
 			<li><a href="ServletEncheres">Enchères</a></li>
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
+			
+			 <c:if test="${empty utilisateur.pseudo}">
 			<li><a href="ServletConnexion">Se connecter</a></li>
 			<li><a href="ServletSinscrire">S'inscrire</a></li>
+			</c:if>
     		
 		</ul>
 
