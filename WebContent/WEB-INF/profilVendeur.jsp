@@ -58,14 +58,14 @@
 	<div class="infosUtilisateur">
    
 	
-		<p>Pseudo : ${utilisateur.pseudo}</p>
-		<p>Nom : ${utilisateur.nom}</p>
-		<p>Prénom : ${utilisateur.prenom}</p>
-		<p>Email : ${utilisateur.email}</p>
-		<p>Téléphone : ${utilisateur.telephone}</p>
-		<p>Rue : ${utilisateur.rue}</p>
-		<p>Code postal : ${utilisateur.codePostal}</p>
-		<p>Ville : ${utilisateur.ville}</p>
+		<p>Pseudo : ${vendeur.pseudo}</p>
+		<p>Nom : ${vendeur.nom}</p>
+		<p>Prénom : ${vendeur.prenom}</p>
+		<p>Email : ${vendeur.email}</p>
+		<p>Téléphone : ${vendeur.telephone}</p>
+		<p>Rue : ${vendeur.rue}</p>
+		<p>Code postal : ${vendeur.codePostal}</p>
+		<p>Ville : ${vendeur.ville}</p>
 		 
 			<button class="button4" type="submit" name="modifier_profil"
 				onclick="window.location.href='http://localhost:8080/projetEncheres/ServletModifierProfil';">Modifier le profil</button>
