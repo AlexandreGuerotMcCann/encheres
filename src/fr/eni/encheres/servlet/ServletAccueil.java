@@ -50,8 +50,9 @@ public class ServletAccueil extends HttpServlet {
 		vendeur=utilisateurManager.retournerUtilisateurParId(noVendeur);
 						articleVendu.setPseudo(vendeur.getPseudo());
 	
-			request.setAttribute("listeArticlesVendus", listeArticlesVendus);
 			}
+			session.setAttribute("vendeur", vendeur);
+			session.setAttribute("listeArticlesVendus", listeArticlesVendus);
 			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 			rd.forward(request, response);
 

@@ -148,103 +148,22 @@
 			<h3>Aucun article en vente actuellement. Revenez un peu plus
 				tard. Vous pouvez aussi vendre un article.</h3>
 		</c:if>
-		
-		
-		<c:forEach items="${listeArticlesVendus}" var="article">
-   ${article.nomArticle}<br>
-   ${article.miseAPrix}<br>
-   dateFinEncheres = ${article.dateFinEncheres}<br>
-   ${article.description}<br> <!-- A modifier Visible seulement si le user est connecté -->
-   vendeur= <a href="ServletAfficherProfilVendeur">${article.pseudo}</a><br>
-		</c:forEach>
 	
 
 	</p>
 	
 	
 		<div class="wrapper444">
+  <c:forEach items="${listeArticlesVendus}" var="article">
+  <form action="ServletAfficherProfilVendeur"method="post">
   <div class="item">
-		<p>Pseudo : test</p>
-		<p>Nom : test</p>
-		<p>Prénom : test}</p>
-		<p>Email : test</p>
-		<p>Téléphone : test</p>
-		<p>Rue : test</p>
-		<p>Code postal : test}</p>
-		<p>Ville : test</p></div>
-  <div class="item">
-		<p>Pseudo : test</p>
-		<p>Nom : test</p>
-		<p>Prénom : test}</p>
-		<p>Email : test</p>
-		<p>Téléphone : test</p>
-		<p>Rue : test</p>
-		<p>Code postal : test}</p>
-		<p>Ville : test</p></div>
-  <div class="item">
-	<p>Pseudo : test</p>
-		<p>Nom : test</p>
-		<p>Prénom : test}</p>
-		<p>Email : test</p>
-		<p>Téléphone : test</p>
-		<p>Rue : test</p>
-		<p>Code postal : test}</p>
-		<p>Ville : test</p></div>
-         <div class="item">
-		<p>Pseudo : test</p>
-		<p>Nom : test</p>
-		<p>Prénom : test}</p>
-		<p>Email : test</p>
-		<p>Téléphone : test</p>
-		<p>Rue : test</p>
-		<p>Code postal : test}</p>
-		<p>Ville : test</p></div>
-         <div class="item">
-	<p>Pseudo : test</p>
-		<p>Nom : test</p>
-		<p>Prénom : test}</p>
-		<p>Email : test</p>
-		<p>Téléphone : test</p>
-		<p>Rue : test</p>
-		<p>Code postal : test}</p>
-		<p>Ville : test</p></div>
-          <div class="item">
-		<p>Pseudo : test</p>
-		<p>Nom : test</p>
-		<p>Prénom : test}</p>
-		<p>Email : test</p>
-		<p>Téléphone : test</p>
-		<p>Rue : test</p>
-		<p>Code postal : test}</p>
-		<p>Ville : test</p></div>
-         <div class="item">
-	<p>Pseudo : test</p>
-		<p>Nom : test</p>
-		<p>Prénom : test}</p>
-		<p>Email : test</p>
-		<p>Téléphone : test</p>
-		<p>Rue : test</p>
-		<p>Code postal : test}</p>
-		<p>Ville : test</p></div>
-         <div class="item">
-		<p>Pseudo : test</p>
-		<p>Nom : test</p>
-		<p>Prénom : test}</p>
-		<p>Email : test</p>
-		<p>Téléphone : test</p>
-		<p>Rue : test</p>
-		<p>Code postal : test}</p>
-		<p>Ville : test</p></div>
-          <div class="item">
-		<p>Pseudo : test</p>
-		<p>Nom : test</p>
-		<p>Prénom : test}</p>
-		<p>Email : test</p>
-		<p>Téléphone : test</p>
-		<p>Rue : test</p>
-		<p>Code postal : test}</p>
-		<p>Ville : test</p></div>
-
+		<p>${article.nomArticle}</p>
+		<p>Prix : ${article.miseAPrix}</p>
+		<p>Date de fin de l'enchère : ${article.dateFinEncheres}</p>
+		<p>Pseudo : <a href="ServletAfficherProfilVendeur">${article.pseudo}</a></p>
+		</div>
+		</form>
+		</c:forEach>
 </div>
 
 	
