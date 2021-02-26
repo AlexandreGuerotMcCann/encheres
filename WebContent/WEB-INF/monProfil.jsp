@@ -58,8 +58,9 @@
 		<p>Code postal : ${utilisateur.codePostal}</p>
 		<p>Ville : ${utilisateur.ville}</p>
 		 
+			<button class="button4" type="submit" name="modifier_profil"
+				onclick="window.location.href='http://localhost:8080/projetEncheres/ServletModifierProfil';">Modifier le profil</button>
 			
-			<a href="ServletModifierProfil" class="button"> <input type="button" class="button" value="Modifier Profil" onclick="ServletModifierProfil"/></a>
 			
 			 <!-- Redirige vers la servletModifierProfil qui envoie vers modifierProfil.jsp -->
 
