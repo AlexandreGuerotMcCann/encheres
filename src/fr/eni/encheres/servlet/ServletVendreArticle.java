@@ -50,8 +50,8 @@ public class ServletVendreArticle extends HttpServlet {
 			int miseAPrix = Integer.parseInt(misAPrix);
 			String prixDepart = request.getParameter("prixVente");
 			int prixVente = Integer.parseInt(prixDepart);
-			Utilisateur noUtilisateur = Utilisateur.parseInt("noUtilisateur");
-			Categorie noCategorie = Categorie.parseInt("noCategorie");
+			int noUtilisateur = Integer.parseInt("noUtilisateur");
+			int noCategorie = Integer.parseInt("noCategorie");
 
 			ArticleManager articleManager = new ArticleManager();
 
