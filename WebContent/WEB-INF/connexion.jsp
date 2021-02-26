@@ -62,7 +62,7 @@
 			<button class="button4" type="button" name="sinscrire" onclick="ServletSinscrire">Créer un compte</button>
 
 			<button class="button4" type="submit" name="connexion"
-				onclick="ServletConnexion">S'inscrire</button>
+				onclick="ServletConnexion">Se connecter</button>
 				
 	
 
