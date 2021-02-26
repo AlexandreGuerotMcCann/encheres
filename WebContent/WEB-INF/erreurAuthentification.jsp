@@ -58,7 +58,7 @@
 		</ul>
 	</div>
 	<p class="erreur2">
-		<a href="ServletConnexion"style="color:#ff6961;" > Erreur lors de la connection, veuillez
+		<a href="ServletConnexion"style="color:#ff6961;" > Erreur lors de la connexion, veuillez
 			réessayer.</a>
 	</p>
 
