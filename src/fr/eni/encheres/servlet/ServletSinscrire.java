@@ -78,9 +78,11 @@ public class ServletSinscrire extends HttpServlet {
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
 		}
-		   
+		validationPseudoBDD(pseudo);  
+		validationEmailBDD(mail);
+		validationTelephoneBDD(telephone);
 		// Vérifie si pseudo existe déjà en BDD
-		else if (pseudoEnBDD) 
+		if (pseudoEnBDD==false) 
 		{ 
 			request.setAttribute("erreur", "ERREUR : Ce pseudo existe déjà.");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -88,8 +90,9 @@ public class ServletSinscrire extends HttpServlet {
 		}
 		  
 		
-		// Vérifie si email existe déjà en BDD 
-		else if (emailEnBDD)
+		// Vérifie si email existe déjà en BDD
+		
+		else if (emailEnBDD==true)
 		{
 			request.setAttribute("erreur", "ERREUR : Cet e-mail existe déjà, veuillez vous connecter.");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -97,7 +100,8 @@ public class ServletSinscrire extends HttpServlet {
 		}
 
 		// Vérifie si téléphone existe déjà en BDD
-		else if (telephoneEnBDD)
+		
+		else if (telephoneEnBDD==true)
 		{
 			request.setAttribute("erreur", "ERREUR : Ce numéro existe déjà");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -112,7 +116,11 @@ public class ServletSinscrire extends HttpServlet {
 			utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
 			HttpSession session = request.getSession();
 			session.setAttribute("utilisateur", utilisateur);
+<<<<<<< HEAD
+			rd = request.getRequestDispatcher("/ServletAccueil");
+=======
 			rd = request.getRequestDispatcher("ServletAccueil");
+>>>>>>> branch 'main' of https://github.com/rambaldi35/encheres.git
 			rd.forward(request, response);
 		}
 		
@@ -160,7 +168,7 @@ private boolean validationTelephoneBDD(String telephone) throws Exception {
 	UtilisateurManager utilisateurManager = new UtilisateurManager();
 	List<Utilisateur> listeUser = utilisateurManager.ListeUtilisateurs();
 	for (Utilisateur utilisateur : listeUser) {
-		listeTelephoneBDD.add(utilisateur.getEmail());
+		listeTelephoneBDD.add(utilisateur.getTelephone());
 	}
 	if (listeTelephoneBDD.contains(telephone)) {
 		telephoneEnBDD = true;
