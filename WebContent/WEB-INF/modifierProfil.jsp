@@ -60,8 +60,8 @@
 		</ul>
 	</div>
 
-     <h1 style="margin-top:1%;">Modifier mon profil</h1>
-	<h2 style="margin-top:2%;">Mon Profil</h2>
+    	<h1>ENI Enchères</h1>
+	<h2 style="margin-top:1%;">Modifier mon Profil</h2>
 	
 	
 	<p class="erreur">
