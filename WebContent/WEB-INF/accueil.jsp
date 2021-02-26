@@ -140,7 +140,8 @@
    ${article.nomArticle}<br>
    ${article.miseAPrix}<br>
    dateFinEncheres = ${article.dateFinEncheres}<br>
-   vendeur= ${article.noUtilisateur}<br>
+   ${article.description}<br> <!-- A modifier Visible seulement si le user est connecté -->
+   vendeur= ${article.pseudo}<br>
 		</c:forEach>
 	
 
