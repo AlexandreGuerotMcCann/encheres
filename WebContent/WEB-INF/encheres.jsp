@@ -46,7 +46,10 @@
 
 	</div>
 	
-	<h1 style="margin-top:2%;">Liste des enchères</h1>
+	<br>
+	
+	<h1>ENI Enchères</h1>
+	<h2>Liste des enchères</h2>
 	
 	<br>
 	
@@ -78,7 +81,7 @@
 		</div>
 		<br>
 	
-	<h2>Articles en Vente</h2>
+	<h3>Articles en Vente</h3>
 	
     <div class="wrapper5"> 
      	<!--  TEST pour présentation de la page -> faire afficher articles de la BDD sur cette page <a href="#"><img src="images/lampe.png" alt="articleLampe" height="120" width="150"></img></a>-->
