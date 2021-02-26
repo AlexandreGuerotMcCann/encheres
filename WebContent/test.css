@@ -22,7 +22,7 @@
 
 .wrapper444 p {font-size:18px;}
 
-.wrapper444 p:hover {background-color:lightgrey;}
+.wrapper444 p:hover {background-color:#a9a9a9;}
 
 
 .item {  background-color: #f2f2f2;
@@ -231,9 +231,9 @@ li a:hover {
 	padding: 0.5em 0.5em;
 }
 
-.wrapper3 label:hover{background-color:lightgrey;}
+.wrapper3 label:hover{background-color: #a9a9a9;}
 
-.wrapper3 span:hover{background-color:lightgrey;}
+.wrapper3 span:hover{background-color: #a9a9a9;}
 
 
 
