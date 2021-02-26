@@ -28,8 +28,12 @@
     <div class="dropdown-content">
       <a href="ServletEncheres">Encheres</a>
       <a href="ServletVendreArticle">Vendre</a>
+       
+      <c:if test="${!empty utilisateur.pseudo}">
       <a href="ServletMonProfil">Mon profil</a>
       <a href="ServletDeconnexion">Se déconnecter</a>
+      </c:if>
+      
     </div>
     </div>
   </div> 
@@ -37,33 +41,40 @@
 		<ul>
 			<li><a href="ServletEncheres">Enchères</a></li>
 			<li><a href="ServletVendreArticle">Vendre un article</a></li>
+			
+			<c:if test="${!empty utilisateur.pseudo}">
 			<li><a href="ServletMonProfil">Mon profil</a></li>
 			<li><a href="ServletDeconnexion">Se déconnecter</a></li>
+			</c:if>
+			
 		</ul>
 	</div>
 
 
-	<h1 class="titre" >Profil de</h1>
-	<h2>${vendeur.pseudo }</h2> 
+	<h1 class="titre" >Mes informations</h1>
+	<div class="rechercheProfil">
+		<input id="searchsize2" type="text" placeholder="Rechercher un profil par pseudo...">
+	</div>
 	<div class="infosUtilisateur">
    
 	
-		<p>Pseudo : ${vendeur.pseudo}</p>
-		<p>Nom : ${vendeur.nom}</p>
-		<p>Prénom : ${vendeur.prenom}</p>
-		<p>Email : ${vendeur.email}</p>
-		<p>Téléphone : ${vendeur.telephone}</p>
-		<p>Rue : ${vendeur.rue}</p>
-		<p>Code postal : ${vendeur.codePostal}</p>
-		<p>Ville : ${vendeur.ville}</p>
+		<p>Pseudo : ${utilisateur.pseudo}</p>
+		<p>Nom : ${utilisateur.nom}</p>
+		<p>Prénom : ${utilisateur.prenom}</p>
+		<p>Email : ${utilisateur.email}</p>
+		<p>Téléphone : ${utilisateur.telephone}</p>
+		<p>Rue : ${utilisateur.rue}</p>
+		<p>Code postal : ${utilisateur.codePostal}</p>
+		<p>Ville : ${utilisateur.ville}</p>
 		 
-		
+			<button class="button4" type="submit" name="modifier_profil"
+				onclick="window.location.href='http://localhost:8080/projetEncheres/ServletModifierProfil';">Modifier le profil</button>
 			
+			
+			 <!-- Redirige vers la servletModifierProfil qui envoie vers modifierProfil.jsp -->
 
 	</div>
-		<button class="button4" type="submit" name="Accueil"
-				onclick="window.location.href='http://localhost:8080/projetEncheres/ServletAccueil';">Accueil</button>
-			
+	
 </body>
 
 <footer> Copyright 2021 des fifous du net © </footer>
