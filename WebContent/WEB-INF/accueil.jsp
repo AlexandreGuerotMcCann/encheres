@@ -157,10 +157,10 @@
   <c:forEach items="${listeArticlesVendus}" var="article">
   <form action="ServletAfficherProfilVendeur"method="post">
   <div class="item">
-		<p>${article.nomArticle}</p>
-		<p>Prix : ${article.miseAPrix}</p>
-		<p>Date de fin de l'enchère : ${article.dateFinEncheres}</p>
-		<p>Pseudo : <a href="ServletAfficherProfilVendeur">${article.pseudo}</a></p>
+		<p style="font-weight:800;"> Article : </p> <p>${article.nomArticle}</p>
+		<p style="font-weight:800;">Prix : </p><p>${article.miseAPrix}</p>
+		<p style="font-weight:800;">Date de fin de l'enchère : </p><p> ${article.dateFinEncheres}</p>
+		<p style="font-weight:800;">Vendeur : <a href="ServletAfficherProfilVendeur">${article.pseudo}</a></p>
 		</div>
 		</form>
 		</c:forEach>
