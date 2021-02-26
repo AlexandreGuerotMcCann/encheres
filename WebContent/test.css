@@ -11,7 +11,7 @@
   grid-template-columns: repeat(3, 0.5fr);
   grid-gap: 50px;
         position: absolute;
-    top: 150%;
+    top: 180%;
     left: 50%;
     width:1200px;
     transform: translate(-50%, -50%);
@@ -687,6 +687,7 @@ min-width:500px;
     min-width:200px;
     transform: translate(-50%, -50%);
   justify-content: center;
+  cursor:crosshair;
 }
 
 
