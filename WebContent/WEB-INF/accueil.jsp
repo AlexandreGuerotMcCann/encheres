@@ -157,7 +157,7 @@
   <c:forEach items="${listeArticlesVendus}" var="article">
   <form action="ServletAfficherProfilVendeur"method="post">
   <div class="item">
-		<p style="font-weight:800;"> Article : </p> <p>${article.nomArticle}</p>
+		<p style="font-weight:800;">Article : </p> <p>${article.nomArticle}</p>
 		<p style="font-weight:800;">Prix : </p><p>${article.miseAPrix}</p>
 		<p style="font-weight:800;">Date de fin de l'enchère : </p><p> ${article.dateFinEncheres}</p>
 		<p style="font-weight:800;">Vendeur : <a href="ServletAfficherProfilVendeur" style="color: #db4d69;">${article.pseudo}</a></p>
