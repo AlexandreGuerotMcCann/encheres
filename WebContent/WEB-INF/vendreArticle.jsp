@@ -1,16 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="test.css">
-<!-- FEUILLE CSS DE TEST -->
-<link rel="stylesheet" type="text/css"
-	href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Ajouter une nouvelle vente</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="test.css">
+
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<title>Ajouter une nouvelle vente</title>
 </head>
 <body>
 
@@ -19,17 +18,19 @@
 	</div>
 	<div class="navbar">
   <div class="dropdown">
-    <button class="dropbtn">MENU
-     <i class="fa fa-bars" aria-hidden="true"></i>
-    </button>
+    <button class="dropbtn">MENU <i class="fa fa-bars" aria-hidden="true"></i></button>
+    
     <div class="dropdown-content">
-      <a href="ServletEncheres">Encheres</a>
+      <a href="ServletEncheres">Enchères</a>
       <a href="ServletVendreArticle">Vendre</a>
       
      <c:if test="${empty utilisateur.pseudo}">
       <a href="ServletConnexion">Se connecter</a>
       <a href="ServletSinscrire">S'inscrire</a>
      </c:if>
+     <c:if test="${!empty utilisateur.pseudo}">
+		<a href="ServletDeconnexion">Se déconnecter</a>
+	</c:if>
       
       
     </div>
