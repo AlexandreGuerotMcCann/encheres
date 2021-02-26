@@ -71,6 +71,8 @@ body {background-color: #fdfdfd;
 	grid-gap:0.5em;
 	margin-top:2%;
 	
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+	
 	
 }
 
@@ -94,6 +96,8 @@ body {background-color: #fdfdfd;
 	grid-gap: 0em;
 	z-index:0;
 	width:50%;
+	
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 
 }
 
@@ -235,9 +239,7 @@ li a:hover {
 	grid-gap: 0.1em;
 	font-size:30px;
 	width:38%;
-	border-style: inset;
-      border-color: #606060;
-  border-width: 0.2em;
+	
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
@@ -278,7 +280,7 @@ li a:hover {
 }
 
 .wrapper66 {
-	
+	    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 	
 	 top: 65%;
     left: 50%;
@@ -366,7 +368,10 @@ footer {
 
 
 .infosUtilisateur { text-align: center;
-
+     border-style:inset;
+     border-width:0.8em;
+     border-color:black;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
     line-height: 1.8em;
     position: absolute;
     top: 72%;
@@ -394,7 +399,8 @@ footer {
     
     .ajoutVente { text-align: center;
    
-   
+  
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
     line-height: 1.5em;
     position: absolute;
     top:120%;
@@ -664,7 +670,8 @@ min-width:500px;
 
 
 .wrapper66 {
-	
+
+
 	
 	 top: 70%;
     left: 50%;
