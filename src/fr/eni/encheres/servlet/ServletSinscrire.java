@@ -69,11 +69,10 @@ public class ServletSinscrire extends HttpServlet {
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
 			rd.forward(request, response);
 		}
-		validationPseudoBDD(pseudo);  
-		validationEmailBDD(mail);
-		validationTelephoneBDD(telephone);
+	
 		// Vérifie si pseudo existe déjà en BDD
-		if (pseudoEnBDD==true) 
+		//validationPseudoBDD(pseudo); 
+		else if (pseudoEnBDD) 
 		{ 
 			request.setAttribute("erreur", "ERREUR : Ce pseudo existe déjà.");
 			rd = request.getRequestDispatcher("/WEB-INF/sinscrire.jsp");
@@ -82,7 +81,7 @@ public class ServletSinscrire extends HttpServlet {
 		  
 		
 		// Vérifie si email existe déjà en BDD
-		
+		//validationEmailBDD(mail);
 		else if (emailEnBDD==true)
 		{
 			request.setAttribute("erreur", "ERREUR : Cet e-mail existe déjà, veuillez vous connecter.");
@@ -91,7 +90,7 @@ public class ServletSinscrire extends HttpServlet {
 		}
 
 		// Vérifie si téléphone existe déjà en BDD
-		
+		//validationTelephoneBDD(telephone);
 		else if (telephoneEnBDD==true)
 		{
 			request.setAttribute("erreur", "ERREUR : Ce numéro existe déjà");
