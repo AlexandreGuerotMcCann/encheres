@@ -27,6 +27,7 @@
     <div class="dropdown-content">
       <a href="ServletEncheres">Encheres</a>
       <a href="ServletVendreArticle">Vendre</a>
+      <a href="ServletMonProfil">Mon profil</a>
       <a href="ServletDeconnexion">Se déconnecter</a>
     </div>
     </div>
