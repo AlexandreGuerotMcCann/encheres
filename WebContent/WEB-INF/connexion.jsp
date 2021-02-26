@@ -44,8 +44,9 @@
 
 	</div>
 	<br>
+	<h1>ENI Enchères</h1>
 	
-	<h1>Se connecter</h1>
+	<h2>Se connecter</h2>
 	<br>
 	<br>
 
