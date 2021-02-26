@@ -112,7 +112,7 @@ public class ServletSinscrire extends HttpServlet {
 			utilisateur = utilisateurManager.retournerUtilisateur(pseudo);
 			HttpSession session = request.getSession();
 			session.setAttribute("utilisateur", utilisateur);
-			rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
+			rd = request.getRequestDispatcher("/WEB-INF/ServletAccueil.jsp");
 			rd.forward(request, response);
 		}
 		
