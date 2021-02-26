@@ -679,11 +679,11 @@ min-width:500px;
 
 
 .wrapper444 { display: grid;
-  grid-template-columns: repeat(3, 0.5fr);
+  grid-template-columns: repeat(1, 0.5fr);
   grid-gap: 20px;
         position: absolute;
-    top: 202%;
-    left: 50%;
+    top: 182%;
+    left: 52%;
     min-width:200px;
     transform: translate(-50%, -50%);
   justify-content: center;
