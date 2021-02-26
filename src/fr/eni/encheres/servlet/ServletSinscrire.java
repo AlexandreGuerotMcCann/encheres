@@ -26,10 +26,7 @@ public class ServletSinscrire extends HttpServlet {
 	boolean pseudoEnBDD;
 	boolean emailEnBDD;
 	boolean telephoneEnBDD;
-	
 	public static final String SINSCRIRE = "/WEB-INF/sinscrire.jsp";
-
-	//Map<String, String> listeErreurs = new HashMap<String, String>();   
 
 
 	/**
@@ -65,7 +62,7 @@ public class ServletSinscrire extends HttpServlet {
 		
  		 
 	try {
-		// METHODE VérifMDP OK FONCTIONNE PARFAITEMENT !
+		// Vérifie si mdp correspond à confirmationMdp
 		if (!mdp.equals(confirmMdp))
 		{
 			request.setAttribute("erreur", "ERREUR : Les mots de passe ne correspondent pas.");
