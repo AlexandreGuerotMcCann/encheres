@@ -51,7 +51,11 @@
 	</div>
 
 
+<<<<<<< Updated upstream
 	<h1 >Profil de </h1>
+=======
+	<h1 class="titre" >Profil de</h1>
+>>>>>>> Stashed changes
 	<h2>${vendeur.pseudo}</h2>
 	
 	<div class="infosUtilisateur">
