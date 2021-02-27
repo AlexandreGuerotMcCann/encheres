@@ -9,7 +9,7 @@ public interface EncheresDAO {
 
 	List<Enchere> selectAll() throws BusinessException;
 
-	Enchere selectByNoEnchere(int no_enchere) throws BusinessException;
+	public Enchere selectByNoEnchere(int no_enchere) throws BusinessException;
 
 	public void supprimerEnchere(int no_enchere) throws BusinessException;
 

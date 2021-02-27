@@ -87,13 +87,15 @@
 		<p>${article.description } </p>
 		<p>Catégorie : </p>
 		<p>${categorie.libelle}</p>
-		<p>Mise à prix : </p><p>${article.miseAPrix} </p> <!-- import à faire  -->
+		<p>Mise à prix : </p><p>${article.miseAPrix} </p>
+		<p>Meilleure offre : </p><p><!-- Import à faire --></p>
 		<p>Fin de l'enchère : </p><p>${article.dateFinEncheres}</p>
-		<p>Retrait : </p>  <p>${vendeur.rue}</p> 
-		<p></p><p>${vendeur.codePostal} ${vendeur.ville}</p>
+		<p>Retrait : </p>  <p>${retrait.rue}</p> 
+		<p></p><p>${retrait.codePostal} ${retrait.ville}</p>
 		<p>Vendeur : </p><p>${vendeur.pseudo}</p>
-		<p>Ma proposition : </p><p> </p><!-- faire un menu déroulant avec le crédit+ méthode pour vérifier si l'acheteur à assez de crédit -->
-		<p> </p><button class="button" type="submit" name="Enchérir" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletEncherir';" >Enchérir</div>
+		<p>Ma proposition : </p><p> <input type="number" id="enchere" name="enchere"value="${article.miseAPrix }"
+       min="${article.miseAPrix}"></p><!-- faire un menu déroulant avec le crédit+ méthode pour vérifier si l'acheteur à assez de crédit -->
+		<button class="button4" type="submit" name="Accueil" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletAccueil';" >Retour à la liste des ventes</button><button class="button4" type="submit" name="Enchérir" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletEncherir';" >Enchérir</button></div>
 
 
 

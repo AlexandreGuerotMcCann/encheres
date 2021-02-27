@@ -11,7 +11,7 @@
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
-		 
+
 	</welcome-file-list>
 
 	<servlet>
@@ -21,8 +21,8 @@
 	<servlet-mapping>
 		<servlet-name>accueil</servlet-name>
 		<url-pattern></url-pattern>
-	</servlet-mapping> 
-	
+	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>accueil</servlet-name>
 		<jsp-file>/WEB-INF/accueil.jsp</jsp-file>
@@ -30,10 +30,10 @@
 	<servlet-mapping>
 		<servlet-name>accueil</servlet-name>
 		<url-pattern>/accueil</url-pattern>
-	</servlet-mapping> 
-	
-	
-    <servlet>
+	</servlet-mapping>
+
+
+	<servlet>
 
 		<servlet-name>connexion</servlet-name>
 		<jsp-file>/WEB-INF/connexion.jsp</jsp-file>
@@ -42,7 +42,7 @@
 		<servlet-name>connexion</servlet-name>
 		<url-pattern>/connexion</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>sinscrire</servlet-name>
 		<jsp-file>/WEB-INF/sinscrire.jsp</jsp-file>
@@ -50,7 +50,7 @@
 	<servlet-mapping>
 		<servlet-name>sinscrire</servlet-name>
 		<url-pattern>/sinscrire</url-pattern>
-	</servlet-mapping> 
+	</servlet-mapping>
 	<servlet>
 		<servlet-name>modifierProfil</servlet-name>
 		<jsp-file>/WEB-INF/modifierProfil.jsp</jsp-file>
@@ -59,4 +59,12 @@
 		<servlet-name>modifierProfil</servlet-name>
 		<url-pattern>/modifierprofil</url-pattern>
 	</servlet-mapping>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error404.html</location>
+	</error-page>
 </web-app>
