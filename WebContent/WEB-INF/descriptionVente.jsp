@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="fr.eni.encheres.bo.Utilisateur"%>
+    <%@ page import="fr.eni.encheres.bo.Categorie"%>
+    <%@ page import="fr.eni.encheres.bo.ArticleVendu"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -80,16 +82,18 @@
 <body>
 
 		<div class="modifProfil1">
-		<p style="color: #db4d69;">${article.nomArticle }</p>
-		<p>Description : ${article.description } </p>
-		<p>Catégorie : </p> <!-- import à faire  -->
-		<p>Mise à prix : ${article.miseAPrix } </p> <!-- import à faire  -->
-		<p>Fin de l'enchère : ${article.dateFinEncheres }</p>
-		<p>Retrait : </p> <!-- import à faire -->
-		<p>Code postal : </p>
-		<p>Vendeur : ${article.pseudo}</p>
-		<p>Ma proposition : </p><!-- faire un menu déroulant avec le crédit+ méthode pour vérifier si l'acheteur à assez de crédit -->
-		<button class="button" type="submit" name="Enchérir" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletEncherir';" >Enchérir</div>
+		<p style="color: #db4d69;">${article.nomArticle}</p><br>
+		<p>Description : </p>
+		<p>${article.description } </p>
+		<p>Catégorie : </p>
+		<p>${categorie.libelle}</p>
+		<p>Mise à prix : </p><p>${article.miseAPrix} </p> <!-- import à faire  -->
+		<p>Fin de l'enchère : </p><p>${article.dateFinEncheres}</p>
+		<p>Retrait : </p>  <p>${vendeur.rue}</p> 
+		<p></p><p>${vendeur.codePostal} ${vendeur.ville}</p>
+		<p>Vendeur : </p><p>${vendeur.pseudo}</p>
+		<p>Ma proposition : </p><p> </p><!-- faire un menu déroulant avec le crédit+ méthode pour vérifier si l'acheteur à assez de crédit -->
+		<p> </p><button class="button" type="submit" name="Enchérir" onclick="window.location.href='http://localhost:8080/projetEncheres/ServletEncherir';" >Enchérir</div>
 
 
 

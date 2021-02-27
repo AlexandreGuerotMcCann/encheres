@@ -16,12 +16,8 @@ public class CategorieManager {
 
 	}
 
-	public Categorie retournerCategorie(int noCategorie) throws BusinessException {
-		return daoCategories.selectById(noCategorie);
-	}
-
-	public Categorie retournerUtilisateurParId(int noCatgeorie) throws BusinessException {
-		return daoCategories.selectById(noCatgeorie);
+	public Categorie retournerCategorieParNoCategorie(int noCategorie) throws BusinessException {
+		return daoCategories.selectByNoCategorie(noCategorie);
 	}
 
 	public List<Categorie> ListeCategorie() throws BusinessException {

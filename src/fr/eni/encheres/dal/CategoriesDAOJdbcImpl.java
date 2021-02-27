@@ -14,16 +14,16 @@ public class CategoriesDAOJdbcImpl implements CategoriesDAO {
 	
 	
 	private static final String SELECT_BY_LIBELLE = "SELECT * FROM categories WHERE libelle = ?";
-	private static final String SELECT_BY_ID = "SELECT * FROM categories";
+	private static final String SELECT_BY_ID = "SELECT * FROM categories WHERE no_categorie=?";
 	private static final String SELECT_ALL = "SELECT * FROM categories";
-	private static final String INSERT = "INSERT INTO utilisateurs (libelle, noCategorie) VALUES (?,?)";
+	private static final String INSERT = "INSERT INTO categories (noCategorie,libelle) VALUES (?,?)";
 
 	private static final String DELETE_CATEGORIE = "DELETE FROM CATEGORIES where no_categorie = ?";
 	private static final String UPDATE_CATEGORIE = "UPDATE CATEGORIES SET libelle = ?, noCategorie = ?";
 				
 	
 	
-	private Categorie categories = new Categorie();
+	private Categorie categorie = new Categorie();
 
 	
 
@@ -36,11 +36,11 @@ public class CategoriesDAOJdbcImpl implements CategoriesDAO {
 			ResultSet rs = pStatement.executeQuery();
 			while (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes***
 								// d'utilisateurs
-				categories = new Categorie();
-				categories.setLibelle(rs.getString("libelle"));
+				categorie = new Categorie();
+				categorie.setLibelle(rs.getString("libelle"));
 				
 			}
-			listeCategorie.add(categories);
+			listeCategorie.add(categorie);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			BusinessException businessException = new BusinessException();
@@ -53,24 +53,24 @@ public class CategoriesDAOJdbcImpl implements CategoriesDAO {
 	
 
 	@Override
-	public Categorie selectById(int id) throws BusinessException {
+	public Categorie selectByNoCategorie(int noCategorie) throws BusinessException {
 
 		try (Connection connection = ConnectionProvider.getConnection()) {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_ID);
-			pStatement.setInt(1, id);
+			pStatement.setInt(1, noCategorie);
 			ResultSet rs = pStatement.executeQuery();
 			while (rs.next()) {
-				categories.setLibelle(rs.getString("libelle"));
-				categories.setNoCategorie(rs.getInt("noCategorie"));
+				categorie.setNoCategorie(rs.getInt("no_categorie"));
+				categorie.setLibelle(rs.getString("libelle"));
 
 			}
-		} catch (SQLException ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			BusinessException businessException = new BusinessException();
 			businessException.ajouterErreur(CodesErreursDAL.ERREUR_ID_CATEGORIE);
 			throw businessException;
 		}
-		return categories;
+		return categorie;
 	}
 
 
@@ -83,9 +83,9 @@ public class CategoriesDAOJdbcImpl implements CategoriesDAO {
 			if (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes
 								// d'utilisateurs
 
-				categories = new Categorie();
-				categories.setLibelle(rs.getString("libelle"));
-				categories.setNoCategorie(rs.getInt("noCategorie"));
+				categorie= new Categorie();
+				categorie.setLibelle(rs.getString("libelle"));
+				categorie.setNoCategorie(rs.getInt("noCategorie"));
 
 			}
 		} catch (Exception ex) {
@@ -94,11 +94,11 @@ public class CategoriesDAOJdbcImpl implements CategoriesDAO {
 			businessException.ajouterErreur(CodesErreursDAL.ERREURS_LIBELLE);
 			throw businessException;
 		}
-		if (categories == null) {
+		if (categorie == null) {
 			System.out.println("aucun libelle");
 		}
 
-		return categories;
+		return categorie;
 	}
 
 
