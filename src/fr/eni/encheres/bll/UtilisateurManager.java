@@ -1,6 +1,5 @@
 package fr.eni.encheres.bll;
- 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import fr.eni.encheres.BusinessException;
@@ -10,18 +9,11 @@ import fr.eni.encheres.dal.UtilisateurDAO;
 
 public class UtilisateurManager {
 
-	// Doit disposer d'un accès à la DAL en passant par le DAOFactory => Création de
-	// la DAOFactory dans DAL
 	private UtilisateurDAO daoUtilisateur;
 
 	public UtilisateurManager() {
 		daoUtilisateur = DAOFactory.getUtilisateurDAO();
 	}
-
-//	// Méthode pour obtenir la liste des utilisateurs présents en BDD 
-//	public List<Utilisateur> getListeUtilisateurs() throws BusinessException {
-//		return this.daoUtilisateur.selectAll();
-//		}
 
 	public Utilisateur retournerUtilisateur(String pseudo) throws BusinessException {
 		return daoUtilisateur.selectByPseudo(pseudo);
@@ -38,7 +30,6 @@ public class UtilisateurManager {
 	public Utilisateur ajoutUtilisateur(String mdp, String pseudo, String nom, String prenom, String mail,
 			String telephone, String rue, String codePostal, String city) throws BusinessException {
 
-	
 		Utilisateur utilisateur = new Utilisateur();
 		utilisateur.setPseudo(pseudo);
 		utilisateur.setNom(nom);
@@ -57,12 +48,8 @@ public class UtilisateurManager {
 		return utilisateur;
 	}
 
-
-
-//Méthode à tester /!\ => à lier avec pageModifierProfil => bouton "Enregistrer" (cf.maquette p.7 & 8/13)
 	public void modificationUtilisateur(Utilisateur utilisateur) throws BusinessException {
-		
-		
+
 		this.daoUtilisateur.modifierUtilisateur(utilisateur);
 	}
 

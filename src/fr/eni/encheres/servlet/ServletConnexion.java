@@ -26,7 +26,7 @@ public class ServletConnexion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Pour récupérer les infos depuis la BDD
+		
 		this.getServletContext().getRequestDispatcher(CONNEXION).forward(request, response);
 	}
 
@@ -50,11 +50,6 @@ public class ServletConnexion extends HttpServlet {
 			
 			String motPasseBDD = utilisateur.getMotDePasse();
 			if (motDePasse.equals(motPasseBDD)) {
-//            	clé "user" pour le code java page accueuil
-				session.setAttribute("user", utilisateur);
-//            	clé "userTespt" pour le jsp:useBean page accueuil
-				session.setAttribute("userTest", utilisateur);
-//            	clé "utilisateur" pour l'expression Language page accueil
 				session.setAttribute("utilisateur", utilisateur);
 				rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");
 				rd.forward(request, response);

@@ -6,11 +6,11 @@ import java.util.Date;
 public class Enchere {
 	
 	private Date dateEnchere;
-	private int montant_enchere;
+	private int montantEnchere;
 	private int noEnchere;
 	
-	private Utilisateur noUtilisateur;
-	private ArticleVendu noArticle;
+	private int noUtilisateur;
+	private int noArticle;
 	
 	// Constructeur sans paramètres
 	public Enchere() {
@@ -25,25 +25,25 @@ public class Enchere {
 	public void setDateEnchere(Date dateEnchere) {
 		this.dateEnchere = dateEnchere;
 	}
-	public int getMontant_enchere() {
-		return montant_enchere;
+	public int getMontantEnchere() {
+		return montantEnchere;
 	}
-	public void setMontant_enchere(int montant_enchere) {
-		this.montant_enchere = montant_enchere;
+	public void setMontantEnchere(int montant_enchere) {
+		this.montantEnchere = montant_enchere;
 	}
 
 
-	public void setNoEncheres(int no_enchere) {
+	public void setNoEncheres(int noEnchere) {
+		this.noEnchere=noEnchere;
+	}
+
+
+	public void setNoArticle(int noArticle) {
 		
 	}
 
 
-	public void setNoArticle(ArticleVendu noArticle) {
-		
-	}
-
-
-	public void setNoUtilisateur(Utilisateur noUtilisateur) {
+	public void setNoUtilisateur(int noUtilisateur) {
 		this.noUtilisateur = noUtilisateur;
 	}
 
@@ -61,6 +61,5 @@ public class Enchere {
 	public int getNoUtilisateur() {
 		return 0;
 	}
-
 	
 }

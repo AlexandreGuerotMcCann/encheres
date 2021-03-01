@@ -13,7 +13,6 @@ public class CategorieManager {
 
 	public CategorieManager() {
 		daoCategories = DAOFactory.getCategorieDAO();
-
 	}
 
 	public Categorie retournerCategorieParNoCategorie(int noCategorie) throws BusinessException {
@@ -24,25 +23,4 @@ public class CategorieManager {
 		return daoCategories.selectAll();
 	}
 
-	public Categorie ajoutCategorie(String libelle, int noCategorie) throws BusinessException {
-
-		Categorie categorie = new Categorie();
-		categorie.setLibelle(libelle);
-		categorie.setNoCategorie(noCategorie);
-
-
-		this.daoCategories.ajoutCategorie(categorie);
-
-		return categorie;
-	}
-	
-	public void modifierCategorie(Categorie categorie) throws BusinessException {
-		
-		
-		this.daoCategories.modifierCategorie(categorie);
-	}
-
-	public void supprimerCategorie(int noCategories) throws BusinessException {
-		this.daoCategories.supprimerCategorie(noCategories);
-	}
 }

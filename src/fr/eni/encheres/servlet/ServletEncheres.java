@@ -54,11 +54,8 @@ public class ServletEncheres extends HttpServlet {
 		Date dateEnchere = new SimpleDateFormat("dd-MM-yyyy").parse(getInitParameter("dateEnchere"));
 		String montantEnchere = request.getParameter("montant_enchere");
 		int montant_enchere  = Integer.parseInt(montantEnchere);
-		ArticleVendu noArticle = ArticleVendu.parseInt("noArticle");
-		Utilisateur noUtilisateur = Utilisateur.parseInt("noUtilisateur");
-		
-		
-
+		int noArticle =  Integer.parseInt(request.getParameter("noArticle"));
+		int noUtilisateur = Integer.parseInt(request.getParameter("noUtilisateur"));
 		
 		EncheresManager encheresManager = new EncheresManager();
 		

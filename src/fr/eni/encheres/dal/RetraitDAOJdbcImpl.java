@@ -60,7 +60,6 @@ public void modifierRetrait(Retrait retrait) throws BusinessException {
 	
 }
 
-
 @Override
 public void ajoutRetrait(Retrait retrait) throws BusinessException {
 	// TODO Auto-generated method stub

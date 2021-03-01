@@ -2,7 +2,6 @@ package fr.eni.encheres.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -15,10 +14,8 @@ import javax.servlet.http.HttpSession;
 
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bll.ArticleManager;
-import fr.eni.encheres.bll.CategorieManager;
 import fr.eni.encheres.bll.UtilisateurManager;
 import fr.eni.encheres.bo.ArticleVendu;
-import fr.eni.encheres.bo.Categorie;
 import fr.eni.encheres.bo.Utilisateur;
 
 /**
@@ -72,15 +69,7 @@ public class ServletAccueil extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
-//		HttpSession session = request.getSession();
-//		String pseudo = "pseudo";
-//		request.setAttribute("pseudo", pseudo);
-//		pseudo = (String) session.getAttribute("pseudo");
-//		String motdepasse = "motdepasse";
-//		request.setAttribute("motdepasse", motdepasse);
-//		pseudo = (String) session.getAttribute("pseudo");
-//
-//		this.getServletContext().getRequestDispatcher(ACCUEIL).forward(request, response);
+
 
 	}
 

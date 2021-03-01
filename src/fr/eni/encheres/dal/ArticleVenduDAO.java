@@ -4,7 +4,6 @@ import java.util.List;
 
 import fr.eni.encheres.BusinessException;
 import fr.eni.encheres.bo.ArticleVendu;
-import fr.eni.encheres.bo.Utilisateur;
 
 public interface ArticleVenduDAO {
 	

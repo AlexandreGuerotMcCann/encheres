@@ -17,7 +17,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String SELECT_ALL = "SELECT * FROM utilisateurs";
 	private static final String INSERT = "INSERT INTO utilisateurs (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
-	// A tester les filles et les gars ;)
 	private static final String DELETE_USER = "DELETE FROM UTILISATEURS where pseudo = ?";
 	private static final String UPDATE_USER = "UPDATE UTILISATEURS SET pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ? WHERE no_utilisateur = ?"; // "credit"
 																																																					// et
@@ -58,16 +57,13 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		return listeUtilisateurs;
 	}
 
-//Méthode ok
 	@Override
 	public Utilisateur selectByPseudo(String pseudo) throws BusinessException {
 		try (Connection connection = ConnectionProvider.getConnection()) {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_PSEUDO);
 			pStatement.setString(1, pseudo);
 			ResultSet rs = pStatement.executeQuery();
-			if (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes
-								// d'utilisateurs
-
+			if (rs.next()) {
 				utilisateur = new Utilisateur();
 				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
 				utilisateur.setPseudo(rs.getString("pseudo"));
@@ -99,7 +95,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	public Utilisateur selectById(int noUtilisateur) throws BusinessException {
 		try (Connection connection = ConnectionProvider.getConnection()) {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_ID);
-			pStatement.setInt(1,noUtilisateur);
+			pStatement.setInt(1, noUtilisateur);
 			ResultSet rs = pStatement.executeQuery();
 			while (rs.next()) {
 				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
@@ -126,8 +122,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	@Override
 	public void ajoutUtilisateur(Utilisateur utilisateur) throws BusinessException {
-		// TODO Auto-generated method stub
-		ResultSet rs;
 
 		try (Connection connection = ConnectionProvider.getConnection()) {
 			PreparedStatement rqt = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
@@ -151,13 +145,10 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		}
 	}
 
-	// Méthode à tester /!\ => à lier avec pageMonProfil => bouton "Supprimer mon
-	// compte" (cf.maquette)
 	@Override
 	public void supprimerUtilisateur(String pseudo) throws BusinessException {
 		try (Connection connection = ConnectionProvider.getConnection()) {
-			PreparedStatement pStatement = connection.prepareStatement(DELETE_USER); // + Voir si delete avec pseudo
-																						// aussi
+			PreparedStatement pStatement = connection.prepareStatement(DELETE_USER);
 			pStatement.setString(1, pseudo);
 			pStatement.executeUpdate();
 		} catch (SQLException ex) {
@@ -168,8 +159,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		}
 	}
 
-	// Méthode à tester /!\ => à lier avec pageModifierProfil => bouton
-	// "Enregistrer" (cf.maquette p.7 & 8/13)
 	@Override
 	public void modifierUtilisateur(Utilisateur utilisateur) throws BusinessException {
 		try (Connection connection = ConnectionProvider.getConnection()) {
@@ -183,10 +172,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			pStatement.setString(7, utilisateur.getCodePostal());
 			pStatement.setString(8, utilisateur.getVille());
 			pStatement.setString(9, utilisateur.getMotDePasse());
-			pStatement.setInt(10, utilisateur.getNoUtilisateur()); // Pas sûre de toucher au "no_utilisateur"
-			// Com de camille : je ne pense pas car c'est une PK en BDD :)
-			// Com de Sandrine : Bien reçu ! Merci pour l'explication, du coup il faudra
-			// bien la supprimer aussi dans la constante UPDATE_USER
+			pStatement.setInt(10, utilisateur.getNoUtilisateur());
 			pStatement.executeUpdate();
 		} catch (SQLException ex) {
 

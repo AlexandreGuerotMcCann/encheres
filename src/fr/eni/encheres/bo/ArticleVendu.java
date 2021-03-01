@@ -1,12 +1,9 @@
 package fr.eni.encheres.bo;
 
-import java.text.DateFormat;
-import java.time.LocalDate;
-import fr.eni.encheres.bo.Categorie;
 import java.util.Date;
 
 public class ArticleVendu {
-	
+
 	private int noArticle;
 	private String nomArticle;
 	private String description;
@@ -22,18 +19,17 @@ public class ArticleVendu {
 	private Utilisateur utilisateur;
 	private Categorie categorie;
 
-	
-	// Constructeur sans paramètres
-		public ArticleVendu() {
-			
-		}
-		
-		public ArticleVendu(int noArticle, String nomArticle, String description, Date dateDebutEncheres, Date dateFinEncheres, int miseAPrix, int prixVente, String etatVente, Utilisateur noUtilisateur, Categorie noCategorie) {
-			
-		}
-		
-	// Getter et Setter		
-/**
+	public ArticleVendu() {
+
+	}
+
+	public ArticleVendu(int noArticle, String nomArticle, String description, Date dateDebutEncheres,
+			Date dateFinEncheres, int miseAPrix, int prixVente, String etatVente, int noUtilisateur, int noCategorie) {
+
+	}
+
+	// Getter et Setter
+	/**
 	 * @return the noArticle
 	 */
 	public int getNoArticle() {
@@ -153,11 +149,9 @@ public class ArticleVendu {
 		this.noUtilisateur = noUtilisateur;
 	}
 
-	
 	public int getNoCategorie() {
 		return noCategorie;
 	}
-
 
 	public void setNoCategorie(int noCategorie) {
 		this.noCategorie = noCategorie;
@@ -191,8 +185,5 @@ public class ArticleVendu {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
-
 
 }

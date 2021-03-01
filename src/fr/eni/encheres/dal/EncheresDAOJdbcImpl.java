@@ -20,7 +20,7 @@ public class EncheresDAOJdbcImpl implements EncheresDAO {
 	
 	private static final String SELECT_BY_NO_ENCHERE = "SELECT * FROM encheres WHERE no_enchere = ?";
 	private static final String SELECT_ALL = "SELECT * FROM encheres;";
-	private static final String INSERT = "INSERT INTO encheres (no_enchere, date_enchere, montant_enchere, noArticle, noUtilisateur) VALUES (?,?,?,?,?)";
+	private static final String INSERT = "INSERT INTO encheres (no_enchere, date_enchere, montant_enchere, no_article, no_utilisateur) VALUES (?,?,?,?,?)";
 	private static final String DELETE_ENCHERE = "DELETE FROM encheres WHERE no_enchere = ?";
 	private static final String UPDATE_ENCHERE= "UPDATE encheres SET no_enchere = ?, date_enchere= ?, montant_enchere = ?, noArticle = ?, noUtilisateur = ?";
 
@@ -33,8 +33,6 @@ public class EncheresDAOJdbcImpl implements EncheresDAO {
 			PreparedStatement pStatement = connection.prepareStatement(SELECT_ALL);
 
 			ResultSet rs = pStatement.executeQuery();
-			UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
-			ArticleVenduDAO ArticleVenduDAO = DAOFactory.getArticleVenduDAO();
 			
 			while (rs.next()) { // on boucle sur le resultset pour transformer le result en lignes***
 				
@@ -43,11 +41,11 @@ public class EncheresDAOJdbcImpl implements EncheresDAO {
 				enchere = new Enchere();
 				enchere.setNoEncheres(rs.getInt("no_enchere"));
 				enchere.setDateEnchere(rs.getDate("date_enchere"));
-				enchere.setMontant_enchere(rs.getInt("montant_enchere"));
-				enchere.setNoArticle((ArticleVendu)ArticleVenduDAO.selectByNoArticle(rs.getInt("noArticle")));			
-				enchere.setNoUtilisateur((Utilisateur)utilisateurDAO.selectById(rs.getInt("noUtilisateur")));	
+				enchere.setMontantEnchere(rs.getInt("montant_enchere"));
+				enchere.setNoArticle(rs.getInt("no_article"));			
+				enchere.setNoUtilisateur(rs.getInt("no_utilisateur"));	
+				listeEncheres.add(enchere);
 				}		
-			listeEncheres.add(enchere);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			BusinessException businessException = new BusinessException();
@@ -68,15 +66,13 @@ public Enchere selectByNoEnchere(int no_utilisateur) throws BusinessException {
 		PreparedStatement pStatement = connection.prepareStatement(SELECT_BY_NO_ENCHERE);
 		pStatement.setInt(1, no_utilisateur);
 		ResultSet rs = pStatement.executeQuery();
-		UtilisateurDAO utilisateurDAO = DAOFactory.getUtilisateurDAO();
-		ArticleVenduDAO ArticleVenduDAO = DAOFactory.getArticleVenduDAO();
 		while (rs.next()) {
 			enchere = new Enchere();
 			enchere.setNoEncheres(rs.getInt("no_enchere"));
 			enchere.setDateEnchere(rs.getDate("date_enchere"));
-			enchere.setMontant_enchere(rs.getInt("montant_enchere"));
-			enchere.setNoArticle((ArticleVendu)ArticleVenduDAO.selectByNoArticle(rs.getInt("noArticle")));			
-			enchere.setNoUtilisateur((Utilisateur)utilisateurDAO.selectById(rs.getInt("noUtilisateur")));	
+			enchere.setMontantEnchere(rs.getInt("montant_enchere"));
+			enchere.setNoArticle(rs.getInt("no_article"));			
+			enchere.setNoUtilisateur(rs.getInt("no_utilisateur"));	
 			
 		}
 	} catch (SQLException ex) {
@@ -94,7 +90,6 @@ public Enchere selectByNoEnchere(int no_utilisateur) throws BusinessException {
 
 public void ajoutEnchere (Enchere enchere) throws BusinessException {
 	// TODO Auto-generated method stub
-	ResultSet rs;
 
 	try {
 		try (Connection connection = ConnectionProvider.getConnection()) {
@@ -103,7 +98,7 @@ public void ajoutEnchere (Enchere enchere) throws BusinessException {
 			PreparedStatement rqt = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			rqt.setInt(1, enchere.getNoEnchere());
 			rqt.setDate(2, (Date) enchere.getDateEnchere());
-			rqt.setInt(3, enchere.getMontant_enchere());
+			rqt.setInt(3, enchere.getMontantEnchere());
 			rqt.setInt(4, articleVendu.getNoArticle());
 			rqt.setInt(5, utilisateur.getNoUtilisateur());
 			
@@ -112,10 +107,12 @@ public void ajoutEnchere (Enchere enchere) throws BusinessException {
 			rqt.close();
 
 		} catch (Exception ex) {
+			 ex.printStackTrace();
 			throw new BusinessException(CodesErreursDAL.ERREUR_AJOUT_ENCHERE);
 			
 		}
 	} catch (BusinessException e) {
+		
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
@@ -131,7 +128,7 @@ public void supprimerEnchere(int no_enchere) throws BusinessException {
 		pStatement.setInt(1, no_enchere);
 		pStatement.executeUpdate();
 	} catch (SQLException ex) {
-		// ex.printStackTrace();
+		 ex.printStackTrace();
 		BusinessException businessException = new BusinessException();
 		businessException.ajouterErreur(CodesErreursDAL.ERREUR_SUPPRESSION_ENCHERE);
 		throw businessException;
@@ -146,13 +143,13 @@ public void modifierEnchere (Enchere enchere) throws BusinessException {
 		PreparedStatement pStatement = connection.prepareStatement(UPDATE_ENCHERE);
 		pStatement.setInt(1, enchere.getNoEnchere());
 		pStatement.setDate(2, (Date) enchere.getDateEnchere());
-		pStatement.setInt(3, enchere.getMontant_enchere());
+		pStatement.setInt(3, enchere.getMontantEnchere());
 		pStatement.setInt(4, articleVendu.getNoArticle());
 		pStatement.setInt(5, utilisateur.getNoUtilisateur());
 		
 		pStatement.executeUpdate();
 	} catch (SQLException ex) {
-
+		 ex.printStackTrace();
 		BusinessException businessException = new BusinessException();
 		businessException.ajouterErreur(CodesErreursDAL.ERREUR_MISE_A_JOUR_ENCHERE);
 		throw businessException;
